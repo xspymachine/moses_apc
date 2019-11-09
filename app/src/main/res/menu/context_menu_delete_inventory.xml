@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/delete_callsheet_item"
+        android:orderInCategory="0"
+        android:icon="@drawable/edit32"
+        android:title="Delete Inventory Item"/>
+
+    <item
+        android:id="@+id/delete_callsheet"
+        android:orderInCategory="1"
+        android:icon="@drawable/delete32"
+        android:title="Delete This Inventory Sheet"/>
+
+</menu>

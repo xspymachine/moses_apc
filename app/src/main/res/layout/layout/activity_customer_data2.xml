@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" 
+    xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/sv_box"   
+	android:layout_height="fill_parent"  
+	android:layout_width="fill_parent" 
+    tools:context=".CustomerAddEditActivity">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="120dp"
+    android:paddingLeft="30dp"
+    android:paddingRight="30dp"
+    android:paddingTop="30dp" >
+
+    <TextView
+        android:id="@+id/tvheader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/bg34"
+        android:padding="6dp"
+        android:text="@string/owner"
+        android:textColor="#000"  
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/OName"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvheader"
+        android:layout_marginBottom="30dp"
+        android:layout_marginEnd="5dp"
+        android:text="@string/name" />
+
+    <EditText
+        android:id="@+id/etOName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/OName"
+        android:layout_toEndOf="@+id/OName"
+        android:labelFor="@id/etOName"
+        android:inputType="textCapWords" />
+
+    <TextView
+        android:id="@+id/OStat"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/OName"
+        android:layout_marginBottom="30dp"
+        android:layout_marginEnd="5dp"
+        android:text="@string/status" />
+
+    <AutoCompleteTextView
+        android:id="@+id/etOStat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/OStat"
+        android:layout_toEndOf="@+id/OStat"
+        android:labelFor="@id/etOStat"
+        android:inputType="textCapWords" />
+
+    <TextView
+        android:id="@+id/OBday"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/OStat"
+        android:layout_marginBottom="30dp"
+        android:layout_marginEnd="5dp"
+        android:text="@string/bday" />
+
+    <EditText
+        android:id="@+id/etOBday"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/OBday"
+        android:layout_toEndOf="@+id/OBday"
+        android:hint="@string/birthdate"
+        android:clickable="true"
+        android:focusable="false" />
+
+    <TextView
+        android:id="@+id/OHobbies"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/OBday"
+        android:layout_marginBottom="30dp"
+        android:layout_marginEnd="5dp"
+        android:text="@string/hobbies" />
+
+    <EditText
+        android:id="@+id/etOHobbies"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/OHobbies"
+        android:layout_toEndOf="@+id/OHobbies"
+        android:labelFor="@id/etOHobbies"
+        android:inputType="textCapWords" />
+
+    <TextView
+        android:id="@+id/OPhone"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/OHobbies"
+        android:layout_marginBottom="30dp"
+        android:layout_marginEnd="5dp"
+        android:text="@string/phone" />
+
+    <EditText
+        android:id="@+id/etOPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/OPhone"
+        android:layout_toEndOf="@+id/OPhone"
+        android:labelFor="@id/etOPhone"
+        android:inputType="phone" />
+
+    <TextView
+        android:id="@+id/OEmail"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/OPhone"
+        android:layout_marginBottom="30dp"
+        android:layout_marginEnd="5dp"
+        android:text="@string/email2" />
+
+    <EditText
+        android:id="@+id/etOEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/OEmail"
+        android:layout_toEndOf="@+id/OEmail"
+        android:labelFor="@id/etOEmail"
+        android:inputType="textEmailAddress" />
+    
+    
+    <RelativeLayout 
+        android:id="@+id/logistics"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:layout_below="@+id/OEmail">
+
+    <TextView
+        android:id="@+id/tvheader2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/bg34"
+        android:padding="6dp"
+        android:text="@string/logistics"
+        android:textColor="#000"
+        android:textSize="16sp" />
+    
+    
+    
+    <TextView
+        android:id="@+id/tvAverage"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvheader2"
+        android:layout_marginBottom="30dp"
+        android:layout_marginEnd="5dp"
+        android:text="@string/average" />
+
+    <EditText
+        android:id="@+id/etAverage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvAverage"
+        android:layout_toEndOf="@+id/tvAverage"
+        android:labelFor="@id/etAverage"
+        android:enabled="false"
+        android:inputType="text" />
+    
+    
+    <TextView
+        android:id="@+id/tvFrequency"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvAverage"
+        android:layout_marginBottom="30dp"
+        android:layout_marginEnd="5dp"
+        android:text="@string/freq" />
+    
+    <EditText
+        android:id="@+id/etFrequency"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvFrequency"
+        android:layout_toEndOf="@+id/tvFrequency"
+        android:labelFor="@id/etFrequency"
+        android:enabled="false"
+        android:inputType="number" />
+    
+    
+    <TextView
+        android:id="@+id/tvRoute"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvFrequency"
+        android:layout_marginBottom="30dp"
+        android:layout_marginEnd="5dp"
+        android:text="@string/route" />
+
+    <AutoCompleteTextView
+        android:id="@+id/etRoute"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvRoute"
+        android:layout_toEndOf="@+id/tvRoute"
+        android:labelFor="@id/etRoute"     
+        android:enabled="false"
+        android:inputType="textCapCharacters" />
+    
+    <TextView
+        android:id="@+id/tvLoan"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvRoute"
+        android:layout_marginBottom="30dp"
+        android:layout_marginEnd="5dp"
+        android:text="@string/loan" />
+
+    <EditText
+        android:id="@+id/etLoan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvLoan"
+        android:layout_toEndOf="@+id/tvLoan"
+        android:labelFor="@id/etLoan"
+        android:enabled="false"
+        android:inputType="text" />
+    
+    </RelativeLayout>
+    
+    
+
+    <LinearLayout        
+         android:id="@+id/sig_buttons"
+         android:layout_width="400dp"
+         android:layout_height="wrap_content"
+         android:layout_below="@+id/separator"
+         android:layout_marginTop="6dp"
+         android:orientation="horizontal"
+         android:paddingLeft="30dp"
+         android:paddingRight="30dp"
+         android:paddingTop="6dp" >
+
+         <Button
+             android:id="@+id/bt_cancel"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_weight=".5"
+             android:contentDescription="@string/btn_clear"
+             android:background="@drawable/custom_button_click"    
+             android:text="@string/btCancel"
+             android:textColor="#fff"      
+             android:paddingRight="10dp" />
+
+         <Button
+             android:id="@+id/bt_save"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_weight=".5"
+             android:contentDescription="@string/clear"    
+             android:text="@string/btSave"
+             android:textColor="#fff"
+             android:background="@drawable/custom_button_click"         
+             android:layout_marginStart="10dp"  />
+     </LinearLayout>   
+
+    <TextView
+        android:id="@+id/separator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/logistics"
+        android:layout_below="@+id/logistics"
+        android:background="@drawable/bg34"
+        android:gravity="center"
+        android:textColor="#000" />     
+
+</RelativeLayout> 
+
+</ScrollView>

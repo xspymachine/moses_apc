@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="#000"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/rl_sccontact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:padding="6dp"
+        android:background="@drawable/rounded_gray_border">
+
+        <ImageView
+            android:id="@+id/bt_scname"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_vertical"
+            android:background="@null"
+            android:contentDescription="@string/app_name"
+            android:padding="5dp"
+            android:src="@drawable/ic_issues" />
+
+        <TextView
+            android:id="@+id/tvCName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/bt_scname"
+            android:paddingTop="3dp"
+            android:background="@null"
+            android:textColor="#000"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:focusable="false" />
+
+
+        <TextView
+            android:id="@+id/tvAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/bt_scname"
+            android:layout_below="@+id/tvCName"
+            android:paddingTop="3dp"
+            android:paddingBottom="3dp"
+            android:background="@null"
+            android:focusable="false"
+            android:textColor="#00BFFF"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+    </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:textSize="17sp"
+            android:padding="5dp"
+            android:id="@+id/tnumber"
+            android:gravity="center"
+            android:textColor="@color/shellred"
+            android:background="@drawable/rounded_border"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:inputType="textMultiLine|textCapSentences"
+        android:layout_weight="100"
+        android:gravity="top"
+        android:padding="5dp"
+        android:layout_margin="5dp"
+        android:hint="@string/issHint"
+        android:background="@color/shellyellow"
+        android:textColor="@android:color/black"
+        android:id="@+id/etIssue" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginStart="5dp"
+        android:gravity="center|bottom"
+        android:orientation="vertical" >
+
+        <Button
+            android:text="Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@drawable/custom_button_click"
+            android:textColor="#fff"
+            android:id="@+id/btOpen" />
+    </LinearLayout>
+
+    </LinearLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/show"
+        android:visibility="gone"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="end|bottom"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="70dp"
+        app:backgroundTint="@null"
+        android:src="@drawable/ic_about" />
+
+</android.support.design.widget.CoordinatorLayout>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id= "@+id/rl_list"
+    android:layout_width="fill_parent" 
+    android:layout_height="fill_parent" 
+    android:orientation="horizontal"
+    android:onClick="fileItemClicked">
+    
+ 	<CheckBox
+        android:id="@+id/cb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+ 
+    <ImageView 
+        android:id="@+id/icon" 
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content" 
+        android:layout_toEndOf="@+id/cb"
+        android:paddingTop="8dp"        
+        android:contentDescription="@string/app_name" 
+        android:src="@drawable/uploadpic32" />
+    
+    
+ 
+    <LinearLayout 
+        android:id="@+id/fileitem" 
+	    android:layout_width="400dp" 
+	    android:layout_height="wrap_content"
+	    android:layout_toEndOf="@+id/icon" 
+	    android:orientation="vertical"> 
+ 
+ 
+        <TextView 
+            android:id="@+id/filename" 
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content" 
+            android:layout_marginStart="10dp" 
+            android:layout_marginTop="5dp"
+            android:textAppearance="?android:attr/textAppearanceLarge" /> 
+ 
+ 
+        <TextView 
+            android:id="@+id/filesize" 
+            android:layout_width="wrap_content" 
+            android:layout_height="wrap_content" 
+            android:layout_marginStart="20dp"/>
+ 
+    </LinearLayout>     
+ 
+</RelativeLayout> 
+

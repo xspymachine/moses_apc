@@ -1,0 +1,557 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/sv_box"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff" >
+
+    <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="4dp"
+    android:paddingLeft="4dp"
+     android:paddingRight="4dp" 
+    android:paddingBottom="100dp"
+    android:background="#fff" >
+    
+    	<RelativeLayout 
+			android:id="@+id/rlCustomer"    
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:padding="12dp"
+		    android:background="@android:drawable/editbox_background" >
+		    
+		    <ImageView 
+		        android:id="@+id/ivCustomer"
+		    	android:layout_width="96dp"
+		    	android:layout_height="96dp"
+		    	android:background="@null"
+                android:contentDescription="@string/name"
+                android:padding="4dp"
+                android:src="@drawable/store"/>
+		    
+		    <TextView 
+				android:id="@+id/tvCustomer"
+		    	android:layout_width="wrap_content"
+		    	android:layout_height="wrap_content"
+		    	android:layout_toRightOf="@+id/ivCustomer"
+		    	android:layout_alignTop="@+id/ivCustomer"
+		    	android:lines="3"/>
+		    
+		</RelativeLayout>
+		
+    	<RelativeLayout 
+			android:id="@+id/rlHeader"    
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_below="@+id/rlCustomer"
+		    android:layout_marginLeft="10dp"
+		    android:layout_marginRight="10dp"
+		    android:padding="10dp" >
+		
+    		<TextView 
+				android:id="@+id/llDate"
+		    	android:layout_width="120dp"
+		    	android:layout_height="wrap_content"
+		    	android:layout_marginTop="12dp"
+		    	android:padding="8dp" 
+		    	android:text="@string/date"/>
+    	
+    	
+		
+    		<TextView 
+				android:id="@+id/tvDate"
+		    	android:layout_width="150dp"
+		    	android:layout_height="wrap_content"
+		    	android:layout_toRightOf="@+id/llDate"
+		    	android:layout_alignTop="@+id/llDate"
+		    	android:gravity="center"
+		    	android:padding="8dp"
+		    	android:typeface="sans"
+        		android:textSize="16sp"
+        		android:textStyle="bold"
+		    	android:background="@drawable/rounded_gray_border"/>
+    		
+    		<TextView 
+					android:id="@+id/llOrNo"
+			    	android:layout_width="120dp"
+			    	android:layout_height="wrap_content"
+			    	android:layout_marginTop="20dp"
+			    	android:layout_below="@+id/tvDate"
+			    	android:padding="8dp" 
+			    	android:text="@string/orno"/>
+	    	
+	    	
+			
+	    		<EditText 
+					android:id="@+id/etOrNo"
+			    	android:layout_width="150dp"
+			    	android:layout_height="wrap_content"
+			    	android:layout_toRightOf="@+id/llOrNo"
+			    	android:layout_alignTop="@+id/llOrNo"
+			    	android:gravity="center"
+			    	android:inputType="textCapCharacters"
+			    	android:padding="8dp"
+			    	android:typeface="sans"
+	        		android:textSize="16sp"
+			    	android:background="@drawable/rounded_gray_border">
+			    	<requestFocus />
+			    </EditText>
+    		
+    		<!--  -->
+    		
+    		<TextView 
+				android:id="@+id/llInvoiceNo"
+		    	android:layout_width="120dp"
+		    	android:layout_height="wrap_content"
+		    	android:layout_below="@+id/llOrNo"
+		    	android:layout_marginTop="20dp"
+		    	android:padding="8dp" 
+		    	android:text="@string/invoiceno"/>
+    	
+    	
+		
+    		<EditText 
+				android:id="@+id/etInvoiceNo"
+		    	android:layout_width="150dp"
+		    	android:layout_height="wrap_content"
+		    	android:layout_toRightOf="@+id/llInvoiceNo"
+		    	android:layout_alignTop="@+id/llInvoiceNo"
+		    	android:gravity="center"
+		    	android:inputType="textCapCharacters"
+		    	android:padding="8dp"
+		    	android:typeface="sans"
+        		android:textSize="16sp"
+        		android:textStyle="bold"
+		    	android:background="@drawable/rounded_gray_border"/>
+    		
+    		<TextView 
+					android:id="@+id/llInvoiceAmount"
+			    	android:layout_width="120dp"
+			    	android:layout_height="wrap_content"
+			    	android:layout_marginTop="20dp"
+			    	android:layout_below="@+id/llInvoiceNo"
+			    	android:padding="8dp" 
+			    	android:text="@string/amount"/>
+	    	
+	    	
+			
+	    		<TextView 
+					android:id="@+id/tvInvoiceAmount"
+			    	android:layout_width="150dp"
+			    	android:layout_height="wrap_content"
+			    	android:layout_toRightOf="@+id/llInvoiceAmount"
+			    	android:layout_alignTop="@+id/llInvoiceAmount"
+			    	android:gravity="center"
+			    	android:hint="@string/zero"
+			    	android:padding="8dp"
+			    	android:typeface="sans"
+	        		android:textSize="16sp"
+	        		android:textStyle="bold"
+			    	android:background="@drawable/rounded_gray_border"/>
+    		
+    		
+    		<TextView 
+				android:id="@+id/hSpace01"
+		    	android:layout_width="match_parent"
+		    	android:layout_height="2dp"
+		    	android:layout_marginTop="20dp"
+		    	android:layout_below="@+id/llInvoiceAmount"
+		    	android:background="#535366"/>
+    		
+    		
+    		
+    		
+    		<!-- CASH PAYMENT -->
+    		<TextView 
+				android:id="@+id/llCash"
+		    	android:layout_width="120dp"
+		    	android:layout_height="wrap_content"
+		    	android:layout_marginTop="20dp"
+		    	android:layout_below="@+id/hSpace01"
+		    	android:padding="8dp" 
+		    	android:text="@string/cash"/>
+    	
+    	
+		
+    		<EditText 
+				android:id="@+id/etCash"
+		    	android:layout_width="150dp"
+		    	android:layout_height="wrap_content"
+		    	android:layout_toRightOf="@+id/llCash"
+		    	android:layout_alignTop="@+id/llCash"
+		    	android:gravity="center"
+		    	android:inputType="numberDecimal"
+		    	android:padding="8dp"
+		    	android:typeface="sans"
+        		android:textSize="16sp"
+        		android:textStyle="bold"
+        		android:hint="@string/cash_amount"
+		    	android:background="@drawable/rounded_gray_border"/>
+    		
+    		<TextView 
+				android:id="@+id/hSpace02"
+		    	android:layout_width="match_parent"
+		    	android:layout_height="2dp"
+		    	android:layout_marginTop="20dp"
+		    	android:layout_below="@+id/llCash"
+		    	android:background="#535366"/>
+    		
+    		<RelativeLayout 
+				android:id="@+id/rlBankHeader"    
+			    android:layout_width="match_parent"
+			    android:layout_height="wrap_content"
+			    android:paddingTop="20dp"
+			    android:paddingBottom="20dp"
+			    android:layout_below="@+id/hSpace02"
+			    android:background="#99DFF8FF">
+    		
+    		<!-- CHECK PAYMENT -->
+    		<TextView 
+				android:id="@+id/llCheck"
+		    	android:layout_width="120dp"
+		    	android:layout_height="wrap_content"
+		    	android:layout_marginTop="20dp"
+		    	android:padding="8dp" 
+		    	android:text="@string/check"/>
+    	
+    	
+		
+    		<EditText 
+				android:id="@+id/etCheck"
+		    	android:layout_width="150dp"
+		    	android:layout_height="wrap_content"
+		    	android:layout_toRightOf="@+id/llCheck"
+		    	android:layout_alignTop="@+id/llCheck"
+		    	android:gravity="center"
+		    	android:inputType="numberDecimal"
+		    	android:padding="8dp"
+		    	android:typeface="sans"
+        		android:textSize="16sp"
+        		android:textStyle="bold"
+        		android:hint="@string/check_amt"
+		    	android:background="@drawable/rounded_gray_border"/>
+    		
+    		<TextView 
+				android:id="@+id/llCheckno"
+		    	android:layout_width="120dp"
+		    	android:layout_height="wrap_content"
+		    	android:layout_marginTop="20dp"
+		    	android:layout_below="@+id/llCheck"
+		    	android:layout_alignLeft="@+id/llCheck"
+		    	android:padding="8dp" 
+		    	android:text="@string/check_num"/>
+    	
+    	
+		
+    		<EditText 
+				android:id="@+id/etCheckno"
+		    	android:layout_width="150dp"
+		    	android:layout_height="wrap_content"
+		    	android:layout_toRightOf="@+id/llCheckno"
+		    	android:layout_alignTop="@+id/llCheckno"
+		    	android:gravity="center"
+		    	android:inputType="textCapCharacters"
+		    	android:padding="8dp"
+		    	android:typeface="sans"
+        		android:textSize="16sp"
+        		android:textStyle="bold"
+        		android:hint="@string/check_num"
+		    	android:background="@drawable/rounded_gray_border"/>
+    		
+    		<!-- Bank PAYMENT -->
+	    		<TextView 
+					android:id="@+id/llBank"
+			    	android:layout_width="120dp"
+			    	android:layout_height="wrap_content"
+			    	android:layout_marginTop="20dp"
+			    	android:padding="8dp" 
+			    	android:layout_below="@+id/llCheckno"
+			    	android:text="@string/bank_deposit"/>
+	    	
+	    	
+			
+	    		<EditText 
+					android:id="@+id/etDeposit"
+			    	android:layout_width="150dp"
+			    	android:layout_height="wrap_content"
+			    	android:layout_toRightOf="@+id/llBank"
+			    	android:layout_alignTop="@+id/llBank"
+			    	android:gravity="center"
+			    	android:inputType="numberDecimal"
+			    	android:padding="8dp"
+			    	android:typeface="sans"
+	        		android:textSize="16sp"
+	        		android:textStyle="bold"
+	        		android:hint="@string/deposit_amount"
+			    	android:background="@drawable/rounded_gray_border"/>
+	    		
+    		
+    		
+    		<!-- ********************************* -->
+			    
+    		    
+	    		<TextView 
+					android:id="@+id/llBankInfo"
+			    	android:layout_width="120dp"
+			    	android:layout_height="wrap_content"
+			    	android:layout_marginTop="20dp"
+			    	android:padding="8dp" 
+			    	android:layout_below="@+id/llBank"
+			    	android:text="@string/bankinfo"/>
+	    	
+	    	
+			
+	    		<EditText 
+					android:id="@+id/etBankName"
+			    	android:layout_width="150dp"
+			    	android:layout_height="wrap_content"
+			    	android:layout_toRightOf="@+id/llBankInfo"
+			    	android:layout_alignTop="@+id/llBankInfo"
+			    	android:gravity="center"
+			    	android:inputType="textCapWords"
+			    	android:padding="8dp"
+			    	android:hint="@string/bankname"
+			    	android:typeface="sans"
+	        		android:textSize="16sp"
+	        		android:textStyle="bold"
+			    	android:background="@drawable/rounded_gray_border"/>
+	    		
+	    		<EditText 
+					android:id="@+id/etBankBranch"
+			    	android:layout_width="150dp"
+			    	android:layout_height="wrap_content"
+			    	android:layout_marginTop="20dp"
+			    	android:layout_below="@+id/etBankName"
+			    	android:layout_alignLeft="@+id/etBankName"
+			    	android:gravity="center"
+			    	android:inputType="textCapWords"
+			    	android:padding="8dp"
+			    	android:hint="@string/bankbranch"
+			    	android:typeface="sans"
+	        		android:textSize="16sp"
+	        		android:textStyle="bold"
+			    	android:background="@drawable/rounded_gray_border"/>
+	    		
+	    		<EditText 
+					android:id="@+id/etDepTrNo"
+			    	android:layout_width="150dp"
+			    	android:layout_height="wrap_content"
+			    	android:layout_marginTop="20dp"
+			    	android:layout_below="@+id/etBankBranch"
+			    	android:layout_alignLeft="@+id/etBankBranch"
+			    	android:gravity="center"
+			    	android:inputType="text"
+			    	android:hint="@string/txno"
+			    	android:padding="8dp"
+			    	android:typeface="sans"
+	        		android:textSize="16sp"
+	        		android:textStyle="bold"
+			    	android:background="@drawable/rounded_gray_border"/>
+			    
+    		
+    		</RelativeLayout>
+    		
+    		<TextView 
+				android:id="@+id/hSpace03"
+		    	android:layout_width="match_parent"
+		    	android:layout_height="2dp"
+		    	android:layout_below="@+id/rlBankHeader"
+		    	android:background="#535366"/>
+    		
+    		<!-- CM PAYMENT -->
+    		<TextView 
+				android:id="@+id/llCm"
+		    	android:layout_width="120dp"
+		    	android:layout_height="wrap_content"
+		    	android:layout_marginTop="20dp"
+		    	android:layout_below="@+id/hSpace03"
+		    	android:padding="8dp" 
+		    	android:text="@string/cm"/>
+    	
+    	
+		
+    		<EditText 
+				android:id="@+id/etCm"
+		    	android:layout_width="150dp"
+		    	android:layout_height="wrap_content"
+		    	android:layout_toRightOf="@+id/llCm"
+		    	android:layout_alignTop="@+id/llCm"
+		    	android:gravity="center"
+		    	android:inputType="numberDecimal"
+		    	android:padding="8dp"
+		    	android:typeface="sans"
+        		android:textSize="16sp"
+        		android:textStyle="bold"
+        		android:hint="@string/cm_amount"
+		    	android:background="@drawable/rounded_gray_border"/>
+    		
+    		
+    		
+    		
+    		<TextView 
+				android:id="@+id/llCmNo"
+		    	android:layout_width="120dp"
+		    	android:layout_height="wrap_content"
+		    	android:layout_marginTop="20dp"
+		    	android:layout_below="@+id/llCm"
+		    	android:padding="8dp" 
+		    	android:text="@string/cm_num"/>
+    	
+    	
+		
+    		<EditText 
+				android:id="@+id/etCmno"
+		    	android:layout_width="150dp"
+		    	android:layout_height="wrap_content"
+		    	android:layout_toRightOf="@+id/llCmNo"
+		    	android:layout_alignTop="@+id/llCmNo"
+		    	android:gravity="center"
+		    	android:inputType="textCapWords"
+		    	android:padding="8dp"
+		    	android:typeface="sans"
+        		android:textSize="16sp"
+        		android:textStyle="bold"
+		    	android:background="@drawable/rounded_gray_border"/>
+    		
+    		
+    		<TextView 
+				android:id="@+id/hSpace04"
+		    	android:layout_width="match_parent"
+		    	android:layout_height="2dp"
+		    	android:layout_marginTop="20dp"
+		    	android:layout_below="@+id/llCmNo"
+		    	android:background="#535366"/>
+    		
+    		
+    		<TextView 
+					android:id="@+id/llTotal"
+			    	android:layout_width="120dp"
+			    	android:layout_height="wrap_content"
+			    	android:layout_below="@+id/hSpace04"
+			    	android:layout_marginTop="20dp"
+			    	android:padding="8dp" 
+			    	android:text="@string/total_amount"/>
+	    	
+	    	
+			
+	    		<TextView 
+					android:id="@+id/tvTotal"
+			    	android:layout_width="150dp"
+			    	android:layout_height="wrap_content"
+			    	android:layout_toRightOf="@+id/llTotal"
+			    	android:layout_alignTop="@+id/llTotal"
+			    	android:gravity="center"
+			    	android:padding="8dp"
+			    	android:typeface="sans"
+	        		android:textSize="16sp"
+	        		android:textStyle="bold"
+			    	android:background="@drawable/rounded_gray_border_ltblue"/>
+	    		
+	    		<TextView 
+					android:id="@+id/llBalance"
+			    	android:layout_width="120dp"
+			    	android:layout_height="wrap_content"
+			    	android:layout_marginTop="20dp"
+			    	android:layout_below="@+id/llTotal"
+			    	android:padding="8dp" 
+			    	android:text="@string/balance"/>
+	    	
+	    	
+			
+	    		<TextView 
+					android:id="@+id/tvBalance"
+			    	android:layout_width="150dp"
+			    	android:layout_height="wrap_content"
+			    	android:layout_toRightOf="@+id/llBalance"
+			    	android:layout_alignTop="@+id/llBalance"
+			    	android:gravity="center"
+			    	android:hint="@string/balance"
+			    	android:padding="8dp"
+			    	android:typeface="sans"
+	        		android:textSize="16sp"
+	        		android:textStyle="bold"
+			    	android:background="@drawable/rounded_gray_border_ltblue"/>
+	    		
+	    		
+	    		<TextView 
+				android:id="@+id/hSpace05"
+		    	android:layout_width="match_parent"
+		    	android:layout_height="2dp"
+		    	android:layout_marginTop="20dp"
+		    	android:layout_below="@+id/llBalance"
+		    	android:background="#535366"/>
+	    		
+	    		<TextView 
+					android:id="@+id/llNpReason"
+			    	android:layout_width="120dp"
+			    	android:layout_height="wrap_content"
+			    	android:layout_marginTop="30dp"
+			    	android:layout_below="@+id/hSpace05"
+			    	android:padding="8dp" 
+			    	android:text="@string/no_production_reason"/>
+	    	
+	    	
+			
+	    		<Spinner
+					android:id="@+id/spNpReason"
+			    	android:layout_width="wrap_content"
+			    	android:layout_height="wrap_content"
+			    	android:layout_marginRight="20dp"
+			    	android:layout_toRightOf="@+id/llNpReason"
+			    	android:layout_alignTop="@+id/llNpReason"
+			    	android:gravity="center"
+			    	android:padding="8dp"
+			    	android:hint="@string/np_reason"
+			    	android:typeface="sans"
+	        		android:textSize="16sp"
+			    	android:background="@drawable/rounded_gray_border"/>
+	    		
+	    		
+	    		<TextView 
+					android:id="@+id/llRemarks"
+			    	android:layout_width="120dp"
+			    	android:layout_height="wrap_content"
+			    	android:layout_marginTop="20dp"
+			    	android:layout_below="@+id/spNpReason"
+			    	android:layout_alignLeft="@+id/llNpReason"
+			    	android:padding="8dp" 
+			    	android:text="@string/remarks"/>
+	    	
+	    	
+			
+	    		<EditText 
+					android:id="@+id/etRemarks"
+			    	android:layout_width="match_parent"
+			    	android:layout_height="wrap_content"
+			    	android:layout_marginRight="20dp"
+			    	android:layout_toRightOf="@+id/llRemarks"
+			    	android:layout_alignTop="@+id/llRemarks"
+			    	android:gravity="center"
+			    	android:inputType="textCapSentences"
+			    	android:padding="8dp"
+			    	android:typeface="sans"
+	        		android:textSize="16sp"
+	        		android:lines="2"
+	        		android:maxLength="80"
+			    	android:background="@drawable/rounded_gray_border"/>
+	    		
+	    		
+	    		
+	    		<Button 
+	    		    android:id="@+id/btSubmit"
+			    	android:layout_width="match_parent"
+			    	android:layout_height="wrap_content"
+			    	android:layout_marginTop="60dp"
+			    	android:layout_below="@+id/llRemarks"
+			    	android:text="@string/submit"
+			    	android:typeface="sans"
+	        		android:textSize="16sp"
+	    		    android:textStyle="bold"/>
+    		
+    		
+    	</RelativeLayout>
+    
+	</RelativeLayout>	
+</ScrollView>

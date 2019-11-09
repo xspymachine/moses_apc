@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#000"
+    android:paddingTop="4dp"
+    android:paddingBottom="4dp"
+    android:textColor="#fff" >
+    
+    
+    <LinearLayout  android:id="@+id/item_header" 
+        android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	android:paddingLeft="6dp"
+    	android:paddingRight="4dp"> 
+    	    
+         <LinearLayout  android:id="@+id/customer_info" 
+	        android:layout_width="0dp"
+	    	android:layout_height="wrap_content"	    	
+	    	android:layout_weight="8"
+	    	android:orientation="vertical">
+        
+		    <TextView android:id="@+id/ccode"
+		        android:layout_width="match_parent"	        
+		        android:layout_height="wrap_content"	        	         
+		        android:textSize="18sp"
+		        android:textStyle="bold"        	        
+		        android:textColor="#fff"/>
+		    
+		    <TextView android:id="@+id/address"
+		        android:layout_width="match_parent"	        
+		        android:layout_height="wrap_content"
+		        android:layout_marginLeft="10dp"	        	         
+		        android:textSize="16sp"	              	        
+		        android:textColor="#fff"/>
+	    
+	    </LinearLayout>
+	    
+	    <TextView android:id="@+id/datetime"	
+	        android:layout_width="0dp"	       
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="6dp"	        
+	        android:textColor="#fff"      
+	        android:textSize="14sp" 
+	        android:layout_weight="3"/>    
+    </LinearLayout>
+    
+    <TextView android:id="@+id/transaction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/item_header" 
+        android:layout_alignParentLeft="true" 
+        android:layout_marginLeft="8dp"                  
+        android:textSize="16sp"
+        android:textColor="#26C9FF" 
+        android:paddingLeft="10dp"/> 
+</RelativeLayout>

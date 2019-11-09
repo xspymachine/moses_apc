@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" 
+    xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/sv_box"   
+	android:layout_height="match_parent"  
+	android:layout_width="match_parent" >
+
+			<RelativeLayout 
+			   android:layout_width="match_parent"
+			    android:layout_height="wrap_content"   
+			    android:paddingBottom="100dp"    
+			    android:background="#fff" >
+			    
+			    <LinearLayout android:id="@+id/ll_header"
+				        android:layout_width="match_parent"
+				        android:layout_height="wrap_content" 
+				        android:orientation="horizontal"
+				        android:baselineAligned="false">				         
+
+				    <RelativeLayout
+				        android:id="@+id/rl_customer"
+				        android:layout_width="match_parent"
+				        android:layout_height="100dp"
+				        android:layout_marginBottom="4dp"
+				        android:layout_weight="3"
+				        android:background="@android:drawable/editbox_background"
+				        android:paddingLeft="15dp"
+				        android:paddingRight="15dp" >
+
+				        <TextView
+				            android:id="@+id/lblCName"
+				            android:layout_width="120dp"
+				            android:layout_height="wrap_content"
+				            android:background="@null"
+				            android:paddingTop="8dp"
+				            android:text="@string/customer"
+				            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+				        <TextView
+				            android:id="@+id/tvCName"
+				            android:layout_width="wrap_content"
+				            android:layout_height="wrap_content"
+				            android:layout_alignBaseline="@+id/lblCName"
+				            android:layout_toRightOf="@+id/lblCName"
+				            android:background="@null"
+				            android:paddingTop="8dp"
+				            android:text="@string/name"
+				            android:textAppearance="?android:attr/textAppearanceMedium"
+				            android:textColor="#0000DD"
+				            android:textStyle="bold" />
+
+				        <TextView
+				            android:id="@+id/lblAddress"
+				            android:layout_width="120dp"
+				            android:layout_height="wrap_content"
+				            android:layout_alignLeft="@+id/lblCName"
+				            android:layout_below="@+id/lblCName"
+				            android:background="@null"
+				            android:paddingTop="4dp"
+				            android:text="@string/address"
+				            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+				        <TextView
+				            android:id="@+id/tvAddress"
+				            android:layout_width="wrap_content"
+				            android:layout_height="wrap_content"
+				            android:layout_alignBaseline="@+id/lblAddress"
+				            android:layout_toRightOf="@+id/lblAddress"
+				            android:background="@null"
+				            android:lines="2"
+				            android:text="@string/address"
+				            android:textAppearance="?android:attr/textAppearanceSmall"
+				            android:textColor="#0000DD"
+				            android:textStyle="bold" />
+
+				    </RelativeLayout>
+
+				    <RelativeLayout
+				        android:id="@+id/rl_defaults"
+				        android:layout_width="match_parent"
+				        android:layout_height="100dp" 	        
+				        android:layout_marginBottom="4dp"
+				        android:paddingLeft="10dp"	 
+				        android:paddingRight="10dp"				        
+				        android:layout_weight="5"                   
+				        android:background="@android:drawable/editbox_background" >
+				        
+				        <TextView
+				            android:id="@+id/lblDate"
+				            android:layout_width="80dp"
+				            android:layout_height="wrap_content"                
+				            android:paddingTop="8dp"
+				            android:background="@null"
+				            android:text="@string/date"
+				            android:textAppearance="?android:attr/textAppearanceMedium" />
+				        
+				         <TextView
+				            android:id="@+id/tvDate"
+				            android:layout_width="120dp"
+				            android:layout_height="wrap_content"  
+				            android:layout_toRightOf="@+id/lblDate"  
+				            android:layout_alignBaseline="@+id/lblDate"               
+				            android:paddingTop="8dp"
+				            android:background="@null"
+				            android:text="@string/date"
+				            android:textColor="#0000DD"
+				            android:textStyle="bold"
+				            android:textAppearance="?android:attr/textAppearanceMedium" />
+				         
+				         <TextView
+				            android:id="@+id/tvPRNo"
+				            android:layout_width="80dp"
+				            android:layout_height="wrap_content" 
+				            android:layout_below="@+id/lblDate"   
+				            android:layout_marginTop="4dp"              
+				            android:paddingTop="6dp"
+				            android:background="@null"
+				            android:text="@string/prno"
+				            android:textAppearance="?android:attr/textAppearanceMedium" />
+				        
+				        <EditText
+				            android:id="@+id/etPRNo"
+				            android:layout_width="120dp"
+				            android:layout_height="wrap_content" 
+				            android:layout_toRightOf="@+id/tvPRNo"  
+				            android:layout_alignBaseline="@+id/tvPRNo"
+				            android:gravity="center"
+				            android:padding="8dp"
+				            android:background="#FFC1FF84"
+				            android:hint="@string/sono"
+				            android:inputType="number"
+				            android:textAppearance="?android:attr/textAppearanceMedium" />	
+				        
+				    </RelativeLayout>
+			    </LinearLayout>
+			    
+			    <Button
+				            android:id="@+id/btAddPr"
+				            android:layout_width="match_parent"
+				            android:layout_height="wrap_content" 
+				            android:layout_below="@+id/ll_header"                    
+				            android:layout_marginTop="2dp"
+				            android:padding="8dp"
+				            android:textSize="16sp"	
+				            android:textStyle="bold"			            
+				            android:text="@string/add_pr"/>
+			     
+			    <RelativeLayout
+				    android:id="@+id/rl_header"
+				    android:layout_width="match_parent"
+				    android:layout_height="wrap_content"
+				    android:layout_below="@+id/btAddPr" >
+			     
+					<TableLayout 
+					   	android:id="@+id/pr_table"
+					    android:layout_width="match_parent"
+					    android:layout_height="wrap_content"
+        				android:stretchColumns="1">
+					   
+				   	</TableLayout>		
+			    
+			   </RelativeLayout>
+			   
+			   <RelativeLayout
+				    android:id="@+id/rl_total"
+				    android:layout_width="match_parent"
+				    android:layout_height="wrap_content"
+				    android:layout_below="@+id/rl_header" 	      
+				    android:padding="3dp"  >
+					
+			       <TextView
+			         android:id="@+id/separator"
+			         android:layout_width="match_parent"
+			         android:layout_height="6dp"
+			         android:layout_marginTop="12dp"
+			         android:background="#000"
+			         android:gravity="center"
+			         android:textSize="12sp"
+			         android:text="@string/defaults"
+			         android:textColor="#000" />
+			       
+			       
+					
+			       	<TextView
+			       	    android:id="@+id/llTotal"
+			       	    android:layout_width="wrap_content"
+			       	    android:layout_height="wrap_content"
+			       	    android:layout_alignBaseline="@+id/tvTotal"
+			       	    android:layout_toLeftOf="@+id/tvTotal"
+			       	    android:padding="12dp"
+			       	    android:text="@string/total"
+			       	    android:textSize="20sp"
+			       	    android:textStyle="bold"
+			       	    android:typeface="sans" />
+				     
+				      <TextView
+				          android:id="@+id/tvTotal"
+				          android:layout_width="wrap_content"
+				          android:layout_height="wrap_content"	
+				          android:layout_below="@+id/separator"
+				          android:layout_marginTop="12dp"
+				          android:layout_alignParentRight="true"
+				          android:layout_marginRight="6dp"
+				          android:padding="20dp"
+				          android:background="#444"				          
+				          android:text="@string/total"
+				          android:textColor="#00FF00"
+				          android:textSize="16sp"          
+				          android:typeface="sans" />
+				      
+				     
+				     
+				     <LinearLayout        
+					         android:id="@+id/buttons"   
+					         android:layout_width="match_parent"
+					         android:layout_height="wrap_content"
+					         android:layout_below="@+id/llTotal"
+					         android:layout_marginTop="80dp"
+					         android:orientation="horizontal" 
+					         android:padding="12dp" >
+				     
+					      <Button
+						         android:id="@+id/btSignature"
+						         android:layout_width="match_parent"
+						         android:layout_height="wrap_content" 
+						         android:layout_marginRight="20dp"
+						         android:layout_weight="1"
+						         android:padding="12dp"
+						         android:text="@string/get_signature"
+						         android:textSize="24sp" 
+						         android:textColor="#000"
+						         android:background="@drawable/rounded_gray_button"        
+						         android:typeface="sans" />
+					      
+					      <Button
+						         android:id="@+id/btSubmit"
+						         android:layout_width="match_parent"
+						         android:layout_height="wrap_content" 
+						         android:layout_weight="1"
+						         android:layout_marginLeft="20dp"
+						         android:padding="12dp"
+						         android:text="@string/submit"
+						         android:textSize="24sp" 
+						         android:textColor="#000"
+						         android:background="@drawable/rounded_gray_button"        
+						         android:typeface="sans" />
+			     	</LinearLayout>
+			     </RelativeLayout>
+				
+			</RelativeLayout>
+		
+   	
+</ScrollView>
+

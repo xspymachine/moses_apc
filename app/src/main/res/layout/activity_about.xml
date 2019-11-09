@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:background="@color/shellyellow"
+    android:orientation="vertical" >
+    
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="220dp"
+        android:layout_height="120dp"
+        android:layout_centerHorizontal="true"
+        android:contentDescription="@id/imageView1"
+        android:scaleType="fitCenter"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/shell" />
+    
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView1"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_horizontal"
+        android:textColor="#000"
+        android:text="@string/app_name" />    
+        
+    <TextView 
+        	android:id="@+id/tvG"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/textView1"
+        android:textColor="#000"
+            android:text="+63 977 803 7710 (Globe)"/>
+    
+    <LinearLayout 
+        android:id="@+id/conG"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/tvG">    
+        
+        
+        <ImageView 
+            android:id="@+id/iv3"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="2dp"
+            android:background="@color/shellred"
+            android:src="@drawable/assets_call2"
+            android:scaleType="fitCenter"/>
+        
+        <ImageView 
+            android:id="@+id/iv4"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="2dp"
+            android:layout_marginStart="10dp"
+            android:background="@color/shellred"
+            android:src="@drawable/assets_msg2"
+            android:scaleType="fitCenter"/>
+        
+    </LinearLayout>
+    
+    <TextView 
+        	android:id="@+id/tvS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/conG"
+        	android:textColor="#000"
+            android:text="+63 925 305 6025 (Sun)"/>
+    
+    <LinearLayout 
+        android:id="@+id/conS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/tvS">
+        
+        <ImageView 
+            android:id="@+id/iv1"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="2dp"
+            android:background="@color/shellred"
+            android:src="@drawable/assets_call2"            
+            android:scaleType="fitCenter"/>
+        
+        <ImageView 
+            android:id="@+id/iv2"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="2dp"
+            android:layout_marginStart="10dp"
+            android:background="@color/shellred"
+            android:src="@drawable/assets_msg2"
+            android:scaleType="fitCenter"/>
+        
+    </LinearLayout>
+    
+    <TextView 
+        	android:id="@+id/imei"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/conS"
+            android:layout_marginTop="10dp"
+        	android:textColor="#000"
+            android:text="IMEI"/>
+
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="130dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:layout_marginBottom="5dp"
+        android:src="@drawable/assets_powered" />
+
+    
+
+</RelativeLayout>

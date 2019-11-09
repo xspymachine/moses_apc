@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" 
+    xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/sv_box"   
+	android:layout_height="fill_parent"  
+	android:layout_width="fill_parent" 
+    tools:context=".CustomerAddEditActivity">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="120dp"
+    android:paddingLeft="30dp"
+    android:paddingRight="30dp"
+    android:paddingTop="30dp" >
+
+    <TextView
+        android:id="@+id/tvheader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/bg34"
+        android:padding="6dp"
+        android:text="Primary Contact"
+        android:textColor="#000"  
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/OName"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvheader"
+        android:layout_marginBottom="30dp"
+        android:layout_marginEnd="5dp"
+        android:text="@string/name" />
+
+    <EditText
+        android:id="@+id/etOName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/OName"
+        android:layout_toEndOf="@+id/OName"
+        android:labelFor="@id/etOName"
+        android:inputType="textCapWords" />
+
+    <TextView
+        android:id="@+id/OStat"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/OName"
+        android:layout_marginBottom="30dp"
+        android:layout_marginEnd="5dp"
+        android:visibility="gone"
+        android:text="@string/status" />
+
+    <AutoCompleteTextView
+        android:id="@+id/etOStat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/OStat"
+        android:layout_toEndOf="@+id/OStat"
+        android:labelFor="@id/etOStat"
+        android:visibility="gone"
+        android:inputType="textCapWords" />
+    <TextView
+        android:id="@+id/Oposition"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/OStat"
+        android:layout_marginBottom="30dp"
+        android:layout_marginEnd="5dp"
+        android:text="Position" />
+
+    <EditText
+        android:id="@+id/etOposition"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/Oposition"
+        android:layout_toEndOf="@+id/Oposition"
+        android:labelFor="@id/etOposition"
+        android:inputType="textCapWords" />
+
+    <TextView
+        android:id="@+id/OBday"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Oposition"
+        android:layout_marginBottom="30dp"
+        android:layout_marginEnd="5dp"
+        android:text="@string/bday" />
+
+    <EditText
+        android:id="@+id/etOBday"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/OBday"
+        android:layout_toEndOf="@+id/OBday"
+        android:hint="Tap to select"
+        android:clickable="true"
+        android:focusable="false" />
+
+    <TextView
+        android:id="@+id/OHobbies"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/OBday"
+        android:layout_marginBottom="30dp"
+        android:layout_marginEnd="5dp"
+        android:text="@string/hobbies" />
+
+    <EditText
+        android:id="@+id/etOHobbies"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/OHobbies"
+        android:layout_toEndOf="@+id/OHobbies"
+        android:labelFor="@id/etOHobbies"
+        android:inputType="textCapWords" />
+
+    <TextView
+        android:id="@+id/OPhone"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/OHobbies"
+        android:layout_marginBottom="30dp"
+        android:layout_marginEnd="5dp"
+        android:text="@string/phone" />
+
+    <EditText
+        android:id="@+id/etOPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/OPhone"
+        android:layout_toEndOf="@+id/OPhone"
+        android:labelFor="@id/etOPhone"
+        android:inputType="phone" />
+
+    <TextView
+        android:id="@+id/OEmail"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/OPhone"
+        android:layout_marginBottom="30dp"
+        android:layout_marginEnd="5dp"
+        android:text="@string/email2" />
+
+    <EditText
+        android:id="@+id/etOEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/OEmail"
+        android:layout_toEndOf="@+id/OEmail"
+        android:labelFor="@id/etOEmail"
+        android:inputType="textEmailAddress" />
+    
+    
+    <RelativeLayout
+        android:id="@+id/logistics"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/OEmail">
+
+        <TextView
+            android:id="@+id/tvPheader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/bg34"
+            android:padding="6dp"
+            android:text="Secondary Contact"
+            android:textColor="#000"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/PName"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:layout_below="@+id/tvPheader"
+            android:layout_marginEnd="5dp"
+            android:text="@string/name" />
+
+        <EditText
+            android:id="@+id/etPName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/PName"
+            android:layout_toEndOf="@+id/PName"
+            android:labelFor="@id/etOName"
+            android:inputType="textCapWords" />
+
+        <TextView
+            android:id="@+id/PStat"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/PName"
+            android:layout_marginBottom="30dp"
+            android:layout_marginEnd="5dp"
+            android:visibility="gone"
+            android:text="@string/status" />
+
+        <AutoCompleteTextView
+            android:id="@+id/etPStat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/PStat"
+            android:layout_toEndOf="@+id/PStat"
+            android:labelFor="@id/etOStat"
+            android:visibility="gone"
+            android:inputType="textCapWords" />
+
+
+        <TextView
+            android:id="@+id/Pposition"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/PStat"
+            android:layout_marginBottom="30dp"
+            android:layout_marginEnd="5dp"
+            android:text="Position" />
+
+        <EditText
+        android:id="@+id/etPposition"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/Pposition"
+        android:layout_toEndOf="@+id/Pposition"
+        android:labelFor="@id/etPposition"
+        android:inputType="textCapWords" />
+
+        <TextView
+            android:id="@+id/PBday"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Pposition"
+            android:layout_marginBottom="30dp"
+            android:layout_marginEnd="5dp"
+            android:text="@string/bday" />
+
+        <EditText
+            android:id="@+id/etPBday"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/PBday"
+            android:layout_toEndOf="@+id/PBday"
+            android:hint="Tap to select"
+            android:clickable="true"
+            android:focusable="false" />
+
+        <TextView
+            android:id="@+id/PHobbies"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/PBday"
+            android:layout_marginBottom="30dp"
+            android:layout_marginEnd="5dp"
+            android:text="@string/hobbies" />
+
+        <EditText
+            android:id="@+id/etPHobbies"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/PHobbies"
+            android:layout_toEndOf="@+id/PHobbies"
+            android:labelFor="@id/etOHobbies"
+            android:inputType="textCapWords" />
+
+        <TextView
+            android:id="@+id/PPhone"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/PHobbies"
+            android:layout_marginBottom="30dp"
+            android:layout_marginEnd="5dp"
+            android:text="@string/phone" />
+
+        <EditText
+            android:id="@+id/etPPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/PPhone"
+            android:layout_toEndOf="@+id/PPhone"
+            android:labelFor="@id/etOPhone"
+            android:inputType="phone" />
+
+        <TextView
+            android:id="@+id/PEmail"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/PPhone"
+            android:layout_marginBottom="30dp"
+            android:layout_marginEnd="5dp"
+            android:text="@string/email2" />
+
+        <EditText
+            android:id="@+id/etPEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/PEmail"
+            android:layout_toEndOf="@+id/PEmail"
+            android:labelFor="@id/etOEmail"
+            android:inputType="textEmailAddress" />
+
+    </RelativeLayout>
+    
+
+    <LinearLayout        
+         android:id="@+id/sig_buttons"
+         android:layout_width="400dp"
+         android:layout_height="wrap_content"
+         android:layout_below="@+id/separator"
+         android:layout_marginTop="6dp"
+         android:orientation="horizontal"
+         android:paddingLeft="30dp"
+         android:paddingRight="30dp"
+         android:paddingTop="6dp" >
+
+         <Button
+             android:id="@+id/bt_cancel"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_weight=".5"
+             android:contentDescription="@string/btn_clear"
+             android:background="@drawable/custom_button_click"    
+             android:text="@string/btCancel"
+             android:textColor="#fff"      
+             android:paddingRight="10dp" />
+
+         <Button
+             android:id="@+id/bt_save"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_weight=".5"
+             android:contentDescription="@string/clear"    
+             android:text="@string/btSave"
+             android:textColor="#fff"
+             android:background="@drawable/custom_button_click"         
+             android:layout_marginStart="10dp"  />
+     </LinearLayout>   
+
+    <TextView
+        android:id="@+id/separator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/logistics"
+        android:layout_below="@+id/logistics"
+        android:background="@drawable/bg34"
+        android:gravity="center"
+        android:textColor="#000" />     
+
+</RelativeLayout> 
+
+</ScrollView>

@@ -1,0 +1,591 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" 
+    xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/sv_box"   
+	android:background="@drawable/bg34"
+	android:layout_height="match_parent"  
+	android:layout_width="match_parent" >
+	<RelativeLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:padding="12dp"
+	    android:layout_marginBottom="100dp" >
+	        
+	    <RelativeLayout
+	        android:id="@+id/rl_sccontact"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content" 
+	        android:layout_margin="8dp"	        
+	        android:padding="6dp"             
+	        android:background="@drawable/rounded_gray_border">
+	        
+	        <ImageView
+	            android:id="@+id/bt_scname"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"	            
+	            android:layout_gravity="center_vertical"
+	            android:background="@null"
+	            android:contentDescription="@string/app_name"
+	            android:padding="5dp"
+	            android:src="@drawable/timein48" />
+	
+	        <TextView
+	            android:id="@+id/tvCName"
+	            android:layout_width="match_parent"
+	            android:layout_height="match_parent"
+	            android:layout_toEndOf="@+id/bt_scname"	            
+	            android:paddingTop="3dp"
+	            android:background="@null"	            
+	            android:textColor="#000"
+	            android:textAppearance="?android:attr/textAppearanceMedium"
+	            android:focusable="false" />
+	        
+	        
+	        <TextView
+	            android:id="@+id/tvAddress"
+	            android:layout_width="match_parent"
+	            android:layout_height="match_parent"	            
+	            android:layout_toEndOf="@+id/bt_scname"
+	            android:layout_below="@+id/tvCName"	            
+	            android:paddingTop="3dp"
+	            android:paddingBottom="3dp"
+	            android:background="@null"	            
+	            android:focusable="false" 
+	            android:textColor="#00BFFF"
+	            android:textAppearance="?android:attr/textAppearanceSmall" />
+	    </RelativeLayout>
+	    
+	    
+	    <RelativeLayout
+	        android:id="@+id/rl_date"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content" 
+	        android:layout_below="@+id/rl_sccontact"
+	        android:padding="6dp" >
+	    
+	
+		    <TextView
+		        android:id="@+id/llDate"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_marginEnd="12dp"
+		        android:textSize="16sp"
+		        android:textColor="#000"
+		        android:text="@string/date" />
+		
+		    <TextView
+		        android:id="@+id/tvDate"
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_below="@+id/llDate"
+		        android:layout_alignStart="@+id/llDate"
+		        android:padding="12dp"
+		        android:gravity="center"
+		        android:textSize="20sp"
+		        android:background="@drawable/recbg">
+		
+		    </TextView>
+	    </RelativeLayout>
+	    
+	    <RelativeLayout  
+	        android:id="@+id/cbGroup"
+	        android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_below="@+id/rl_date"
+		    android:layout_margin="10dp" 
+		    android:padding="10dp"
+		    android:background="@drawable/rounded_gray_border">
+		    
+	          <TextView
+			        android:id="@+id/header"
+			        android:layout_width="match_parent"
+			        android:layout_height="wrap_content"
+			        android:layout_marginBottom="10dp"
+			        android:gravity="center"
+			        android:textSize="20sp"
+			        android:padding="12dp"
+			        android:text="@string/checklist"
+			        android:textColor="#fff"
+			        android:background="#E88100" />	          
+	          
+	           <TextView
+			        android:id="@+id/tvCheck11"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_below="@+id/header" 
+			        android:textSize="35sp"
+			        android:textStyle="bold"
+			        android:padding="5dp"
+			        android:background="#E88100"
+			        android:textColor="#FFF"
+			        android:layout_marginBottom="5dp"
+			        android:text="@string/cccheck1" />	          
+	          
+	         <!-- <EditText
+	              android:id="@+id/editText1"
+	              android:layout_width="match_parent"
+	              android:layout_height="wrap_content"
+	              android:layout_alignBottom="@+id/tvCheck1"
+	              android:layout_alignTop="@+id/tvCheck1"
+	              android:layout_marginLeft="20dp"
+	              android:layout_toRightOf="@+id/tvCheck1"
+	              android:background="@drawable/rounded_gray_border"
+	              android:inputType="textMultiLine"
+	              android:hint="@string/cccHint1"	              
+	              android:padding="5dp"
+	              android:ems="10" /> -->
+	          
+	          <TextView
+			        android:id="@+id/tvCheck22"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_below="@+id/tvCheck11" 
+			        android:textSize="35sp"
+			        android:textStyle="bold"
+			        android:padding="5dp"
+			        android:background="#E88100"
+			        android:textColor="#FFF"
+			        android:layout_marginBottom="5dp"
+			        android:text="@string/cccheck2" />
+	          
+	         <!-- <EditText
+	              android:id="@+id/editText2"
+	              android:layout_width="match_parent"
+	              android:layout_height="wrap_content"
+	              android:layout_alignBottom="@+id/tvCheck2"
+	              android:layout_alignTop="@+id/tvCheck2"
+	              android:layout_marginLeft="20dp"
+	              android:layout_toRightOf="@+id/tvCheck2"
+	              android:background="@drawable/rounded_gray_border"
+	              android:inputType="textMultiLine"
+	              android:hint="@string/cccHint2"
+	              android:padding="5dp"
+	              android:ems="10" />-->
+	          
+	          <TextView
+			        android:id="@+id/tvCheck33"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_below="@+id/tvCheck22" 
+			        android:textSize="35sp"
+			        android:textStyle="bold"
+			        android:padding="5dp"
+			        android:background="#E88100"
+			        android:textColor="#FFF"
+			        android:layout_marginBottom="5dp"
+			        android:text="@string/cccheck3" />
+	          
+	        <!--  <EditText
+	              android:id="@+id/editText3"
+	              android:layout_width="match_parent"
+	              android:layout_height="wrap_content"
+	              android:layout_alignBottom="@+id/tvCheck3"
+	              android:layout_alignTop="@+id/tvCheck3"
+	              android:layout_marginLeft="20dp"
+	              android:layout_toRightOf="@+id/tvCheck3"
+	              android:background="@drawable/rounded_gray_border"
+	              android:inputType="textMultiLine"
+	              android:hint="@string/cccHint3"
+	              android:padding="5dp"
+	              android:ems="10" />-->
+	          
+	          <TextView
+			        android:id="@+id/tvCheck44"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_below="@+id/tvCheck33" 
+			        android:textSize="35sp"
+			        android:textStyle="bold"
+			        android:padding="5dp"
+			        android:background="#E88100"
+			        android:textColor="#FFF"
+			        android:layout_marginBottom="5dp"
+			        android:text="@string/cccheck4" />
+	          
+	       <!--   <EditText
+	              android:id="@+id/editText4"
+	              android:layout_width="match_parent"
+	              android:layout_height="wrap_content"
+	              android:layout_alignBottom="@+id/tvCheck4"
+	              android:layout_alignTop="@+id/tvCheck4"
+	              android:layout_marginLeft="20dp"
+	              android:layout_toRightOf="@+id/tvCheck4"
+	              android:background="@drawable/rounded_gray_border"
+	              android:inputType="textMultiLine"
+	              android:hint="@string/cccHint4"
+	              android:padding="5dp"
+	              android:ems="10" />-->
+	          
+	          <TextView
+			        android:id="@+id/tvCheck55"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_below="@+id/tvCheck44" 
+			        android:textSize="35sp"
+			        android:textStyle="bold"
+			        android:padding="5dp"
+			        android:background="#E88100"
+			        android:textColor="#FFF"
+			        android:text="@string/cccheck5" />
+	          
+	         <!-- <EditText
+	              android:id="@+id/editText5"
+	              android:layout_width="match_parent"
+	              android:layout_height="wrap_content"
+	              android:layout_alignBottom="@+id/tvCheck5"
+	              android:layout_alignTop="@+id/tvCheck5"
+	              android:layout_marginLeft="20dp"
+	              android:layout_toRightOf="@+id/tvCheck5"
+	              android:background="@drawable/rounded_gray_border"
+	              android:inputType="textMultiLine"
+	              android:hint="@string/cccHint5"
+	              android:padding="5dp"
+	              android:ems="10" /> -->
+	
+	            <CheckBox
+			        android:id="@+id/cbCheck1"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content" 
+			        android:layout_below="@+id/header" 			        
+			        android:layout_toEndOf="@+id/tvCheck11"
+			        android:layout_alignTop="@+id/tvCheck11"	     
+			        android:textSize="20sp" />
+	            
+	            
+			    <TextView
+			        android:id="@+id/tvCheck1"
+			        android:layout_width="match_parent"
+			        android:layout_height="wrap_content"
+			        android:layout_toEndOf="@+id/cbCheck1"
+			        android:layout_alignTop="@+id/cbCheck1"
+			        android:textSize="20sp"
+			        android:text="" />
+	     
+	 
+	            <CheckBox
+			        android:id="@+id/cbCheck2"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"        
+			        android:layout_toEndOf="@+id/tvCheck22"
+			        android:layout_alignTop="@+id/tvCheck22"
+			        android:textSize="20sp" />
+	            
+	            
+			    <TextView
+			        android:id="@+id/tvCheck2"
+			        android:layout_width="match_parent"
+			        android:layout_height="wrap_content"
+			        android:layout_toEndOf="@+id/cbCheck2"
+			        android:layout_alignTop="@+id/cbCheck2"
+			        android:textSize="20sp"
+			        android:text="" />
+	      
+	
+	            <CheckBox
+			        android:id="@+id/cbCheck3"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"         
+			        android:layout_toEndOf="@+id/tvCheck33"
+			        android:layout_alignTop="@+id/tvCheck33"	 
+			        android:textSize="20sp"/>
+	            
+	            
+			    <TextView
+			        android:id="@+id/tvCheck3"
+			        android:layout_width="match_parent"
+			        android:layout_height="wrap_content"
+			        android:layout_toEndOf="@+id/cbCheck3"
+			        android:layout_alignTop="@+id/cbCheck3"
+			        android:textSize="20sp"
+			        android:text="" />
+	     
+	
+	            <CheckBox
+			        android:id="@+id/cbCheck4"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"         
+			        android:layout_toEndOf="@+id/tvCheck44"
+			        android:layout_alignTop="@+id/tvCheck44"     
+			        android:textSize="20sp" />
+	            
+	            
+			    <TextView
+			        android:id="@+id/tvCheck4"
+			        android:layout_width="match_parent"
+			        android:layout_height="wrap_content"
+			        android:layout_toEndOf="@+id/cbCheck4"
+			        android:layout_alignTop="@+id/cbCheck4"
+			        android:textSize="20sp"
+			        android:text="" />
+	
+	            <CheckBox
+			        android:id="@+id/cbCheck5"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"        
+			        android:layout_toEndOf="@+id/tvCheck55"
+			        android:layout_alignTop="@+id/tvCheck55"   
+			        android:textSize="20sp" />
+	            
+	            
+			     <TextView
+			        android:id="@+id/tvCheck5"
+			        android:layout_width="match_parent"
+			        android:layout_height="wrap_content"
+			        android:layout_toEndOf="@+id/cbCheck5"   
+			        android:layout_alignTop="@+id/cbCheck5"  
+			        android:textSize="20sp"		        
+			        android:text="" /> 
+			        
+			    <!-- <CheckBox
+			        android:id="@+id/cbCheck6"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content" 
+			        android:layout_below="@+id/tvCheck5" 
+			        android:layout_marginTop="10dp"  	     
+			        android:textSize="20sp" />
+	            
+	            
+			    <TextView
+			        android:id="@+id/tvCheck6"
+			        android:layout_width="match_parent"
+			        android:layout_height="wrap_content"
+			        android:layout_toRightOf="@+id/cbCheck6"
+			        android:layout_alignTop="@+id/cbCheck6"
+			        android:textSize="20sp"
+			        android:text="@string/ccheck1" />
+	     
+	
+	            <CheckBox
+			        android:id="@+id/cbCheck7"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_below="@+id/tvCheck6" 
+			        android:layout_marginTop="30dp"     
+			        android:textSize="20sp" />
+	            
+	            
+			    <TextView
+			        android:id="@+id/tvCheck7"
+			        android:layout_width="match_parent"
+			        android:layout_height="wrap_content"
+			        android:layout_toRightOf="@+id/cbCheck7"
+			        android:layout_alignTop="@+id/cbCheck7"
+			        android:textSize="20sp"
+			        android:text="@string/ccheck2" />
+	      
+	
+	            <CheckBox
+			        android:id="@+id/cbCheck8"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content" 
+			        android:layout_below="@+id/tvCheck7"	
+			        android:layout_marginTop="30dp"     
+			        android:textSize="20sp"/>
+	            
+	            
+			    <TextView
+			        android:id="@+id/tvCheck8"
+			        android:layout_width="match_parent"
+			        android:layout_height="wrap_content"
+			        android:layout_toRightOf="@+id/cbCheck8"
+			        android:layout_alignTop="@+id/cbCheck8"
+			        android:textSize="20sp"
+			        android:text="@string/ccheck3" />
+	     
+	
+	            <CheckBox
+			        android:id="@+id/cbCheck9"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content" 
+			        android:layout_below="@+id/tvCheck8"   	
+			        android:layout_marginTop="30dp"     
+			        android:textSize="20sp" />
+	            
+	            
+			    <TextView
+			        android:id="@+id/tvCheck9"
+			        android:layout_width="match_parent"
+			        android:layout_height="wrap_content"
+			        android:layout_toRightOf="@+id/cbCheck9"
+			        android:layout_alignTop="@+id/cbCheck9"
+			        android:textSize="20sp"
+			        android:text="@string/ccheck4" />
+	
+	            <CheckBox
+			        android:id="@+id/cbCheck10"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_below="@+id/tvCheck9" 	
+			        android:layout_marginTop="30dp"    
+			        android:textSize="20sp" />
+	            
+	            
+			     <TextView
+			        android:id="@+id/tvCheck10"
+			        android:layout_width="match_parent"
+			        android:layout_height="wrap_content"
+			        android:layout_toRightOf="@+id/cbCheck10"   
+			        android:layout_alignTop="@+id/cbCheck10"  
+			        android:textSize="20sp"		        
+			        android:text="@string/ccheck5" />	
+			        
+			     <CheckBox
+			        android:id="@+id/cbCheck11"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_below="@+id/tvCheck10" 	
+			        android:layout_marginTop="30dp"    
+			        android:textSize="20sp" />
+	            
+	            
+			     <TextView
+			        android:id="@+id/tvCheck11"
+			        android:layout_width="match_parent"
+			        android:layout_height="wrap_content"
+			        android:layout_toRightOf="@+id/cbCheck11"   
+			        android:layout_alignTop="@+id/cbCheck11"  
+			        android:textSize="20sp"		        
+			        android:text="@string/ccheck6" />		   -->	          
+			   
+	      </RelativeLayout>   
+	      
+	    <Button
+	        android:id="@+id/btCmp"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignStart="@+id/btSubmit"
+	        android:layout_alignEnd="@+id/btSubmit"
+	        android:layout_below="@id/cbGroup"	        
+	   	    android:background="@drawable/custom_button_click"
+	   	    android:textColor="#E88100"
+	        android:text="@string/add_comp_price" />
+
+		<Button
+			android:id="@+id/btCheck"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignStart="@+id/btSubmit"
+			android:layout_alignEnd="@+id/btSubmit"
+			android:layout_below="@id/btCmp"
+			android:background="@drawable/custom_button_click"
+			android:textColor="#E88100"
+			android:layout_marginTop="5dp"
+			android:text="@string/strcheck" />
+	          
+		  <RelativeLayout android:id="@+id/header_remarks"
+	        android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_below="@+id/btCheck"
+		    android:layout_margin="10dp" 
+		    android:padding="10dp"
+		    android:background="@drawable/rounded_gray_border">
+			  
+		      <!-- <CheckBox
+			        android:id="@+id/cbProductive"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"	
+			        android:layout_marginTop="10dp"    
+			        android:textSize="20sp" />	            
+	            
+			    <TextView
+			        android:id="@+id/tvProductive"
+			        android:layout_width="match_parent"
+			        android:layout_height="wrap_content"
+			        android:layout_toRightOf="@+id/cbProductive"   
+			        android:layout_alignTop="@+id/cbProductive"  
+			        android:textSize="20sp"		        
+			        android:text="@string/newproductive" /> -->
+			        
+		        <TextView 
+					android:id="@+id/tvWork"
+			    	android:layout_width="wrap_content"
+			    	android:layout_height="wrap_content"
+			    	android:layout_marginTop="6dp"
+			    	android:padding="8dp" 
+			    	android:textColor="#000"
+			    	android:text="@string/work"/> 
+			
+	    		<Spinner 
+					android:id="@+id/spWork"
+			    	android:layout_width="match_parent"
+			    	android:layout_height="wrap_content"
+			    	android:layout_marginEnd="20dp"
+			    	android:layout_below="@+id/tvWork"
+			    	android:layout_alignStart="@+id/tvWork"
+			    	android:gravity="center"
+			    	android:padding="8dp"
+			    	android:layout_marginBottom="10dp"
+			    	android:hint="@string/np_reason"  
+			    	android:typeface="sans"
+	        		android:textSize="16sp"
+			    	android:background="@drawable/rounded_border"/>
+		       
+	      		<TextView 
+					android:id="@+id/llNpReason"
+			    	android:layout_width="wrap_content"
+			    	android:layout_height="wrap_content"
+			    	android:layout_below="@+id/spWork"
+			    	android:layout_marginTop="6dp"
+			    	android:padding="8dp" 
+			    	android:textColor="#000"
+			    	android:text="@string/no_production_reason"/> 
+			
+	    		<Spinner
+					android:id="@+id/spNpReason"
+			    	android:layout_width="match_parent"
+			    	android:layout_height="wrap_content"
+			    	android:layout_marginEnd="20dp"
+			    	android:layout_below="@+id/llNpReason"
+			    	android:layout_alignStart="@+id/llNpReason"
+			    	android:gravity="center"
+			    	android:padding="8dp"
+			    	android:layout_marginBottom="10dp"
+			    	android:hint="@string/np_reason"  
+			    	android:typeface="sans"
+	        		android:textSize="16sp"
+			    	android:background="@drawable/rounded_border"/>
+	    		
+	    </RelativeLayout> 	
+	    
+		  <TextView 
+					android:id="@+id/llRemarks"
+			    	android:layout_width="wrap_content"
+			    	android:layout_height="wrap_content"
+			    	android:layout_below="@+id/header_remarks"
+			    	android:layout_alignStart="@+id/header_remarks"
+			    	android:padding="8dp" 
+			    	android:textColor="#000"
+			    	android:text="@string/remarks"/>
+	    	
+	    		<EditText
+	    		    android:id="@+id/etRemarks"
+	    		    android:layout_width="match_parent"
+	    		    android:layout_height="wrap_content"
+	    		    android:layout_alignStart="@+id/btCmp"
+	    		    android:layout_below="@+id/llRemarks"
+	    		    android:background="@drawable/rounded_border"
+	    		    android:gravity="center"
+	    		    android:inputType="textCapSentences"
+	    		    android:labelFor="@id/etRemarks"
+	    		    android:lines="3"
+	    		    android:maxLength="80"
+	    		    android:padding="15dp"
+	    		    android:textSize="16sp"
+	    		    android:typeface="sans" />
+	
+	    <Button
+	        android:id="@+id/btSubmit"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/etRemarks"
+	         android:layout_marginTop="30dp" 
+	        android:gravity="center"
+	        android:textSize="20sp" 
+	   	    android:background="@drawable/custom_button_click"
+	   	    android:textColor="#E88100"
+	        android:text="@string/submit" />
+
+	    
+	
+	</RelativeLayout>
+</ScrollView>

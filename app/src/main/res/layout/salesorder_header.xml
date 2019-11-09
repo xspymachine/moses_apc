@@ -1,0 +1,164 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"  
+    android:paddingBottom="6dp"    
+    android:background="#fff" >
+         
+    <RelativeLayout
+        android:id="@+id/rl_customer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 	        
+        android:layout_marginBottom="4dp"	 
+        android:padding="6dp"                    
+        android:background="@android:drawable/editbox_background" >
+
+        <TextView
+            android:id="@+id/tvCName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"                    
+            android:paddingTop="4dp"
+            android:background="@null"
+            android:text="@string/name"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+        
+        
+        <TextView
+            android:id="@+id/tvAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvCName"
+            android:layout_alignLeft="@+id/tvCName"                        
+            android:paddingTop="4dp"
+            android:background="@null"
+            android:text="@string/address"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+        
+        <Button
+            android:id="@+id/btAdd"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignBottom="@+id/tvAddress"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="4dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/add_icon" />
+        
+    </RelativeLayout>
+    
+    <RelativeLayout
+	    android:id="@+id/rl_total"
+	    android:layout_width="180dp"
+	    android:layout_height="wrap_content"
+	    android:layout_below="@+id/rl_customer" 
+	    android:layout_alignParentRight="true"
+	    android:gravity="center"
+	    android:padding="3dp"                    
+	    android:background="#444" >
+    
+     <TextView
+           	android:id="@+id/tvTotal"
+           	android:layout_width="wrap_content"
+	    	android:layout_height="wrap_content"
+          	android:textColor="#00FF00"
+           	android:gravity="center"
+           	android:text="@string/total"
+           	android:typeface="sans"   
+       		android:textSize="16sp"
+       		android:textStyle="bold"
+       		android:paddingTop="3dp"  
+       		android:paddingLeft="4dp" />
+     </RelativeLayout>
+     
+    
+	<RelativeLayout
+        android:id="@+id/salesorder_header"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp" 	  
+        android:layout_below="@+id/rl_total" 
+        android:layout_alignParentLeft="true"     
+        android:layout_marginBottom="4dp"	 
+        android:padding="2dp"                    
+        android:background="#000" >
+        
+        <TextView
+            android:id="@+id/tvItemDescription"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content" 
+            android:textColor="#fff"
+            android:text="@string/description"
+           	android:typeface="sans"   
+        	android:textSize="14sp" />
+        
+        <TextView
+            android:id="@+id/tvQtyPack"
+            android:layout_width="45dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/tvItemDescription" 
+            android:layout_alignTop="@+id/tvItemDescription" 
+            android:gravity="right" 
+            android:textColor="#fff"
+            android:text="@string/qty_pack"
+           android:typeface="sans"   
+        	android:textSize="14sp" />
+        
+        <TextView
+            android:id="@+id/tvPricePack"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/tvQtyPack" 
+            android:layout_alignTop="@+id/tvQtyPack"  
+            android:gravity="right"
+            android:textColor="#fff"
+            android:text="@string/sp_pack"
+            android:typeface="sans"   
+        	android:textSize="14sp"/>
+        
+        <TextView
+            android:id="@+id/tvQtyUnit"
+            android:layout_width="45dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/tvPricePack" 
+            android:layout_alignTop="@+id/tvPricePack"  
+            android:gravity="right" 
+            android:textColor="#fff"
+            android:text="@string/qty_unit"
+            android:typeface="sans"   
+        	android:textSize="14sp"/>
+        
+        <TextView
+            android:id="@+id/tvPriceUnit"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/tvQtyUnit" 
+            android:layout_alignTop="@+id/tvQtyUnit" 
+            android:gravity="right" 
+            android:textColor="#fff"
+            android:text="@string/sp_unit"
+            android:typeface="sans"   
+        	android:textSize="14sp" />
+        
+        <TextView
+            android:id="@+id/tvAmount"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/tvPriceUnit" 
+            android:layout_alignTop="@+id/tvPriceUnit"  
+            android:textColor="#fff"
+            android:gravity="right"
+            android:text="@string/amount"
+            android:typeface="sans"   
+        	android:textSize="14sp" />
+    </RelativeLayout>
+    
+    
+    
+    <ListView 
+    	android:id="@+id/android:list"
+    	android:dividerHeight="1dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="#b5b5b5"    	
+    	android:listSelector="@drawable/list_selector"
+        android:layout_below="@+id/salesorder_header" />
+	
+</RelativeLayout>

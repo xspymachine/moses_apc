@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" 
+	android:id="@+id/ll_box"   	
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"  		 
+	android:background="@drawable/bg32">
+	
+<ScrollView 
+	android:id="@+id/sv_box"   	
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"> 
+	
+    <RelativeLayout
+        android:id="@+id/rl_scmain"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"        
+        android:padding="6dp"        
+        android:descendantFocusability="beforeDescendants" 
+		android:focusableInTouchMode="true">
+        
+        <RelativeLayout
+	        android:id="@+id/rl_sccontact"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content" 	     	   	        
+	        android:layout_marginBottom="6dp"	                     
+	        android:background="#FFFFFF">
+	        
+	        <ImageView
+	            android:id="@+id/bt_scname"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"	            
+	            android:layout_gravity="center_vertical"
+	            android:background="@null"
+	            android:contentDescription="@string/app_name"
+	            android:padding="5dp"
+	            android:src="@drawable/timein48" />
+	
+	        <TextView
+	            android:id="@+id/tvCName"
+	            android:layout_width="match_parent"
+	            android:layout_height="match_parent"
+	            android:layout_toRightOf="@+id/bt_scname"	            
+	            android:paddingTop="3dp"
+	            android:background="@null"	            
+	            android:textAppearance="?android:attr/textAppearanceMedium"
+	            android:focusable="false" />
+	        
+	        
+	        <TextView
+	            android:id="@+id/tvAddress"
+	            android:layout_width="match_parent"
+	            android:layout_height="match_parent"	            
+	            android:layout_toRightOf="@+id/bt_scname"
+	            android:layout_below="@+id/tvCName"	            
+	            android:paddingTop="3dp"
+	            android:paddingBottom="3dp"
+	            android:background="@null"	            
+	            android:focusable="false" 
+	            android:textColor="#00BFFF"
+	            android:textAppearance="?android:attr/textAppearanceSmall" />
+	    </RelativeLayout>
+       
+	    <RelativeLayout
+	        android:id="@+id/ll_location"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/rl_sccontact"
+	        android:layout_centerHorizontal="true"
+	        android:layout_marginLeft="6dp"
+	        android:layout_marginRight="6dp"	       
+	        android:padding="6dp" >
+
+	        <View 
+	            android:id="@+id/v2"
+	            android:layout_width="fill_parent"
+	            android:layout_height="1dip"
+	            android:background="#888888"
+	            android:visibility="invisible"/>
+	        
+
+	        <RelativeLayout
+	            android:id="@+id/gps_accuracy"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"	            
+	            android:layout_below="@+id/v2"
+	            android:layout_centerInParent="true"
+	            android:layout_marginRight="10dp"	            
+	            android:orientation="vertical" >
+
+	            <TextView
+	                android:id="@+id/ll_accuracy"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_centerHorizontal="true"
+	                android:layout_marginTop="6dp"
+	                android:text="@string/accuracy"
+	                android:textColor="#04FF04"
+	                android:textSize="16sp" />
+
+	            <TextView
+	                android:id="@+id/tv_gpsfix"
+	                android:layout_width="100dp"
+	                android:layout_height="60dp"
+	                android:layout_below="@+id/ll_accuracy"		                
+	                android:layout_centerHorizontal="true"
+	                android:background="@drawable/recbg"
+	                android:gravity="center"
+	                android:textColor="#00008c"
+	                android:textSize="30sp" />
+	       
+				 <View
+				    android:id="@+id/hview1"
+				    android:layout_width="fill_parent"
+				    android:layout_height="wrap_content" 
+					android:layout_below="@+id/tv_gpsfix"			        
+			        android:layout_marginTop="10dp"	
+			        android:layout_marginBottom="10dp"			    
+			        android:background="#888888" />
+	            
+
+	            <TextView
+	                android:id="@+id/lbl_gpstime"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                 android:layout_below="@+id/hview1"	               
+	                android:layout_centerInParent="true"
+	                android:text="@string/gpstime"
+	                android:textColor="#04FF04"
+	                android:textSize="16sp" />
+
+	            <TextView
+	                android:id="@+id/tv_gpstime"
+	                android:layout_width="200dp"
+	                android:layout_height="60dp"
+	                android:layout_below="@+id/lbl_gpstime"
+	                android:layout_centerInParent="true"
+	                android:background="@drawable/recbg"
+	                android:textColor="#000"
+	                android:gravity="center"
+	                android:padding="6dp"	          
+	                android:textSize="30sp" />
+
+	        </RelativeLayout>
+	    </RelativeLayout>
+	</RelativeLayout>
+	
+</ScrollView>
+<RelativeLayout 
+	   	    android:id="@+id/footer"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_alignParentBottom="true"		    			
+			android:orientation="vertical"
+			android:background="#004262">
+	        
+	   	    <Button
+			        android:id="@+id/bt_submitio"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"			        			                       	
+			        android:layout_marginBottom="2dp"	
+			        android:layout_alignParentRight="true"
+			        android:text="@string/time_inout"
+			        android:contentDescription="@string/name"
+			        android:textSize="14sp" 	
+			        android:background="@drawable/blank_button128"
+			        android:textColor="#fff" />
+	   	    
+</RelativeLayout>
+</RelativeLayout>	   	

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/proheader_layout_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+	 
+	    <TextView
+	        android:id="@+id/profHeader"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:padding="6dp"
+	        android:gravity="center"
+	        android:text="@string/prof_Header"
+	        android:background="#FF006BD7"
+	        android:textColor="#fff"
+	        android:textSize="20sp" >
+	    </TextView>
+
+</LinearLayout>

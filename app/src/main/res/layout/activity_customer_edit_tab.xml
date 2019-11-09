@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" 
+    xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/sv_box"   
+	android:layout_height="fill_parent"  
+	android:layout_width="fill_parent" 
+    tools:context=".CustomerAddEditActivity">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="30dp"
+    android:paddingLeft="30dp"
+    android:paddingBottom="120dp"
+     android:paddingRight="30dp">
+	
+    <TextView
+        android:id="@+id/tvheader"
+        android:text="@string/edit_customer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:layout_marginEnd="5dp"
+        android:padding="6dp"
+        android:textSize="16sp"
+        android:textColor="#000"       
+        android:background="@color/shellyellow" />
+    
+    <TextView
+        android:id="@+id/labelCode"
+        android:text="@string/customer_code"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvheader"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="5dp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tvCode"
+        android:layout_toEndOf="@+id/labelCode"
+        android:layout_alignBaseline="@+id/labelCode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:visibility="gone"/>
+	
+    <TextView
+        android:id="@+id/labelName"
+        android:text="@string/name"
+        android:layout_below="@+id/labelCode"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:layout_marginEnd="5dp" />
+    
+     <EditText
+        android:id="@+id/etName"
+        android:layout_toEndOf="@+id/labelName"
+        android:layout_alignBaseline="@+id/labelName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:labelFor="@id/etName"
+         android:hint="Complete Name"
+        android:inputType="textCapWords"/>
+     
+     <TextView
+        android:id="@+id/labelAddress"
+        android:text="@string/address"
+        android:layout_below="@+id/labelName"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:layout_marginEnd="5dp" />
+    
+     <EditText
+        android:id="@+id/etAddress"
+        android:layout_toEndOf="@+id/labelAddress"
+        android:layout_alignBaseline="@+id/labelAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:labelFor="@id/etAddress"
+        android:inputType="textCapWords"/>
+     
+     <TextView
+        android:id="@+id/labelBrgy"
+        android:text="@string/brgy"
+        android:layout_below="@+id/labelAddress"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:layout_marginEnd="5dp" />
+    
+     <EditText
+        android:id="@+id/etBrgy"
+        android:layout_toEndOf="@+id/labelBrgy"
+        android:layout_alignBaseline="@+id/labelBrgy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:labelFor="@id/etBrgy"
+        android:inputType="textCapWords"/>
+     
+     <TextView
+        android:id="@+id/labelCity"
+        android:text="City/Municipality"
+        android:layout_below="@+id/labelBrgy"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:layout_marginEnd="5dp" />
+    
+     <!--<EditText-->
+        <!--android:id="@+id/etCity"-->
+        <!--android:layout_toEndOf="@+id/labelCity"-->
+        <!--android:layout_alignBaseline="@+id/labelCity"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content" -->
+        <!--android:labelFor="@id/etCity"-->
+        <!--android:inputType="textCapWords"/>-->
+
+    <Spinner
+        android:id="@+id/etCity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/labelCity"
+        android:layout_alignBaseline="@+id/labelCity" />
+     
+     
+     
+     <TextView
+        android:id="@+id/labelState"
+        android:text="@string/state"
+        android:layout_below="@+id/labelCity"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:layout_marginEnd="5dp" />
+    
+     <!--<AutoCompleteTextView-->
+        <!--android:id="@+id/etState"-->
+        <!--android:layout_toEndOf="@+id/labelState"-->
+        <!--android:layout_alignBaseline="@+id/labelState"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content" -->
+        <!--android:labelFor="@id/etState"-->
+        <!--android:inputType="textCapWords"/>-->
+
+    <Spinner
+        android:id="@+id/etState"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/labelState"
+        android:layout_alignBaseline="@+id/labelState" />
+          
+      <TextView
+        android:id="@+id/labelContact"
+        android:text="@string/status"
+        android:layout_below="@+id/labelState"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:layout_marginEnd="5dp" />
+    
+     <!--<EditText-->
+        <!--android:id="@+id/etContact"-->
+        <!--android:layout_toEndOf="@+id/labelContact"-->
+        <!--android:layout_alignBaseline="@+id/labelContact"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content" -->
+        <!--android:labelFor="@id/etContact"-->
+        <!--android:inputType="number"/>-->
+
+    <Spinner
+        android:id="@+id/etContact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/labelContact"
+        android:layout_alignBaseline="@+id/labelContact" />
+
+
+    <TextView
+        android:id="@+id/labelCplan"
+        android:text="@string/cplan"
+        android:layout_width="110dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="30dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/labelContact"
+        android:layout_alignParentStart="true" />
+
+    <AutoCompleteTextView
+        android:id="@+id/etCplan"
+        android:layout_toEndOf="@+id/labelCplan"
+        android:layout_alignBaseline="@+id/labelCplan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="#000"
+        android:labelFor="@id/etCplan"
+        android:inputType="textCapCharacters"/>
+
+    <TextView
+         android:id="@+id/labelTerms"
+        android:layout_width="110dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="30dp"
+         android:layout_height="wrap_content"
+         android:layout_below="@+id/labelCplan"
+        android:visibility="gone"
+         android:text="@string/terms" />
+     
+     <Spinner
+         android:visibility="gone"
+         android:id="@+id/spTerms"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_toEndOf="@+id/labelTerms"
+         android:layout_alignBaseline="@+id/labelTerms" />
+
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/labelType"
+        android:layout_toEndOf="@+id/spType"
+        android:onClick="storeType"
+        android:src="@drawable/ic_about" />
+
+    <TextView
+        android:id="@+id/labelType"
+        android:layout_width="90dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/labelTerms"
+        android:layout_marginBottom="30dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="5dp"
+        android:text="Store Type" />
+
+    <Spinner
+        android:id="@+id/spType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/labelType"
+        android:layout_alignBaseline="@+id/labelType" />
+
+
+     <Button
+         android:id="@+id/btNewData"
+         android:layout_width="fill_parent"
+         android:layout_height="wrap_content"
+         android:layout_alignStart="@+id/labelCplan"
+         android:layout_alignEnd="@+id/tvheader"
+         android:layout_below="@+id/labelType"
+         android:gravity="center"
+         android:textColor="#fff"
+         android:background="@drawable/btn_ripple2"
+         android:text="@string/btNewData" />
+      
+     <TextView
+         android:id="@+id/separator"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_alignParentStart="true"
+         android:layout_below="@+id/btNewData"
+         android:layout_marginTop="10dp"
+         android:background="@color/shellyellow"
+         android:gravity="center"
+         android:textColor="#000" />
+     
+     
+     
+     <LinearLayout        
+         android:id="@+id/sig_buttons"
+         android:layout_width="400dp"
+         android:layout_height="wrap_content"
+         android:layout_below="@+id/separator"
+         android:layout_marginTop="6dp"
+         android:orientation="horizontal"
+         android:paddingLeft="30dp"
+         android:paddingRight="30dp"
+         android:paddingTop="6dp" >
+
+         <Button
+             android:id="@+id/bt_cancel"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_weight=".5"
+             android:contentDescription="@string/btn_clear"
+             android:background="@drawable/btn_ripple2"
+             android:text="@string/btCancel"
+             android:textColor="#fff"      
+             android:paddingRight="10dp" />
+
+         <Button
+             android:id="@+id/bt_save"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_weight=".5"
+             android:contentDescription="@string/clear"    
+             android:text="@string/btSave"
+             android:textColor="#fff"
+             android:background="@drawable/btn_ripple3"
+             android:layout_marginStart="10dp"  />
+     </LinearLayout>  
+
+     
+    
+</RelativeLayout>
+</ScrollView>

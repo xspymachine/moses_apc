@@ -1,0 +1,28 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="4dp"
+    android:background="#000" >
+	        
+	    <!-- Editext for Search -->
+	    <EditText android:id="@+id/inputSearch"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:padding="6dp"	        
+	        android:background="@drawable/rounded_gray_border"
+	        android:hint="@string/search_sku"
+	        android:textSize="16sp"
+	        android:inputType="textVisiblePassword"/>
+	  
+		
+	    <ListView 
+	    	android:id="@+id/android:list"	    	
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/inputSearch"
+	        android:dividerHeight="1dp"
+	        android:divider="#b5b5b5" />
+	    
+
+</RelativeLayout>

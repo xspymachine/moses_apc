@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android" 
+	android:id="@+id/ll_box"   	
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@drawable/bg34" >
+	
+    <RelativeLayout
+        android:id="@+id/rl_scmain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"        
+        android:padding="6dp"        
+        android:descendantFocusability="beforeDescendants" 
+		android:focusableInTouchMode="true">
+        
+        <RelativeLayout
+	        android:id="@+id/rl_sccontact"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content" 
+	        android:layout_margin="8dp"	        
+	        android:padding="6dp"             
+	        android:background="@drawable/rounded_gray_border">
+	        
+	        <ImageView
+	            android:id="@+id/bt_scname"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"	            
+	            android:layout_gravity="center_vertical"
+	            android:background="@null"
+	            android:contentDescription="@string/app_name"
+	            android:padding="5dp"
+	            android:src="@drawable/timein48" />
+	
+	        <TextView
+	            android:id="@+id/tvCName"
+	            android:layout_width="match_parent"
+	            android:layout_height="match_parent"
+	            android:layout_toRightOf="@+id/bt_scname"	            
+	            android:paddingTop="3dp"
+	            android:background="@null"	            
+	            android:textAppearance="?android:attr/textAppearanceMedium"
+	            android:focusable="false" />
+	        
+	        
+	        <TextView
+	            android:id="@+id/tvAddress"
+	            android:layout_width="match_parent"
+	            android:layout_height="match_parent"	            
+	            android:layout_toRightOf="@+id/bt_scname"
+	            android:layout_below="@+id/tvCName"	            
+	            android:paddingTop="3dp"
+	            android:paddingBottom="3dp"
+	            android:background="@null"	            
+	            android:focusable="false" 
+	            android:textColor="#00BFFF"
+	            android:textAppearance="?android:attr/textAppearanceSmall" />
+	    </RelativeLayout>
+       
+	    <RelativeLayout
+	        android:id="@+id/ll_location"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/rl_sccontact"
+	        android:layout_centerHorizontal="true"
+	        android:layout_marginLeft="6dp"
+	        android:layout_marginRight="6dp"	    
+	        android:layout_marginTop="20dp"   
+	        android:padding="6dp" >
+
+	        <View 
+	            android:id="@+id/v2"
+	            android:layout_width="match_parent"
+	            android:layout_height="1dip"
+	            android:background="#888888"
+	            android:visibility="invisible"/>
+	        
+	        <LinearLayout
+	            android:id="@+id/llStatus"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"	            
+	            android:layout_below="@+id/v2"
+	            android:layout_centerInParent="true"
+	            android:layout_marginRight="10dp"	         
+	            android:orientation="vertical" >
+
+	            <TextView
+	                android:id="@+id/lbl_status"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_marginTop="6dp"
+	                android:text="@string/gps_status"
+	                android:textColor="#000"
+	                android:layout_gravity="center_horizontal"
+	                android:textSize="16sp" />
+	            
+	            <TextView
+	                android:id="@+id/tv_status"
+	                android:layout_width="200dp"
+	                android:layout_height="60dp"
+	                android:background="@drawable/rounded_gray_border"
+	                android:gravity="center"
+	                android:textColor="#00008c"
+	                android:textSize="26sp" />
+	            
+	        </LinearLayout>
+	        
+	          <LinearLayout
+	            android:id="@+id/gps_accuracy"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"	    
+	            android:layout_marginTop="20dp"        
+	            android:layout_below="@+id/llStatus"
+	            android:layout_centerInParent="true"
+	            android:layout_marginRight="10dp"	         
+	            android:orientation="vertical" >
+	            
+	            <TextView
+	                android:id="@+id/ll_accuracy"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_marginTop="6dp"
+	                android:text="@string/accuracy"
+	                android:textColor="#000"
+	                android:layout_gravity="center_horizontal"
+	                android:textSize="16sp" />
+	            
+	            <TextView
+	                android:id="@+id/tv_gpsfix"
+	                android:layout_width="200dp"
+	                android:layout_height="60dp"
+	                android:background="@drawable/rounded_gray_border"
+	                android:gravity="center"
+	                android:textColor="#00008c"
+	                android:textSize="24sp" 
+	                android:padding="4dp"/>
+	            
+	        </LinearLayout>
+	        
+	          <LinearLayout
+	            android:id="@+id/gps_time"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"	    
+	            android:layout_marginTop="20dp"        
+	            android:layout_below="@+id/gps_accuracy"
+	            android:layout_centerInParent="true"
+	            android:layout_marginRight="10dp"	         
+	            android:orientation="vertical" >
+	            
+	            <TextView
+	                android:id="@+id/lbl_gpstime"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_marginTop="6dp"
+	                android:text="@string/gpstime"
+	                android:layout_gravity="center_horizontal"
+	                android:textColor="#000"
+	                android:visibility="gone"
+	                android:textSize="16sp" />
+	            
+	            <TextView
+	                android:id="@+id/tv_gpstime"
+	                android:layout_width="200dp"
+	                android:layout_height="60dp"
+	                android:background="@drawable/rounded_gray_border"
+	                android:gravity="center"
+	                android:textColor="#00008c"
+	                android:paddingBottom="2dp"
+	                android:textSize="24sp"  
+	                android:visibility="gone"
+	                android:padding="4dp"/>
+	            
+	        </LinearLayout>
+	        
+	            <LinearLayout
+	            android:id="@+id/gps_localTime"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"	    
+	            android:layout_marginTop="20dp"        
+	            android:layout_below="@+id/gps_time"
+	            android:layout_centerInParent="true"
+	            android:layout_marginRight="10dp"	         
+	            android:orientation="vertical" >
+	            
+	            <TextView
+	                android:id="@+id/lblDevTime"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_marginTop="6dp"
+	                android:text="@string/devicetime"
+	                android:layout_gravity="center_horizontal"
+	                android:textColor="#000"
+	                android:textSize="16sp" />
+	            
+	            <TextView
+	                android:id="@+id/tvDeviceTime"
+	                android:layout_width="200dp" 
+	                android:layout_height="60dp"
+	                android:background="@drawable/rounded_gray_border"
+	                android:gravity="center"
+	                android:textColor="#00008c"
+	                android:textSize="26sp" />
+	            
+	        </LinearLayout>
+	        
+	    </RelativeLayout> 
+	    <TextView
+	            android:id="@+id/Separator"
+	            android:layout_width="match_parent"
+	            android:layout_height="12sp"
+	            android:layout_alignParentLeft="true"
+	            android:layout_below="@+id/ll_location"
+	            android:layout_marginTop="20dp"
+	            android:background="#5C5D5F"
+	            android:gravity="left" 
+	            android:padding="10dp"
+	            android:textColor="#fff"
+	            android:textStyle="bold" />
+	    
+	    <RelativeLayout
+	            android:id="@+id/timeInReminders"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"	    
+	            android:layout_marginTop="20dp"        
+	            android:layout_below="@+id/Separator"
+	            android:layout_centerInParent="true"	      
+	            android:layout_marginRight="10dp" >
+	            
+	        	 <CheckBox
+			        android:id="@+id/cbRem1"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content" 
+			        android:layout_marginTop="3dp"  	  
+			        android:background="@drawable/custom_checkbox"  
+			        android:textSize="20sp" />
+	        	
+	        	 <CheckBox
+			        android:id="@+id/cbRem2"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content" 
+			        android:layout_below="@+id/tvRem1"
+			        android:layout_alignLeft="@+id/cbRem1"
+			        android:layout_marginTop="20dp"  	     
+			        android:background="@drawable/custom_checkbox"
+			        android:textSize="20sp" />	   
+			        
+	        	 <CheckBox
+			        android:id="@+id/cbRem3"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content" 
+			        android:layout_below="@+id/reminder2"
+			        android:layout_alignLeft="@+id/cbRem1"
+			        android:layout_marginTop="20dp"  	     
+			        android:background="@drawable/custom_checkbox"
+			        android:textSize="20sp" />	   
+
+	        	<TextView
+	        	    android:id="@+id/tvRem1"
+	        	    android:layout_width="wrap_content"
+	        	    android:layout_height="wrap_content"
+	        	    android:layout_toRightOf="@+id/cbRem1"
+	        	    android:layout_alignTop="@+id/cbRem1"
+	        	    android:layout_marginLeft="10dp"
+	        	    android:text="@string/greet"
+	        	    android:textColor="#000"
+	        	    android:textSize="20sp"
+	        	    android:textStyle="bold" />
+	        	
+	        	<TextView
+	                android:id="@+id/reminder2"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_toRightOf="@+id/cbRem2"
+	                android:layout_alignTop="@+id/cbRem2"
+	                android:text="@string/introduce"
+	                android:textColor="#000"
+	                android:layout_marginLeft="10dp"
+	                android:textStyle="bold"
+	                android:textSize="20sp" />
+	        	
+	        	<TextView
+	                android:id="@+id/reminder3"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_toRightOf="@+id/cbRem3"
+	                android:layout_alignTop="@+id/cbRem3"
+	                android:text="@string/ask"
+	                android:textColor="#000"
+	                android:layout_marginLeft="10dp"
+	                android:textStyle="bold"
+	                android:textSize="20sp" />
+	        	
+	      </RelativeLayout>
+	      
+	    <RelativeLayout
+	            android:id="@+id/timeOutReminders"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"	    
+	            android:layout_marginTop="20dp"        
+	            android:layout_below="@+id/timeInReminders"
+	            android:layout_centerInParent="true"
+	            android:visibility="gone"
+	            android:layout_marginRight="10dp" >
+	            
+	        	 <CheckBox
+			        android:id="@+id/cbORem1"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content" 
+			        android:layout_marginTop="10dp"  	
+			        android:background="@drawable/custom_checkbox"     
+			        android:textSize="20sp" />
+	        
+	        	<TextView
+	                android:id="@+id/tvORem1"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_toRightOf="@+id/cbORem1"
+	                android:layout_alignTop="@+id/cbORem1"
+	                android:text="@string/orem1"
+	                android:textColor="#000"
+	                android:layout_marginLeft="10dp"
+	                android:textStyle="bold"	          
+	                android:textSize="20sp" />
+	        	
+	        	<!--  <CheckBox
+			        android:id="@+id/cbORem2"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content" 
+			        android:layout_below="@+id/tvORem1"
+			        android:layout_alignLeft="@+id/cbORem1"
+			        android:layout_marginTop="20dp"  	 
+			        android:background="@drawable/custom_checkbox"    
+			        android:textSize="20sp" />
+	        	
+	        	<TextView
+	                android:id="@+id/tvORem2"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_toRightOf="@+id/cbORem2"
+	                android:layout_alignTop="@+id/cbORem2"
+	                android:text="@string/orem2"
+	                android:textColor="#000"
+	                android:textStyle="bold"	         
+	                android:layout_marginLeft="10dp"       
+	                android:textSize="20sp" /> -->
+	        	
+	        	<!-- *********************************** -->
+	        	<CheckBox
+			        android:id="@+id/cbORem3"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:layout_below="@+id/tvORem1"
+			        android:layout_alignLeft="@+id/cbORem1" 
+			        android:background="@drawable/custom_checkbox"
+			        android:layout_marginTop="20dp"  	     
+			        android:textSize="20sp" />
+	        
+	        	<TextView
+	                android:id="@+id/tvORem3"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_toRightOf="@+id/cbORem3"
+	                android:layout_alignTop="@+id/cbORem3"
+	                android:text="@string/orem3"
+	                android:textColor="#000"
+	                android:textStyle="bold"	       
+	                android:layout_marginLeft="10dp"   
+	                android:textSize="20sp" />
+	        	
+	        	 <CheckBox
+			        android:id="@+id/cbORem4"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content" 
+			        android:layout_below="@+id/tvORem3"
+			        android:layout_alignLeft="@+id/cbORem3"
+			        android:background="@drawable/custom_checkbox"
+			        android:layout_marginTop="20dp"  	     
+			        android:textSize="20sp" />
+	        	
+	        	<TextView
+	                android:id="@+id/tvORem4"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_toRightOf="@+id/cbORem4"
+	                 android:layout_alignTop="@+id/cbORem4"
+	                android:text="@string/orem4"
+	                android:layout_marginLeft="10dp"
+	                android:textColor="#000"
+	                android:textStyle="bold"
+	                android:textSize="20sp" />
+	        	
+	        	<!-- <CheckBox
+			        android:id="@+id/cbORem5"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content" 
+			        android:layout_below="@+id/tvORem4"
+			        android:layout_alignLeft="@+id/cbORem4"
+			        android:background="@drawable/custom_checkbox"
+			        android:layout_marginTop="20dp"  	     
+			        android:textSize="20sp" />
+	        	
+	        	<TextView
+	                android:id="@+id/tvORem5"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_toRightOf="@+id/cbORem5"
+	                 android:layout_alignTop="@+id/cbORem5"
+	                android:text="@string/orem5"
+	                android:layout_marginLeft="10dp"
+	                android:textColor="#000"
+	                android:textStyle="bold"
+	                android:textSize="20sp" /> -->
+
+	        	<Button
+	        	    android:id="@+id/btMerch"
+	        	    android:layout_width="wrap_content"
+	        	    android:layout_height="wrap_content"
+	        	    android:layout_alignParentBottom="true"
+	        	    android:layout_alignParentLeft="true"
+	        	    android:layout_alignRight="@+id/tvORem4"
+	        	    android:layout_below="@+id/tvORem4"
+	        	    android:textStyle="bold"
+	        	    android:background="@drawable/custom_button_click"
+	        	    android:layout_marginTop="10dp"	        	    
+	   	       		android:layout_centerHorizontal="true"
+	   	       		android:textColor="#E88100"
+	   	       		android:gravity="center"
+	        	    android:text="@string/orem5" />
+	        	
+	      </RelativeLayout>
+	    
+	    
+	      <RelativeLayout 
+	   	    android:id="@+id/footer"
+		    android:layout_width="match_parent"
+		    android:layout_height="match_parent"
+		    android:layout_below="@+id/timeOutReminders"	
+		    android:layout_marginTop="20dp">
+
+	   	    <Button
+	   	        android:id="@+id/bt_submitio"
+	   	        android:layout_width="300dp"
+	   	        android:layout_height="wrap_content"
+	   	        android:layout_centerHorizontal="true"
+	   	        android:layout_centerVertical="true"
+	   	        android:gravity="center"
+	   	        android:text="@string/time_in"
+	   	        android:textStyle="bold"
+	   	        android:textColor="#8DC33D"
+	   	        android:background="@drawable/custom_button_click"	   	        
+	   	        android:textSize="20sp" />
+	   	    
+</RelativeLayout>
+	</RelativeLayout>
+	
+</ScrollView>
+
+   	

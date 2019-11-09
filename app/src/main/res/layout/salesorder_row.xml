@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_listview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"     
+    android:background="#fff">     
+       
+    <TextView android:id="@+id/description"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:typeface="sans"
+        android:textSize="14sp"        
+        android:textColor="#000"/>
+    
+    <TextView android:id="@+id/qty_pack"
+        android:layout_width="45dp"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/description"  
+        android:layout_alignTop="@+id/description"
+        android:gravity="right"
+        android:typeface="sans"   
+        android:textSize="14sp"
+        android:textColor="#000"/>
+    
+    <TextView android:id="@+id/pp_pack"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/qty_pack"  
+        android:layout_alignTop="@+id/qty_pack"
+        android:gravity="right"
+        android:typeface="sans"   
+        android:textSize="14sp"
+        android:textColor="#000"/>
+    
+    <TextView android:id="@+id/qty_unit"
+        android:layout_width="45dp"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/pp_pack"  
+        android:layout_alignTop="@+id/pp_pack"
+        android:gravity="right"
+        android:typeface="sans"   
+        android:textSize="14sp"
+        android:textColor="#000"/>
+    
+    <TextView android:id="@+id/pp_unit"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/qty_unit"  
+        android:layout_alignTop="@+id/qty_unit"
+        android:gravity="right"
+        android:typeface="sans"   
+        android:textSize="14sp"
+        android:textColor="#000"/>
+    
+     <TextView android:id="@+id/amount"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/pp_unit"  
+        android:layout_alignTop="@+id/pp_unit"
+        android:gravity="right"
+        android:typeface="sans"   
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textColor="#000"/>
+    
+</RelativeLayout>

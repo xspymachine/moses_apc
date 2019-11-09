@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp"
+    android:background="@color/shellyellow"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:id="@+id/btPrev"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/prev"
+            android:text="" />
+        
+        <View android:layout_width="0dp"
+		      android:layout_height="fill_parent"
+		      android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/tvMY"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="30sp"
+            android:text="MONTHYEAR" />
+        
+        <View android:layout_width="0dp"
+		      android:layout_height="fill_parent"
+		      android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/btNext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"            
+            android:background="@drawable/next"
+            android:text="" />
+
+    </LinearLayout>
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp" >
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:background="@color/shellred" >
+    
+            <TextView android:text="KPI"
+                android:textStyle="bold"
+		        android:layout_width="wrap_content"    
+		        android:layout_height="wrap_content"    
+		        android:layout_column="1"
+                android:textColor="#000000"
+                android:layout_marginLeft="2dp"
+		        android:background="@color/shellyellow"
+		        android:layout_weight="1">
+	        </TextView>
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/target02" />
+            
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_target01" />
+
+	        <!-- <TextView android:text="TARGET"
+                android:textStyle="bold"
+		        android:layout_width="wrap_content"  
+		        android:layout_height="wrap_content"   
+		        android:layout_column="1"
+		        android:layout_weight="1"
+		        android:background="#125456"
+		        android:gravity="center">
+	        </TextView> 
+	        <TextView android:text="ACTUAL"
+                android:textStyle="bold"
+		        android:layout_width="wrap_content"  
+		        android:layout_height="wrap_content"   
+		        android:layout_column="1"
+		        android:layout_weight="1"
+		        android:background="#653456"
+		        android:gravity="center">
+	        </TextView>
+-->
+        </TableRow>
+        
+    </TableLayout>
+
+</LinearLayout>

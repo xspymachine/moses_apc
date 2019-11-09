@@ -1,0 +1,553 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.xpluscloud.mosesshell_davao">
+
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+    <uses-permission android:name="android.permission.READ_SMS"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />                  
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" /> 
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>               
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_INTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/assets_icon"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:largeHeap="true"
+        android:theme="@style/AppTheme"
+        android:name=".MyApplication"
+        tools:ignore="GoogleAppIndexingWarning">
+
+        <activity
+            android:name="com.xpluscloud.mosesshell_davao.BootStrapActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <activity
+            android:name="com.xpluscloud.mosesshell_davao.SplashScreen"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+
+        <activity
+            android:name="com.xpluscloud.mosesshell_davao.RetailDataActivity"
+            android:label="@string/app_name"
+            android:windowSoftInputMode="stateHidden"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+        </activity>
+
+        <activity
+            android:name="com.xpluscloud.mosesshell_davao.IssuesActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+        </activity>
+
+        <activity
+            android:name="com.xpluscloud.mosesshell_davao.IssuesHistory"
+            android:label="@string/app_name"
+            android:windowSoftInputMode="adjustResize"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+        </activity>
+
+        <activity
+            android:name="com.xpluscloud.mosesshell_davao.StartActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+        </activity>
+
+        <activity
+            android:name="com.xpluscloud.mosesshell_davao.MainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+        </activity>
+
+        <activity
+            android:name="com.xpluscloud.mosesshell_davao.CustomerListActivity"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:windowSoftInputMode="stateHidden"
+            android:label="Customer List">
+
+        </activity>
+
+        <activity
+            android:name="com.xpluscloud.mosesshell_davao.CustomerAddEditActivity"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:icon="@drawable/assets_edit"
+            android:label="Edit Customer"
+            android:windowSoftInputMode="stateHidden">
+        </activity>
+
+
+        <activity
+            android:name="com.xpluscloud.mosesshell_davao.CoveragePlanListActivity"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:icon="@drawable/cplan96"
+            android:label="Coverage Plans"
+            android:windowSoftInputMode="stateHidden">
+            <!--android:theme="@style/datePickerDialog"      -->
+        </activity>
+
+
+        <!--<activity -->
+        <!--android:name=".XPLoadingActivity"                                                        -->
+        <!--android:screenOrientation="portrait" -->
+        <!--android:configChanges="keyboardHidden|orientation|screenSize">-->
+        <!---->
+        <!--</activity>-->
+
+        <activity
+            android:name="com.xpluscloud.mosesshell_davao.InOutActivity"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+
+        </activity>
+
+        <activity
+            android:name="com.xpluscloud.mosesshell_davao.InOutFusedActivity"
+            android:screenOrientation="portrait"
+
+            android:configChanges="keyboardHidden|orientation|screenSize">
+
+        </activity>
+
+        <activity
+            android:name="com.xpluscloud.mosesshell_davao.IOListActivity"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+        </activity>
+
+        <activity
+            android:name="com.xpluscloud.mosesshell_davao.BarcodeScanner"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+        </activity>
+
+        <activity
+            android:name="com.xpluscloud.mosesshell_davao.CheckListActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+        </activity>
+
+        <activity
+            android:name="com.xpluscloud.mosesshell_davao.CollectionActivity"
+            android:icon="@drawable/collection"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+        </activity>
+
+        <activity
+            android:name="com.xpluscloud.mosesshell_davao.CustomerCallActivity"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+        </activity>
+
+        <activity
+            android:name="com.xpluscloud.mosesshell_davao.CustomerCallSummary"
+            android:screenOrientation="portrait"
+            android:icon="@drawable/summary"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+        </activity>
+
+        <activity
+            android:name="com.xpluscloud.mosesshell_davao.CustomerCallListActivity"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+        </activity>
+
+        <activity
+            android:name="com.xpluscloud.mosesshell_davao.CompetitorPricingActivity"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+        </activity>
+
+        <activity
+            android:name="com.xpluscloud.mosesshell_davao.CompetitorsItemList"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+        </activity>
+
+        <activity
+            android:name="com.xpluscloud.mosesshell_davao.CollectibleListActivity"
+            android:icon="@drawable/collection"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+        </activity>
+
+        <activity
+            android:name="com.xpluscloud.mosesshell_davao.ResendActivity"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+        </activity>
+
+        <activity
+            android:name="com.xpluscloud.mosesshell_davao.DeliveryListActivity"
+            android:icon="@drawable/delivery96"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+        </activity>
+
+
+
+        <activity
+            android:name="com.xpluscloud.mosesshell_davao.GetSignatureActivity"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+        </activity>
+
+        <activity
+            android:name="com.xpluscloud.mosesshell_davao.GetSignatureListActivity"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+        </activity>
+
+        <activity
+            android:name="com.xpluscloud.mosesshell_davao.UploadSignatureActivity"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+        </activity>
+
+        <activity
+            android:name="com.xpluscloud.mosesshell_davao.UploadPictureActivity"
+            android:icon="@drawable/uploadpic96"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+        </activity>
+
+
+
+        <activity
+            android:name="com.xpluscloud.mosesshell_davao.RegisterActivity"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+        </activity>
+
+        <activity
+            android:name="com.xpluscloud.mosesshell_davao.LoginActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+        </activity>
+
+        <activity
+            android:name="com.xpluscloud.mosesshell_davao.LostPasswordActivity"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+        </activity>
+
+        <!--<activity-->
+        <!--android:name=".CallBackActivity"-->
+        <!--android:screenOrientation="portrait"-->
+        <!--android:configChanges="keyboardHidden|orientation|screenSize">-->
+        <!--</activity>-->
+
+        <!--<activity-->
+        <!--android:name=".FileDirectory"-->
+        <!--android:screenOrientation="portrait"-->
+        <!--android:configChanges="keyboardHidden|orientation|screenSize">-->
+        <!--</activity>-->
+
+        <activity
+            android:name="com.xpluscloud.mosesshell_davao.MarkLocationActivity"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+
+        </activity>
+
+        <activity
+            android:name="com.xpluscloud.mosesshell_davao.MarkFusedLocationActivity"
+            android:screenOrientation="portrait"
+            android:icon="@drawable/mark_location48"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+
+        </activity>
+
+        <activity
+            android:name="com.xpluscloud.mosesshell_davao.MarkLocationListActivity"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+
+        </activity>
+
+        <activity
+            android:name="com.xpluscloud.mosesshell_davao.SyncActivity"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+        </activity>
+
+        <activity
+            android:name="com.xpluscloud.mosesshell_davao.OutboxListActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+        </activity>
+
+        <activity
+            android:name="com.xpluscloud.mosesshell_davao.ExpiredActivity"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+        </activity>
+
+        <activity
+            android:name="com.xpluscloud.mosesshell_davao.ItemListActivity" >
+
+        </activity>
+
+        <activity
+            android:name="com.xpluscloud.mosesshell_davao.ItemOrderActivity"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+
+        </activity>
+
+        <activity
+            android:name="com.xpluscloud.mosesshell_davao.CalendarActivity"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+
+        </activity>
+
+        <!--<activity -->
+        <!--android:name=".SalesOrderListActivityOld" >-->
+        <!---->
+        <!--</activity> -->
+
+        <activity
+            android:name="com.xpluscloud.mosesshell_davao.PopUpActivity" >
+
+        </activity>
+
+        <activity
+            android:name="com.xpluscloud.mosesshell_davao.CallSheetActivity"
+            android:icon="@drawable/callsheet96"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+
+        </activity>
+
+        <activity
+            android:name="com.xpluscloud.mosesshell_davao.CallSheetActivity2"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+
+        </activity>
+
+        <activity
+            android:name="com.xpluscloud.mosesshell_davao.CallSheetListActivity"
+            android:icon="@drawable/callsheet96"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+
+
+        </activity>
+
+        <activity
+            android:name="com.xpluscloud.mosesshell_davao.ReturnListActivity"
+            android:icon="@drawable/product_return"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+
+
+        </activity>
+
+        <!--<activity -->
+        <!--android:name=".SalesOrderSummaryActivity" -->
+        <!--android:configChanges="keyboardHidden|orientation|screenSize">-->
+        <!---->
+        <!--</activity> -->
+
+        <activity
+            android:name="com.xpluscloud.mosesshell_davao.TableViewActivity" >
+
+        </activity>
+
+        <activity
+            android:name="com.xpluscloud.mosesshell_davao.NewCompPrice"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:windowSoftInputMode="stateHidden">
+
+        </activity>
+
+        <activity
+            android:name="com.xpluscloud.mosesshell_davao.CustomerDataActivity2"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:icon="@drawable/assets_edit"
+            android:windowSoftInputMode="stateHidden">
+
+        </activity>
+
+        <activity
+            android:name="com.xpluscloud.mosesshell_davao.ProfileListActivity">
+            <!--android:theme="@android:style/Theme.Dialog" >-->
+
+        </activity>
+
+        <activity
+            android:name="com.xpluscloud.mosesshell_davao.ProfileActivity" >
+
+        </activity>
+
+        <activity
+            android:name="com.xpluscloud.mosesshell_davao.AboutActivity" >
+
+        </activity>
+        <activity
+            android:name="com.xpluscloud.mosesshell_davao.ReturnActivity"
+            android:icon="@drawable/product_return"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+
+        </activity>
+        <activity
+            android:name="com.xpluscloud.mosesshell_davao.TruckActivity"
+            android:icon="@drawable/product_return"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+
+        </activity>
+        <activity
+            android:name="com.xpluscloud.mosesshell_davao.WarehouseActivity"
+            android:icon="@drawable/product_return"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+
+        </activity>
+        <activity
+            android:name="com.xpluscloud.mosesshell_davao.CallSheetManager"
+            android:icon="@drawable/csmanager"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:windowSoftInputMode="stateHidden">
+
+        </activity>
+
+        <activity
+            android:name="com.xpluscloud.mosesshell_davao.CallSheetServeActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+
+        </activity>
+        <activity android:name="com.xpluscloud.mosesshell_davao.SurveyActivity" />
+        <activity android:name="com.xpluscloud.mosesshell_davao.PromotionsActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:name="com.xpluscloud.mosesshell_davao.Brochure01"
+            android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:name="com.xpluscloud.mosesshell_davao.SummaryStatusWeb"
+            android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:name="com.xpluscloud.mosesshell_davao.TargetSalesActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:name="com.xpluscloud.mosesshell_davao.ImageViewActivity" />
+        <activity android:name="com.xpluscloud.mosesshell_davao.StoretypeActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:name="com.xpluscloud.mosesshell_davao.CustomerProfileActivity" />
+        <activity android:name="com.xpluscloud.mosesshell_davao.SalescallListActivity" />
+        <activity android:name="com.xpluscloud.mosesshell_davao.CallSheetActivity4"
+            android:icon="@drawable/callsheet96"
+            android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:name=".InventoryActivity"
+            android:label="Inventory"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:windowSoftInputMode="stateHidden"/>
+        <activity android:name=".PromoActivity"
+            android:label="Promos"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:windowSoftInputMode="stateHidden"/>
+        <activity android:name=".CompetitorActivity2"
+            android:label="Competitor Pricing"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:windowSoftInputMode="stateHidden"/>
+        <activity android:name=".ItemListActivity2"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:windowSoftInputMode="stateHidden"/>
+        <activity android:name=".CompetitorActivityList2"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:windowSoftInputMode="stateHidden"/>
+        <activity android:name=".PDFViewActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:windowSoftInputMode="stateHidden"/>
+        <!--<activity android:name=".SimpleScannerActivity" />-->
+
+
+        <service android:enabled="true"  android:name="com.xpluscloud.mosesshell_davao.MyLocationService"/>
+        <service android:enabled="true"  android:name="com.xpluscloud.mosesshell_davao.DispatcherService"/>
+        <service android:enabled="true"  android:name="com.xpluscloud.mosesshell_davao.FusedLocationService"/>
+
+
+
+        <!--<service-->
+        <!--android:name=".ReceiveUpdatesIntentService"-->
+        <!--android:label="@string/app_name"-->
+        <!--android:exported="false"></service>-->
+
+        <!--   <service android:enabled="true"  android:name=".SendCommandService"/> -->
+
+        <receiver android:enabled="true" android:name="com.xpluscloud.mosesshell_davao.AutoRun"
+            android:permission="android.permission.RECEIVE_BOOT_COMPLETED">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name="com.xpluscloud.mosesshell_davao.SMSReceiver"
+            android:permission="android.permission.BROADCAST_SMS">
+            <intent-filter android:priority="10" >
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name="com.xpluscloud.mosesshell_davao.RestartService"
+            android:enabled="true"
+            tools:ignore="ExportedReceiver">
+            <intent-filter>
+                <action android:name="restartService" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="com.xpluscloud.mosesshell_davao.MyFirebaseMessagingService"
+            tools:ignore="ExportedService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+
+        <service
+            android:name="com.xpluscloud.mosesshell_davao.MyFirebaseInstanceIDService"
+            tools:ignore="ExportedService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+    </application>
+
+</manifest>

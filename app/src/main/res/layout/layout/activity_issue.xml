@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="#000"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/rl_sccontact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:padding="6dp"
+        android:background="@drawable/rounded_gray_border">
+
+        <ImageView
+            android:id="@+id/bt_scname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@null"
+            android:contentDescription="@string/app_name"
+            android:padding="5dp"
+            android:src="@drawable/timein48" />
+
+        <TextView
+            android:id="@+id/tvCName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/bt_scname"
+            android:paddingTop="3dp"
+            android:background="@null"
+            android:textColor="#000"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:focusable="false" />
+
+
+        <TextView
+            android:id="@+id/tvAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/bt_scname"
+            android:layout_below="@+id/tvCName"
+            android:paddingTop="3dp"
+            android:paddingBottom="3dp"
+            android:background="@null"
+            android:focusable="false"
+            android:textColor="#00BFFF"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+    </RelativeLayout>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:inputType="textMultiLine|textCapSentences"
+        android:layout_weight="100"
+        android:gravity="top"
+        android:padding="5dp"
+        android:layout_margin="5dp"
+        android:hint="Type here some issues observe from the client."
+        android:background="@drawable/rounded_border"
+        android:id="@+id/etIssue" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginStart="5dp"
+        android:gravity="center|bottom"
+        android:orientation="vertical" >
+
+        <Button
+            android:text="Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@drawable/custom_button_click"
+            android:textColor="#fff"
+            android:id="@+id/btOpen" />
+    </LinearLayout>
+
+</LinearLayout>

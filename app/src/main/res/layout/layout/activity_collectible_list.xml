@@ -1,0 +1,124 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="4dp"
+    android:background="#fff" >
+    
+    <RelativeLayout 
+			android:id="@+id/rlCustomer"    
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content" 
+		    android:padding="12dp"
+		    android:background="#77D2D2DF" >
+		    
+		    <TextView
+		        android:id="@+id/llCustomer"
+		    	android:layout_width="wrap_content"
+		    	android:layout_height="wrap_content"
+		    	android:layout_marginRight="12dp"
+		    	android:text="@string/customer"/>
+		    
+		    <TextView 
+				android:id="@+id/tvCustomer"
+		    	android:layout_width="wrap_content"
+		    	android:layout_height="wrap_content"
+		    	android:layout_toRightOf="@+id/llCustomer"
+		    	android:layout_alignTop="@+id/llCustomer"
+		    	android:textColor="#0000C4"
+		    	android:lines="3"/>
+		    
+		</RelativeLayout>
+		
+    <!-- Editext for Search -->
+	    <EditText android:id="@+id/inputSearch"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/rlCustomer"
+	        android:padding="6dp"	
+	        android:hint="@string/search"
+	        android:inputType="textVisiblePassword"
+	        android:layout_marginTop="4dp"
+        	android:layout_marginBottom="4dp"
+        	android:textSize="20sp"
+        	android:background="@drawable/rounded_gray_border"/>
+		
+	    
+    
+    	<LinearLayout 
+    	    android:id="@+id/headerCollectibles"
+    	    android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/inputSearch"
+	        android:orientation="horizontal"
+	        android:paddingTop="8dp"
+	        android:paddingLeft="20dp"
+	        android:paddingRight="20dp"
+	        android:paddingBottom="8dp"
+	        android:background="#424251">
+		    
+    	    <TextView 
+    	        android:id="@+id/headerDate"
+    	    	android:layout_width="1dp"
+	        	android:layout_height="wrap_content"
+	        	android:layout_weight="0.2"
+	        	android:gravity="center"
+	        	android:text="@string/date" 
+	        	android:typeface="sans"
+        		android:textSize="16sp"
+        		android:textStyle="bold"
+        		android:textColor="#fff"/>
+    	    
+    	     <TextView 
+    	        android:id="@+id/headerInvoiceNo"
+    	    	android:layout_width="1dp"
+	        	android:layout_height="wrap_content"
+	        	android:text="@string/invoiceno"
+    	        android:layout_weight="0.5"
+	        	android:gravity="center"
+	        	android:typeface="sans"
+        		android:textSize="16sp"
+        		android:textStyle="bold"
+        		android:textColor="#fff"/>
+    	     
+    	      <TextView 
+    	        android:id="@+id/headerAmount"
+    	    	android:layout_width="1dp"
+	        	android:layout_height="wrap_content"
+	        	android:text="@string/amount"
+    	        android:layout_weight="0.3"
+	        	android:gravity="center"
+	        	android:typeface="sans"
+        		android:textSize="16sp"
+        		android:textStyle="bold"
+        		android:textColor="#fff"/>
+    	      
+    	      <TextView 
+    	        android:id="@+id/headerStatus"
+    	    	android:layout_width="1dp"
+	        	android:layout_height="wrap_content"
+	        	android:text="@string/paid"
+    	        android:layout_weight="0.1"
+	        	android:gravity="center"
+	        	android:typeface="sans"
+        		android:textSize="16sp"
+        		android:textStyle="bold"
+        		android:textColor="#fff"/>
+    	    
+    	</LinearLayout>
+    
+	        
+	    
+	  
+		
+	    <ListView 
+	    	android:id="@+id/android:list"	    	
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/headerCollectibles"
+	        android:dividerHeight="1dp"
+	        android:divider="#b5b5b5" 
+	        android:listSelector="@drawable/list_selector"/>
+	    
+
+</RelativeLayout>

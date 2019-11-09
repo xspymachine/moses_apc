@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <TextView 
+        android:id="@+id/expired" 
+        android:layout_height="wrap_content" 
+        android:layout_width="fill_parent"
+        android:text="@string/expired_msg" 
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
+        android:textSize="20sp"
+        android:gravity="center"  />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/outdated" 
+        android:layout_gravity="center" />
+    
+    <TextView 
+        android:id="@+id/download_src" 
+        android:layout_height="wrap_content" 
+        android:layout_width="fill_parent"
+        android:text="@string/download_msg" 
+        android:textSize="16sp"
+        android:gravity="center" />
+    
+     <TextView 
+        android:id="@+id/download_url" 
+        android:layout_height="wrap_content" 
+        android:layout_width="fill_parent"
+        android:text="@string/download_url" 
+        android:textSize="16sp"
+        android:textColor="#0000FF"
+        android:gravity="center" />
+
+</LinearLayout>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?><menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <!--  
+    <item
+
+        android:id="@+id/nonSched"
+        android:orderInCategory="10"
+        android:icon="@drawable/non_sched32"
+        android:showAsAction="ifRoom"
+        android:title="@string/non_sched"/>
+      -->
+
+    <item
+
+        android:id="@+id/onSched"
+        android:orderInCategory="10"
+        android:icon="@drawable/cplan32"
+        android:showAsAction="never"
+        android:title="@string/on_sched"/>
+
+    <item
+        android:id="@+id/allCustomers"
+        android:orderInCategory="10"
+        android:icon="@drawable/list32"
+        android:showAsAction="never"
+        android:title="@string/all_customers"/>
+    
+    <item
+        android:id="@+id/add_customer"
+        android:orderInCategory="100"
+        android:icon="@drawable/add_customer32"
+        android:showAsAction="never"
+        android:title="@string/action_add_customer"/>
+    
+
+   <item
+
+        android:id="@+id/delete_all"
+        android:orderInCategory="100"
+        android:icon="@drawable/delete32"
+        android:showAsAction="never"
+        android:title="@string/action_delete_all"/>
+
+
+
+</menu>

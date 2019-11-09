@@ -1,0 +1,479 @@
+<resources>
+    <string name="app_name">Moses-Army</string>
+    <string name="version">v2.0</string>
+    <string name="date">Date  </string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="apik">mrj2k12atxplusg5</string>
+    <string name="cl">Credit Limit</string>
+    <string name="versiondate">Shell 2019-11-09</string>
+
+    <string name="date_from">Date from </string>
+    <string name="date_to">Date to</string>
+
+    <string name="issHint">Type here only one issue at a time and then tap the OPEN ISSUE button. If you want to open another issue for the same customer, tap on dashboard’s CUSTOMER ISSUE button and repeat the process."</string>
+
+    <!-- Registration Info -->
+    <string name="register">Register</string>
+    <string name="company">Company</string>
+    <string name="firstname">Firstname</string>
+    <string name="lastname">Lastname</string>
+    <string name="mobileno">Mobile Number</string>
+    <string name="email">Email Address</string>
+    <string name="type">Salesman type</string>
+    <string name="clear">Clear</string>
+
+    <string name="search">Search</string>
+
+    <!-- GENERAL INFO -->
+    <string name="add_comp_item">Add Competitors Item</string>
+    <string name="add_comp_price">Fill out Retail Data</string>
+    <string name="strcheck">Compliance Checklist</string>
+    <string name="survey">Competitor Survey</string>
+
+    <!-- Customer Info -->
+    <string name="customer_name">Customer Name</string>
+
+    <!-- Download Menu Options  -->
+    <string name="download_customers">Download Customer List</string>
+    <string name="download_items">Download Item List</string>
+    <string name="download_cplan">Download Coverage Plan</string>
+    <string name="sync_sales_order">Sync Sales Order</string>
+
+    <!-- Customer List Toggle Menu -->
+    <string name="non_sched">Non Schedule</string>
+    <string name="on_sched">On Schedule</string>
+    <string name="all_customers">All Customers</string>
+
+    <string name="sync_header">Download Data Tables</string>
+
+    <!-- Customer List Activity -->
+
+    <string name="customers">Customers</string>
+    <string name="search_customer">Search Customer</string>
+    <string name="action_add_customer">Add Customer</string>
+
+    <string name="no_data">No Record</string>
+
+    <!-- Edit/Delete Menu -->
+    <string name="action_edit">View/Edit</string>
+    <string name="action_delete">Delete</string>
+    <string name="action_add">Add</string>
+    <string name="action_sync">Sync</string>
+    <string name="action_delete_all">Delete All</string>
+
+    <string name="action_mark">Mark as served</string>
+
+    <string name="edit_customer">Edit Customer</string>
+
+    <!-- Customer Fields -->
+    <string name="customer_code">Customer Code</string>
+    <string name="customer">Customer</string>
+    <string name="name">Name</string>
+    <string name="address">Street</string>
+    <string name="brgy">Brgy</string>
+    <string name="city">City</string>
+    <string name="state">Province</string>
+    <string name="contact_number">Contact Number</string>
+    <string name="acct_type">Acct Type</string>
+    <string name="cplan">CPlan (Sched)</string>
+    <string name="defaults">Defaults</string>
+    <string name="buffer">Buffer</string>
+    <string name="num_days"># of days </string>
+    <string name="salestype">Cash Sales/Sales Booking</string>
+    <string name="cash_sales">Cash Sales</string>
+    <string name="terms">Terms</string>
+    <string name="sales_booking">Sales Booking</string>
+    <string name="packaging">Packaging</string>
+    <string name="by_case">By Case</string>
+    <string name="by_piece">By Piece</string>
+    <string name="by_case_piece">Both By Case/Piece</string>
+    <string name="no_customers">No Customers</string>
+
+    <string name="profile">Profile</string>
+    <string name="prof_Header">Profile List</string>
+
+    <string name="ex_cplan">Type Mon,Tue,Wed,Thu,Fri,Sat,Sun for options</string>
+    <string name="percent">%</string>
+
+    <!-- Main Menu -->
+    <string name="outbox">Outbox</string>
+    <string name="empty_outbox">Empty Outbox</string>
+
+
+    <!-- Action Menu -->
+    <string name="history">History</string>
+    <string name="delete">Delete</string>
+
+    <!-- InOut Layout -->
+    <string name="time_in">Time In</string>
+    <string name="time_ot">Time Out</string>
+    <string name="time_inout">Time In/Out</string>
+    <string name="accuracy">Accuracy</string>
+    <string name="gpstime">GPS Time</string>
+    <string name="gps_status">GPS Status</string>
+    <string name="devicetime">Device Time</string>
+    <string name="greet">Greet Customer</string>
+    <string name="introduce">Introduce yourself as Trade Marketing Implementer</string>
+    <string name="ask">Ask permission for cascade of programs, survey and merchandising</string>
+
+
+    <!-- Customer Call (Store/Warehouse) Check List -->
+
+    <string name="checklist">Pre-Call Checklist</string>
+    <string name="check1">Check the OHD versus must-sell SKUs</string>
+    <string name="check2">Check the pricing of your merchandise versus SRP</string>
+    <string name="check3">Check the shelves and display position versus display standard</string>
+    <string name="check4">Check the inventory of your products in the warehouse and in the display area</string>
+    <string name="check5">Check competitors’ activities-pricing and new products</string>
+    <string name="productive">Productive Visit</string>
+
+    <string name="pcheck1">Have I defined my purpose for the visit?</string>
+    <string name="ocheck2">Have I set my SMART objectives for this visit?</string>
+    <string name="pcheck3">Have I reviewed customer profile? \nHave I leveraged customer insights for this visit?</string>
+    <string name="scheck4">Have I defined my strategy for this visit? \nHave I used previous information in my strategy?</string>
+    <string name="acheck5">Have I anticipated possible questions and issues? \nHave I identified possible risks and opportunities?</string>
+    <string name="newproductive">Is my visit productive?</string>
+
+    <string name="sales">Sales</string>
+    <string name="sales_amount">Sales Amount</string>
+    <string name="collection">Collection</string>
+    <string name="cash">Cash</string>
+    <string name="check">Check</string>
+    <string name="cm">Credit Memo</string>
+    <string name="check_num">Check No.</string>
+    <string name="check_amt">Check Amount</string>
+    <string name="cash_amount">Cash Amount</string>
+    <string name="deposit_amount">Deposit Amount</string>
+    <string name="cm_amount">Credit Memo Amount</string>
+
+
+    <string name="invoiceno">Invoice No.</string>
+    <string name="invoice_amount">Invoice Amount</string>
+    <string name="cm_num">CM No.</string>
+    <string name="bankinfo">Bank Info</string>
+    <string name="bank_deposit">Bank Deposit</string>
+    <string name="bankname">Bank Name</string>
+    <string name="bankbranch">Bank Branch</string>
+    <string name="txno">TX No.</string>
+
+    <string name="total_amount">Total Amount</string>
+
+    <string name="paid">Paid</string>
+
+    <string name="sono">REF No.</string>
+    <string name="orno">OR No.</string>
+    <string name="reason_no_production">Reason For No Production</string>
+    <string name="balance">Balance</string>
+    <string name="remarks">Remarks</string>
+    <string name="gremarks">General Remarks</string>
+    <string name="tap_remarks">Tap to enter remarks</string>
+
+
+
+
+    <!-- Mark Location -->
+    <string name="mark_location">Mark Location</string>
+    <string name="mark">Mark</string>
+    <string name="currentfix">Current Fix</string>
+
+    <!-- Signature -->
+    <string name="btn_clear">Clear</string>
+    <string name="btn_savesignature">Save</string>
+    <string name="signatures_dir">Signatures</string>
+    <string name="signature">Signature</string>
+    <string name="get_signature">Get Signature</string>
+    <string name="upsignature">Upload Signature</string>
+
+
+    <!-- Upload URLs -->
+    <string name="upload_msgs">https://moses.xpluscloud.com/xupload/messages</string>
+    <string name="upload_customers">https://moses.xpluscloud.com/xupload/customers</string>
+
+    <string name="sig_file_upload">https://moses.xpluscloud.com/xupload/signatures</string>
+    <string name="pic_file_upload">https://moses.xpluscloud.com/xupload/pictures</string>
+
+    <!-- Sync/Download Contacts URL  -->
+    <string name="url_download_contacts">http://xplustrack.com/secured/download_contacts</string>
+
+    <string name="upload_datas">https://moses.xpluscloud.com/xupload/sync_server</string>
+    <string name="appversion">https://moses.xpluscloud.com/app_version</string>
+    <string name="link">https://moses.xpluscloud.com</string>
+
+    <string name="pictures_dir">Pictures</string>
+    <string name="upload">Upload</string>
+
+    <!-- Expired -->
+    <string name="expired_msg">This App is outdated!</string>
+    <string name="download_msg">Download a new version at </string>
+    <string name="download_url">https://moses.xpluscloud.com</string>
+
+    <!-- SKU List -->
+    <string name="search_sku">Search SKU</string>
+    <string name="itemcode">ItemCode</string>
+    <string name="description">Description</string>
+
+    <!-- TRUCK -->
+    <string name="tName">Name</string>
+    <string name="tCapacity">Capacity</string>
+    <string name="tType">Type</string>
+    <string name="tQty">Units</string>
+
+    <string name="wQty">Quantity (bags)</string>
+
+
+    <!-- Sales Order -->
+    <string name="so_type">BOOKING</string>
+    <string name="pack">Packs</string>
+    <string name="price_per_pack">Price/Pack</string>
+    <string name="inventory_pack">Inventory (Pack)</string>
+    <string name="suggest_pack">Suggest (Pack)</string>
+    <string name="order_qty_pack">Order Qty (Pack)</string>
+    <string name="amt_pack">Amount (Pack)</string>
+
+    <string name="unit">UNITS</string>
+    <string name="price_per_unit">Price/Unit</string>
+    <string name="inventory_unit">Inventory (Unit)</string>
+    <string name="suggest_unit">Suggest (Unit)</string>
+    <string name="order_qty_unit">Order Qty (Unit)</string>
+    <string name="amt_unit">Amount (Unit)</string>
+
+    <string name="qty_pack">Qty Css</string>
+    <string name="qty_unit">Qty Pcs</string>
+
+    <string name="sp_pack">SP/Cs</string>
+    <string name="sp_unit">SP/Pc</string>
+
+    <string name="zero">0</string>
+    <string name="none"></string>
+    <string name="total">Total</string>
+    <string name="amount">Amount</string>
+
+    <!-- Common  -->
+    <string name="submit">Submit</string>
+    <string name="inventory">Inventory</string>
+    <string name="suggest">Sug. Order</string>
+    <string name="qty">Qty</string>
+    <string name="vol">Volume</string>
+    <string name="price">Price</string>
+    <string name="price1">DTR\nPrice</string>
+    <string name="price2">Retail\nPrice</string>
+    <string name="discount">%Disc</string>
+    <string name="ioh">IOH</string>
+    <string name="go">Go</string>
+
+    <string name="ret01">11kg</string>
+    <string name="ret02">2.7kg</string>
+    <string name="ret03">22kg</string>
+    <string name="ret04">50kg</string>
+    <string name="ret05">5kg</string>
+    <string name="ret06">7kg</string>
+
+    <string name="surend">Surrendered</string>
+
+
+    <string name="amt_desc">Amount </string>
+    <string name="pin_desc">PIN# </string>
+
+    <string name="action_resend">Resend</string>
+    <string name="action_view">More info</string>
+
+    <string name="sc_type">SO Type</string>
+    <string name="pckg">PCKG</string>
+    <string name="add_sku">Add SKU</string>
+
+    <string name="prno">PR No.</string>
+    <string name="add_pr">Add Product Return</string>
+
+    <!-- Reminders -->
+    <string name="new_reminders">Tools Checklist</string>
+    <string name="reminders">REVIEW PLANS</string>
+    <!-- 	<string name="rem1">Sales invoices for collection and Official Receipts on hand</string>
+        <string name="rem2">Other accountable forms on hand (merch return slip, trade letter, etc)</string>
+        <string name="rem3">Merchandising materials on hand</string>
+        <string name="rem4">Device fully charged and working</string>
+        <string name="rem5">GPS of device is activated</string> -->
+    <string name="rem1">HSSE Guidelines, Safety Gear</string>
+    <string name="rem2">Uniform, ID, Trade Letter</string>
+    <string name="rem3">Daily Call Plan</string>
+    <string name="rem4">Army Tool Kit, Promo Detailers</string>
+    <string name="rem5">Account Opening Forms</string>
+    <string name="rem6">Merchandising Materials</string>
+    <string name="rem7">Power bank and mobile phone fully charged</string>
+
+    <string name="orem">Up Sale/Leave Call</string>
+    <string name="orem1">Present/Offer new products</string>
+    <string name="orem2">Present all marketing programs</string>
+    <string name="orem3">Take competitor pricing and activities</string>
+    <string name="orem4">Thank the store owner</string>
+    <string name="orem5">Advise him of the next visit</string>
+    <string name="orem6">Merchandise the store</string>
+    <string name="orem10">Merchandising Checklist</string>
+
+    <string name="promo1">New Starter Pack</string>
+    <string name="promo2">Negosyo-pport</string>
+    <string name="promo3">HX8 Trade Offer</string>
+    <string name="promo4">Advance AX3 Price-off</string>
+    <string name="promo5">Advance Merchandising</string>
+    <string name="promo6">Rimula Merchandising</string>
+    <string name="promo7">Advance Save on Gas</string>
+    <string name="promo8">Advance Twin Pack</string>
+    <string name="promo9">Helix 6+1</string>
+    <string name="promo10">Helix 4+1</string>
+    <string name="promo11">Rimula 5+1 Promo</string>
+
+
+    <!-- String Arrays -->
+
+    <string-array name="sale_options">
+        <item>Cash Sales</item>
+        <item>Order Booking</item>
+    </string-array>
+
+
+    <string-array name="retail_list">
+        <item>Biscuit</item>
+        <item>Pasta</item>
+        <item>Oil</item>
+    </string-array>
+
+
+    <string name="delete_callsheet_item">Delete Callsheet Item</string>
+    <string name="delete_callsheet">Delete This Callsheet</string>
+    <string name="payment_received">Payment Received: </string>
+    <string name="blank"></string>
+
+    <string name="no_production_reason">Reason for No Production</string>
+    <string name="np_reason">Tap here to enter reason</string>
+    <string name="work">Work with</string>
+
+    <string name="blue">#FF0000CC</string>
+
+    <!-- CalendarView -->
+
+    <color name="text_color">#000</color>
+    <string name="prev">&lt;&lt;</string>
+    <string name="next">&gt;&gt;</string>
+    <string name="schedules">Schedules</string>
+
+    <!-- LOGIN FORM -->
+
+    <string name="user">Username</string>
+    <string name="pass">Password</string>
+    <string name="cpass">Confirm Password</string>
+    <string name="pHint">Hint</string>
+    <string name="login">Login</string>
+
+    <string name="newPass">New Password</string>
+    <string name="conPass">Confirm Password</string>
+    <string name="btSave">Save</string>
+    <string name="btCancel">Cancel</string>
+
+    <!-- CUSTOMER CHECK -->
+    <string name="ccheck1">Have I asked the right questions to engage customer? \nHave I asked the customer to gather warehouse  info?</string>
+    <string name="ccheck2">Have I uncovered issues and opportunities? \nHave I followed up programs for the customer?</string>
+    <string name="ccheck3">Have I offered solutions to address customer concerns? \nHave I presented my value proposition?</string>
+    <string name="ccheck4">Have I proactively pursued sales volume objective? \nHave I effectively provided benefits to advance sales?</string>
+    <string name="ccheck5">Have I summarized  key points of the discussion? \nHave I new insights? \nHave I captured issues and opportunities?</string>
+    <string name="ccheck6">Have I identified my action points? \nHave i idnetified the help I needed? from whom? \nHave I identified my next visit objectives?</string>
+
+    <!-- Customer New Details -->
+    <string name="owner">Opportunity Owner</string>
+    <string name="Purchaser">Other Data</string>
+    <string name="status">Status</string>
+    <string name="bday">Bday</string>
+    <string name="birthdate">Birthdate</string>
+    <string name="hobbies">H/I</string>
+    <string name="phone">Tel</string>
+    <string name="email2">Email</string>
+    <string name="btNewData">Complete Customer Data</string>
+
+
+    <!-- Customer Logistics -->
+    <string name="average">Average Daily Sales</string>
+    <string name="freq">Frequency of Delivery</string>
+    <string name="route">Delivery Route</string>
+    <string name="loan">Cylinder OnLoan</string>
+
+    <string name="no_trk">No.of trucks</string>
+    <string name="delivery">Delivery time</string>
+    <string name="supplier">Supplier</string>
+    <string name="warehouse">Warehouse Capacity</string>
+
+    <string name="truck">Truck Details</string>
+    <string name="logistics">Logistics</string>
+
+    <string name="p1">Civil Status</string>
+    <string name="p2">Birthdate</string>
+    <string name="p3">Hobbies and Interests</string>
+    <string name="p4">Phone Number</string>
+    <string name="p5">E-mail</string>
+
+    <!-- POPSA -->
+    <string name="cccheck1">P</string>
+    <string name="cccheck2">O</string>
+    <string name="cccheck3">P</string>
+    <string name="cccheck4">S</string>
+    <string name="cccheck5">A</string>
+
+    <!-- POPSA HINT -->
+    <!-- <string name="cccHint1">Purpose for the visit</string>
+    <string name="cccHint2">SMART objectives (Qualitative/Quantitative)</string>
+    <string name="cccHint3">Customer profile and Insights</string>
+    <string name="cccHint4">Visit Strategy</string>
+    <string name="cccHint5">Possible risks and opportunities</string> -->
+    <string name="cccHint1"><![CDATA[Defined <b><font color="#E88100">PURPOSE</font></b>]]></string>
+    <string name="cccHint2"><![CDATA[Set SMART <b><font color="#E88100">OBJECTIVES</font></b>]]></string>
+    <string name="cccHint3"><![CDATA[Reviewed customer <b><font color="#E88100">PROFILE</font></b> and insights]]></string>
+    <string name="cccHint4"><![CDATA[Determined call <b><font color="#E88100">STRATEGY</font></b>]]></string>
+    <string name="cccHint5"><![CDATA[<b><font color="#E88100">ANTICIPATE</font></b> possible risks and opportunities]]></string>
+    <string name="ss"><![CDATA[<b>Bold.</b> <u>Underlined.</u> <i>Italic.</i> <big>Big.</big> <small>Small</small>]]></string>
+
+    <!-- Merchandising CheckList -->
+    <string name="merchHeader">Merchandising Checklist</string>
+    <string name="merch1">Signage</string>
+    <string name="merch2">Stickers</string>
+    <string name="merch3">CPS (Plastic Streamer)</string>
+    <string name="merch4">Posters</string>
+    <string name="merch5">Wobblers</string>
+    <string name="merch6">Flyers</string>
+    <string name="merch7">Others</string>
+
+    <!-- GCM -->
+    <string name="error_config">Please set the %1$s constant and recompile the app.</string>
+    <string name="already_registered">Device is already registered on server.</string>
+    <string name="gcm_registered">From GCM: device successfully registered!</string>
+    <string name="gcm_unregistered">From GCM: device successfully unregistered!</string>
+    <string name="gcm_message">From GCM: you got message!</string>
+    <string name="gcm_error">From GCM: error (%1$s).</string>
+    <string name="gcm_recoverable_error">From GCM: recoverable error (%1$s).</string>
+    <string name="gcm_deleted">From GCM: server deleted %1$d pending messages!</string>
+    <string name="server_registering">Trying (attempt %1$d/%2$d) to register device on  Server.</string>
+    <string name="server_registered">From Server: successfully added device!</string>
+    <string name="server_unregistered">From Server: successfully removed device!</string>
+    <string name="server_register_error">Could not register device on Server after %1$d attempts.</string>
+    <string name="server_unregister_error">Could not unregister device on Server (%1$s).</string>
+    <string name="options_register">Register</string>
+    <string name="options_unregister">Unregister</string>
+    <string name="options_clear">Clear</string>
+    <string name="options_exit">Exit</string>
+
+    <string name="set_server_ready_gcm">Trying (attempt %1$d/%2$d) to set ready GCM device on Server.</string>
+
+    <string name="server_ready_set">From Server: Device successfully set to ready!</string>
+
+    <string name="info">We aim to meet the energy needs of society in ways that are economically, socially and environmentally viable, now and in the future. Learn about our business and people, which grew from a small shop in London nearly 200 years ago to become a major energy company.</string>
+    <string name="product_avp">Product AVP</string>
+    <string name="brochure">Brochure</string>
+
+
+    <string name="promo_remarks">Remarks\n
+				- No DSR visit since?\n
+				- Not selling shell</string>
+    <string name="sales_remarks">New Outlet\n
+				No DSR visit since?\n
+				Upsell/cross-sell of promo\n
+                Promo availment\n
+                New SKU</string>
+
+</resources>

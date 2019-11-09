@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:background="@color/shellyellow"
+        android:layout_height="wrap_content">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:background="@color/shellred"
+                android:textStyle="bold"
+                android:layout_margin="1dp"
+                android:textColor="#fff"
+                android:text="Reasons For Non Buying"/>
+
+            <TextView
+                android:layout_weight="20"
+                android:layout_margin="1dp"
+                android:background="@color/shellred"
+                android:gravity="center"
+                android:text="Translation"
+                android:textColor="#fff"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:textSize="20sp"
+                android:layout_margin="1dp"
+                android:text=" No Owner "/>
+            <TextView
+                android:layout_weight="30"
+                android:layout_margin="1dp"
+                android:textSize="20sp"
+                android:text="Wala ang May ari/Kailangan kausapin"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_marginTop="5dp"
+            android:background="@color/shellred"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:textSize="20sp"
+                android:textColor="#fff"
+                android:layout_margin="1dp"
+                android:text=" Sufficient Inventory "/>
+            <TextView
+                android:layout_weight="30"
+                android:layout_margin="1dp"
+                android:textColor="#fff"
+                android:textSize="20sp"
+                android:text="Puno pa ang imbentaryo"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:textSize="20sp"
+                android:layout_margin="1dp"
+                android:text=" Purchase From Other Source "/>
+            <TextView
+                android:layout_weight="30"
+                android:layout_margin="1dp"
+                android:textSize="20sp"
+                android:text="Nakabili sa ibang supplier"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:background="@color/shellred"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:textSize="20sp"
+                android:layout_margin="1dp"
+                android:textColor="#fff"
+                android:text=" Pending Delivery "/>
+            <TextView
+                android:layout_weight="30"
+                android:layout_margin="1dp"
+                android:textSize="20sp"
+                android:textColor="#fff"
+                android:text="Inaantay pa ang delivery ng order"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:textSize="20sp"
+                android:layout_margin="1dp"
+                android:text=" Bad Account "/>
+            <TextView
+                android:layout_weight="30"
+                android:layout_margin="1dp"
+                android:textSize="20sp"
+                android:text="Bad Account"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:background="@color/shellred"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:textSize="20sp"
+                android:layout_margin="1dp"
+                android:textColor="#fff"
+                android:text="  Pricing Issue  "/>
+            <TextView
+                android:layout_weight="30"
+                android:layout_margin="1dp"
+                android:textSize="20sp"
+                android:textColor="#fff"
+                android:text="Issue sa Presyo"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:textSize="20sp"
+                android:layout_margin="1dp"
+                android:text="  Marketing Issue  "/>
+            <TextView
+                android:layout_weight="30"
+                android:layout_margin="1dp"
+                android:textSize="20sp"
+                android:text="Issue sa Marketing"/>
+
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:background="@color/shellred"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:textSize="20sp"
+                android:textColor="#fff"
+                android:layout_margin="1dp"
+                android:text="  Dissatisfied Customer  "/>
+            <TextView
+                android:layout_weight="30"
+                android:layout_margin="1dp"
+                android:textColor="#fff"
+                android:textSize="20sp"
+                android:text="Hindi nasiyahan ang customer"/>
+
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:textSize="20sp"
+                android:layout_margin="1dp"
+                android:text="  Stored Closed  "/>
+            <TextView
+                android:layout_weight="30"
+                android:layout_margin="1dp"
+                android:textSize="20sp"
+                android:text="Saradong Outlet"/>
+
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:background="@color/shellred"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:textSize="20sp"
+                android:textColor="#fff"
+                android:layout_margin="1dp"
+                android:text="  Pending Collections  "/>
+            <TextView
+                android:layout_weight="30"
+                android:layout_margin="1dp"
+                android:textColor="#fff"
+                android:textSize="20sp"
+                android:text="May kailangan bayaran"/>
+
+        </TableRow>
+
+    </TableLayout>
+
+</ScrollView>

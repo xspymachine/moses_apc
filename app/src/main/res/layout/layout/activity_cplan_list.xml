@@ -1,0 +1,63 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:background="#000" >
+   
+    <TextView
+        android:id="@+id/tvBucket"        
+        android:layout_width="1dp"
+        android:layout_height="1dp"
+        android:visibility="gone" />
+    
+    <Button
+        android:id="@+id/dateButton"        
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="6dp"
+        android:layout_centerHorizontal="true"   
+        android:padding="6dp"
+        android:gravity="center"  
+        android:background="#006291"     
+        android:textColor="#fff"
+        android:textSize="16sp" />
+    <!-- 
+     <TextView
+        android:id="@+id/tvheader"        
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="6dp"
+        android:padding="6dp"
+        android:gravity="center"
+        android:background="#006291"
+        android:textColor="#fff"
+        android:textSize="16sp" />
+     -->
+     
+    <!-- Editext for Search -->
+    <EditText android:id="@+id/inputSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dateButton"
+        android:layout_alignParentLeft="true"        
+        android:padding="6dp"
+        android:layout_marginBottom="6dp"
+        android:hint="@string/search_customer"
+        android:background="@drawable/rounded_gray_border"
+        android:inputType="textVisiblePassword"/>
+  
+	
+    <ListView 
+    	android:id="@+id/android:list"
+    	android:dividerHeight="2dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/inputSearch" />
+    
+    <TextView
+        android:id="@+id/android:empty"
+        android:gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>

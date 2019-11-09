@@ -1,0 +1,647 @@
+--------- beginning of system
+11-23 16:04:57.253   717   882 I chatty  : uid=1000(system) AlarmManager expire 2 lines
+11-23 16:05:00.004   717   882 I DataShapingService: openLteGateSuccess = false
+11-23 16:05:06.715   717  1348 I ActivityManager: START u0 {act=android.media.action.IMAGE_CAPTURE cmp=com.evenwell.camera2/com.android.camera.CaptureActivity} from uid 10120
+11-23 16:05:06.751   717   738 I WindowManager: Focus moving from Window{eded3c6 u0 com.xpluscloud.mosesshell/com.xpluscloud.mosesshell.CustomerProfileActivity} to null
+11-23 16:05:07.090   717  1797 I WindowManager: Relayout Window{a406a47 u0 com.evenwell.camera2/com.android.camera.CaptureActivity}: oldVis=4 newVis=0 focusMayChange = true
+11-23 16:05:07.116   717   738 I WindowManager: Focus moving from null to Window{a406a47 u0 com.evenwell.camera2/com.android.camera.CaptureActivity}
+--------- beginning of main
+11-23 16:05:11.811   424 29270 I BWC     : MMDVFS SET 1
+11-23 16:05:11.811   424 29270 E BWC     : MTK_IOC_MMDVFS_CMD failed.:Operation not permitted
+11-23 16:05:11.812   424 29270 I iio/ifunc: [_config] path(1),CQ(1),en1(0x40203001),en2(0x80000003),dma(0x00000001),fmt(0x00001002),ctl(0x10000050),tcm_en(0x00000000),isIspOn(0x1),muxS2(0x40080104)
+11-23 16:05:11.812   424 29270 I iio/ifunc: [_config] [Pass1] EN1:Set(0x40203001),Clr(0x00000200),En2:Set(0x80000003),Clr(0x00020020),DMA:Set(0x00000001),Clr(0x00000400)
+11-23 16:05:11.861   424 29290 I MtkCam/MtkCamUtils: {CamProfile}[SingleShot::allocImgMem] : (0-th) ===> [start-->now: 39 ms]
+11-23 16:05:11.862   424 29290 I MtkCam/MtkCamUtils: {CamProfile}[SingleShot::allocImgMem] : (0-th) ===> [start-->now: 0 ms]
+11-23 16:05:11.885   424 29270 I IspDrv  : [cqRingBuf] [rtbc]va(0x0xb1db3420),pa(0x0x3100420),ctrl(0),dma(4),PA(0xaa00000),or_size(0),2or_size(0)
+11-23 16:05:11.885   424 29270 I IspDrv  : [cqRingBuf] [rtbc]or_size(1),2or_size(0)
+11-23 16:05:11.885   424 29270 I MtkCam/MtkCamUtils: {CamProfile}[SingleShot::createSensorRawImg] : (0-th) ===> [start-->now: 74 ms]
+11-23 16:05:11.885   424 29270 I TdriMgr : [flushSetting] E:Cq(5)
+11-23 16:05:11.885   424 29270 I TdriMgr : [flushSetting] X, ispCq:5
+11-23 16:05:11.888   424 29270 I TdriMgr : [flushSetting] E:Cq(5)
+11-23 16:05:11.888   424 29270 I TdriMgr : [flushSetting] X, ispCq:5
+11-23 16:05:11.889   424 29270 W iio/path: [flushCqDescriptor] WARNING: [warning]not support this cq(-1)
+11-23 16:05:11.889   424 29270 I iio/ifunc: [_enable] ctrl(4),id(4),ptr(0x0xacae5f70)
+11-23 16:05:11.889   424 29270 I iio/ifunc: [_enable] dma(4),size(1)
+11-23 16:05:11.891   424 29270 I iio/ifunc: [_enable] P1 dma_en(0x2b),addr(0xaa00000)(0x0)(0x0)(0x0)
+11-23 16:05:12.086   418 29254 I GenericSource: start
+11-23 16:05:12.089 28625 29250 I Camera  : handleMessage: 2
+11-23 16:05:12.090 28625 28625 I CAM_PhotoModule: PhotoModule--stopFlashAnimationAfterTakePicture
+11-23 16:05:12.098   418 29294 I OMXClient: Treble IOmx obtained
+11-23 16:05:12.099   422  1088 I OMXMaster: makeComponentInstance(OMX.google.vorbis.decoder) in omx@1.0-service process
+11-23 16:05:12.101   288   991 I BufferQueueProducer: [com.evenwell.camera2/com.android.camera.CaptureActivity#0](this:0xa9829000,id:321,api:1,p:28625,c:288) queueBuffer: fps=8.71 dur=1263.02 max=369.28 min=50.41
+11-23 16:05:12.102   424 29270 I iio/ifunc: [_disable] wait 1 VD till DMA stop tgStatus(0x1)
+11-23 16:05:12.102   424 29270 I iio/ifunc: [_disable] - P1 stop VF(0x1000),TG_IN(0x4040102),STX(0x0)
+11-23 16:05:12.102   424 29270 I iio/ifunc: [_disable] rtBufCtrl.ctrl(5)/id(4)/ptr(0xacae5f78)
+11-23 16:05:12.102   424 29270 I iio/ifunc: [_disable] rtBufCtrl.ctrl(5)/id(5)/ptr(0xacae5f78)
+11-23 16:05:12.103   424 29270 I iio/ifunc: [_disable] P1 start(0x0)
+11-23 16:05:12.103   424 29270 I MtkCam/MtkCamUtils: {CamProfile}[SingleShot::createSensorRawImg] : (1-th) ===> [start-->now: 292 ms] [last-->now: 218 ms]
+11-23 16:05:12.105   422  1088 E OMXNodeInstance: setConfig(0xb3220b40:google.vorbis.decoder, ConfigPriority(0x6f800002)) ERROR: Undefined(0x80001001)
+11-23 16:05:12.105   418 29294 I ACodec  : codec does not support config priority (err -2147483648)
+11-23 16:05:12.106   422  1088 E OMXNodeInstance: getConfig(0xb3220b40:google.vorbis.decoder, ConfigAndroidVendorExtension(0x6f100004)) ERROR: Undefined(0x80001001)
+11-23 16:05:12.108   418 29294 I MediaCodec: MediaCodec will operate in async mode
+11-23 16:05:12.112   270   270 W /system/bin/hw/android.hidl.allocator@1.0-service: ashmem_create_region(32768) returning hidl_memory(0xa7a982a0, 32768)
+11-23 16:05:12.114   270   270 W /system/bin/hw/android.hidl.allocator@1.0-service: ashmem_create_region(32768) returning hidl_memory(0xa7a982a0, 32768)
+11-23 16:05:12.116   288   288 I DisplayDevice: [Built-in Screen (type:0)] fps:9.502415,dur:1262.84,max:368.48,min:15.82
+11-23 16:05:12.116   288   288 I DisplayDevice: [stdout (type:2)] fps:9.107417,dur:1207.81,max:368.68,min:15.82
+11-23 16:05:12.118   270   270 W /system/bin/hw/android.hidl.allocator@1.0-service: ashmem_create_region(32768) returning hidl_memory(0xa7a982a0, 32768)
+11-23 16:05:12.127   270   270 I chatty  : uid=1000(system) allocator@1.0-s identical 4 lines
+11-23 16:05:12.128   270   270 W /system/bin/hw/android.hidl.allocator@1.0-service: ashmem_create_region(32768) returning hidl_memory(0xa7a982a0, 32768)
+11-23 16:05:12.132   424 29270 I TdriMgr : [flushSetting] E:Cq(5)
+11-23 16:05:12.132   424 29270 I TdriMgr : [flushSetting] X, ispCq:5
+11-23 16:05:12.133   424 29270 I MtkCam/MtkCamUtils: {CamProfile}[SingleShot::allocImgMem] : (0-th) ===> [start-->now: 0 ms]
+11-23 16:05:12.134   424 29270 I MtkCam/MtkCamUtils: {CamProfile}[SingleShot::allocImgMem] : (0-th) ===> [start-->now: 0 ms]
+11-23 16:05:12.136   424 29270 I iio/ifunc: [createInstance] ScenarioID: 1.
+11-23 16:05:12.136   424 29270 I iio/ifunc: [getInstance] ScenarioID: 1.
+11-23 16:05:12.136   424 29270 I iio/ifunc: [createMdpMgr] +
+11-23 16:05:12.136   424 29270 I iio/ifunc: [init] mInitCount(1) GdmaMode: 0.
+11-23 16:05:12.136   424 29270 I IspDrv  : [GlobalPipeCountInc] +
+11-23 16:05:12.136   424 29270 I IspDrv  : [GlobalPipeCountInc] -,Result(1),count(2)
+11-23 16:05:12.137   424 29270 I iio/ifunc: [_config] path(2),CQ(4),en1(0x40300000),en2(0x38a00003),dma(0x00280080),fmt(0x00000103),ctl(0x00000050),tcm_en(0x90000000),isIspOn(0x1),muxS2(0x0)
+11-23 16:05:12.137   424 29270 I MdpMgr  : [init] +,cqIndex(4),sceID(3)
+11-23 16:05:12.137   424 29270 I MtkCam/MtkCamUtils: {CamProfile}[SingleShot::createYuvRawImg] : (0-th) ===> [start-->now: 2 ms]
+11-23 16:05:12.145   270   270 W /system/bin/hw/android.hidl.allocator@1.0-service: ashmem_create_region(32768) returning hidl_memory(0xa7a982a0, 32768)
+11-23 16:05:12.147   270   270 I chatty  : uid=1000(system) allocator@1.0-s identical 2 lines
+11-23 16:05:12.148   270   270 W /system/bin/hw/android.hidl.allocator@1.0-service: ashmem_create_region(32768) returning hidl_memory(0xa7a982a0, 32768)
+11-23 16:05:12.161   281   355 I vendor.mediatek.hardware.power@1.1-impl: mtkCusPowerHint hint:0, data:268435455
+11-23 16:05:12.162   281   312 I powerd  : [powerd_req] POWER_MSG_MTK_CUS_HINT: hint:0, hdl:36, data:268435455
+11-23 16:05:12.162   281   312 I libPerfService: perfCusUserScnEnable - handle:36
+11-23 16:05:12.162   281   312 I libPerfService: 36: legacy set: 2 -1
+11-23 16:05:12.182   424 29270 W MDP     : DpIsp: 0xa9f83500, scenario 9, dst1 40 ms
+11-23 16:05:12.185   424 29270 W MDP     : DpIsp: 0xa9f83500, src 47 ms
+11-23 16:05:12.187   424 29270 I MtkCam/MtkCamUtils: {CamProfile}[SingleShot::createYuvRawImg] : (1-th) ===> [start-->now: 50 ms] [last-->now: 48 ms]
+11-23 16:05:12.187   424 29270 I IspDrv  : [GlobalPipeCountDec] +
+11-23 16:05:12.188   424 29270 I IspDrv  : [GlobalPipeCountDec] -,Result(1),count(1)
+11-23 16:05:12.188   424 29270 I MtkCam/MtkCamUtils: {CamProfile}[SingleShot::createYuvRawImg] : (2-th) ===> [start-->now: 52 ms] [last-->now: 2 ms]
+11-23 16:05:12.190   418 29293 I NuPlayerDecoder: [audio] saw output EOS
+11-23 16:05:12.191   424 29270 I MtkCam/MtkCamUtils: {CamProfile}[SingleShot::allocImgMem] : (0-th) ===> [start-->now: 2 ms]
+11-23 16:05:12.191   424 29270 I CamShot/SImager: [setFormat] format = 0x2008
+11-23 16:05:12.191   424 29270 I CamShot/SImager: [setRotation] rotation = 0
+11-23 16:05:12.191   424 29270 I CamShot/SImager: [setFlip] u4Flip = 0x0
+11-23 16:05:12.191   424 29270 I CamShot/SImager: [setResize] size (w, h) = (1920, 2560)
+11-23 16:05:12.191   424 29270 I CamShot/SImager: [setROI] roi (x, y, w, h) = (0, 0, 1920, 2560)
+11-23 16:05:12.192   424 29270 I MtkCam/MtkCamUtils: {CamProfile}[ImageTransform::execute] : (0-th) ===> [start-->now: 0 ms]
+11-23 16:05:12.218 28389 29247 V FA      : Inactivity, disconnecting from the service
+11-23 16:05:12.223   424 29270 I MtkCam/MtkCamUtils: {CamProfile}[ImageTransform::execute] : (1-th) ===> [start-->now: 31 ms] [last-->now: 31 ms]
+11-23 16:05:12.241   281   355 I vendor.mediatek.hardware.power@1.1-impl: querySysInfo cmd:1, param:0
+11-23 16:05:12.241   281   312 I powerd  : [powerd_req] POWER_MSG_QUERY_INFO: cmd:1, param:0
+11-23 16:05:12.241   281   312 I libPerfService: perfUserGetCapability - cmd:1, id:0, value:1
+11-23 16:05:12.242   281   312 I powerd  : [powerd_req] POWER_MSG_SCN_REG: pid:424, uid:1047
+11-23 16:05:12.242   281   312 E libPerfService: Could not open '/proc/424/comm'
+11-23 16:05:12.242   281   312 E libPerfService: error : 2, No such file or directory
+11-23 16:05:12.242   281   355 I vendor.mediatek.hardware.power@1.1-impl: scnReg hdl:40
+11-23 16:05:12.243   281   355 I vendor.mediatek.hardware.power@1.1-impl: querySysInfo cmd:2, param:0
+11-23 16:05:12.244   281   312 I powerd  : [powerd_req] POWER_MSG_QUERY_INFO: cmd:2, param:0
+11-23 16:05:12.244   281   312 I libPerfService: perfUserGetCapability - cmd:2, id:0, value:4
+11-23 16:05:12.245   281   355 I vendor.mediatek.hardware.power@1.1-impl: querySysInfo cmd:4, param:0
+11-23 16:05:12.245   281   312 I powerd  : [powerd_req] POWER_MSG_QUERY_INFO: cmd:4, param:0
+11-23 16:05:12.245   281   312 I libPerfService: perfUserGetCapability - cmd:4, id:0, value:1092000
+11-23 16:05:12.246   281   312 I powerd  : [powerd_req] POWER_MSG_SCN_CONFIG: hdl:40, cmd:1, param1:0, param2:4
+11-23 16:05:12.247   281   312 I powerd  : [powerd_req] POWER_MSG_SCN_CONFIG: hdl:40, cmd:3, param1:0, param2:1092000
+11-23 16:05:12.249   281   855 I vendor.mediatek.hardware.power@1.1-impl: scnEnable hdl:40, timeout:0
+11-23 16:05:12.250   281   312 I powerd  : [powerd_req] POWER_MSG_SCN_ENABLE: hdl:40, timeout:0
+11-23 16:05:12.250   281   312 I libPerfService: perfUserScnEnable - handle:40
+11-23 16:05:12.250   281   312 I libPerfService: 40: legacy set freq: 1092000 -1
+11-23 16:05:12.251   281   312 I libPerfService: 40: legacy set: 4 -1
+11-23 16:05:12.346   717   908 I NetworkStatsRecorder: recordSnapshotLocked: ident[[{type=WIFI, subType=COMBINED, networkId="XPLUS_A88", metered=false}]]
+11-23 16:05:12.346   717   908 W NetworkStatsRecorder: unknown interfaces [lo], ignoring those stats
+11-23 16:05:12.346   717   908 I NetworkStatsRecorder: recordSnapshotLocked: ident[[{type=WIFI, subType=COMBINED, networkId="XPLUS_A88", metered=false}]]
+11-23 16:05:12.346   717   908 W NetworkStatsRecorder: unknown interfaces [lo], ignoring those stats
+11-23 16:05:12.347   717   908 I NetworkStatsRecorder: recordSnapshotLocked: ident[[{type=WIFI, subType=COMBINED, networkId="XPLUS_A88", metered=false}]]
+11-23 16:05:12.347   717   908 I chatty  : uid=1000(system) NetworkStats identical 2 lines
+11-23 16:05:12.347   717   908 I NetworkStatsRecorder: recordSnapshotLocked: ident[[{type=WIFI, subType=COMBINED, networkId="XPLUS_A88", metered=false}]]
+11-23 16:05:12.347   717   908 W NetworkStatsRecorder: unknown interfaces [lo], ignoring those stats
+11-23 16:05:12.348   717   908 I NetworkStatsRecorder: recordSnapshotLocked: ident[[{type=WIFI, subType=COMBINED, networkId="XPLUS_A88", metered=false}]]
+11-23 16:05:12.348   717   908 I NetworkStatsRecorder: recordSnapshotLocked: ident[[{type=WIFI, subType=COMBINED, networkId="XPLUS_A88", metered=false}]]
+11-23 16:05:12.348   717   908 W NetworkStatsRecorder: unknown interfaces [lo], ignoring those stats
+11-23 16:05:12.448   281   355 I vendor.mediatek.hardware.power@1.1-impl: scnDisable hdl:40
+11-23 16:05:12.449   281   312 I libPerfService: 40: legacy set: 2 -1
+11-23 16:05:12.449   281   312 I libPerfService: 40: legacy set freq: -1 -1
+11-23 16:05:12.452   281   355 I vendor.mediatek.hardware.power@1.1-impl: scnUnreg hdl:40
+11-23 16:05:12.452   424 29270 I CamShot/SImager: [setFormat] format = 0x14
+11-23 16:05:12.452   424 29270 I CamShot/SImager: [setRotation] rotation = 0
+11-23 16:05:12.452   424 29270 I CamShot/SImager: [setFlip] u4Flip = 0x0
+11-23 16:05:12.452   281   312 I powerd  : [powerd_req] POWER_MSG_SCN_UNREG: hdl:40
+11-23 16:05:12.452   424 29270 I CamShot/SImager: [setResize] size (w, h) = (1920, 2560)
+11-23 16:05:12.452   424 29270 I CamShot/SImager: [setROI] roi (x, y, w, h) = (0, 0, 1920, 2560)
+11-23 16:05:12.452   281   312 I libPerfService: perfUserUnregScn - handle:40
+11-23 16:05:12.453   424 29270 I MtkCam/MtkCamUtils: {CamProfile}[ImageTransform::execute] : (0-th) ===> [start-->now: 0 ms]
+11-23 16:05:12.482   424 29270 I MtkCam/MtkCamUtils: {CamProfile}[ImageTransform::execute] : (1-th) ===> [start-->now: 29 ms] [last-->now: 29 ms]
+11-23 16:05:12.485   424 29270 I CamShot/SImager: [setStrideAlign] stride align = (1920, 0, 0)
+11-23 16:05:12.485   424 29270 I CamShot/SImager: [setFormat] format = 0x2300
+11-23 16:05:12.485   424 29270 I CamShot/SImager: [setRotation] rotation = 0
+11-23 16:05:12.485   424 29270 I CamShot/SImager: [setFlip] u4Flip = 0x0
+11-23 16:05:12.485   424 29270 I CamShot/SImager: [setResize] size (w, h) = (1920, 2560)
+11-23 16:05:12.485   424 29270 I CamShot/SImager: [setEncodeParam] enc param (SOI, Quality) = (0, 95)
+11-23 16:05:12.485   424 29270 I CamShot/SImager: [setEncodeParam] enc param (SOI, Quality) = (0, 95)
+11-23 16:05:12.485   424 29270 I CamShot/SImager: [setROI] roi (x, y, w, h) = (0, 0, 1920, 2560)
+11-23 16:05:12.486   424 29268 W MtkCam/DisplayClient: [handleReturnBuffers] time inversion!(-182261466)
+11-23 16:05:12.492   424 29270 W JpgEncHal: config: w 780, h a00, pw 780, ph a00, format 0, Q 3, Exif 1, dri 0!! 
+11-23 16:05:12.492   424 29270 W JpgEncHal: config: 420 0, Src_Y 8200000, Src_C 0, imgS f00, memS f00, DU 257ff!!
+11-23 16:05:12.492   424 29270 W JpgEncHal: config: dst_base aa00000, dst_of 0, dst_ms 0, m4u 0!!
+11-23 16:05:12.522   422   500 I BufferQueueProducer: [GraphicBufferSource](this:0xb326e000,id:3,api:1,p:422,c:422) queueBuffer: fps=5.70 dur=1228.01 max=402.37 min=53.29
+11-23 16:05:12.524   424 29270 I MtkCam/MtkCamUtils: {CamProfile}[JpegCodec::encode] : (0-th) ===> [start-->now: 39 ms]
+11-23 16:05:12.525   424 29270 I MtkCam/MtkCamUtils: {CamProfile}[SingleShot::createJpegImg] : (0-th) ===> [start-->now: 39 ms]
+11-23 16:05:12.525   424 29270 I CamShot/SImager: [setStrideAlign] stride align = (640, 320, 320)
+11-23 16:05:12.525   424 29270 I CamShot/SImager: [setFormat] format = 0x2300
+11-23 16:05:12.525   424 29270 I CamShot/SImager: [setRotation] rotation = 90
+11-23 16:05:12.525   424 29270 I CamShot/SImager: [setFlip] u4Flip = 0x0
+11-23 16:05:12.525   424 29270 I CamShot/SImager: [setResize] size (w, h) = (160, 128)
+11-23 16:05:12.525   424 29270 I CamShot/SImager: [setEncodeParam] enc param (SOI, Quality) = (1, 100)
+11-23 16:05:12.525   424 29270 I CamShot/SImager: [setEncodeParam] enc param (SOI, Quality) = (1, 100)
+11-23 16:05:12.525   424 29270 I CamShot/SImager: [setROI] roi (x, y, w, h) = (0, 0, 640, 480)
+11-23 16:05:12.526   424 29270 I MtkCam/MtkCamUtils: {CamProfile}[ImageTransform::execute] : (0-th) ===> [start-->now: 0 ms]
+11-23 16:05:12.529   424 29270 I MtkCam/MtkCamUtils: {CamProfile}[ImageTransform::execute] : (1-th) ===> [start-->now: 3 ms] [last-->now: 3 ms]
+11-23 16:05:12.530   424 29270 W JpgEncHal: config: w 80, h a0, pw 80, ph a0, format 0, Q 3, Exif 0, dri 0!! 
+11-23 16:05:12.530   424 29270 W JpgEncHal: config: 420 0, Src_Y 4000000, Src_C 0, imgS 100, memS 100, DU 27f!!
+11-23 16:05:12.530   424 29270 W JpgEncHal: config: dst_base 5000000, dst_of 0, dst_ms 0, m4u 0!!
+11-23 16:05:12.531   424 29270 I MtkCam/MtkCamUtils: {CamProfile}[JpegCodec::encode] : (0-th) ===> [start-->now: 1 ms]
+11-23 16:05:12.531   424 29270 I MtkCam/MtkCamUtils: {CamProfile}[SingleShot::createJpegImg] : (0-th) ===> [start-->now: 6 ms]
+11-23 16:05:12.532   424 29270 I CamExif : (29270)[init] u4GpsIsOn(0), u4GPSAltitude(0), uGPSLatitude(), uGPSLongitude(), uGPSTimeStamp(), uGPSProcessingMethod(), u4Orientation(0), u4Facing(0)
+11-23 16:05:12.532   424 29270 I CamExif : (29270)[init] u4ZoomRatio(100), u4ImgIndex(0), u4GroupId(0), u4FocusH/L(0/0), u4RefocusPos(0), uJpsFileName(), u4ShotMode(0), u4CamMode(5), bStereoCam(0)
+11-23 16:05:12.532   424 29270 I CamExif : (29270)[set3AEXIFInfo] FNumber(24/10) FocalLength(350/100) SceneMode(0) AWBMode(1) flash(30000) AEMeterMode(0) AEExpBias(0) AEExpTime(50000) ISO(0) RealISO(799)
+11-23 16:05:12.532   424 29270 I CamExif : (29270)[queryExifApp1Info] strDateTime(2018:11:23 16:05:12), strSubSecTime(53)
+11-23 16:05:12.532   424 29270 I CamExif : (29270)[determineExifOrientation] (u4DeviceOrientation, bIsFacing, bIsFacingFlip, result)=(0, 0, 0, 1)
+11-23 16:05:12.532   424 29270 I CamExif : (29270)[queryExifApp1Info] property: make(0), model(Nokia 1)
+11-23 16:05:12.533   424 29270 I CamExifDebug: (29270)[sendCommand] Set: ID_AAA(0x0004), Size(47920), Addr(0x2897092192)
+11-23 16:05:12.533   424 29270 I CamExifDebug: (29270)[sendCommand] Set: ID_SHAD/RESERVE1(0x0100), Size(2408), Addr(0x2897092192)
+11-23 16:05:12.533   424 29270 I CamExifDebug: (29270)[sendCommand] Set: ID_ISP(0x0008), Size(3936), Addr(0x2897092192)
+11-23 16:05:12.533   424 29270 I CamExifDebug: (29270)[sendCommand] Set: ID_SENSOR(0x0080), Size(176), Addr(0x2897108624)
+11-23 16:05:12.533   424 29270 I CamExifDebug: (29270)[appendDebugExif] enableDbgInfo(1), dbgProperty(-1)
+11-23 16:05:12.533   424 29270 I CamExifDebug: (29270)[sendCommand] Set: ID_COMMON(0x0010), Size(80), Addr(0x2897102944)
+11-23 16:05:12.533   424 29270 I CamExifDebug: (29270)[getCamDebugInfo] Get: ID_COMMON(0x0010), Size(80), Addr(0x2974948432)
+11-23 16:05:12.533   424 29270 I CamExifDebug: (29270)[getCamDebugInfo] Get: ID_SENSOR(0x0080), Size(176), Addr(0x2974948424)
+11-23 16:05:12.533   424 29270 I CamExifDebug: (29270)[getCamDebugInfo] Get: ID_SHAD/RESERVE1(0x0100), Size(2408), Addr(0x2974948408)
+11-23 16:05:12.533   424 29270 I CamExifDebug: (29270)[appendDebugInfo] Get: ID_AAA(0x0004), Index(0), Size(47920), Addr(0x2841132992), APP6
+11-23 16:05:12.534   424 29270 I CamExifDebug: (29270)[appendDebugInfo] Get: ID_ISP(0x0008), Index(2), Size(3936), Addr(0x2851966976), APP7
+11-23 16:05:12.535   270   270 W /system/bin/hw/android.hidl.allocator@1.0-service: ashmem_create_region(2072576) returning hidl_memory(0xa7a982a0, 2072576)
+11-23 16:05:12.535 28625 29250 I Camera  : handleMessage: 128
+11-23 16:05:12.543   424 29270 I MtkCam/MtkCamUtils: {CamProfile}[SingleShot::[startOne][mem->Mem]] : (0-th) ===> [start-->now: 409 ms]
+11-23 16:05:12.543   424 29306 I MtkCam/CamAdapter: (29306)[registerOneShotObserver] (0xabfb38f8)
+11-23 16:05:12.543   424 29270 I IspDrv  : [GlobalPipeCountDec] +
+11-23 16:05:12.543   424 29270 I IspDrv  : [GlobalPipeCountDec] -,Result(1),count(0)
+11-23 16:05:12.543   424 29270 I CdpDrv  : [Uninit] +,mInitCount(1),mSysramUsageCount(1)
+11-23 16:05:12.543   424 29270 I CdpDrv  : [ProfilingPrint] [Event_CdpDrv_Uninit] atomic_dec:(0-th) ===> [start-->now: 0.053000 ms]
+11-23 16:05:12.543   424 29270 I CdpDrv  : [FreeRotationBuf] +,mSysramUsageCount(1)
+11-23 16:05:12.543   424 29270 I CdpDrv  : [FreeRotationBuf] - ,ret(1),mSysramUsageCount(0)
+11-23 16:05:12.543   424 29270 I CdpDrv  : [ProfilingPrint] [Event_CdpDrv_Uninit] FreeRotationBuf:(1-th) ===> [start-->now: 0.149000 ms] [last-->now: 0.096000 ms]
+11-23 16:05:12.543   424 29270 I CdpDrv  : [ProfilingPrint] [Event_CdpDrv_Uninit] Close SYSRAM kernel drv:(2-th) ===> [start-->now: 0.204000 ms] [last-->now: 0.055000 ms]
+11-23 16:05:12.543   424 29270 I CdpDrv  : [Uninit] -.Result(1),mInitCount(0),mFdSysram(52),mSysramUsageCount(0)
+11-23 16:05:12.543   424 29270 I CdpDrv  : [ProfilingPrint] [Event_CdpDrv_Uninit] Exit:(3-th) ===> [start-->now: 0.273000 ms] [last-->now: 0.069000 ms]
+11-23 16:05:12.543   424 29270 I CdpDrv  : [DestroyInstance] +
+11-23 16:05:12.543   424 29270 I TpipeDrv: [TpipeDrv][uninit] X, mInitCount = 1
+11-23 16:05:12.543   424 29270 I iio/ifunc: [uninit] [Tpipe free]q(0),va/pa(0x0, 0x00000000)
+11-23 16:05:12.544   424 29270 I iio/ifunc: [uninit] [Tpipe free]q(1),va/pa(0x0, 0x00000000)
+11-23 16:05:12.544   424 29270 I iio/ifunc: [uninit] [Tpipe free]q(2),va/pa(0x0, 0x00000000)
+11-23 16:05:12.544   424 29270 I iio/ifunc: [uninit] [Tpipe free]q(3),va/pa(0x0, 0x00000000)
+11-23 16:05:12.544   424 29270 I iio/ifunc: [uninit] [Tpipe free]q(4),va/pa(0x0, 0x00000000)
+11-23 16:05:12.544   424 29270 I iio/ifunc: [uninit] [Tpipe free]q(5),va/pa(0x0, 0x00000000)
+11-23 16:05:12.544   424 29270 I iio/ifunc: [uninit] [Tpipe free]q(6),va/pa(0x0, 0x00000000)
+11-23 16:05:12.544   424 29270 I iio/ifunc: [uninit] [Tpipe free]q(7),va/pa(0x0, 0x00000000)
+11-23 16:05:12.544   424 29270 I IspDrv  : [uninit] +,mInitCount(9)
+11-23 16:05:12.544   424 29270 I IspDrv  : [ProfilingPrint] [Event_IspDrv_Uninit] atomic_dec:(0-th) ===> [start-->now: 0.061000 ms]
+11-23 16:05:12.544   424 29270 I IspDrv  : [uninit] -,ret(1),mInitCount(8)
+11-23 16:05:12.544   424 29270 I IspDrv  : [ProfilingPrint] [Event_IspDrv_Uninit] Exit:(1-th) ===> [start-->now: 0.120000 ms] [last-->now: 0.059000 ms]
+11-23 16:05:12.544   424 29270 I iio/ifunc: [uninit] mInitCount(0)
+11-23 16:05:12.544   424 29270 I MtkCam/MtkCamUtils: {CamProfile}[SingleShot::[startOne][sensor->mem]] : (0-th) ===> [start-->now: 779 ms]
+11-23 16:05:12.545   424 29270 I MtkCam/MtkCamUtils: {CamProfile}[SingleShot::freeShotMem] : (0-th) ===> [start-->now: 0 ms]
+11-23 16:05:12.545   424 29270 I MtkCam/CamAdapter: (29270)[registerOneShotObserver] (0xacae67e0)
+11-23 16:05:12.545   424 29270 I MtkCam/CamAdapter: (29270)[transitState] StateCapture --> StateIdle
+11-23 16:05:12.545   424 29270 I MtkCam/CamAdapter: (29270)[transitState] (0xabfb38f8)
+11-23 16:05:12.545   424 29270 I MtkCam/CamAdapter: (29270)[transitState] (0xacae67e0)
+11-23 16:05:12.551   424 29306 W MtkCam/CamAdapter: (29306)[isState] current/waited=StateIdle/StatePreview
+11-23 16:05:12.558 28625 29250 I Camera  : handleMessage: 256
+11-23 16:05:12.559 28625 28625 I CAM_PhotoModule: onPictureTaken
+11-23 16:05:12.560 28625 28625 I CAM_PhotoModule: stopPreview
+11-23 16:05:12.566   424   956 I mtkcam-dev1: 0[CameraDevice1Base::stopPreview] +
+11-23 16:05:12.566   424   956 W MtkCam/CamAdapter: (956)[isState] current/waited=StateIdle/StatePreview
+11-23 16:05:12.567   424   956 W MtkCam/CamAdapter: (956)[isState] current/waited=StateIdle/StateCapture
+11-23 16:05:12.567   424   956 W MtkCam/CamAdapter: (956)[isState] current/waited=StateIdle/StatePreCapture
+11-23 16:05:12.567   424   956 W MtkCam/CamAdapter: (956)[isState] current/waited=StateIdle/StatePreviewCapture
+11-23 16:05:12.567   424   956 W MtkCam/CamAdapter: (956)(StateIdle)[op_UnSupport] onStopPreview
+11-23 16:05:12.567   424   956 I MtkCam/CamAdapter: (MtkZsd)[BaseCamAdapter::onImgBufProviderDestroyed] id=4, ImgBufProvider=0x0
+11-23 16:05:12.567   424   956 W MtkCam/CamClient/FDClient: (956)[stopFaceDetection] FD was not running
+11-23 16:05:12.567   424   956 E MtkCam/CamClient/PREFEATUREBASE: (956)[onStopFeature] FeatureClient==NULL! (onStopFeature){#451:vendor/mediatek/proprietary/hardware/mtkcam/legacy/v1/client/CamClient/PreviewFeature/PreviewFeatureBase.cpp}
+11-23 16:05:12.567   424   956 W MtkCam/CamAdapter: (956)(StateIdle)[op_UnSupport] onCancelCapture
+11-23 16:05:12.567   424 29268 W MtkCam/DisplayClient: [waitAndHandleReturnBuffers] vQueNode.empty()
+11-23 16:05:12.567   424 29268 I MtkCam/DisplayClient: [onThreadLoop] Display disabled
+11-23 16:05:12.567   424 29268 W MtkCam/MtkCamUtils: (CameraDisplay@ImgBufQue)[stopProcessor] intent to clear Done Que: size(3)!=0
+11-23 16:05:12.567   424   956 W MtkCam/CapBufMgr: [freeBuffer] to free cnt(0) < total cnt(3)
+11-23 16:05:12.569   424 29268 I MtkCam/Utils: {CamProfile}[DisplayClient::cancelPrvOps] mpStreamOps->cancel_buffer, rpImgBuf(0xb1517010,0xac979000): (2-th) ===> ( overtime > 0 ms) [start-->now: 1 ms] [last-->now: 1 ms]
+11-23 16:05:12.571   424   956 I mtkcam-dev1: 0[CameraDevice1Base::stopPreview] -
+11-23 16:05:12.592 28625 28625 I CAM_PhotoModule: onPictureTaken done
+11-23 16:05:12.691  2342  2363 I MAL-Daemon:  (      mfi_task_bootstrap,  400) mfi_task_bootstrap(): an event EVENT_ATMNGR_URC(18) incoming from FD 29!!
+11-23 16:05:12.691  2342  2394 I MAL-RDS :  (         rds_ru_urc_hdlr, 2271) [RDS-I][RDS][rds_ru_urc_hdlr] get URC data: +ECSQ: 11,37,1,1,1,-58,-416,7,3
+11-23 16:05:12.692  2342  2394 I MAL-RDS :  (          rds_ru_rpl_gen, 7629) [RDS-I][RU][rds_ru_rpl_gen][RDS] Current policy: fgimsolte_en<0>, fgwfc_en<0>, erdspolicy<3>,||Threshold i4wifirssih<-75>, i4wifirssil<-85>, i4wifirssih_ho<-78>, i4wifirssil_ho<-88>, i4wifisnrh<10>, i4wifisnrl<6>||Threshold i4ltersrph<-106>, i4ltersrpm<-111>, i4ltersrpl<-116>, i4ltersrqh<5>, i4ltersrqm<3>, i4ltersrql<1>||Threshold i4utranrscph<-104>, i4utranrscpl<-110>, i4gsmrssih<-94>, i4gsmrssil<-102>||current rds ru status: i4wifirssi<-34>, i4wifisnr<9999>, i4ltersrp<-104>, i4ltersrq<11>, i4utranrscp<-98>, i4gsmrssi<-141>, u4active_ran<65539>, flight_mode_activating<0>, ims_roamb<-1>, mms_roamb<-1>||current wifi backhaul : rtp_plr<0>, rtp_jitter<0>, ping_ind<0>||pcscf acc stat : volte<1>, wfc<1> || wifi acc_ctrl:<0>, || current MD stat : MD1 roam <0>, ||Call stat : IR92<0>, IR94<0>, SMS over IP<0>
+11-23 16:05:12.698  1039  1223 I NetworkController.MobileSignalController(1): updateVoiceNetworkType voiceNetType: 13 mCurrentState.connected: true
+11-23 16:05:12.713   281   355 I vendor.mediatek.hardware.power@1.1-impl: querySysInfo cmd:6, param:0
+11-23 16:05:12.714   281   312 I powerd  : [powerd_req] POWER_MSG_QUERY_INFO: cmd:6, param:0
+11-23 16:05:12.714   281   312 I libPerfService: perfUserGetCapability - cmd:6, id:0, value:28625
+11-23 16:05:12.827  2342  2394 I MAL-RDS :  (  rds_ru_wifi_status_ind, 1744) [RDS-I][RU][EVENT_RU_WS_WIFI_STATUS_IND] fgwifi_en:1(no use) i4wifirssi:-37 i4wifisnr:9999
+11-23 16:05:12.824  2342  2342 W mtkmal  : type=1400 audit(0.0:49545): avc: denied { open } for path="/proc/2342/net/dev" dev="proc" ino=4026533568 scontext=u:r:mtkmal:s0 tcontext=u:object_r:proc_net:s0 tclass=file permissive=0
+11-23 16:05:12.827  2342  2394 I MAL-RDS :  (          rds_ru_rpl_gen, 7629) [RDS-I][RU][rds_ru_rpl_gen][RDS] Current policy: fgimsolte_en<0>, fgwfc_en<0>, erdspolicy<3>,||Threshold i4wifirssih<-75>, i4wifirssil<-85>, i4wifirssih_ho<-78>, i4wifirssil_ho<-88>, i4wifisnrh<10>, i4wifisnrl<6>||Threshold i4ltersrph<-106>, i4ltersrpm<-111>, i4ltersrpl<-116>, i4ltersrqh<5>, i4ltersrqm<3>, i4ltersrql<1>||Threshold i4utranrscph<-104>, i4utranrscpl<-110>, i4gsmrssih<-94>, i4gsmrssil<-102>||current rds ru status: i4wifirssi<-37>, i4wifisnr<9999>, i4ltersrp<-104>, i4ltersrq<11>, i4utranrscp<-98>, i4gsmrssi<-141>, u4active_ran<65539>, flight_mode_activating<0>, ims_roamb<-1>, mms_roamb<-1>||current wifi backhaul : rtp_plr<0>, rtp_jitter<0>, ping_ind<0>||pcscf acc stat : volte<1>, wfc<1> || wifi acc_ctrl:<0>, || current MD stat : MD1 roam <0>, ||Call stat : IR92<0>, IR94<0>, SMS over IP<0>
+11-23 16:05:13.877   288   991 I BufferQueueProducer: [com.evenwell.camera2/com.android.camera.CaptureActivity#0](this:0xa9829000,id:321,api:1,p:28625,c:288) queueBuffer: fps=2.25 dur=1776.80 max=1067.28 min=104.80
+11-23 16:05:13.898   288   288 I DisplayDevice: [Built-in Screen (type:0)] fps:2.244644,dur:1782.02,max:1076.70,min:100.90
+11-23 16:05:13.898   288   288 I DisplayDevice: [stdout (type:2)] fps:2.244651,dur:1782.01,max:1076.90,min:100.90
+11-23 16:05:13.901   422   500 I BufferQueueProducer: [GraphicBufferSource](this:0xb326e000,id:3,api:1,p:422,c:422) queueBuffer: fps=2.18 dur=1379.19 max=1076.97 min=101.09
+11-23 16:05:13.997 28625 28625 I CAM_PhotoModule: onCaptureDone
+11-23 16:05:14.018   271   712 E VT HIDL : [IVT] [VT THREAD] [VT_Bind] des = volte_imsvt1 Fail to connect . retry count: 60713
+11-23 16:05:14.137   281   312 I libPerfService: 11: legacy set freq: 1092000 -1
+11-23 16:05:14.145   281   312 I libPerfService: 11: legacy set: 4 -1
+11-23 16:05:14.145   417  1271 W MediaAnalyticsItem: Unable to record: (extractor:0:-1:-11:0:3:android.media.mediaextractor.fmt=OggExtractor:android.media.mediaextractor.ntrk=1:android.media.mediaextractor.mime=application/ogg:) [forcenew=0]
+11-23 16:05:14.148   423   852 I Accelerometer: enable: handle:0, en:0
+11-23 16:05:14.182   424   956 I mtkcam-dev1: 0[CameraDevice1Base::stopPreview] +
+11-23 16:05:14.182   424   956 I MtkCam/CamAdapter: (MtkZsd)[BaseCamAdapter::onImgBufProviderDestroyed] id=4, ImgBufProvider=0x0
+11-23 16:05:14.182   424   956 W MtkCam/CamClient/FDClient: (956)[stopFaceDetection] FD was not running
+11-23 16:05:14.182   424   956 E MtkCam/CamClient/PREFEATUREBASE: (956)[onStopFeature] FeatureClient==NULL! (onStopFeature){#451:vendor/mediatek/proprietary/hardware/mtkcam/legacy/v1/client/CamClient/PreviewFeature/PreviewFeatureBase.cpp}
+11-23 16:05:14.182   424   956 W MtkCam/RecordClient: (956)[stopPreview] Preview has been stopped
+11-23 16:05:14.182   424   956 I mtkcam-dev1: 0[CameraDevice1Base::stopPreview] -
+11-23 16:05:14.184   424   956 I mtkcam-dev1: 0[CameraDevice1Base::cancelPicture] +
+11-23 16:05:14.185   424   956 I mtkcam-dev1: 0[CameraDevice1Base::cancelPicture] - status(7)
+11-23 16:05:14.189   424   956 I mtkcam-dev1: 0[CameraDevice1Base::close] +
+11-23 16:05:14.189   424   956 I MtkCam/DisplayClient: [uninit] + getStrongCount(2)
+11-23 16:05:14.189   424   956 I MtkCam/CamAdapter: (MtkZsd)[BaseCamAdapter::onImgBufProviderDestroyed] id=1, ImgBufProvider=0xb15218b0
+11-23 16:05:14.190   424   956 I MtkCam/DisplayClient: [uninit] - getStrongCount(1)
+11-23 16:05:14.190   424   956 I MtkCam/CamClient: (956)[uninit] + getStrongCount(1)
+11-23 16:05:14.190   424   956 I MtkCam/CamAdapter: (MtkZsd)[BaseCamAdapter::onImgBufProviderDestroyed] id=3, ImgBufProvider=0xb15216d0
+11-23 16:05:14.191   424   956 I MtkCam/CamAdapter: (MtkZsd)[BaseCamAdapter::onImgBufProviderDestroyed] id=2, ImgBufProvider=0xb1521720
+11-23 16:05:14.201   424   956 I MtkCam/CamClient: (956)[uninit] - getStrongCount(1)
+11-23 16:05:14.202   424   956 I IspDrv  : [uninit] +,mInitCount(8)
+11-23 16:05:14.202   424   956 I IspDrv  : [ProfilingPrint] [Event_IspDrv_Uninit] atomic_dec:(0-th) ===> [start-->now: 0.446000 ms]
+11-23 16:05:14.203   424   956 I IspDrv  : [uninit] -,ret(1),mInitCount(7)
+11-23 16:05:14.204   424   956 I IspDrv  : [ProfilingPrint] [Event_IspDrv_Uninit] Exit:(1-th) ===> [start-->now: 1.431000 ms] [last-->now: 0.985000 ms]
+11-23 16:05:14.212   424   956 I IspDrv  : [uninit] +,mInitCount(7)
+11-23 16:05:14.212   424   956 I IspDrv  : [ProfilingPrint] [Event_IspDrv_Uninit] atomic_dec:(0-th) ===> [start-->now: 0.107000 ms]
+11-23 16:05:14.212   424   956 I IspDrv  : [uninit] -,ret(1),mInitCount(6)
+11-23 16:05:14.212   424   956 I IspDrv  : [ProfilingPrint] [Event_IspDrv_Uninit] Exit:(1-th) ===> [start-->now: 0.178000 ms] [last-->now: 0.071000 ms]
+11-23 16:05:14.212   424   956 I MtkCam/HalSensor: [onDestroy] Forget to powerOff before destroying. PowerRefCount:1
+11-23 16:05:14.212   424   956 I TdriMgr : [uninit] mInitCount(2)
+11-23 16:05:14.212   424   956 I IspDrv  : [uninit] +,mInitCount(6)
+11-23 16:05:14.212   424   956 I IspDrv  : [ProfilingPrint] [Event_IspDrv_Uninit] atomic_dec:(0-th) ===> [start-->now: 0.052000 ms]
+11-23 16:05:14.212   424   956 I IspDrv  : [uninit] -,ret(1),mInitCount(5)
+11-23 16:05:14.212   424   956 I IspDrv  : [ProfilingPrint] [Event_IspDrv_Uninit] Exit:(1-th) ===> [start-->now: 0.112000 ms] [last-->now: 0.060000 ms]
+11-23 16:05:14.218 28625 28630 I zygote  : Do partial code cache collection, code=59KB, data=60KB
+11-23 16:05:14.220 28625 28630 I zygote  : After code cache collection, code=58KB, data=59KB
+11-23 16:05:14.221   424   956 I IspDrv  : [uninit] +,mInitCount(5)
+11-23 16:05:14.221 28625 28630 I zygote  : Increasing code cache capacity to 256KB
+11-23 16:05:14.222   424   956 I IspDrv  : [ProfilingPrint] [Event_IspDrv_Uninit] atomic_dec:(0-th) ===> [start-->now: 0.433000 ms]
+11-23 16:05:14.222   424   956 I IspDrv  : [uninit] -,ret(1),mInitCount(4)
+11-23 16:05:14.222   424   956 I IspDrv  : [ProfilingPrint] [Event_IspDrv_Uninit] Exit:(1-th) ===> [start-->now: 0.830000 ms] [last-->now: 0.397000 ms]
+11-23 16:05:14.223   424   956 I IspDrv  : [uninit] +,mInitCount(4)
+11-23 16:05:14.223   424   956 I IspDrv  : [ProfilingPrint] [Event_IspDrv_Uninit] atomic_dec:(0-th) ===> [start-->now: 0.068000 ms]
+11-23 16:05:14.223   424   956 I IspDrv  : [uninit] -,ret(1),mInitCount(3)
+11-23 16:05:14.223   424   956 I IspDrv  : [ProfilingPrint] [Event_IspDrv_Uninit] Exit:(1-th) ===> [start-->now: 0.356000 ms] [last-->now: 0.288000 ms]
+11-23 16:05:14.223   424   956 I TdriMgr : [uninit] mInitCount(1)
+11-23 16:05:14.225   424   956 I TpipeDrv: [TpipeDrv][uninit] X, mInitCount = 0
+11-23 16:05:14.225   424   956 I IspDrv  : [uninit] +,mInitCount(3)
+11-23 16:05:14.225   424   956 I IspDrv  : [ProfilingPrint] [Event_IspDrv_Uninit] atomic_dec:(0-th) ===> [start-->now: 0.060000 ms]
+11-23 16:05:14.225   424   956 I IspDrv  : [uninit] -,ret(1),mInitCount(2)
+11-23 16:05:14.225   424   956 I IspDrv  : [ProfilingPrint] [Event_IspDrv_Uninit] Exit:(1-th) ===> [start-->now: 0.226000 ms] [last-->now: 0.166000 ms]
+11-23 16:05:14.225   424   956 I TdriMgr : [uninit] Release
+11-23 16:05:14.230   424   956 I IspDrv  : [uninit] +,mInitCount(2)
+11-23 16:05:14.230   424   956 I IspDrv  : [ProfilingPrint] [Event_IspDrv_Uninit] atomic_dec:(0-th) ===> [start-->now: 0.739000 ms]
+11-23 16:05:14.230   424   956 I IspDrv  : [uninit] -,ret(1),mInitCount(1)
+11-23 16:05:14.231   424   956 I IspDrv  : [ProfilingPrint] [Event_IspDrv_Uninit] Exit:(1-th) ===> [start-->now: 0.860000 ms] [last-->now: 0.121000 ms]
+11-23 16:05:14.231   424   956 I IspDrv  : [uninit] +,mInitCount(1)
+11-23 16:05:14.231   424   956 I IspDrv  : [ProfilingPrint] [Event_IspDrv_Uninit] atomic_dec:(0-th) ===> [start-->now: 0.038000 ms]
+11-23 16:05:14.231   424   956 I IspDrv  : [ProfilingPrint] [Event_IspDrv_Uninit] munmap(mpIspHwRegAddr):(1-th) ===> [start-->now: 0.099000 ms] [last-->now: 0.061000 ms]
+11-23 16:05:14.231   424   956 I IspDrv  : [ProfilingPrint] [Event_IspDrv_Uninit] munmap(m_pRTBufTbl):(2-th) ===> [start-->now: 0.151000 ms] [last-->now: 0.052000 ms]
+11-23 16:05:14.231   424   956 I IspDrv  : [ProfilingPrint] [Event_IspDrv_Uninit] m_pIMemDrv->unmapPhyAddr(m_ispVirRegBufInfo):(3-th) ===> [start-->now: 0.192000 ms] [last-->now: 0.041000 ms]
+11-23 16:05:14.231   424   956 I IspDrv  : [ProfilingPrint] [Event_IspDrv_Uninit] m_pIMemDrv->freeVirtBuf(m_ispVirRegBufInfo):(4-th) ===> [start-->now: 0.344000 ms] [last-->now: 0.152000 ms]
+11-23 16:05:14.231   424   956 I IspDrv  : [ProfilingPrint] [Event_IspDrv_Uninit] m_pIMemDrv->unmapPhyAddr(m_ispCQDescBufInfo):(5-th) ===> [start-->now: 0.692000 ms] [last-->now: 0.348000 ms]
+11-23 16:05:14.231   424   956 I IspDrv  : [ProfilingPrint] [Event_IspDrv_Uninit] m_pIMemDrv->freeVirtBuf(m_ispCQDescBufInfo):(6-th) ===> [start-->now: 0.834000 ms] [last-->now: 0.142000 ms]
+11-23 16:05:14.233   424   956 I IspDrv  : [ProfilingPrint] [Event_IspDrv_Uninit] m_pIMemDrv->uninit():(7-th) ===> [start-->now: 1.647000 ms] [last-->now: 0.813000 ms]
+11-23 16:05:14.233   424   956 I IspDrv  : [ProfilingPrint] [Event_IspDrv_Uninit] m_pIMemDrv->destroyInstance():(8-th) ===> [start-->now: 1.944000 ms] [last-->now: 0.297000 ms]
+11-23 16:05:14.233   424   956 I IspDrv  : [ProfilingPrint] [Event_IspDrv_Uninit] memset(tdriMgrInfoCq1):(9-th) ===> [start-->now: 1.988000 ms] [last-->now: 0.044000 ms]
+11-23 16:05:14.233   424   956 I IspDrv  : [ProfilingPrint] [Event_IspDrv_Uninit] memset(tdriMgrInfoCq2):(10-th) ===> [start-->now: 2.027000 ms] [last-->now: 0.039000 ms]
+11-23 16:05:14.233   424   956 I IspDrv  : [uninit] ISP Global Count: 0.
+11-23 16:05:14.233   424   956 I IspDrv  : [ProfilingPrint] [Event_IspDrv_Uninit] close isp mFd:(11-th) ===> [start-->now: 2.110000 ms] [last-->now: 0.083000 ms]
+11-23 16:05:14.233   424   956 I IspDrv  : [ProfilingPrint] [Event_IspDrv_Uninit] free(mpIspDrvRegMap):(12-th) ===> [start-->now: 2.195000 ms] [last-->now: 0.085000 ms]
+11-23 16:05:14.233   424   956 I IspDrv  : [uninit] -,ret(1),mInitCount(0)
+11-23 16:05:14.234   424   956 I IspDrv  : [ProfilingPrint] [Event_IspDrv_Uninit] Exit:(13-th) ===> [start-->now: 2.371000 ms] [last-->now: 0.176000 ms]
+11-23 16:05:14.242   424   956 I BWC     : emi_ddr_type_string_get is no longer available
+11-23 16:05:14.243   424   956 I BWC     : Profile_Change:[BWCPT_CAMERA_CAPTURE]:OFF,current concurrency is 0x800,DDR=,EMI scenario=CON_SCE_ICFP OFF
+11-23 16:05:14.243   424   956 I BWC     : emi_ddr_type_string_get is no longer available
+11-23 16:05:14.243   424   956 I BWC     : Profile_Change:[BWCPT_CAMERA_PREVIEW]:OFF,current concurrency is 0x800,DDR=,EMI scenario=CON_SCE_VSS OFF
+11-23 16:05:14.244   424   956 W ResMgrDrv: [CloseHdmi]WRN(  381):HDMITX kernel open fail, errno(2):No such file or directory
+11-23 16:05:14.244   424   956 I mtkcam-devicemgr: [detachOpenDeviceLocked] device: device@1.0/internal/0 openTimestamp:11-23 16:05:06.964
+11-23 16:05:14.245   409 14554 I CameraProviderManager: Camera device device@1.0/internal/0 torch status is now AVAILABLE_OFF
+11-23 16:05:14.245   409 14554 I CameraService: onTorchStatusChangedLocked: Torch status changed for cameraId=0, newStatus=1
+11-23 16:05:14.245   424   956 I mtkcam-camprovider: [onTorchModeStatusChange] device@1.0/internal/0 TorchModeStatus:1
+11-23 16:05:14.245   424   956 I mtkcam-dev1: 0[CameraDevice1Base::close] Del cameraId 0 - 0xb1579140, this - 0xb1579140
+11-23 16:05:14.245   424   956 I mtkcam-dev1: 0[CameraDevice1Base::close] -
+11-23 16:05:14.246   281   355 I vendor.mediatek.hardware.power@1.1-impl: scnDisable hdl:39
+11-23 16:05:14.247   281   355 I vendor.mediatek.hardware.power@1.1-impl: scnUnreg hdl:39
+11-23 16:05:14.247   281   312 I powerd  : [powerd_req] POWER_MSG_SCN_UNREG: hdl:39
+11-23 16:05:14.247   281   312 I libPerfService: perfUserUnregScn - handle:39
+11-23 16:05:14.248   281   355 I vendor.mediatek.hardware.power@1.1-impl: scnDisable hdl:39
+11-23 16:05:14.250 28625 29250 I BufferQueueProducer: [SurfaceTexture-0-28625-1](this:0x87643000,id:1,api:4,p:409,c:28625) disconnect(P): api 4
+11-23 16:05:14.250 28625 29250 I BufferQueueConsumer: [SurfaceTexture-0-28625-1](this:0x87643000,id:1,api:4,p:-1,c:28625) getReleasedBuffers: returning mask 0xffffffffffffffff
+11-23 16:05:14.255   409 14554 I CameraHardwareInterface: Destroying camera 0
+11-23 16:05:14.261   409 14554 I CameraService: disconnect: Disconnected client for camera 0 for PID 28625
+11-23 16:05:14.274   281   855 I vendor.mediatek.hardware.power@1.1-impl: notifyAppState pack:com.xpluscloud.mosesshell, act:com.xpluscloud.mosesshell.CustomerProfileActivity, pid:28389, state:1
+11-23 16:05:14.279   281   312 I libPerfService: [perfNotifyAppState] foreground:com.xpluscloud.mosesshell, pid:28389
+11-23 16:05:14.279   281   312 E libPerfService: Could not open '/proc/driver/thermal/ta_fg_pid'
+11-23 16:05:14.279   281   312 E libPerfService: error : 2, No such file or directory
+11-23 16:05:14.279   281   312 E libPerfService: Could not open '/sys/module/ged/parameters/gx_top_app_pid'
+11-23 16:05:14.279   281   312 E libPerfService: error : 2, No such file or directory
+11-23 16:05:14.279   281   312 I libPerfService: perfUserGetCapability - cmd:7, id:0, value:-1
+11-23 16:05:14.280   418 29293 W MediaAnalyticsItem: Unable to record: (codec:0:-1:-11:0:6:android.media.mediacodec.mime=audio/vorbis:android.media.mediacodec.mode=audio:android.media.mediacodec.encoder=0:android.media.mediacodec.codec=OMX.google.vorbis.decoder:android.media.mediacodec.secure=0:android.media.mediacodec.bytesin=6930:) [forcenew=0]
+11-23 16:05:14.282   717   738 I WindowManager: Focus moving from Window{a406a47 u0 com.evenwell.camera2/com.android.camera.CaptureActivity} to null
+11-23 16:05:14.286   417  1271 W MediaAnalyticsItem: Unable to record: (extractor:0:-1:-11:0:3:android.media.mediaextractor.fmt=OggExtractor:android.media.mediaextractor.ntrk=1:android.media.mediaextractor.mime=application/ogg:) [forcenew=0]
+11-23 16:05:14.307 28389 28389 W System.err: java.io.IOException: No such file or directory
+11-23 16:05:14.307 28389 28389 W System.err: 	at java.io.UnixFileSystem.createFileExclusively0(Native Method)
+11-23 16:05:14.308 28389 28389 W System.err: 	at java.io.UnixFileSystem.createFileExclusively(UnixFileSystem.java:281)
+11-23 16:05:14.308 28389 28389 W System.err: 	at java.io.File.createNewFile(File.java:1000)
+11-23 16:05:14.308 28389 28389 W System.err: 	at com.xpluscloud.mosesshell.CustomerProfileActivity.savePicture(CustomerProfileActivity.java:177)
+11-23 16:05:14.309 28389 28389 W System.err: 	at com.xpluscloud.mosesshell.CustomerProfileActivity.onActivityResult(CustomerProfileActivity.java:252)
+11-23 16:05:14.309 28389 28389 W System.err: 	at android.app.Activity.dispatchActivityResult(Activity.java:7280)
+11-23 16:05:14.309 28389 28389 W System.err: 	at android.app.ActivityThread.deliverResults(ActivityThread.java:4291)
+11-23 16:05:14.310 28389 28389 W System.err: 	at android.app.ActivityThread.handleSendResult(ActivityThread.java:4339)
+11-23 16:05:14.310 28389 28389 W System.err: 	at android.app.ActivityThread.-wrap19(Unknown Source:0)
+11-23 16:05:14.310 28389 28389 W System.err: 	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:1668)
+11-23 16:05:14.311 28389 28389 W System.err: 	at android.os.Handler.dispatchMessage(Handler.java:106)
+11-23 16:05:14.311 28389 28389 W System.err: 	at android.os.Looper.loop(Looper.java:164)
+11-23 16:05:14.311 28389 28389 W System.err: 	at android.app.ActivityThread.main(ActivityThread.java:6523)
+11-23 16:05:14.311 28389 28389 W System.err: 	at java.lang.reflect.Method.invoke(Native Method)
+11-23 16:05:14.312 28389 28389 W System.err: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:438)
+11-23 16:05:14.312 28389 28389 W System.err: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:857)
+11-23 16:05:14.329   717   730 I GnssLocationProvider: WakeLock acquired by sendMessage(SET_REQUEST, 0, com.android.server.location.GnssLocationProvider$GpsRequest@cb09827)
+11-23 16:05:14.333   417  1271 W MediaAnalyticsItem: Unable to record: (extractor:0:-1:-11:0:3:android.media.mediaextractor.fmt=OggExtractor:android.media.mediaextractor.ntrk=1:android.media.mediaextractor.mime=application/ogg:) [forcenew=0]
+11-23 16:05:14.342   417  1271 W MediaAnalyticsItem: Unable to record: (extractor:0:-1:-11:0:3:android.media.mediaextractor.fmt=OggExtractor:android.media.mediaextractor.ntrk=1:android.media.mediaextractor.mime=application/ogg:) [forcenew=0]
+11-23 16:05:14.345   717   717 I NlpLocationProvider: handleSetRequest() request=ProviderRequest[ON interval=+1s0ms]
+11-23 16:05:14.346 28389 28389 E devpath : /storage/emulated/0/Pictures/Mosesv2.0_Profile/168 Cycle Parts  (5NZKXQCCVXNSL79R63D3)_5NZKXQCCVXNSL79R63D3.png
+11-23 16:05:14.352   717   730 I GnssLocationProvider: WakeLock released by handleMessage(SET_REQUEST, 0, com.android.server.location.GnssLocationProvider$GpsRequest@cb09827)
+11-23 16:05:14.367   717 11771 I WindowManager: Relayout Window{eded3c6 u0 com.xpluscloud.mosesshell/com.xpluscloud.mosesshell.CustomerProfileActivity}: oldVis=4 newVis=0 focusMayChange = true
+11-23 16:05:14.368 28389 29247 V FA      : Connecting to remote service
+11-23 16:05:14.375   288   288 I BufferQueue: [unnamed-288-322](this:0xa5e6c000,id:322,api:0,p:-1,c:-1) BufferQueue core=(288:/system/bin/surfaceflinger)
+11-23 16:05:14.377   288   288 W GuiExt  : Cannot find GuiExtService
+11-23 16:05:14.377   288   288 I BufferQueueConsumer: [unnamed-288-322](this:0xa5e6c000,id:322,api:0,p:-1,c:288) connect(C): consumer=(288:/system/bin/surfaceflinger) controlledByApp=false
+11-23 16:05:14.377   288   288 I BufferQueueConsumer: [unnamed-288-322](this:0xa5e6c000,id:322,api:0,p:-1,c:288) setConsumerName: unnamed-288-322
+11-23 16:05:14.377   288   288 I BufferQueueConsumer: [com.xpluscloud.mosesshell/com.xpluscloud.mosesshell.CustomerProfileActivity#0](this:0xa5e6c000,id:322,api:0,p:-1,c:288) setConsumerName: com.xpluscloud.mosesshell/com.xpluscloud.mosesshell.CustomerProfileActivity#0
+11-23 16:05:14.377   288   288 I BufferQueueConsumer: [com.xpluscloud.mosesshell/com.xpluscloud.mosesshell.CustomerProfileActivity#0](this:0xa5e6c000,id:322,api:0,p:-1,c:288) setDefaultBufferSize: width=480 height=854
+11-23 16:05:14.386   717   738 I WindowManager: Focus moving from null to Window{eded3c6 u0 com.xpluscloud.mosesshell/com.xpluscloud.mosesshell.CustomerProfileActivity}
+11-23 16:05:14.391   288   322 I BufferQueueProducer: [com.xpluscloud.mosesshell/com.xpluscloud.mosesshell.CustomerProfileActivity#0](this:0xa5e6c000,id:322,api:1,p:28389,c:288) connect(P): api=1 producer=(28389:com.xpluscloud.mosesshell) producerControlledByApp=true
+11-23 16:05:14.507   717 11771 I WifiService: acquireWifiLock uid=10047 lockMode=2
+11-23 16:05:14.519 28389 29247 V FA      : Activity resumed, time: 182264186
+11-23 16:05:14.530   717   882 I DataShapingService: openLteGateSuccess = false
+11-23 16:05:14.530   288   288 I BufferQueue: [unnamed-288-323](this:0xa98d7000,id:323,api:0,p:-1,c:-1) BufferQueue core=(288:/system/bin/surfaceflinger)
+11-23 16:05:14.532   288   288 W GuiExt  : Cannot find GuiExtService
+11-23 16:05:14.532   288   288 I BufferQueueConsumer: [unnamed-288-323](this:0xa98d7000,id:323,api:0,p:-1,c:288) connect(C): consumer=(288:/system/bin/surfaceflinger) controlledByApp=false
+11-23 16:05:14.532   288   288 I BufferQueueConsumer: [unnamed-288-323](this:0xa98d7000,id:323,api:0,p:-1,c:288) setConsumerName: unnamed-288-323
+11-23 16:05:14.532   288   288 I BufferQueueConsumer: [Toast#0](this:0xa98d7000,id:323,api:0,p:-1,c:288) setConsumerName: Toast#0
+11-23 16:05:14.532   288   288 I BufferQueueConsumer: [Toast#0](this:0xa98d7000,id:323,api:0,p:-1,c:288) setDefaultBufferSize: width=265 height=64
+11-23 16:05:14.534 28625 28662 I GLConsumer: [SurfaceTexture-0-28625-1] detachFromContext
+11-23 16:05:14.542   288   321 I BufferQueueProducer: [com.evenwell.camera2/com.android.camera.CaptureActivity#0](this:0xa9829000,id:321,api:1,p:28625,c:288) disconnect(P): api 1
+11-23 16:05:14.543   288   321 I BufferQueueConsumer: [com.evenwell.camera2/com.android.camera.CaptureActivity#0](this:0xa9829000,id:321,api:1,p:-1,c:288) getReleasedBuffers: returning mask 0xffffffffffffffff
+11-23 16:05:14.552   288   391 I BufferQueueProducer: [Toast#0](this:0xa98d7000,id:323,api:1,p:28389,c:288) connect(P): api=1 producer=(28389:com.xpluscloud.mosesshell) producerControlledByApp=true
+11-23 16:05:14.580  1020  1020 I GoogleInputMethod: onFinishInput() : Dummy InputConnection bound
+11-23 16:05:14.581  1020  1020 I GoogleInputMethod: onStartInput() : Dummy InputConnection bound
+11-23 16:05:14.627   288   288 W Layer   : [com.xpluscloud.mosesshell/com.xpluscloud.mosesshell.CustomerProfileActivity#0] opaque layer with plane alpha:0.78 cannot be handled by hwcomposer
+11-23 16:05:14.627   288   288 W Layer   : [com.xpluscloud.mosesshell/com.xpluscloud.mosesshell.CustomerProfileActivity#0] opaque layer with plane alpha:0.78 cannot be handled by hwcomposer
+11-23 16:05:14.659   279   347 W hwcomposer: [JOB] No available overlay resource (input_num=0)  
+11-23 16:05:14.664   288   288 I BufferQueueProducer: [FrameBufferSurface_0](this:0xaa3d1000,id:0,api:1,p:288,c:288) queueBuffer: fps=1.00 dur=6996.81 max=6739.07 min=27.47
+11-23 16:05:14.665   288   288 E SurfaceFlinger: getUniqueId not supported on VirtualDisplaySurface
+11-23 16:05:14.678   288   288 E SurfaceFlinger: getUniqueId not supported on VirtualDisplaySurface
+11-23 16:05:14.687 28389 29247 D FA      : Connected to remote service
+11-23 16:05:14.723   281   855 I vendor.mediatek.hardware.power@1.1-impl: querySysInfo cmd:6, param:0
+11-23 16:05:14.724   281   312 I powerd  : [powerd_req] POWER_MSG_QUERY_INFO: cmd:6, param:0
+11-23 16:05:14.724   281   312 I libPerfService: perfUserGetCapability - cmd:6, id:0, value:28389
+11-23 16:05:14.727   288   288 W Layer   : [com.xpluscloud.mosesshell/com.xpluscloud.mosesshell.CustomerProfileActivity#0] opaque layer with plane alpha:0.81 cannot be handled by hwcomposer
+11-23 16:05:14.728   288   288 W Layer   : [com.evenwell.camera2/com.android.camera.CaptureActivity#0] opaque layer with plane alpha:0.99 cannot be handled by hwcomposer
+11-23 16:05:14.728   288   288 W Layer   : [com.xpluscloud.mosesshell/com.xpluscloud.mosesshell.CustomerProfileActivity#0] opaque layer with plane alpha:0.81 cannot be handled by hwcomposer
+11-23 16:05:14.728   288   288 W Layer   : [com.evenwell.camera2/com.android.camera.CaptureActivity#0] opaque layer with plane alpha:0.99 cannot be handled by hwcomposer
+11-23 16:05:14.730   279   347 W hwcomposer: [JOB] No available overlay resource (input_num=0)  
+11-23 16:05:14.735   288   288 E SurfaceFlinger: getUniqueId not supported on VirtualDisplaySurface
+11-23 16:05:14.735   717  1720 E TouchFilter: setTouchFilter LOG Enable prameter: 0
+11-23 16:05:14.741   288   288 E SurfaceFlinger: getUniqueId not supported on VirtualDisplaySurface
+11-23 16:05:14.758  2342  2369 I MAL-DATAMNGR:  (           dm_read_event,  114) [DMGR-INF] read_netlink: nlmsg_type = 28
+11-23 16:05:14.762   288   288 W Layer   : [com.xpluscloud.mosesshell/com.xpluscloud.mosesshell.CustomerProfileActivity#0] opaque layer with plane alpha:0.83 cannot be handled by hwcomposer
+11-23 16:05:14.763   288   288 W Layer   : [com.evenwell.camera2/com.android.camera.CaptureActivity#0] opaque layer with plane alpha:0.89 cannot be handled by hwcomposer
+11-23 16:05:14.763   288   288 W Layer   : [com.xpluscloud.mosesshell/com.xpluscloud.mosesshell.CustomerProfileActivity#0] opaque layer with plane alpha:0.83 cannot be handled by hwcomposer
+11-23 16:05:14.763   288   288 W Layer   : [com.evenwell.camera2/com.android.camera.CaptureActivity#0] opaque layer with plane alpha:0.89 cannot be handled by hwcomposer
+11-23 16:05:14.764   279   347 W hwcomposer: [JOB] No available overlay resource (input_num=0)  
+11-23 16:05:14.770   288   288 E SurfaceFlinger: getUniqueId not supported on VirtualDisplaySurface
+11-23 16:05:14.778   288   288 E SurfaceFlinger: getUniqueId not supported on VirtualDisplaySurface
+11-23 16:05:14.799   288   288 W Layer   : [com.xpluscloud.mosesshell/com.xpluscloud.mosesshell.CustomerProfileActivity#0] opaque layer with plane alpha:0.93 cannot be handled by hwcomposer
+11-23 16:05:14.799   288   288 W Layer   : [com.evenwell.camera2/com.android.camera.CaptureActivity#0] opaque layer with plane alpha:0.55 cannot be handled by hwcomposer
+11-23 16:05:14.799   288   288 W Layer   : [com.xpluscloud.mosesshell/com.xpluscloud.mosesshell.CustomerProfileActivity#0] opaque layer with plane alpha:0.93 cannot be handled by hwcomposer
+11-23 16:05:14.799   288   288 W Layer   : [com.evenwell.camera2/com.android.camera.CaptureActivity#0] opaque layer with plane alpha:0.55 cannot be handled by hwcomposer
+11-23 16:05:14.801   279   347 W hwcomposer: [JOB] No available overlay resource (input_num=0)  
+11-23 16:05:14.808   288   288 E SurfaceFlinger: getUniqueId not supported on VirtualDisplaySurface
+11-23 16:05:14.820   717 11771 I WifiService: releaseWifiLock uid=10047
+11-23 16:05:14.823   288   288 E SurfaceFlinger: getUniqueId not supported on VirtualDisplaySurface
+11-23 16:05:14.855 28389 29247 V FA      : Processing queued up service tasks: 1
+11-23 16:05:14.884   288   288 W Layer   : [com.xpluscloud.mosesshell/com.xpluscloud.mosesshell.CustomerProfileActivity#0] opaque layer with plane alpha:0.99 cannot be handled by hwcomposer
+11-23 16:05:14.884   288   288 W Layer   : [com.evenwell.camera2/com.android.camera.CaptureActivity#0] opaque layer with plane alpha:0.21 cannot be handled by hwcomposer
+11-23 16:05:14.885   288   288 W Layer   : [com.xpluscloud.mosesshell/com.xpluscloud.mosesshell.CustomerProfileActivity#0] opaque layer with plane alpha:0.99 cannot be handled by hwcomposer
+11-23 16:05:14.885   288   288 W Layer   : [com.evenwell.camera2/com.android.camera.CaptureActivity#0] opaque layer with plane alpha:0.21 cannot be handled by hwcomposer
+11-23 16:05:14.895   279   347 W hwcomposer: [JOB] No available overlay resource (input_num=0)  
+11-23 16:05:14.901   288   288 I DisplayDevice: [Built-in Screen (type:0)] fps:31.908562,dur:1002.87,max:269.84,min:9.50
+11-23 16:05:14.901   288   288 E SurfaceFlinger: getUniqueId not supported on VirtualDisplaySurface
+11-23 16:05:14.909   288   288 E SurfaceFlinger: getUniqueId not supported on VirtualDisplaySurface
+11-23 16:05:14.910   288   288 I DisplayDevice: [stdout (type:2)] fps:31.620096,dur:1012.01,max:269.64,min:9.51
+11-23 16:05:14.915   422 14332 I BufferQueueProducer: [GraphicBufferSource](this:0xb326e000,id:3,api:1,p:422,c:422) queueBuffer: fps=13.81 dur=1013.70 max=448.48 min=12.87
+11-23 16:05:15.042   422   500 I BufferQueueProducer: [GraphicBufferSource](this:0xb326e000,id:3,api:1,p:422,c:422) queueBuffer: slot 13 is dropped, handle=0xb3246260
+11-23 16:05:15.067   422   500 I BufferQueueProducer: [GraphicBufferSource](this:0xb326e000,id:3,api:1,p:422,c:422) queueBuffer: slot 2 is dropped, handle=0xb32460a0
+11-23 16:05:15.087   422   500 I BufferQueueProducer: [GraphicBufferSource](this:0xb326e000,id:3,api:1,p:422,c:422) queueBuffer: slot 13 is dropped, handle=0xb3246260
+11-23 16:05:15.097   281   312 I libPerfService: 11: legacy set: 2 -1
+11-23 16:05:15.101   281   312 I libPerfService: 11: legacy set freq: -1 -1
+11-23 16:05:15.121   422   500 I BufferQueueProducer: [GraphicBufferSource](this:0xb326e000,id:3,api:1,p:422,c:422) queueBuffer: slot 13 is dropped, handle=0xb3246260
+11-23 16:05:15.124   417  1271 W MediaAnalyticsItem: Unable to record: (extractor:0:-1:-11:0:3:android.media.mediaextractor.fmt=OggExtractor:android.media.mediaextractor.ntrk=1:android.media.mediaextractor.mime=application/ogg:) [forcenew=0]
+11-23 16:05:15.131 28625 29250 W CAM2PORT_AndCamAgntImp: Releasing camera without any camera opened.
+11-23 16:05:15.131 28625 28625 W CAM2PORT_DispatchThread: DispatchThread is end
+11-23 16:05:15.136   422   500 I BufferQueueProducer: [GraphicBufferSource](this:0xb326e000,id:3,api:1,p:422,c:422) queueBuffer: slot 10 is dropped, handle=0xb32467a0
+11-23 16:05:15.144   288   288 I BufferQueueConsumer: [com.evenwell.camera2/com.android.camera.CaptureActivity#0](this:0xa9829000,id:321,api:1,p:-1,c:-1) disconnect(C)
+11-23 16:05:15.144   288   288 I BufferQueue: [com.evenwell.camera2/com.android.camera.CaptureActivity#0](this:0xa9829000,id:321,api:1,p:-1,c:-1) ~BufferQueueCore
+11-23 16:05:15.173   422   500 I BufferQueueProducer: [GraphicBufferSource](this:0xb326e000,id:3,api:1,p:422,c:422) queueBuffer: slot 10 is dropped, handle=0xb32467a0
+11-23 16:05:15.189   422   500 I BufferQueueProducer: [GraphicBufferSource](this:0xb326e000,id:3,api:1,p:422,c:422) queueBuffer: slot 3 is dropped, handle=0xb3246960
+11-23 16:05:15.202   422   500 I BufferQueueProducer: [GraphicBufferSource](this:0xb326e000,id:3,api:1,p:422,c:422) queueBuffer: slot 10 is dropped, handle=0xb32467a0
+11-23 16:05:15.236   422   500 I BufferQueueProducer: [GraphicBufferSource](this:0xb326e000,id:3,api:1,p:422,c:422) queueBuffer: slot 10 is dropped, handle=0xb32467a0
+11-23 16:05:15.249   422   500 I BufferQueueProducer: [GraphicBufferSource](this:0xb326e000,id:3,api:1,p:422,c:422) queueBuffer: slot 1 is dropped, handle=0xb3245ee0
+11-23 16:05:15.632   425   425 I thermal_repeater: select timeout
+11-23 16:05:15.642   281   855 I vendor.mediatek.hardware.power@1.1-impl: mtkCusPowerHint hint:0, data:0
+11-23 16:05:15.642   281   312 I powerd  : [powerd_req] POWER_MSG_MTK_CUS_HINT: hint:0, hdl:36, data:0
+11-23 16:05:15.643   281   312 I libPerfService: 36: legacy set: -1 -1
+11-23 16:05:15.824  2342  2342 W mtkmal  : type=1400 audit(0.0:49546): avc: denied { open } for path="/proc/2342/net/dev" dev="proc" ino=4026533568 scontext=u:r:mtkmal:s0 tcontext=u:object_r:proc_net:s0 tclass=file permissive=0
+11-23 16:05:15.825  2342  2394 I MAL-RDS :  (  rds_ru_wifi_status_ind, 1744) [RDS-I][RU][EVENT_RU_WS_WIFI_STATUS_IND] fgwifi_en:1(no use) i4wifirssi:-36 i4wifisnr:9999
+11-23 16:05:15.826  2342  2394 I MAL-RDS :  (          rds_ru_rpl_gen, 7629) [RDS-I][RU][rds_ru_rpl_gen][RDS] Current policy: fgimsolte_en<0>, fgwfc_en<0>, erdspolicy<3>,||Threshold i4wifirssih<-75>, i4wifirssil<-85>, i4wifirssih_ho<-78>, i4wifirssil_ho<-88>, i4wifisnrh<10>, i4wifisnrl<6>||Threshold i4ltersrph<-106>, i4ltersrpm<-111>, i4ltersrpl<-116>, i4ltersrqh<5>, i4ltersrqm<3>, i4ltersrql<1>||Threshold i4utranrscph<-104>, i4utranrscpl<-110>, i4gsmrssih<-94>, i4gsmrssil<-102>||current rds ru status: i4wifirssi<-36>, i4wifisnr<9999>, i4ltersrp<-104>, i4ltersrq<11>, i4utranrscp<-98>, i4gsmrssi<-141>, u4active_ran<65539>, flight_mode_activating<0>, ims_roamb<-1>, mms_roamb<-1>||current wifi backhaul : rtp_plr<0>, rtp_jitter<0>, ping_ind<0>||pcscf acc stat : volte<1>, wfc<1> || wifi acc_ctrl:<0>, || current MD stat : MD1 roam <0>, ||Call stat : IR92<0>, IR94<0>, SMS over IP<0>
+11-23 16:05:15.992   288   391 I BufferQueueProducer: [com.xpluscloud.mosesshell/com.xpluscloud.mosesshell.CustomerProfileActivity#0](this:0xa5e6c000,id:322,api:1,p:28389,c:288) queueBuffer: fps=6.02 dur=1495.14 max=883.29 min=6.49
+11-23 16:05:16.005   288   288 I DisplayDevice: [Built-in Screen (type:0)] fps:15.400126,dur:1103.89,max:743.49,min:12.95
+11-23 16:05:16.005   288   288 I DisplayDevice: [stdout (type:2)] fps:15.526569,dur:1094.90,max:743.81,min:12.96
+11-23 16:05:16.009   422   500 I BufferQueueProducer: [GraphicBufferSource](this:0xb326e000,id:3,api:1,p:422,c:422) queueBuffer: fps=14.62 dur=1094.52 max=759.71 min=13.26
+11-23 16:05:16.292   422   500 I BufferQueueProducer: [GraphicBufferSource](this:0xb326e000,id:3,api:1,p:422,c:422) queueBuffer: slot 12 is dropped, handle=0xb3246180
+11-23 16:05:16.307   422   500 I BufferQueueProducer: [GraphicBufferSource](this:0xb326e000,id:3,api:1,p:422,c:422) queueBuffer: slot 2 is dropped, handle=0xb32460a0
+11-23 16:05:16.341   288   321 I BufferQueueProducer: [Toast#0](this:0xa98d7000,id:323,api:1,p:28389,c:288) disconnect(P): api 1
+11-23 16:05:16.342   288   321 I BufferQueueConsumer: [Toast#0](this:0xa98d7000,id:323,api:1,p:-1,c:288) getReleasedBuffers: returning mask 0xffffffffffffffff
+11-23 16:05:16.353   717   717 W WindowManager: removeWindowToken: Attempted to remove non-existing token: android.os.Binder@ffe7ae6
+11-23 16:05:16.392   288   288 I BufferQueueProducer: [FrameBufferSurface_0](this:0xaa3d1000,id:0,api:1,p:288,c:288) queueBuffer: fps=10.42 dur=1728.18 max=1174.97 min=12.97
+11-23 16:05:16.412   422   500 I BufferQueueProducer: [GraphicBufferSource](this:0xb326e000,id:3,api:1,p:422,c:422) queueBuffer: slot 12 is dropped, handle=0xb3246180
+11-23 16:05:16.428   422   500 I BufferQueueProducer: [GraphicBufferSource](this:0xb326e000,id:3,api:1,p:422,c:422) queueBuffer: slot 2 is dropped, handle=0xb32460a0
+11-23 16:05:16.462   422 14332 I BufferQueueProducer: [GraphicBufferSource](this:0xb326e000,id:3,api:1,p:422,c:422) queueBuffer: slot 3 is dropped, handle=0xb3246960
+11-23 16:05:16.495   422 14332 I BufferQueueProducer: [GraphicBufferSource](this:0xb326e000,id:3,api:1,p:422,c:422) queueBuffer: slot 12 is dropped, handle=0xb3246180
+11-23 16:05:16.512   422 14332 I BufferQueueProducer: [GraphicBufferSource](this:0xb326e000,id:3,api:1,p:422,c:422) queueBuffer: slot 2 is dropped, handle=0xb32460a0
+11-23 16:05:16.546   422 14332 I BufferQueueProducer: [GraphicBufferSource](this:0xb326e000,id:3,api:1,p:422,c:422) queueBuffer: slot 3 is dropped, handle=0xb3246960
+11-23 16:05:16.562   422 14332 I BufferQueueProducer: [GraphicBufferSource](this:0xb326e000,id:3,api:1,p:422,c:422) queueBuffer: slot 8 is dropped, handle=0xb3247a00
+11-23 16:05:16.596   422 14332 I BufferQueueProducer: [GraphicBufferSource](this:0xb326e000,id:3,api:1,p:422,c:422) queueBuffer: slot 2 is dropped, handle=0xb32460a0
+11-23 16:05:16.613   422 14332 I BufferQueueProducer: [GraphicBufferSource](this:0xb326e000,id:3,api:1,p:422,c:422) queueBuffer: slot 3 is dropped, handle=0xb3246960
+11-23 16:05:16.646   422 14332 I BufferQueueProducer: [GraphicBufferSource](this:0xb326e000,id:3,api:1,p:422,c:422) queueBuffer: slot 11 is dropped, handle=0xb32465e0
+11-23 16:05:16.681   422 14332 I BufferQueueProducer: [GraphicBufferSource](this:0xb326e000,id:3,api:1,p:422,c:422) queueBuffer: slot 3 is dropped, handle=0xb3246960
+11-23 16:05:16.697   422 14332 I BufferQueueProducer: [GraphicBufferSource](this:0xb326e000,id:3,api:1,p:422,c:422) queueBuffer: slot 7 is dropped, handle=0xb3246a40
+11-23 16:05:16.731   422 14332 I BufferQueueProducer: [GraphicBufferSource](this:0xb326e000,id:3,api:1,p:422,c:422) queueBuffer: slot 6 is dropped, handle=0xb3246420
+11-23 16:05:16.748   422 14332 I BufferQueueProducer: [GraphicBufferSource](this:0xb326e000,id:3,api:1,p:422,c:422) queueBuffer: slot 3 is dropped, handle=0xb3246960
+11-23 16:05:16.781   422 14332 I BufferQueueProducer: [GraphicBufferSource](this:0xb326e000,id:3,api:1,p:422,c:422) queueBuffer: slot 5 is dropped, handle=0xb3246500
+11-23 16:05:16.816   422 14332 I BufferQueueProducer: [GraphicBufferSource](this:0xb326e000,id:3,api:1,p:422,c:422) queueBuffer: slot 3 is dropped, handle=0xb3246960
+11-23 16:05:16.832   422 14332 I BufferQueueProducer: [GraphicBufferSource](this:0xb326e000,id:3,api:1,p:422,c:422) queueBuffer: slot 4 is dropped, handle=0xb32466c0
+11-23 16:05:16.852   281   855 I vendor.mediatek.hardware.power@1.1-impl: querySysInfo cmd:6, param:0
+11-23 16:05:16.853   281   312 I powerd  : [powerd_req] POWER_MSG_QUERY_INFO: cmd:6, param:0
+11-23 16:05:16.853   281   312 I libPerfService: perfUserGetCapability - cmd:6, id:0, value:28389
+11-23 16:05:16.869   422 14332 I BufferQueueProducer: [GraphicBufferSource](this:0xb326e000,id:3,api:1,p:422,c:422) queueBuffer: slot 9 is dropped, handle=0xb3246880
+11-23 16:05:16.883   422   500 I BufferQueueProducer: [GraphicBufferSource](this:0xb326e000,id:3,api:1,p:422,c:422) queueBuffer: slot 3 is dropped, handle=0xb3246960
+11-23 16:05:16.889   288   288 I BufferQueueConsumer: [Toast#0](this:0xa98d7000,id:323,api:1,p:-1,c:-1) disconnect(C)
+11-23 16:05:16.889   288   288 I BufferQueue: [Toast#0](this:0xa98d7000,id:323,api:1,p:-1,c:-1) ~BufferQueueCore
+11-23 16:05:17.021   271   712 E VT HIDL : [IVT] [VT THREAD] [VT_Bind] des = volte_imsvt1 Fail to connect . retry count: 60714
+11-23 16:05:17.814  2342  2363 I MAL-Daemon:  (      mfi_task_bootstrap,  400) mfi_task_bootstrap(): an event EVENT_ATMNGR_URC(18) incoming from FD 29!!
+11-23 16:05:17.815  2342  2394 I MAL-RDS :  (         rds_ru_urc_hdlr, 2271) [RDS-I][RDS][rds_ru_urc_hdlr] get URC data: +ECSQ: 12,37,1,1,1,-56,-414,7,4
+11-23 16:05:17.817  2342  2394 I MAL-RDS :  (          rds_ru_rpl_gen, 7629) [RDS-I][RU][rds_ru_rpl_gen][RDS] Current policy: fgimsolte_en<0>, fgwfc_en<0>, erdspolicy<3>,||Threshold i4wifirssih<-75>, i4wifirssil<-85>, i4wifirssih_ho<-78>, i4wifirssil_ho<-88>, i4wifisnrh<10>, i4wifisnrl<6>||Threshold i4ltersrph<-106>, i4ltersrpm<-111>, i4ltersrpl<-116>, i4ltersrqh<5>, i4ltersrqm<3>, i4ltersrql<1>||Threshold i4utranrscph<-104>, i4utranrscpl<-110>, i4gsmrssih<-94>, i4gsmrssil<-102>||current rds ru status: i4wifirssi<-36>, i4wifisnr<9999>, i4ltersrp<-104>, i4ltersrq<12>, i4utranrscp<-98>, i4gsmrssi<-141>, u4active_ran<65539>, flight_mode_activating<0>, ims_roamb<-1>, mms_roamb<-1>||current wifi backhaul : rtp_plr<0>, rtp_jitter<0>, ping_ind<0>||pcscf acc stat : volte<1>, wfc<1> || wifi acc_ctrl:<0>, || current MD stat : MD1 roam <0>, ||Call stat : IR92<0>, IR94<0>, SMS over IP<0>
+11-23 16:05:17.836  1039  1223 I NetworkController.MobileSignalController(1): updateVoiceNetworkType voiceNetType: 13 mCurrentState.connected: true
+11-23 16:05:17.979   288   288 I DisplayDevice: [Built-in Screen (type:0)] fps:22.797001,dur:1973.94,max:1063.07,min:14.34
+11-23 16:05:17.979   288   288 I DisplayDevice: [stdout (type:2)] fps:22.791304,dur:1974.44,max:1063.91,min:14.35
+11-23 16:05:18.199  1039  1039 I SignalClusterView: updateDisplayVoLte mShowVoLteIcon: false mNoSimsVisible: false mIsAirplaneMode: false showWfc: false  showVolte: false
+11-23 16:05:18.201  1039  1039 I SignalClusterView: updateDisplayVoLte mShowVoLteIcon: false mNoSimsVisible: false mIsAirplaneMode: false showWfc: false  showVolte: false
+11-23 16:05:18.241   288   391 I BufferQueueProducer: [StatusBar#0](this:0xa988d000,id:4,api:1,p:1039,c:288) queueBuffer: fps=0.25 dur=8033.25 max=7042.80 min=990.45
+11-23 16:05:18.282   422 14332 I BufferQueueProducer: [GraphicBufferSource](this:0xb326e000,id:3,api:1,p:422,c:422) queueBuffer: fps=18.92 dur=2272.80 max=1384.36 min=13.47
+11-23 16:05:18.824  2342  2342 W mtkmal  : type=1400 audit(0.0:49547): avc: denied { open } for path="/proc/2342/net/dev" dev="proc" ino=4026533568 scontext=u:r:mtkmal:s0 tcontext=u:object_r:proc_net:s0 tclass=file permissive=0
+11-23 16:05:18.828  2342  2394 I MAL-RDS :  (  rds_ru_wifi_status_ind, 1744) [RDS-I][RU][EVENT_RU_WS_WIFI_STATUS_IND] fgwifi_en:1(no use) i4wifirssi:-34 i4wifisnr:9999
+11-23 16:05:18.830  2342  2394 I MAL-RDS :  (          rds_ru_rpl_gen, 7629) [RDS-I][RU][rds_ru_rpl_gen][RDS] Current policy: fgimsolte_en<0>, fgwfc_en<0>, erdspolicy<3>,||Threshold i4wifirssih<-75>, i4wifirssil<-85>, i4wifirssih_ho<-78>, i4wifirssil_ho<-88>, i4wifisnrh<10>, i4wifisnrl<6>||Threshold i4ltersrph<-106>, i4ltersrpm<-111>, i4ltersrpl<-116>, i4ltersrqh<5>, i4ltersrqm<3>, i4ltersrql<1>||Threshold i4utranrscph<-104>, i4utranrscpl<-110>, i4gsmrssih<-94>, i4gsmrssil<-102>||current rds ru status: i4wifirssi<-34>, i4wifisnr<9999>, i4ltersrp<-104>, i4ltersrq<12>, i4utranrscp<-98>, i4gsmrssi<-141>, u4active_ran<65539>, flight_mode_activating<0>, ims_roamb<-1>, mms_roamb<-1>||current wifi backhaul : rtp_plr<0>, rtp_jitter<0>, ping_ind<0>||pcscf acc stat : volte<1>, wfc<1> || wifi acc_ctrl:<0>, || current MD stat : MD1 roam <0>, ||Call stat : IR92<0>, IR94<0>, SMS over IP<0>
+11-23 16:05:18.873   281   855 I vendor.mediatek.hardware.power@1.1-impl: querySysInfo cmd:6, param:0
+11-23 16:05:18.875   281   312 I powerd  : [powerd_req] POWER_MSG_QUERY_INFO: cmd:6, param:0
+11-23 16:05:18.875   281   312 I libPerfService: perfUserGetCapability - cmd:6, id:0, value:28389
+11-23 16:05:19.203  1039  1039 I SignalClusterView: updateDisplayVoLte mShowVoLteIcon: false mNoSimsVisible: false mIsAirplaneMode: false showWfc: false  showVolte: false
+11-23 16:05:19.204  1039  1039 I SignalClusterView: updateDisplayVoLte mShowVoLteIcon: false mNoSimsVisible: false mIsAirplaneMode: false showWfc: false  showVolte: false
+11-23 16:05:19.258   288   391 I BufferQueueProducer: [StatusBar#0](this:0xa988d000,id:4,api:1,p:1039,c:288) queueBuffer: fps=0.98 dur=1017.44 max=1017.44 min=1017.44
+11-23 16:05:19.265   288   288 I DisplayDevice: [Built-in Screen (type:0)] fps:1.554152,dur:1286.88,max:992.68,min:294.20
+11-23 16:05:19.266   288   288 I DisplayDevice: [stdout (type:2)] fps:1.554939,dur:1286.22,max:992.54,min:293.69
+11-23 16:05:19.951 28389 29247 V FA      : Inactivity, disconnecting from the service
+11-23 16:05:20.022   271   712 E VT HIDL : [IVT] [VT THREAD] [VT_Bind] des = volte_imsvt1 Fail to connect . retry count: 60715
+11-23 16:05:20.133 28625 28633 I BufferQueueConsumer: [SurfaceTexture-0-28625-1](this:0x87643000,id:1,api:4,p:-1,c:-1) disconnect(C)
+11-23 16:05:20.133 28625 28633 I BufferQueue: [SurfaceTexture-0-28625-1](this:0x87643000,id:1,api:4,p:-1,c:-1) ~BufferQueueCore
+11-23 16:05:20.644   425   425 I thermal_repeater: oh, queryMdThermalInfo (0)No such file or directory
+11-23 16:05:20.668   425   425 I thermal_repeater: [recvMdThermalInfo] ret=27, strLen=127,  3, 34, -127, -1, 32767, 18
+11-23 16:05:20.905   281   855 I vendor.mediatek.hardware.power@1.1-impl: querySysInfo cmd:6, param:0
+11-23 16:05:20.906   281   312 I powerd  : [powerd_req] POWER_MSG_QUERY_INFO: cmd:6, param:0
+11-23 16:05:20.907   281   312 I libPerfService: perfUserGetCapability - cmd:6, id:0, value:28389
+11-23 16:05:21.827  2342  2342 W mtkmal  : type=1400 audit(0.0:49548): avc: denied { open } for path="/proc/2342/net/dev" dev="proc" ino=4026533568 scontext=u:r:mtkmal:s0 tcontext=u:object_r:proc_net:s0 tclass=file permissive=0
+11-23 16:05:22.936  2342  2363 I MAL-Daemon:  (      mfi_task_bootstrap,  400) mfi_task_bootstrap(): an event EVENT_ATMNGR_URC(18) incoming from FD 29!!
+11-23 16:05:22.937  2342  2394 I MAL-RDS :  (         rds_ru_urc_hdlr, 2271) [RDS-I][RDS][rds_ru_urc_hdlr] get URC data: +ECSQ: 13,37,1,1,1,-53,-414,7,4
+11-23 16:05:22.940  2342  2394 I MAL-RDS :  (          rds_ru_rpl_gen, 7629) [RDS-I][RU][rds_ru_rpl_gen][RDS] Current policy: fgimsolte_en<0>, fgwfc_en<0>, erdspolicy<3>,||Threshold i4wifirssih<-75>, i4wifirssil<-85>, i4wifirssih_ho<-78>, i4wifirssil_ho<-88>, i4wifisnrh<10>, i4wifisnrl<6>||Threshold i4ltersrph<-106>, i4ltersrpm<-111>, i4ltersrpl<-116>, i4ltersrqh<5>, i4ltersrqm<3>, i4ltersrql<1>||Threshold i4utranrscph<-104>, i4utranrscpl<-110>, i4gsmrssih<-94>, i4gsmrssil<-102>||current rds ru status: i4wifirssi<-34>, i4wifisnr<9999>, i4ltersrp<-104>, i4ltersrq<13>, i4utranrscp<-98>, i4gsmrssi<-141>, u4active_ran<65539>, flight_mode_activating<0>, ims_roamb<-1>, mms_roamb<-1>||current wifi backhaul : rtp_plr<0>, rtp_jitter<0>, ping_ind<0>||pcscf acc stat : volte<1>, wfc<1> || wifi acc_ctrl:<0>, || current MD stat : MD1 roam <0>, ||Call stat : IR92<0>, IR94<0>, SMS over IP<0>
+11-23 16:05:22.943   281   855 I vendor.mediatek.hardware.power@1.1-impl: querySysInfo cmd:6, param:0
+11-23 16:05:22.944   281   312 I powerd  : [powerd_req] POWER_MSG_QUERY_INFO: cmd:6, param:0
+11-23 16:05:22.944   281   312 I libPerfService: perfUserGetCapability - cmd:6, id:0, value:28389
+11-23 16:05:22.960  1039  1223 I NetworkController.MobileSignalController(1): updateVoiceNetworkType voiceNetType: 13 mCurrentState.connected: true
+11-23 16:05:23.023   271   712 E VT HIDL : [IVT] [VT THREAD] [VT_Bind] des = volte_imsvt1 Fail to connect . retry count: 60716
+11-23 16:05:24.347  1510  1510 I EmmUpdate: forcestop pkg: com.android.defcontainer
+11-23 16:05:24.349   717   728 I ActivityManager: Force stopping com.android.defcontainer appid=10041 user=0: from pid 1510
+11-23 16:05:24.352   717   728 I ActivityManager: Killing 28886:com.android.defcontainer/u0a41 (adj 904): stop com.android.defcontainer
+11-23 16:05:24.366   717   733 W zygote  : kill(-28886, 9) failed: No such process
+11-23 16:05:24.395   288   288 I DisplayDevice: [Built-in Screen (type:0)] fps:0.194930,dur:5130.05,max:5130.05,min:5130.05
+11-23 16:05:24.396   288   288 I DisplayDevice: [stdout (type:2)] fps:0.194930,dur:5130.06,max:5130.06,min:5130.06
+11-23 16:05:24.445   717   733 W zygote  : kill(-28886, 9) failed: No such process
+11-23 16:05:24.447  1510  1510 I EmmUpdate: forcestop pkg: com.android.vending
+11-23 16:05:24.449   717 11771 I ActivityManager: Force stopping com.android.vending appid=10068 user=0: from pid 1510
+11-23 16:05:24.452   717 11771 I ActivityManager: Killing 28902:com.android.vending/u0a68 (adj 900): stop com.android.vending
+11-23 16:05:24.491   717   733 W zygote  : kill(-28886, 9) failed: No such process
+11-23 16:05:24.535   717   733 W zygote  : kill(-28886, 9) failed: No such process
+11-23 16:05:24.535   717   733 I zygote  : Successfully killed process cgroup uid 10041 pid 28886 in 168ms
+11-23 16:05:24.536   717   733 W zygote  : kill(-28902, 9) failed: No such process
+11-23 16:05:24.536   717   733 I zygote  : Successfully killed process cgroup uid 10068 pid 28902 in 0ms
+11-23 16:05:24.827  2342  2394 I MAL-RDS :  (  rds_ru_wifi_status_ind, 1744) [RDS-I][RU][EVENT_RU_WS_WIFI_STATUS_IND] fgwifi_en:1(no use) i4wifirssi:-33 i4wifisnr:9999
+11-23 16:05:24.824  2342  2342 W mtkmal  : type=1400 audit(0.0:49549): avc: denied { open } for path="/proc/2342/net/dev" dev="proc" ino=4026533568 scontext=u:r:mtkmal:s0 tcontext=u:object_r:proc_net:s0 tclass=file permissive=0
+11-23 16:05:24.829  2342  2394 I MAL-RDS :  (          rds_ru_rpl_gen, 7629) [RDS-I][RU][rds_ru_rpl_gen][RDS] Current policy: fgimsolte_en<0>, fgwfc_en<0>, erdspolicy<3>,||Threshold i4wifirssih<-75>, i4wifirssil<-85>, i4wifirssih_ho<-78>, i4wifirssil_ho<-88>, i4wifisnrh<10>, i4wifisnrl<6>||Threshold i4ltersrph<-106>, i4ltersrpm<-111>, i4ltersrpl<-116>, i4ltersrqh<5>, i4ltersrqm<3>, i4ltersrql<1>||Threshold i4utranrscph<-104>, i4utranrscpl<-110>, i4gsmrssih<-94>, i4gsmrssil<-102>||current rds ru status: i4wifirssi<-33>, i4wifisnr<9999>, i4ltersrp<-104>, i4ltersrq<13>, i4utranrscp<-98>, i4gsmrssi<-141>, u4active_ran<65539>, flight_mode_activating<0>, ims_roamb<-1>, mms_roamb<-1>||current wifi backhaul : rtp_plr<0>, rtp_jitter<0>, ping_ind<0>||pcscf acc stat : volte<1>, wfc<1> || wifi acc_ctrl:<0>, || current MD stat : MD1 roam <0>, ||Call stat : IR92<0>, IR94<0>, SMS over IP<0>
+11-23 16:05:24.979   281   855 I vendor.mediatek.hardware.power@1.1-impl: querySysInfo cmd:6, param:0
+11-23 16:05:24.981   281   312 I powerd  : [powerd_req] POWER_MSG_QUERY_INFO: cmd:6, param:0
+11-23 16:05:24.981   281   312 I libPerfService: perfUserGetCapability - cmd:6, id:0, value:28389
+11-23 16:05:25.232  1039  1039 I SignalClusterView: updateDisplayVoLte mShowVoLteIcon: false mNoSimsVisible: false mIsAirplaneMode: false showWfc: false  showVolte: false
+11-23 16:05:25.233  1039  1039 I SignalClusterView: updateDisplayVoLte mShowVoLteIcon: false mNoSimsVisible: false mIsAirplaneMode: false showWfc: false  showVolte: false
+11-23 16:05:25.261   288   391 I BufferQueueProducer: [StatusBar#0](this:0xa988d000,id:4,api:1,p:1039,c:288) queueBuffer: fps=0.17 dur=6002.74 max=6002.74 min=6002.74
+11-23 16:05:25.290   422 14332 I BufferQueueProducer: [GraphicBufferSource](this:0xb326e000,id:3,api:1,p:422,c:422) queueBuffer: fps=0.29 dur=7007.65 max=6016.04 min=991.61
+11-23 16:05:25.672   425   425 I thermal_repeater: select timeout
+11-23 16:05:26.024   271   712 E VT HIDL : [IVT] [VT THREAD] [VT_Bind] des = volte_imsvt1 Fail to connect . retry count: 60717
+11-23 16:05:26.239  1039  1039 I SignalClusterView: updateDisplayVoLte mShowVoLteIcon: false mNoSimsVisible: false mIsAirplaneMode: false showWfc: false  showVolte: false
+11-23 16:05:26.243  1039  1039 I SignalClusterView: updateDisplayVoLte mShowVoLteIcon: false mNoSimsVisible: false mIsAirplaneMode: false showWfc: false  showVolte: false
+11-23 16:05:26.262   288   391 I BufferQueueProducer: [StatusBar#0](this:0xa988d000,id:4,api:1,p:1039,c:288) queueBuffer: fps=1.00 dur=1001.05 max=1001.05 min=1001.05
+11-23 16:05:26.280   288   288 I DisplayDevice: [Built-in Screen (type:0)] fps:1.591982,dur:1884.44,max:999.68,min:118.47
+11-23 16:05:26.280   288   288 I DisplayDevice: [stdout (type:2)] fps:1.591998,dur:1884.43,max:999.53,min:118.28
+11-23 16:05:27.011   281   855 I vendor.mediatek.hardware.power@1.1-impl: querySysInfo cmd:6, param:0
+11-23 16:05:27.013   281   312 I powerd  : [powerd_req] POWER_MSG_QUERY_INFO: cmd:6, param:0
+11-23 16:05:27.013   281   312 I libPerfService: perfUserGetCapability - cmd:6, id:0, value:28389
+11-23 16:05:27.827  2342  2342 W mtkmal  : type=1400 audit(0.0:49550): avc: denied { open } for path="/proc/2342/net/dev" dev="proc" ino=4026533568 scontext=u:r:mtkmal:s0 tcontext=u:object_r:proc_net:s0 tclass=file permissive=0
+11-23 16:05:28.050  2342  2363 I MAL-Daemon:  (      mfi_task_bootstrap,  400) mfi_task_bootstrap(): an event EVENT_ATMNGR_URC(18) incoming from FD 29!!
+11-23 16:05:28.050  2342  2394 I MAL-RDS :  (         rds_ru_urc_hdlr, 2271) [RDS-I][RDS][rds_ru_urc_hdlr] get URC data: +ECSQ: 13,37,1,1,1,-54,-415,7,4
+11-23 16:05:28.051  2342  2394 I MAL-RDS :  (          rds_ru_rpl_gen, 7629) [RDS-I][RU][rds_ru_rpl_gen][RDS] Current policy: fgimsolte_en<0>, fgwfc_en<0>, erdspolicy<3>,||Threshold i4wifirssih<-75>, i4wifirssil<-85>, i4wifirssih_ho<-78>, i4wifirssil_ho<-88>, i4wifisnrh<10>, i4wifisnrl<6>||Threshold i4ltersrph<-106>, i4ltersrpm<-111>, i4ltersrpl<-116>, i4ltersrqh<5>, i4ltersrqm<3>, i4ltersrql<1>||Threshold i4utranrscph<-104>, i4utranrscpl<-110>, i4gsmrssih<-94>, i4gsmrssil<-102>||current rds ru status: i4wifirssi<-33>, i4wifisnr<9999>, i4ltersrp<-104>, i4ltersrq<13>, i4utranrscp<-98>, i4gsmrssi<-141>, u4active_ran<65539>, flight_mode_activating<0>, ims_roamb<-1>, mms_roamb<-1>||current wifi backhaul : rtp_plr<0>, rtp_jitter<0>, ping_ind<0>||pcscf acc stat : volte<1>, wfc<1> || wifi acc_ctrl:<0>, || current MD stat : MD1 roam <0>, ||Call stat : IR92<0>, IR94<0>, SMS over IP<0>
+11-23 16:05:28.258  1039  1039 I SignalClusterView: updateDisplayVoLte mShowVoLteIcon: false mNoSimsVisible: false mIsAirplaneMode: false showWfc: false  showVolte: false
+11-23 16:05:28.260  1039  1039 I SignalClusterView: updateDisplayVoLte mShowVoLteIcon: false mNoSimsVisible: false mIsAirplaneMode: false showWfc: false  showVolte: false
+11-23 16:05:28.309   288   391 I BufferQueueProducer: [StatusBar#0](this:0xa988d000,id:4,api:1,p:1039,c:288) queueBuffer: fps=0.49 dur=2046.82 max=2046.82 min=2046.82
+11-23 16:05:28.316   288   288 I DisplayDevice: [Built-in Screen (type:0)] fps:0.491155,dur:2036.02,max:2036.02,min:2036.02
+11-23 16:05:28.316   288   288 I DisplayDevice: [stdout (type:2)] fps:0.491154,dur:2036.02,max:2036.02,min:2036.02
+11-23 16:05:28.324   422 14332 I BufferQueueProducer: [GraphicBufferSource](this:0xb326e000,id:3,api:1,p:422,c:422) queueBuffer: fps=0.66 dur=3034.46 max=2037.84 min=996.62
+11-23 16:05:29.026   271   712 E VT HIDL : [IVT] [VT THREAD] [VT_Bind] des = volte_imsvt1 Fail to connect . retry count: 60718
+11-23 16:05:29.048   281   855 I vendor.mediatek.hardware.power@1.1-impl: querySysInfo cmd:6, param:0
+11-23 16:05:29.049   281   312 I powerd  : [powerd_req] POWER_MSG_QUERY_INFO: cmd:6, param:0
+11-23 16:05:29.049   281   312 I libPerfService: perfUserGetCapability - cmd:6, id:0, value:28389
+11-23 16:05:30.279  1039  1039 I SignalClusterView: updateDisplayVoLte mShowVoLteIcon: false mNoSimsVisible: false mIsAirplaneMode: false showWfc: false  showVolte: false
+11-23 16:05:30.283  1039  1039 I SignalClusterView: updateDisplayVoLte mShowVoLteIcon: false mNoSimsVisible: false mIsAirplaneMode: false showWfc: false  showVolte: false
+11-23 16:05:30.315  1039  1039 I DataSaverController: registerReceiver() : Runnable call registerReceiver()
+11-23 16:05:30.329  1039  1039 I DataSaverController: registerReceiver() : queryIntentServices = 0
+11-23 16:05:30.330  1039  1039 I DataSaverController: registerReceiver() :  postDelayed Runnable 30000
+11-23 16:05:30.335   288   391 I BufferQueueProducer: [StatusBar#0](this:0xa988d000,id:4,api:1,p:1039,c:288) queueBuffer: fps=0.49 dur=2025.91 max=2025.91 min=2025.91
+11-23 16:05:30.351   288   288 I DisplayDevice: [Built-in Screen (type:0)] fps:0.491435,dur:2034.86,max:2034.86,min:2034.86
+11-23 16:05:30.351   288   288 I DisplayDevice: [stdout (type:2)] fps:0.491434,dur:2034.86,max:2034.86,min:2034.86
+11-23 16:05:30.359   422 14332 I BufferQueueProducer: [GraphicBufferSource](this:0xb326e000,id:3,api:1,p:422,c:422) queueBuffer: fps=0.49 dur=2035.08 max=2035.08 min=2035.08
+11-23 16:05:30.673   425   425 I thermal_repeater: oh, queryMdThermalInfo (0)No such file or directory
+11-23 16:05:30.687   425   425 I thermal_repeater: [recvMdThermalInfo] ret=27, strLen=127,  3, 34, -127, -1, 32767, 18
+11-23 16:05:30.824  2342  2342 W mtkmal  : type=1400 audit(0.0:49551): avc: denied { open } for path="/proc/2342/net/dev" dev="proc" ino=4026533568 scontext=u:r:mtkmal:s0 tcontext=u:object_r:proc_net:s0 tclass=file permissive=0
+11-23 16:05:30.826  2342  2394 I MAL-RDS :  (  rds_ru_wifi_status_ind, 1744) [RDS-I][RU][EVENT_RU_WS_WIFI_STATUS_IND] fgwifi_en:1(no use) i4wifirssi:-34 i4wifisnr:9999
+11-23 16:05:30.826  2342  2394 I MAL-RDS :  (          rds_ru_rpl_gen, 7629) [RDS-I][RU][rds_ru_rpl_gen][RDS] Current policy: fgimsolte_en<0>, fgwfc_en<0>, erdspolicy<3>,||Threshold i4wifirssih<-75>, i4wifirssil<-85>, i4wifirssih_ho<-78>, i4wifirssil_ho<-88>, i4wifisnrh<10>, i4wifisnrl<6>||Threshold i4ltersrph<-106>, i4ltersrpm<-111>, i4ltersrpl<-116>, i4ltersrqh<5>, i4ltersrqm<3>, i4ltersrql<1>||Threshold i4utranrscph<-104>, i4utranrscpl<-110>, i4gsmrssih<-94>, i4gsmrssil<-102>||current rds ru status: i4wifirssi<-34>, i4wifisnr<9999>, i4ltersrp<-104>, i4ltersrq<13>, i4utranrscp<-98>, i4gsmrssi<-141>, u4active_ran<65539>, flight_mode_activating<0>, ims_roamb<-1>, mms_roamb<-1>||current wifi backhaul : rtp_plr<0>, rtp_jitter<0>, ping_ind<0>||pcscf acc stat : volte<1>, wfc<1> || wifi acc_ctrl:<0>, || current MD stat : MD1 roam <0>, ||Call stat : IR92<0>, IR94<0>, SMS over IP<0>
+11-23 16:05:31.058   281   855 I vendor.mediatek.hardware.power@1.1-impl: querySysInfo cmd:6, param:0
+11-23 16:05:31.059   281   312 I powerd  : [powerd_req] POWER_MSG_QUERY_INFO: cmd:6, param:0
+11-23 16:05:31.059   281   312 I libPerfService: perfUserGetCapability - cmd:6, id:0, value:28389
+11-23 16:05:32.027   271   712 E VT HIDL : [IVT] [VT THREAD] [VT_Bind] des = volte_imsvt1 Fail to connect . retry count: 60719
+11-23 16:05:32.239  2936  2936 I [BatteryProtectApp]: DetectBatteryService: ACTION_BATTERY_CHANGED -> mTemprature : 37.0
+11-23 16:05:32.239  2936  2936 I [BatteryProtectApp]: DetectBatteryService: mMaxTempShutDown : false
+11-23 16:05:32.240  2936  2936 I [BatteryProtectApp]: DetectBatteryService: mLowTempShutDown : false
+11-23 16:05:32.240  2936  2936 I [BatteryProtectApp]: DetectBatteryService:IS_SUPPORT_DECREASE_CHARGING : true
+11-23 16:05:32.240  2936  2936 I [BatteryProtectApp]: DetectBatteryService:phone not in any mode now,and health is Good  [mTemprature = 37.0 ]
+11-23 16:05:32.240  2936  2936 I [BatteryProtectApp]: DetectBatteryService:-Not need to display
+11-23 16:05:32.283   288   391 I BufferQueueProducer: [StatusBar#0](this:0xa988d000,id:4,api:1,p:1039,c:288) queueBuffer: fps=0.51 dur=1948.46 max=1948.46 min=1948.46
+11-23 16:05:32.302   288   288 I DisplayDevice: [Built-in Screen (type:0)] fps:0.512428,dur:1951.49,max:1951.49,min:1951.49
+11-23 16:05:32.302   288   288 I DisplayDevice: [stdout (type:2)] fps:0.512431,dur:1951.48,max:1951.48,min:1951.48
+11-23 16:05:32.310   422 14332 I BufferQueueProducer: [GraphicBufferSource](this:0xb326e000,id:3,api:1,p:422,c:422) queueBuffer: fps=0.51 dur=1951.19 max=1951.19 min=1951.19
+11-23 16:05:33.080   281   855 I vendor.mediatek.hardware.power@1.1-impl: querySysInfo cmd:6, param:0
+11-23 16:05:33.080   281   312 I powerd  : [powerd_req] POWER_MSG_QUERY_INFO: cmd:6, param:0
+11-23 16:05:33.080   281   312 I libPerfService: perfUserGetCapability - cmd:6, id:0, value:28389
+11-23 16:05:33.175  2342  2363 I MAL-Daemon:  (      mfi_task_bootstrap,  400) mfi_task_bootstrap(): an event EVENT_ATMNGR_URC(18) incoming from FD 29!!
+11-23 16:05:33.177  2342  2394 I MAL-RDS :  (         rds_ru_urc_hdlr, 2271) [RDS-I][RDS][rds_ru_urc_hdlr] get URC data: +ECSQ: 12,37,1,1,1,-56,-413,7,4
+11-23 16:05:33.179  2342  2394 I MAL-RDS :  (          rds_ru_rpl_gen, 7629) [RDS-I][RU][rds_ru_rpl_gen][RDS] Current policy: fgimsolte_en<0>, fgwfc_en<0>, erdspolicy<3>,||Threshold i4wifirssih<-75>, i4wifirssil<-85>, i4wifirssih_ho<-78>, i4wifirssil_ho<-88>, i4wifisnrh<10>, i4wifisnrl<6>||Threshold i4ltersrph<-106>, i4ltersrpm<-111>, i4ltersrpl<-116>, i4ltersrqh<5>, i4ltersrqm<3>, i4ltersrql<1>||Threshold i4utranrscph<-104>, i4utranrscpl<-110>, i4gsmrssih<-94>, i4gsmrssil<-102>||current rds ru status: i4wifirssi<-34>, i4wifisnr<9999>, i4ltersrp<-104>, i4ltersrq<12>, i4utranrscp<-98>, i4gsmrssi<-141>, u4active_ran<65539>, flight_mode_activating<0>, ims_roamb<-1>, mms_roamb<-1>||current wifi backhaul : rtp_plr<0>, rtp_jitter<0>, ping_ind<0>||pcscf acc stat : volte<1>, wfc<1> || wifi acc_ctrl:<0>, || current MD stat : MD1 roam <0>, ||Call stat : IR92<0>, IR94<0>, SMS over IP<0>
+11-23 16:05:33.192  1039  1223 I NetworkController.MobileSignalController(1): updateVoiceNetworkType voiceNetType: 13 mCurrentState.connected: true
+11-23 16:05:33.297  1039  1039 I SignalClusterView: updateDisplayVoLte mShowVoLteIcon: false mNoSimsVisible: false mIsAirplaneMode: false showWfc: false  showVolte: false
+11-23 16:05:33.300  1039  1039 I SignalClusterView: updateDisplayVoLte mShowVoLteIcon: false mNoSimsVisible: false mIsAirplaneMode: false showWfc: false  showVolte: false
+11-23 16:05:33.347   288   391 I BufferQueueProducer: [StatusBar#0](this:0xa988d000,id:4,api:1,p:1039,c:288) queueBuffer: fps=1.88 dur=1063.25 max=1008.16 min=55.09
+11-23 16:05:33.362   288   288 I DisplayDevice: [Built-in Screen (type:0)] fps:1.887234,dur:1059.75,max:1009.35,min:50.40
+11-23 16:05:33.362   288   288 I DisplayDevice: [stdout (type:2)] fps:1.887218,dur:1059.76,max:1009.54,min:50.22
+11-23 16:05:33.369   422 14332 I BufferQueueProducer: [GraphicBufferSource](this:0xb326e000,id:3,api:1,p:422,c:422) queueBuffer: fps=1.89 dur=1058.11 max=1009.91 min=48.20
+11-23 16:05:33.829  2342  2394 I MAL-RDS :  (  rds_ru_wifi_status_ind, 1744) [RDS-I][RU][EVENT_RU_WS_WIFI_STATUS_IND] fgwifi_en:1(no use) i4wifirssi:-33 i4wifisnr:9999
+11-23 16:05:33.830  2342  2394 I MAL-RDS :  (          rds_ru_rpl_gen, 7629) [RDS-I][RU][rds_ru_rpl_gen][RDS] Current policy: fgimsolte_en<0>, fgwfc_en<0>, erdspolicy<3>,||Threshold i4wifirssih<-75>, i4wifirssil<-85>, i4wifirssih_ho<-78>, i4wifirssil_ho<-88>, i4wifisnrh<10>, i4wifisnrl<6>||Threshold i4ltersrph<-106>, i4ltersrpm<-111>, i4ltersrpl<-116>, i4ltersrqh<5>, i4ltersrqm<3>, i4ltersrql<1>||Threshold i4utranrscph<-104>, i4utranrscpl<-110>, i4gsmrssih<-94>, i4gsmrssil<-102>||current rds ru status: i4wifirssi<-33>, i4wifisnr<9999>, i4ltersrp<-104>, i4ltersrq<12>, i4utranrscp<-98>, i4gsmrssi<-141>, u4active_ran<65539>, flight_mode_activating<0>, ims_roamb<-1>, mms_roamb<-1>||current wifi backhaul : rtp_plr<0>, rtp_jitter<0>, ping_ind<0>||pcscf acc stat : volte<1>, wfc<1> || wifi acc_ctrl:<0>, || current MD stat : MD1 roam <0>, ||Call stat : IR92<0>, IR94<0>, SMS over IP<0>
+11-23 16:05:33.827  2342  2342 W mtkmal  : type=1400 audit(0.0:49552): avc: denied { open } for path="/proc/2342/net/dev" dev="proc" ino=4026533568 scontext=u:r:mtkmal:s0 tcontext=u:object_r:proc_net:s0 tclass=file permissive=0
+11-23 16:05:35.029   271   712 E VT HIDL : [IVT] [VT THREAD] [VT_Bind] des = volte_imsvt1 Fail to connect . retry count: 60720
+11-23 16:05:35.089   281   855 I vendor.mediatek.hardware.power@1.1-impl: querySysInfo cmd:6, param:0
+11-23 16:05:35.089   281   312 I powerd  : [powerd_req] POWER_MSG_QUERY_INFO: cmd:6, param:0
+11-23 16:05:35.090   281   312 I libPerfService: perfUserGetCapability - cmd:6, id:0, value:28389
+11-23 16:05:35.305  1039  1039 I SignalClusterView: updateDisplayVoLte mShowVoLteIcon: false mNoSimsVisible: false mIsAirplaneMode: false showWfc: false  showVolte: false
+11-23 16:05:35.309  1039  1039 I SignalClusterView: updateDisplayVoLte mShowVoLteIcon: false mNoSimsVisible: false mIsAirplaneMode: false showWfc: false  showVolte: false
+11-23 16:05:35.356   288   391 I BufferQueueProducer: [StatusBar#0](this:0xa988d000,id:4,api:1,p:1039,c:288) queueBuffer: fps=0.50 dur=2009.38 max=2009.38 min=2009.38
+11-23 16:05:35.364   288   288 I DisplayDevice: [Built-in Screen (type:0)] fps:0.499521,dur:2001.92,max:2001.92,min:2001.92
+11-23 16:05:35.364   288   288 I DisplayDevice: [stdout (type:2)] fps:0.499522,dur:2001.91,max:2001.91,min:2001.91
+11-23 16:05:35.374   422 14332 I BufferQueueProducer: [GraphicBufferSource](this:0xb326e000,id:3,api:1,p:422,c:422) queueBuffer: fps=0.50 dur=2005.82 max=2005.82 min=2005.82
+11-23 16:05:35.614 24525 24525 I ADB_SERVICES: service_to_fd shell:export ANDROID_LOG_TAGS="''"; exec logcat '-d'
+11-23 16:05:35.692   425   425 I thermal_repeater: select timeout
+11-23 16:05:35.781   717   882 I DataShapingService: openLteGateSuccess = false

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    android:orientation="vertical"
+    android:padding="5dp" >
+
+    <RelativeLayout
+	        android:id="@+id/rl_sccontact"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"               
+	        android:background="@drawable/rounded_gray_border">
+	        
+	        <ImageView
+	            android:id="@+id/bt_scname"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"	            
+	            android:layout_gravity="center_vertical"
+	            android:background="@null"
+	            android:contentDescription="@string/app_name"
+	            android:padding="5dp"
+	            android:src="@drawable/timein48" />
+	
+	        <TextView
+	            android:id="@+id/tvCName"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:layout_toEndOf="@+id/bt_scname"	            
+	            android:paddingTop="3dp"
+	            android:background="@null"	            
+	            android:textColor="#000"
+	            android:textAppearance="?android:attr/textAppearanceMedium"
+	            android:focusable="false" />
+	        
+	        
+	        <TextView
+	            android:id="@+id/tvAddress"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"	            
+	            android:layout_toEndOf="@+id/bt_scname"
+	            android:layout_below="@+id/tvCName"	            
+	            android:paddingTop="3dp"
+	            android:paddingBottom="3dp"
+	            android:background="@null"	            
+	            android:focusable="false" 
+	            android:textColor="#00BFFF"
+	            android:textAppearance="?android:attr/textAppearanceSmall" />
+	    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/separator"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_marginTop="5dp"
+        android:background="#707070"
+        android:gravity="center"
+        android:text="@string/defaults"
+        android:textColor="#000" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <android.support.v4.view.ViewPager
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/llRemarks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+        android:text="@string/remarks" /> 
+
+    <EditText
+        android:id="@+id/etRemarks_pg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_border"
+        android:ems="10"  
+        android:gravity="center"
+        android:inputType="textCapSentences|textMultiLine"
+        android:lines="1"
+        android:maxLength="80"
+        android:padding="5dp"
+        android:textSize="16sp"
+        android:typeface="sans" />
+
+    <Button
+        android:id="@+id/btSubmit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="submitToServer"
+        android:layout_marginTop="10dp"
+        android:textColor="#fff"
+        android:background="@drawable/custom_button_click"
+        android:text="@string/submit" />
+
+</LinearLayout>

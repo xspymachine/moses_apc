@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    
+ <item 
+        android:id="@+id/action_view"
+        android:orderInCategory="0"
+        android:icon="@drawable/send32"
+        android:title="@string/action_view"/>
+ 
+ <item 
+        android:id="@+id/action_resend"
+        android:orderInCategory="0"
+        android:icon="@drawable/history"
+        android:title="@string/action_resend"/>
+    
+   
+</menu>
+

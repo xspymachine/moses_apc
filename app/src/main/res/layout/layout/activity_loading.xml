@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        
+	<RelativeLayout 
+	    android:id="@+id/relativeLayout1"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:background="@drawable/bg32" >
+	
+	   <RelativeLayout
+		        android:id="@+id/rl_sccontact"
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content" 	     	   	        
+		        android:layout_marginBottom="6dp"	                     
+		        android:background="#FFFFFF">
+		        
+		        <ImageView
+		            android:id="@+id/bt_scname"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"	            
+		            android:layout_gravity="center_vertical"
+		            android:background="@null"
+		            android:contentDescription="@string/app_name"
+		            android:padding="5dp"
+		            android:src="@drawable/timein48" />
+		
+		        <TextView
+		            android:id="@+id/tvCName"
+		            android:layout_width="match_parent"
+		            android:layout_height="wrap_content"
+		            android:layout_toRightOf="@+id/bt_scname"	            
+		            android:paddingTop="3dp"
+		            android:background="@null"	            
+		            android:textAppearance="?android:attr/textAppearanceMedium"
+		            android:focusable="false" />
+		        
+		        
+		        <TextView
+		            android:id="@+id/tvAddress"
+		            android:layout_width="match_parent"
+		            android:layout_height="wrap_content"	            
+		            android:layout_toRightOf="@+id/bt_scname"
+		            android:layout_below="@+id/tvCName"	            
+		            android:paddingTop="3dp"
+		            android:paddingBottom="3dp"
+		            android:background="@null"	            
+		            android:focusable="false" 
+		            android:textColor="#00BFFF"
+		            android:textAppearance="?android:attr/textAppearanceSmall" />
+		        
+		        <TextView
+		            android:id="@+id/tvMobileNo"
+		            android:layout_width="match_parent"
+		            android:layout_height="wrap_content"  
+		            android:layout_below="@+id/tvAddress"
+		            android:layout_alignLeft="@+id/tvAddress"	            
+		            android:paddingTop="3dp"
+		            android:paddingBottom="3dp"
+		            android:background="@null"	            
+		            android:focusable="false" 
+		            android:textColor="#000"
+		            android:textStyle="bold"
+		            android:textAppearance="?android:attr/textAppearanceSmall" />
+		    </RelativeLayout>
+	    
+	    <RelativeLayout
+	        android:id="@+id/rl2"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginTop="6dp"
+	        android:layout_marginLeft="6dp"
+	        android:layout_marginRight="12dp"  
+	        android:layout_alignParentLeft="true"        
+	        android:layout_below="@+id/rl_sccontact"  
+	        android:background="@android:drawable/editbox_background"        
+	        android:orientation="vertical" >
+	        
+	        <ImageButton 
+	            android:id="@+id/bt_amount"
+	            android:contentDescription="@string/app_name" 
+	            android:layout_width="wrap_content" 
+	            android:layout_height="wrap_content" 
+	            android:background="@null" 
+	            android:src="@drawable/peso"
+	            android:paddingRight="5dp" 
+	            android:layout_gravity="center_vertical"  />
+	            
+	        <EditText 
+	            android:id="@+id/et_amount" 
+	            android:layout_width="220dp"
+	            android:layout_height="wrap_content"
+	            android:layout_toRightOf="@+id/bt_amount"
+	            android:padding="12dp"             
+	            android:background="@null"
+	            android:inputType="number"
+	            android:hint="@string/amt_desc" 
+	            android:layout_gravity="center_vertical" />         
+	    </RelativeLayout>
+	    
+	    <RelativeLayout
+	        android:id="@+id/rl3"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"        
+	        android:layout_marginTop="12dp" 
+	        android:layout_marginRight="12dp"            
+	        android:layout_below="@+id/rl2" 
+	        android:layout_alignLeft="@+id/rl2"   
+	        android:background="@android:drawable/editbox_background"
+	        android:orientation="vertical" >
+	        
+	        <ImageButton 
+	            android:id="@+id/bt_pin"
+	            android:contentDescription="@string/app_name" 
+	            android:layout_width="wrap_content" 
+	            android:layout_height="wrap_content" 
+	            android:background="@null" 
+	            android:src="@drawable/pin"
+	            android:paddingRight="5dp" 
+	            android:layout_gravity="center_vertical"  />
+	            
+	        <EditText 
+	            android:id="@+id/et_pin" 
+	            android:layout_width="220dp"
+	            android:layout_height="wrap_content"
+	            android:layout_toRightOf="@+id/bt_pin"
+	            android:paddingLeft="12dp" 
+	            android:paddingTop="12dp" 
+	            android:paddingBottom="12dp"            
+	            android:background="@null"
+	            android:inputType="number"
+	            android:hint="@string/pin_desc" 
+	            android:layout_gravity="center_vertical" />         
+	    </RelativeLayout>
+	
+	    <ImageButton
+	        android:id="@+id/btLoad"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/rl3"
+	        android:layout_alignParentRight="true"
+	        android:layout_marginLeft="22dp"
+	        android:layout_marginTop="6dp"        
+	        android:background="@null"
+	        android:contentDescription="@string/app_name"
+	        android:src="@drawable/dial"
+	        android:onClick="btDialClick"/>
+	
+	
+	</RelativeLayout>
+</ScrollView>

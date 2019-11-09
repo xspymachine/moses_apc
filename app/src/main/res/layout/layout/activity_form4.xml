@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    android:orientation="vertical" >
+
+    <!-- <TextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+         android:textSize="15sp"
+        android:text="@string/name" />
+
+    <TextView
+        android:id="@+id/tvAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+         android:textSize="15sp"
+        android:text="@string/address" /> -->
+    
+    <TextView
+        android:id="@+id/separator"
+		android:layout_width="match_parent"
+		android:layout_height="3dp"
+		android:layout_marginTop="12dp"
+		android:background="#707070"
+		android:gravity="center"
+		android:text="@string/defaults"
+		android:textColor="#000" />
+    
+    <LinearLayout
+         android:id="@+id/group4ff"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content" >
+
+         <TextView
+              android:id="@+id/textView1"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:textStyle="bold"
+              android:textSize="15sp"
+              android:layout_weight="0.2"
+              android:gravity="center_horizontal"
+              android:text="@string/tName" />
+         
+
+         <TextView
+             android:id="@+id/textView2"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:textStyle="bold"
+             android:textSize="15sp"
+             android:layout_weight="0.3"
+             android:gravity="center_horizontal"
+             android:text="@string/tType" />
+         
+         <TextView
+             android:id="@+id/textView3"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:textStyle="bold"
+             android:textSize="15sp"
+             android:layout_weight="0.3"
+             android:gravity="center_horizontal"
+             android:text="@string/tCapacity" />
+         
+         <TextView
+             android:id="@+id/textView5"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content" 
+             android:textStyle="bold"
+             android:textSize="15sp"
+             android:layout_weight="0.1"
+             android:gravity="center_horizontal"
+             android:text="@string/tQty" />
+         
+         <!-- <TextView
+             android:id="@+id/textView4"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:textStyle="bold"
+             android:textSize="15sp"             
+             android:layout_weight="0.2"
+             android:gravity="center_horizontal"
+             android:text="@string/ioh" /> -->
+
+     </LinearLayout>   
+    
+
+<ScrollView 
+    android:layout_width="match_parent"
+    android:layout_weight="1"
+    android:padding="5dp"
+    android:layout_height="fill_parent">
+
+      <LinearLayout 
+        android:id="@+id/mylinear"
+         android:layout_width="match_parent"
+         android:layout_weight="1"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+
+        >
+
+    </LinearLayout>
+
+ </ScrollView>
+
+         <Button
+             android:id="@+id/btSubmit"
+             android:layout_width="fill_parent"
+             android:layout_height="wrap_content"
+             android:onClick="submitToServer"
+             android:text="@string/btSave" />
+
+</LinearLayout>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    
+ <item 
+        android:id="@+id/delete_return_item"
+        android:orderInCategory="0"
+        android:icon="@drawable/edit32"
+        android:title="@string/delete_callsheet_item"/>
+    
+    <item
+        android:id="@+id/delete_all"
+        android:orderInCategory="1" 
+        android:icon="@drawable/delete32"       
+        android:title="@string/delete_callsheet"/>
+    
+</menu>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+	Date: 2013-11-19 
+	•	added new layout ListView with id name: list
+ -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CalendarViewActivity"
+    android:background="#5E514D" >
+     <!-- 
+    <RelativeLayout 
+	    android:orientation="horizontal"
+	    android:layout_width="match_parent"
+	    android:layout_height="52dp"
+	    android:background="#323331" 
+	    android:padding="5dp">
+	    
+	
+	    <ImageView
+	        android:id="@+id/app_logo"
+	        android:src="@drawable/logo96"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentLeft="true"
+	        android:contentDescription="@string/app_name"/>
+	    
+	    <TextView  
+	        android:id="@+id/custom_title"        
+	        android:layout_width="wrap_content"	      
+	        android:layout_height="wrap_content"
+	        android:layout_toRightOf="@+id/app_logo"	       
+	        android:layout_alignBottom="@+id/app_logo"
+	        android:layout_marginBottom="6dp"
+	        android:text="@string/app_name"
+	        android:textSize="16sp"
+	        android:textColor="#fff"/>
+	    
+	    <Button
+	        android:id="@+id/new_itinerary"
+	        android:src="@drawable/logo96"
+	        android:text="@string/new_itinerary"
+	        android:textColor="#fff"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginRight="10dp"
+	        android:layout_alignParentRight="true"/>
+	 
+	</RelativeLayout >
+     -->
+    
+    <LinearLayout
+    	android:id="@+id/header"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_marginLeft="3dp"
+	    android:layout_marginRight="3dp"	    
+	    android:orientation="horizontal"
+	    android:background="@drawable/header_background"
+	    android:padding="6dp">
+	    
+        <ImageView  
+			android:id="@+id/previous" 		    
+		    android:layout_width="0dp"	
+		    android:layout_height="wrap_content"
+		    android:layout_weight="1" 
+		    android:layout_gravity="left"  
+		    android:src="@drawable/prev"
+		    android:contentDescription="@string/prev"   
+		    android:clickable="true"/>
+        
+        <TextView  
+			android:id="@+id/title" 
+			android:layout_width="0dp"
+		    android:layout_height="wrap_content"  
+		    android:layout_weight="12"
+		    android:textSize="20sp"
+		    android:textStyle="bold"
+		    android:gravity="center_horizontal"/>
+        
+        <ImageView  
+			android:id="@+id/next" 
+		    android:layout_width="0dp"
+		    android:layout_height="wrap_content"  
+		    android:layout_weight="1"
+		    android:layout_gravity="right"
+		    android:src="@drawable/next"
+		    android:contentDescription="@string/next"
+		    android:clickable="true" />
+	</LinearLayout>    
+    
+    <GridView
+        android:id="@+id/header_gridview"
+        android:layout_width="match_parent"
+        android:layout_height="63dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="3dp"
+        android:layout_marginRight="3dp"
+        android:background="#FFBE9534"
+        android:gravity="center"
+        android:horizontalSpacing="1dp"
+        android:numColumns="8"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="1dp" />
+   
+      <LinearLayout
+          android:id="@+id/calendarView"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginLeft="1dp"
+          android:layout_marginRight="1dp"
+          android:orientation="horizontal"
+          android:baselineAligned="false"
+          android:padding="2dp" >
+
+          <GridView
+              android:id="@+id/gridview1"
+              android:layout_width="50dp"
+              android:layout_height="match_parent"
+              android:background="#FFBE9534"
+              android:gravity="center"
+              android:horizontalSpacing="1dp"
+              android:numColumns="1"
+              android:stretchMode="columnWidth"
+              android:verticalSpacing="1dp"
+              android:visibility="gone" />
+
+          <GridView
+              android:id="@+id/gridview2"
+              android:layout_width="0dp"
+              android:layout_height="551dp"
+              android:layout_weight="0.97"
+              android:gravity="center"
+              android:horizontalSpacing="1dp"
+              android:numColumns="8"
+              android:stretchMode="columnWidth"
+              android:verticalSpacing="1dp" />
+      </LinearLayout>
+
+	<TextView
+	    android:id="@+id/textView1"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:text="@string/schedules"
+	    android:background="#FFBE9534" />
+
+	<ListView
+	    android:id="@+id/android:list"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:dividerHeight="2dp"
+	    android:background="#000"
+	    android:divider="#fff" >
+	</ListView>
+	
+</LinearLayout>

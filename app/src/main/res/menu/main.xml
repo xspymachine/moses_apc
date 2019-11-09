@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/Outbox"
+        android:orderInCategory="100"
+        android:icon="@drawable/outbox32"
+        android:showAsAction="never"
+        android:title="@string/outbox"/>
+    
+   <item
+        android:id="@+id/empty_outbox"
+        android:orderInCategory="100"
+         android:icon="@drawable/delete48"
+        android:showAsAction="never"
+        android:title="@string/empty_outbox"/>
+
+</menu>

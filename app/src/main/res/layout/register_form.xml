@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/sv_box"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/shellyellow"
+    tools:context=".RegisterActivity" >
+
+    <RelativeLayout
+        android:id="@+id/rl_regmain"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:descendantFocusability="beforeDescendants"
+        android:focusableInTouchMode="true"
+        android:padding="12dp" >
+        
+        <TextView
+            android:id="@+id/tvRegister"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:text="@string/register"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FFFFFF" />
+        
+        <EditText
+            android:id="@+id/etCompany"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/tvRegister"
+            android:hint="@string/company"
+            android:layout_marginStart="12dp"            
+            android:layout_marginEnd="12dp"
+            android:layout_marginTop="12dp"
+            android:padding="5dp"
+            android:ems="10"              
+            android:background="@drawable/recbg"
+            android:inputType="textCapSentences"/>
+
+        <Spinner
+            android:id="@+id/etType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/etCompany"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginTop="12dp"
+            android:ems="10"
+            android:padding="5dp"
+            android:hint="@string/type"
+            android:background="@drawable/recbg"
+            android:inputType="textCapSentences" />
+        
+
+        <EditText
+            android:id="@+id/etFirstname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/etType"
+            android:layout_marginStart="12dp"            
+            android:layout_marginEnd="12dp"
+            android:layout_marginTop="12dp"
+            android:ems="10"           
+            android:padding="5dp"
+            android:hint="@string/firstname"     
+            android:background="@drawable/recbg"      
+            android:inputType="textCapSentences" />
+        
+        <EditText
+            android:id="@+id/etLastname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/etFirstname"  
+            android:layout_marginStart="12dp"            
+            android:layout_marginEnd="12dp"
+            android:layout_marginTop="12dp"
+            android:padding="5dp"
+            android:ems="10"
+            android:hint="@string/lastname"
+            android:background="@drawable/recbg"    
+            android:inputType="textCapSentences" />
+
+        <EditText
+            android:id="@+id/etMobileno"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/etLastname"
+            android:layout_marginStart="12dp"            
+            android:layout_marginEnd="12dp"
+            android:layout_marginTop="12dp"
+            android:ems="10"
+            android:padding="5dp"
+            android:background="@drawable/recbg"                
+            android:hint="@string/mobileno"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/etEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/etMobileno"
+            android:background="@drawable/recbg"               
+            android:padding="5dp"
+            android:layout_marginStart="12dp"            
+            android:layout_marginEnd="12dp"
+            android:layout_marginTop="12dp"
+            android:ems="10"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress" />
+
+        <com.scottyab.showhidepasswordedittext.ShowHidePasswordEditText
+            android:id="@+id/etPass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/etEmail"
+            android:background="@drawable/recbg"               
+            android:padding="5dp"
+            android:layout_marginStart="12dp"            
+            android:layout_marginEnd="12dp"
+            android:layout_marginTop="12dp"
+            android:ems="10"
+            android:hint="@string/pass"
+            android:inputType="textPassword" />     
+        
+        <com.scottyab.showhidepasswordedittext.ShowHidePasswordEditText
+            android:id="@+id/etCPass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/etPass"
+            android:background="@drawable/recbg"               
+            android:padding="5dp"
+            android:layout_marginStart="12dp"            
+            android:layout_marginEnd="12dp"
+            android:layout_marginTop="12dp"
+            android:ems="10"
+            android:hint="@string/cpass"
+            android:inputType="textPassword" />
+        
+        <!--<CheckBox-->
+            <!--android:id="@+id/passCheck"-->
+            <!--android:layout_width="wrap_content" -->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentStart="true"-->
+            <!--android:layout_below="@+id/etCPass"-->
+            <!--android:layout_marginStart="12dp"        -->
+            <!--android:layout_marginTop="12dp"    -->
+            <!--android:textColor="#fff" />-->
+        
+        <EditText
+            android:id="@+id/etHint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/etCPass"
+            android:background="@drawable/recbg"               
+            android:padding="5dp"
+            android:layout_marginStart="12dp"            
+            android:layout_marginEnd="12dp"
+            android:layout_marginTop="12dp"
+            android:ems="10"
+            android:hint="@string/pHint"
+            android:inputType="text" />
+        
+        <LinearLayout        
+         android:id="@+id/sig_buttons"
+         android:layout_width="400dp"
+         android:layout_height="wrap_content"
+         android:layout_below="@+id/etHint"
+         android:layout_marginTop="6dp"
+         android:orientation="horizontal"
+         android:paddingLeft="30dp"
+         android:paddingRight="30dp"
+         android:paddingTop="6dp" >
+
+         <Button
+             android:id="@+id/bt_clear_reg"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_weight=".5"
+             android:contentDescription="@string/btn_clear"
+             android:background="@drawable/custom_button_click"    
+             android:text="@string/btCancel"
+             android:textColor="#fff"      
+             android:paddingRight="10dp" />
+
+         <Button
+             android:id="@+id/btRegister"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_weight=".5"
+             android:contentDescription="@string/clear"    
+             android:text="@string/btSave"
+             android:textColor="#fff"
+             android:background="@drawable/custom_button_click"         
+             android:layout_marginStart="10dp"  />
+     </LinearLayout>  
+
+    </RelativeLayout>
+
+</ScrollView>

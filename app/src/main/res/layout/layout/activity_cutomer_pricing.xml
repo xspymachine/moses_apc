@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp" >
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/name" />
+
+    <TextView
+        android:id="@+id/tvAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/tvName"
+        android:text="@string/address" />
+
+    <TextView
+        android:id="@+id/tvCusName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="52dp"
+        android:layout_toRightOf="@+id/tvName"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+    
+    <TextView
+        android:id="@+id/tvCusAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tvCusName"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/tvCusName"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+    
+    <Button
+        android:id="@+id/btAddComItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/tvAddress"
+        android:visibility="invisible"
+        android:text="@string/add_comp_item" />
+    
+    <TextView
+		android:id="@+id/separator"
+		android:layout_width="match_parent"
+		android:layout_height="6dp"
+		android:layout_marginTop="12dp"
+		android:background="#000"
+		android:gravity="center"
+		android:textSize="12sp"
+		android:text="@string/defaults"
+		android:layout_below="@+id/btAddComItem"
+		android:textColor="#000" />
+    
+    <LinearLayout
+        android:id="@+id/priceHeader"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/separator"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:visibility="invisible"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:text="@string/description"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+        
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            />     
+        
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="70dp"
+            android:text="@string/price"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    </LinearLayout>
+    
+    <TextView
+		android:id="@+id/separator2"
+		android:layout_width="match_parent"
+		android:layout_height="6dp"
+		android:background="#000"
+		android:gravity="center"
+		android:textSize="12sp"
+		android:text="@string/defaults"
+		android:layout_below="@+id/priceHeader"
+		android:visibility="invisible"
+		android:textColor="#000" />
+    
+    <ListView
+        android:id="@+id/android:list"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btCPRSubmit"
+        android:layout_below="@id/separator2"
+        android:descendantFocusability="beforeDescendants" >
+
+    </ListView>
+
+    <Button
+        android:id="@+id/btCPRSubmit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/android:list"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/android:list"
+        android:text="@string/submit" />
+
+</RelativeLayout>

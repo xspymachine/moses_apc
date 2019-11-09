@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" 
+    xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/sv_box"   
+	android:layout_height="fill_parent"  
+	android:layout_width="fill_parent" 
+    tools:context=".CustomerAddEditActivity">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="120dp"
+    android:paddingLeft="30dp"
+    android:paddingRight="30dp"
+    android:paddingTop="30dp" >
+
+    <TextView
+        android:id="@+id/tvheader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/bg32"
+        android:padding="6dp"
+        android:text="@string/owner"
+        android:textColor="#fff"  
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/OName"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvheader"
+        android:layout_marginBottom="30dp"
+        android:layout_marginRight="5dp"
+        android:text="@string/name" />
+
+    <EditText
+        android:id="@+id/etOName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/OName"
+        android:layout_toRightOf="@+id/OName"
+        android:inputType="textCapWords" />
+
+    <TextView
+        android:id="@+id/OStat"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/OName"
+        android:layout_marginBottom="30dp"
+        android:layout_marginRight="5dp"
+        android:text="@string/status" />
+
+    <AutoCompleteTextView
+        android:id="@+id/etOStat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/OStat"
+        android:layout_toRightOf="@+id/OStat"
+        android:inputType="textCapWords" />
+
+    <TextView
+        android:id="@+id/OBday"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/OStat"
+        android:layout_marginBottom="30dp"
+        android:layout_marginRight="5dp"
+        android:text="@string/bday" />
+
+    <EditText
+        android:id="@+id/etOBday"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/OBday"
+        android:layout_toRightOf="@+id/OBday"
+        android:hint="@string/birthdate"
+        android:clickable="true"
+        android:focusable="false" />
+
+    <TextView
+        android:id="@+id/OHobbies"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/OBday"
+        android:layout_marginBottom="30dp"
+        android:layout_marginRight="5dp"
+        android:text="@string/hobbies" />
+
+    <EditText
+        android:id="@+id/etOHobbies"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/OHobbies"
+        android:layout_toRightOf="@+id/OHobbies"
+        android:inputType="textCapWords" />
+
+    <TextView
+        android:id="@+id/OPhone"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/OHobbies"
+        android:layout_marginBottom="30dp"
+        android:layout_marginRight="5dp"
+        android:text="@string/phone" />
+
+    <EditText
+        android:id="@+id/etOPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/OPhone"
+        android:layout_toRightOf="@+id/OPhone"
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/OEmail"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/OPhone"
+        android:layout_marginBottom="30dp"
+        android:layout_marginRight="5dp"
+        android:text="@string/email2" />
+
+    <EditText
+        android:id="@+id/etOEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/OEmail"
+        android:layout_toRightOf="@+id/OEmail"
+        android:inputType="textEmailAddress" />
+
+    <TextView
+        android:id="@+id/tvheader2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/bg32"
+        android:padding="6dp"
+        android:text="@string/logistics"
+        android:layout_below="@+id/OEmail"
+        android:textColor="#fff"
+        android:textSize="16sp" />
+    
+    <TextView
+        android:id="@+id/tvTruck"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvheader2"
+        android:layout_marginBottom="5dp"
+        android:layout_marginRight="5dp"
+        android:text="@string/no_trk" />
+
+    <EditText
+        android:id="@+id/etTruck"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvTruck"
+        android:layout_toRightOf="@+id/tvTruck"
+        android:enabled="false"
+        android:inputType="number" />
+    
+    <Button
+        android:id="@+id/btTruck"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvTruck"
+        android:layout_marginBottom="5dp"
+        android:text="@string/truck" />  
+
+    <TextView
+        android:id="@+id/tvSupplier"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btTruck"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="5dp"
+        android:text="@string/supplier" />
+
+    <AutoCompleteTextView
+        android:id="@+id/etSupplier"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvSupplier"
+        android:layout_toRightOf="@+id/tvSupplier"
+        android:hint="@string/supplier"
+        android:inputType="textEmailAddress" /> 
+        
+    <TextView
+        android:id="@+id/tvDelivery"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvSupplier"
+        android:layout_marginBottom="30dp"
+        android:layout_marginRight="5dp"
+        android:text="@string/delivery" />
+    
+    <Spinner
+        android:id="@+id/spDelivery"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tvWarehouse"
+        android:layout_toRightOf="@+id/tvDelivery" />
+        
+    <TextView
+        android:id="@+id/tvWarehouse"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvDelivery"
+        android:layout_marginBottom="30dp"
+        android:layout_marginRight="5dp"
+        android:text="@string/warehouse" />
+    
+    <EditText
+        android:id="@+id/etWarehouse"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/tvWarehouse"
+        android:layout_toRightOf="@+id/tvWarehouse"
+        android:ems="10"
+        android:hint="@string/wQty"
+        android:inputType="textCapWords" />
+
+    <!-- <TextView
+        android:id="@+id/labelSalesType"
+        android:layout_width="70dp"
+        android:layout_height="1dp"
+        android:layout_below="@+id/PEmail"
+        android:layout_marginBottom="30dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="1dp"
+        android:text="@string/salestype"
+        android:visibility="invisible" />
+
+    <RadioGroup
+        android:id="@+id/h_SalesType"
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:layout_alignTop="@+id/labelSalesType"
+        android:layout_toRightOf="@+id/labelSalesType"
+        android:background="#Fee"
+        android:padding="30dp"
+        android:visibility="invisible" >
+
+        <RadioButton
+            android:id="@+id/rbCashSales"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="@string/cash_sales" />
+
+        <RadioButton
+            android:id="@+id/rbSalesBooking"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/sales_booking" />
+    </RadioGroup> -->
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/separator"
+        android:layout_marginTop="30dp" >
+
+        <ImageButton
+            android:id="@+id/bt_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/bt_save"
+            android:layout_marginRight="50dp"
+            android:layout_toLeftOf="@+id/bt_save"
+            android:background="#fff"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/cancel96" />
+
+        <ImageButton
+            android:id="@+id/bt_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="#fff"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/save96" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/separator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/etSupplier"
+        android:layout_below="@+id/tvWarehouse"
+        android:background="#000"
+        android:gravity="center"
+        android:text="@string/defaults"
+        android:textColor="#000" />      
+
+</RelativeLayout>
+
+</ScrollView>

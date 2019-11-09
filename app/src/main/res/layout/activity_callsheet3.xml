@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/rl_customer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:background="@android:drawable/editbox_background" >
+
+
+            <TextView
+                android:id="@+id/lblCName"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:paddingTop="8dp"
+                android:background="@null"
+                android:text="@string/customer"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+
+            <TextView
+                android:id="@+id/tvCName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/lblCName"
+                android:layout_alignBaseline="@+id/lblCName"
+                android:paddingTop="8dp"
+                android:background="@null"
+                android:text="@string/name"
+                android:textColor="#0000DD"
+                android:textStyle="bold"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <TextView
+                android:id="@+id/tvAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvCName"
+                android:layout_alignLeft="@+id/tvCName"
+                android:lines="2"
+                android:background="@null"
+                android:text="@string/address"
+                android:textColor="#0000DD"
+                android:textStyle="bold"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_defaults"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:layout_below="@+id/rl_customer"
+            android:background="@android:drawable/editbox_background" >
+
+            <TextView
+                android:id="@+id/lblDate"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/date"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <TextView
+                android:id="@+id/tvDate"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/lblDate"
+                android:layout_toEndOf="@+id/lblDate"
+                android:layout_alignBaseline="@+id/lblDate"
+                android:text="@string/date"
+                android:textColor="#0000DD"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <TextView
+                android:id="@+id/tvSONo"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvDate"
+                android:layout_marginTop="8dp"
+                android:text="@string/sono"
+                android:visibility="gone"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <EditText
+                android:id="@+id/etSONo"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/tvSONo"
+                android:layout_toEndOf="@+id/tvSONo"
+                android:layout_alignBaseline="@+id/tvSONo"
+                android:gravity="center"
+                android:padding="5dp"
+                android:background="#FFC1FF84"
+                android:hint="@string/sono"
+                android:inputType="number"
+                android:visibility="gone"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <TextView
+                android:id="@+id/tvScType"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvDate"
+                android:layout_marginTop="8dp"
+                android:text="@string/sc_type"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <Spinner
+                android:id="@+id/spnScType"
+                android:layout_width="120dp"
+                android:padding="5dp"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/tvScType"
+                android:entries="@array/sale_options"
+                android:background="#FFDBDBEA"
+                android:layout_alignTop="@+id/tvScType" />
+
+            <TextView
+                android:id="@+id/lblTerm"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/spnScType"
+                android:layout_marginTop="8dp"
+                android:text="@string/terms"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <Spinner
+                android:id="@+id/spTerms"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/lblTerm"
+                android:layout_alignTop="@+id/lblTerm"
+                android:padding="5dp"
+                android:background="#FFDBDBEA"
+                android:layout_below="@+id/spnScType" />
+
+            <TextView
+                android:id="@+id/lblCredit"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@null"
+                android:layout_below="@id/spTerms"
+                android:text="@string/cl"
+                android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+            <TextView
+                android:id="@+id/tvCredit"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/lblCredit"
+                android:layout_alignTop="@+id/lblCredit"
+                android:text="1000"
+                android:textColor="#0000DD"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/btAddSku"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_defaults"
+            android:layout_marginTop="5dp"
+            android:padding="8dp"
+            android:textSize="16sp"
+            android:text="@string/add_sku"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</ScrollView>

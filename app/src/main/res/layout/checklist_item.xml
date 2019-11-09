@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_checklist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/cb_checklist"
+        android:layout_alignTop="@id/cb_checklist"
+        android:textSize="20sp"
+        android:layout_marginStart="10dp"
+        android:text="" />
+
+    <CheckBox
+        android:id="@+id/cb_checklist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/iv_checklist"
+        android:layout_alignTop="@id/iv_checklist"
+        android:background="@drawable/custom_checkbox"
+        android:textSize="20sp" />
+
+    <ImageView
+        android:visibility="gone"
+        android:layout_marginEnd="10dp"
+        android:id="@+id/iv_checklist"
+        android:src="@drawable/assets_about"
+        android:layout_toEndOf="@id/temp_view"
+        android:layout_alignTop="@id/temp_view"
+        android:layout_width="20dp"
+        android:layout_height="20dp"/>
+
+    <View
+        android:id="@+id/temp_view"
+        android:layout_marginTop="10dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"/>
+
+
+</RelativeLayout>

@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:background="@color/shellyellow"
+        android:layout_height="wrap_content">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:background="@color/shellred"
+                android:textStyle="bold"
+                android:layout_margin="1dp"
+                android:textColor="#fff"
+                android:text="Store Type"/>
+
+            <TextView
+                android:layout_weight="30"
+                android:layout_margin="1dp"
+                android:background="@color/shellred"
+                android:gravity="center"
+                android:text="Definition"
+                android:textColor="#fff"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:textSize="20sp"
+                android:layout_margin="1dp"
+                android:text=" General Merchandise "/>
+            <TextView
+                android:layout_weight="30"
+                android:layout_margin="1dp"
+                android:textSize="20sp"
+                android:text="Majority of items sold are not for vehicles, usually for construction
+Store selling other goods aside from oil (Batteries, Tires, Gen. Merchandise, etc.)"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_marginTop="5dp"
+            android:background="@color/shellred"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:textSize="20sp"
+                android:textColor="#fff"
+                android:layout_margin="1dp"
+                android:text=" Auto Supply "/>
+            <TextView
+                android:layout_weight="30"
+                android:layout_margin="1dp"
+                android:textColor="#fff"
+                android:textSize="20sp"
+                android:text="Sells parts and accessories only for four-wheeled vehicles
+Store selling oil, parts for Auto / Jeep / Trucks. No mechanics or repairs done on site"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:textSize="20sp"
+                android:layout_margin="1dp"
+                android:text=" Bike Supply "/>
+            <TextView
+                android:layout_weight="30"
+                android:layout_margin="1dp"
+                android:textSize="20sp"
+                android:text="Sells parts and accessories only for motorcycles
+Stores selling oil, parts for Motorcycles. No mechanics or repairs done on site"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_marginTop="5dp"
+            android:background="@color/shellred"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:textSize="20sp"
+                android:textColor="#fff"
+                android:layout_margin="1dp"
+                android:text=" Auto IWS "/>
+            <TextView
+                android:layout_weight="30"
+                android:layout_margin="1dp"
+                android:textColor="#fff"
+                android:textSize="20sp"
+                android:text="Auto Supply with at least one mechanic
+Workshop for Auto / Jeep / Light Trucks with space for maintenance and repairs"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:textSize="20sp"
+                android:layout_margin="1dp"
+                android:text=" Bike IWS "/>
+            <TextView
+                android:layout_weight="30"
+                android:layout_margin="1dp"
+                android:textSize="20sp"
+                android:text="Bike Supply with at least one mechanic
+Workshop for motorcycles with space for maintenance and repairs. With mechanics on site"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_marginTop="5dp"
+            android:background="@color/shellred"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:textSize="20sp"
+                android:textColor="#fff"
+                android:layout_margin="1dp"
+                android:text=" White Station "/>
+            <TextView
+                android:layout_weight="30"
+                android:layout_margin="1dp"
+                android:textColor="#fff"
+                android:textSize="20sp"
+                android:text="Gas stations not exclusively affiliated with any lubricants brand"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:textSize="20sp"
+                android:layout_margin="1dp"
+                android:text="  Wholesaler  "/>
+            <TextView
+                android:layout_weight="30"
+                android:layout_margin="1dp"
+                android:textSize="20sp"
+                android:text="Sells to RTO’s and end-users
+Customer that sells oil and other products in bulk to smaller stores.
+Business is conducted from shop and does not actively sell through a
+specific field sales team"/>
+
+        </TableRow>
+
+    </TableLayout>
+
+</ScrollView>

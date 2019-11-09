@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/sv_box"
+	android:layout_width="wrap_content"
+	android:layout_height="match_parent"
+	android:background="@color/shellyellow" >
+
+	<RelativeLayout
+		android:id="@+id/rl_scmain"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center_horizontal"
+		android:layout_marginTop="4dp"
+		android:layout_marginBottom="100dp"
+		android:paddingLeft="6dp"
+		android:paddingRight="6dp"
+		android:paddingBottom="4dp"
+		android:descendantFocusability="beforeDescendants"
+		android:focusableInTouchMode="true">
+
+		<RelativeLayout
+			android:id="@+id/rl_sccontact"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="4dp"
+			android:padding="4dp"
+			android:background="@android:drawable/editbox_background" >
+
+			<ImageView
+				android:id="@+id/bt_scname"
+				android:contentDescription="@string/name"
+				android:layout_width="60dp"
+				android:layout_height="60dp"
+				android:background="@null"
+				android:src="@drawable/ic_ccall"
+				android:padding="4dp"
+				android:layout_gravity="center_vertical"/>
+
+
+			<TextView
+				android:id="@+id/tvCName"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:layout_toRightOf="@+id/bt_scname"
+				android:paddingTop="4dp"
+				android:background="@null"
+				android:hint="@string/name"
+				android:textAppearance="?android:attr/textAppearanceMedium" />
+
+
+			<TextView
+				android:id="@+id/tvAddress"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:layout_below="@+id/tvCName"
+				android:layout_toRightOf="@+id/bt_scname"
+				android:paddingTop="4dp"
+				android:background="@null"
+				android:hint="@string/address"
+				android:textAppearance="?android:attr/textAppearanceSmall" />
+
+		</RelativeLayout>
+
+
+
+		<RelativeLayout
+			android:id="@+id/ll_scall"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="6dp"
+			android:layout_marginRight="6dp"
+			android:padding="4dp"
+			android:layout_below="@+id/rl_sccontact">
+
+			<TextView
+				android:id="@+id/tv_visited"
+				android:layout_width="100dp"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="8dp"
+				android:padding="4dp"
+				android:text="Visited"
+				android:textSize="16sp"/>
+
+			<CheckBox
+				android:id="@+id/cb_visited"
+				android:layout_width="40dp"
+				android:layout_height="wrap_content"
+				android:layout_toRightOf="@+id/tv_visited"
+				android:layout_alignBaseline="@+id/tv_visited"
+				android:textSize="16sp"
+				android:layout_marginStart="25dp"
+				android:padding="4dp"
+				android:background="#FFF"/>
+
+			<TextView
+				android:id="@+id/tv_sales"
+				android:layout_width="100dp"
+				android:layout_height="wrap_content"
+				android:layout_below="@+id/tv_visited"
+				android:layout_marginTop="12dp"
+				android:padding="4dp"
+				android:text="@string/sales"
+				android:textSize="16sp"
+				android:visibility="gone"
+				android:textColor="#FFF"/>
+
+			<EditText
+				android:id="@+id/et_sales"
+				android:layout_width="180dp"
+				android:layout_height="wrap_content"
+				android:layout_below="@+id/tv_visited"
+				android:layout_toRightOf="@+id/tv_sales"
+				android:layout_alignTop="@+id/tv_sales"
+				android:inputType="numberDecimal"
+				android:hint="@string/sales_amount"
+				android:textSize="20sp"
+				android:padding="4dp"
+				android:visibility="gone"
+				android:background="#FFF"/>
+
+			<TextView
+				android:id="@+id/tv_collection"
+				android:layout_width="100dp"
+				android:layout_height="wrap_content"
+				android:layout_below="@+id/et_sales"
+				android:layout_marginTop="12dp"
+				android:padding="4dp"
+				android:text="@string/collection"
+				android:textSize="16sp"
+				android:visibility="gone"
+				android:textColor="#FFF"/>
+
+			<EditText
+				android:id="@+id/et_collection"
+				android:layout_width="180dp"
+				android:layout_height="wrap_content"
+				android:layout_toRightOf="@+id/tv_collection"
+				android:layout_alignTop="@+id/tv_collection"
+				android:inputType="numberDecimal"
+				android:hint="@string/collection"
+				android:textSize="20sp"
+				android:padding="4dp"
+				android:visibility="gone"
+				android:background="#FFF"/>
+
+
+			<RadioGroup
+				android:id="@+id/h_pmethod"
+				android:layout_width="180dp"
+				android:layout_height="wrap_content"
+				android:layout_alignParentLeft="true"
+				android:layout_marginTop="12dp"
+				android:layout_marginLeft="100dp"
+				android:layout_below="@+id/tv_collection"
+				android:visibility="gone"
+				android:background="#FFF"  >
+
+				<RadioButton
+					android:id="@+id/rb_cash"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:checked="true"
+					android:text="@string/cash" />
+
+				<RadioButton
+					android:id="@+id/rb_check"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="@string/check" />
+
+			</RadioGroup>
+
+			<TextView
+				android:id="@+id/tv_checkno"
+				android:layout_width="100dp"
+				android:layout_height="wrap_content"
+				android:layout_below="@+id/h_pmethod"
+				android:layout_marginTop="12dp"
+				android:layout_alignParentLeft="true"
+				android:padding="4dp"
+				android:text="@string/check_num"
+				android:textSize="16sp"
+				android:visibility="gone"
+				android:textColor="#FFF"/>
+
+			<EditText
+				android:id="@+id/et_checkno"
+				android:layout_width="180dp"
+				android:layout_height="wrap_content"
+				android:layout_toRightOf="@+id/tv_checkno"
+				android:layout_alignTop="@+id/tv_checkno"
+				android:padding="4dp"
+				android:textSize="20sp"
+				android:hint="@string/check_num"
+				android:visibility="gone"
+				android:background="#FFF" >
+			</EditText>
+
+			<TextView
+				android:id="@+id/tv_invoiceno"
+				android:layout_width="100dp"
+				android:layout_height="wrap_content"
+				android:layout_below="@+id/tv_checkno"
+				android:layout_marginTop="12dp"
+				android:layout_alignParentLeft="true"
+				android:padding="4dp"
+				android:text="@string/invoiceno"
+				android:textSize="16sp"
+				android:visibility="gone"
+				android:textColor="#FFF"/>
+
+
+			<EditText
+				android:id="@+id/et_invoiceno"
+				android:layout_width="180dp"
+				android:layout_height="wrap_content"
+				android:layout_toRightOf="@+id/tv_invoiceno"
+				android:layout_alignTop="@+id/tv_invoiceno"
+				android:padding="4dp"
+				android:textSize="20sp"
+				android:hint="@string/invoiceno"
+				android:visibility="gone"
+				android:background="#FFF" />
+
+			<TextView
+				android:id="@+id/tv_orno"
+				android:layout_width="100dp"
+				android:layout_height="40dp"
+				android:layout_below="@+id/tv_invoiceno"
+				android:layout_marginTop="12dp"
+				android:layout_alignParentLeft="true"
+				android:padding="4dp"
+				android:text="@string/orno"
+				android:textSize="16sp"
+				android:visibility="gone"
+				android:textColor="#FFF"/>
+
+			<EditText
+				android:id="@+id/et_orno"
+				android:layout_width="180dp"
+				android:layout_height="wrap_content"
+				android:layout_toRightOf="@+id/tv_orno"
+				android:layout_alignBaseline="@+id/tv_orno"
+				android:padding="4dp"
+				android:textSize="20sp"
+				android:hint="@string/orno"
+				android:visibility="gone"
+				android:background="#FFF"/>
+
+			<TextView
+				android:visibility="gone"
+				android:id="@+id/tv_npreason"
+				android:layout_width="100dp"
+				android:layout_height="wrap_content"
+				android:layout_below="@+id/tv_orno"
+				android:layout_marginTop="12dp"
+				android:layout_marginStart="25dp"
+				android:layout_alignParentLeft="true"
+				android:padding="4dp"
+				android:text="Non-Buying Reason"
+				android:textSize="16sp"/>
+
+			<Spinner
+				android:visibility="gone"
+				android:id="@+id/sp_npreason"
+				android:layout_width="180dp"
+				android:layout_height="wrap_content"
+				android:layout_toRightOf="@+id/tv_npreason"
+				android:layout_alignTop="@+id/tv_npreason"
+				android:padding="4dp"
+				android:background="@drawable/rounded_gray_border"	  />
+
+
+			<ImageView
+				android:id="@+id/infoview"
+				android:layout_width="20dp"
+				android:layout_height="20dp"
+				android:layout_alignParentStart="true"
+				android:layout_below="@+id/tv_visited"
+				android:onClick="validtype"
+				android:layout_marginTop="20dp"
+				android:src="@drawable/assets_about" />
+
+			<TextView
+				android:id="@+id/tv_validation"
+				android:layout_width="100dp"
+				android:layout_height="wrap_content"
+				android:layout_alignTop="@+id/infoview"
+				android:layout_toRightOf="@+id/infoview"
+				android:layout_marginStart="10dp"
+				android:text="Validation"
+				android:textSize="16sp"/>
+
+			<Spinner
+				android:id="@+id/sp_validation"
+				android:layout_width="180dp"
+				android:layout_height="wrap_content"
+				android:layout_toRightOf="@+id/tv_validation"
+				android:layout_alignTop="@+id/tv_validation"
+				android:padding="4dp"
+				android:background="@drawable/rounded_gray_border"	  />
+
+			<EditText
+				android:id="@+id/et_remarks"
+				android:layout_width="match_parent"
+				android:layout_height="100dp"
+				android:layout_below="@+id/tv_validation"
+				android:layout_alignParentLeft="true"
+				android:inputType="textMultiLine"
+				android:gravity="center"
+				android:hint="@string/promo_remarks"
+				android:layout_marginTop="40dp"
+				android:padding="5dp"
+				android:background="@drawable/rounded_gray_border" >
+
+			</EditText>
+
+			<Button
+				android:id="@+id/bt_submit"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="40dp"
+				android:layout_centerHorizontal="true"
+				android:layout_below="@+id/et_remarks"
+				android:contentDescription="@string/app_name"
+				android:src="@drawable/submit36"
+				android:text="SUBMIT"
+				android:background="@drawable/btn_ripple3"
+				android:focusable="false"/>
+
+
+
+		</RelativeLayout>
+
+	</RelativeLayout>
+</ScrollView>
