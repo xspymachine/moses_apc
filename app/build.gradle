@@ -5,7 +5,7 @@ android {
         appkey {
             keyAlias 'sfakeyalias'
             keyPassword 'sfaarmy0117'
-            storeFile file('D:/DRIVE_E/eclipse/2017ConvertedAS/MOSES/Android_Studio/MosesShell/MosesShell - Davao/appkey/sfaarmykey.jks')
+            storeFile file('../appkey/mosesshell.jks')
             storePassword 'sfaarmy0117'
         }
     }
