@@ -4,6 +4,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
+    <TextView
+        android:id="@+id/tv_mcid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/cb_checklist"
+        android:layout_alignTop="@id/cb_checklist"
+        android:textSize="20sp"
+        android:layout_marginStart="10dp"
+        android:visibility="invisible"
+        android:text="" />
+
     <TextView
         android:id="@+id/tv_checklist"
         android:layout_width="match_parent"

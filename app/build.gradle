@@ -5,7 +5,7 @@ android {
         appkey {
             keyAlias 'sfakeyalias'
             keyPassword 'sfaarmy0117'
-            storeFile file('../appkey/mosesshell.jks')
+            storeFile file('../appkey/sfaarmykey.jks')
             storePassword 'sfaarmy0117'
         }
     }

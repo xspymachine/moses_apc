@@ -1,11 +1,9 @@
 package com.xpluscloud.mosesshell_davao;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.Editable;
-import android.text.InputType;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -22,13 +20,12 @@ import android.widget.TextView;
 import com.xpluscloud.mosesshell_davao.dbase.DesContract;
 import com.xpluscloud.mosesshell_davao.dbase.MerchandisingDbManager;
 import com.xpluscloud.mosesshell_davao.dbase.RetailDataDbManager;
-import com.xpluscloud.mosesshell_davao.getset.Retail;
 import com.xpluscloud.mosesshell_davao.util.DbUtil;
 
 import java.util.HashMap;
 import java.util.List;
 
-public class RetailFragC extends Fragment {
+public class RetailFragD extends Fragment {
 	
         LinearLayout[] llx ;
         TextView[] tx  ;
@@ -61,7 +58,7 @@ public class RetailFragC extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.first_frag3, container, false);
+        View v = inflater.inflate(R.layout.first_frag4, container, false);
 
         context = getActivity();
 
@@ -78,9 +75,9 @@ public class RetailFragC extends Fragment {
         return v;
     }
 
-    public static RetailFragC newInstance(String ccode, String devId) {
+    public static RetailFragD newInstance(String ccode, String devId) {
 
-        RetailFragC f = new RetailFragC();
+        RetailFragD f = new RetailFragD();
         Bundle b = new Bundle();
         b.putString("ccode", ccode);
         b.putString("devId", devId);
@@ -93,11 +90,11 @@ public class RetailFragC extends Fragment {
     private void contentSetup(){
         MerchandisingDbManager db = new MerchandisingDbManager(context);
         db.open();
-        listem = db.getList(3);
+        listem = db.getList(4);
         db.close();
 
         ll.removeAllViews();
-        Log.e("frag","C");
+        Log.e("frag","D");
 
         int i=0;
         for(HashMap<String,String> data : listem){
@@ -131,7 +128,7 @@ public class RetailFragC extends Fragment {
             cbMerch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-//                    someEventListener.someEvent("Fragment C check-"+b+"-"+tvMCID.getText().toString());
+//                    someEventListener.someEvent("Fragment D check-"+b+"-"+tvMCID.getText().toString());
                     someEventListener.someEvent(tvMCID.getText().toString(),b);
                 }
             });

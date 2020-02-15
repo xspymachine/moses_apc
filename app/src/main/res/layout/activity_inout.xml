@@ -318,7 +318,7 @@
 				android:layout_alignTop="@+id/cbORem1"
 				android:layout_marginLeft="10dp"
 				android:layout_toRightOf="@+id/cbORem1"
-				android:text="@string/orem2"
+				android:text="@string/orem100"
 				android:textColor="#000"
 				android:textSize="20sp"
 				android:textStyle="bold" />
@@ -340,7 +340,7 @@
 				android:layout_alignTop="@+id/cbORem3"
 				android:layout_marginLeft="10dp"
 				android:layout_toRightOf="@+id/cbORem3"
-				android:text="@string/orem3"
+				android:text="@string/orem200"
 				android:textColor="#000"
 				android:textSize="20sp"
 				android:textStyle="bold" />
@@ -362,7 +362,7 @@
 				android:layout_alignTop="@+id/cbORem4"
 				android:layout_marginLeft="10dp"
 				android:layout_toRightOf="@+id/cbORem4"
-				android:text="@string/orem4"
+				android:text="@string/orem300"
 				android:textColor="#000"
 				android:textSize="20sp"
 				android:textStyle="bold" />
@@ -384,7 +384,7 @@
 				android:layout_alignTop="@+id/cbORem5"
 				android:layout_marginLeft="10dp"
 				android:layout_toRightOf="@+id/cbORem5"
-				android:text="@string/orem5"
+				android:text="@string/orem400"
 				android:textColor="#000"
 				android:textSize="20sp"
 				android:textStyle="bold" />
@@ -405,7 +405,28 @@
 				android:layout_alignTop="@+id/cbORem6"
 				android:layout_marginLeft="10dp"
 				android:layout_toRightOf="@+id/cbORem6"
-				android:text="@string/orem6"
+				android:text="@string/orem500"
+				android:textColor="#000"
+				android:textSize="20sp"
+				android:textStyle="bold" />
+			<CheckBox
+				android:id="@+id/cbORem7"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_alignStart="@+id/cbORem6"
+				android:layout_below="@+id/tvORem6"
+				android:layout_marginTop="20dp"
+				android:background="@drawable/custom_checkbox"
+				android:textSize="20sp" />
+
+			<TextView
+				android:id="@+id/tvORem7"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_alignTop="@+id/cbORem7"
+				android:layout_marginLeft="10dp"
+				android:layout_toRightOf="@+id/cbORem7"
+				android:text="@string/orem600"
 				android:textColor="#000"
 				android:textSize="20sp"
 				android:textStyle="bold" />
@@ -415,7 +436,7 @@
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:layout_alignParentStart="true"
-				android:layout_below="@+id/tvORem6"
+				android:layout_below="@+id/tvORem7"
 				android:layout_centerHorizontal="true"
 				android:layout_marginTop="20dp"
 				android:background="@drawable/custom_button_click"

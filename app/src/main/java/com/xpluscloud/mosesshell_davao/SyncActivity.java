@@ -4,6 +4,7 @@
     import android.app.ListActivity;
     import android.content.Context;
     import android.os.Bundle;
+    import android.os.Environment;
     import android.view.LayoutInflater;
     import android.view.View;
     import android.view.ViewGroup;
@@ -20,6 +21,8 @@
     import com.zplesac.connectionbuddy.interfaces.NetworkRequestCheckListener;
 
     import org.json.JSONArray;
+
+    import java.io.File;
 
 
     public class SyncActivity extends ListActivity {
@@ -63,7 +66,7 @@
             devId = DbUtil.getSetting(context, Master.DEVID);
 
 //            devId = "351802101498594";
-//            devId = "temp34345";
+            devId = "354669101269581";
             APIK= getResources().getString(R.string.apik);
 
      //add header to list
@@ -134,8 +137,11 @@
                         downloadPromo();
                         break;
                     case PBROCHURE:
+                        deleteFiles();
                         deleteTable("cus_datas"," where status=12");
+                        deleteTable("cus_datas"," where status=13");
                         downloadPromotions();
+                        downloadPromoCat();
                         break;
                     default:
                         //
@@ -172,8 +178,12 @@
             new DownloadTask(context,header,"Terms").execute(url,"cus_datas",devId,APIK);
         }
         private void downloadPromotions(){
-            String url = baseUrl+"download/promotion";
+            String url = baseUrl+"download/promotion2";
             new DownloadTask(context,header,"Promo Brochures","BROCHURE").execute(url,"cus_datas",devId,APIK);
+        }
+        private void downloadPromoCat(){
+            String url = baseUrl+"download/promo_cat";
+            new DownloadTask(context,header,"Promo Categories").execute(url,"cus_datas",devId,APIK);
         }
         private void downloadPromo(){
             String url = baseUrl+"download/promo";
@@ -284,5 +294,16 @@
             db.open();
             db.deleteTable(tableName,where);
             db.close();
+        }
+
+        private void deleteFiles(){
+            File dir = new File(Environment.getExternalStorageDirectory().toString()+"/ShellPromo");
+            if (dir.isDirectory())
+            {
+                String[] children = dir.list();
+                for (String child : children) {
+                    new File(dir, child).delete();
+                }
+            }
         }
     }

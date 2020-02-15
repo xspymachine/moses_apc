@@ -315,11 +315,15 @@ public class CustomerAddEditActivity extends AppCompatActivity {
 //        	if(term == 9) term = 2;
 //			else if(term == 7) term = 5;
 
-			int type = cust.getTypeid();
+			int type = cust.getAcctypid();
 			int termL = ArrayDef.TERMS2.length-1;
-			int typeL = ArrayDef.ACCT_TYPES2.length-1;
+//			int typeL = ArrayDef.ACCT_TYPES2.length-1;
         	spTerms.setSelection(term>termL?termL:term);
-			spType.setSelection(type>typeL?typeL:type);
+
+//			spType.setSelection(type>typeL?typeL:type);
+			Log.e("accttypeid",""+type);
+			int typeIndex = Arrays.asList(ArrayDef.ACCT_TYPES2).lastIndexOf(getTypeString(type));
+			spType.setSelection(typeIndex);
 
             int status = Arrays.asList(ArrayDef.STATUS).indexOf(cust.getContactNumber());
             spStatus.setSelection(status<0?0:status);
@@ -537,6 +541,17 @@ public class CustomerAddEditActivity extends AppCompatActivity {
 		db.close();
 		
 		return id;
+	}
+
+	private String getTypeString(int typeId){
+		String type;
+
+		AccountTypeDbManager db = new AccountTypeDbManager(this);
+		db.open();
+		type = db.getType(typeId);
+		db.close();
+
+		return type;
 	}
 
 	private int getOtherDataId(String type,int status){

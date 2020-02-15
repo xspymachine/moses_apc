@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 
 import com.github.barteksc.pdfviewer.PDFView;
 import com.github.barteksc.pdfviewer.scroll.DefaultScrollHandle;
+import com.xpluscloud.mosesshell_davao.dbase.AccountTypeDbManager;
 import com.xpluscloud.mosesshell_davao.util.DbUtil;
 
 import java.io.File;
@@ -36,12 +37,19 @@ public class PDFViewActivity extends AppCompatActivity {
 
         pdfView.setBackgroundColor(Color.LTGRAY);
 
-        switch (selected){
-            case 0: loadFromFile("Starter.pdf");break;
-            case 1: loadFromFile("Trade.pdf");break;
-            case 2: loadFromFile("Consumer.pdf");break;
-            case 3: loadFromFile("Guidelines.pdf");break;
-        }
+        AccountTypeDbManager db = new AccountTypeDbManager(ctx);
+        db.open();
+        String filename = db.getOtherDataSingle(selected,12);
+        db.close();
+
+        loadFromFile(filename.split("/")[1]);
+
+//        switch (selected){
+//            case 0: loadFromFile("Starter.pdf");break;
+//            case 1: loadFromFile("Trade.pdf");break;
+//            case 2: loadFromFile("Consumer.pdf");break;
+//            case 3: loadFromFile("Guidelines.pdf");break;
+//        }
 
     }
 

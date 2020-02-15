@@ -71,6 +71,18 @@ public class AccountTypeDbManager extends DbManager{
 		return id;
 	}
 
+	public String getOtherDataSingle(int dataid , int status){
+		String desc = "";
+
+		String sql = "SELECT description FROM cus_datas WHERE dataid="+dataid+" AND status="+status;
+
+		Cursor c = db.rawQuery(sql, null);
+
+		if(c != null && c.moveToFirst()) desc= c.getString(0);
+
+		return desc;
+	}
+
 	public String[] getOtherData(int status){
 		ArrayList<String> datastr = new ArrayList<>();
 

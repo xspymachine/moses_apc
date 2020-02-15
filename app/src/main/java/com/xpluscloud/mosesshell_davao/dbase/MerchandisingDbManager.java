@@ -3,6 +3,15 @@ package com.xpluscloud.mosesshell_davao.dbase;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.util.Log;
+
+import com.xpluscloud.mosesshell_davao.getset.Retail;
+import com.xpluscloud.mosesshell_davao.util.DateUtil;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class MerchandisingDbManager extends DbManager{
 
@@ -31,6 +40,28 @@ public class MerchandisingDbManager extends DbManager{
 		if(c.moveToFirst()) id = c.getLong(0); 
 		
 		return id;
+	}
+
+	public List<HashMap<String,String>> getList(int status) {
+		List<HashMap<String,String>> list = new ArrayList<>();
+
+		String where = " where "+DesContract.Checklists.STATUS+" = "+status;
+		String sql = "SELECT *FROM "+DesContract.Checklists.TABLE_NAME+where;
+
+		Cursor c = db.rawQuery(sql, null);
+//		Log.e("sql", sql);
+		for(int i=0; i<c.getCount(); i++){
+			if(c.moveToPosition(i)) {
+				HashMap<String,String> item = new HashMap<>();
+				item.put("description",c.getString(c.getColumnIndex("description")));
+				item.put("status",c.getString(c.getColumnIndex("status")));
+				item.put("mcid",""+c.getInt(c.getColumnIndex("mcid")));
+				list.add(item);
+			}
+		}
+
+		c.close();
+		return list;
 	}
 
 }

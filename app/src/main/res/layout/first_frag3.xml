@@ -61,7 +61,7 @@
               android:layout_weight="1"
               android:gravity="center_horizontal"
              android:textColor="#fff"
-              android:text="Helix" />
+              android:text="Advance" />
          
 
 <!--         <TextView-->

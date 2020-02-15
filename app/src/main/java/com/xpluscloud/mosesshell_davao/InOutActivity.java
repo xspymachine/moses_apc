@@ -152,7 +152,7 @@ public class InOutActivity extends AppCompatActivity {
 			        @Override
 					public void onClick(View v) {
 //			        	btMerchCheck.setClickable(false);
-			        	Intent intent = new Intent(context, StartActivity.class);
+			        	Intent intent = new Intent(context, MerchandisingActivity.class);
 			    		Bundle b = new Bundle();
 			    		b.putString("merchandising", "merchandising");
 			    		b.putString("devid", devId);

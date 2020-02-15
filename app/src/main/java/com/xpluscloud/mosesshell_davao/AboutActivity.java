@@ -65,21 +65,21 @@ public class AboutActivity extends AppCompatActivity {
 //		uploadCustomers();
         String strTxt;
         if(Master.FOR_APPROVAL_SETTING == 0){
-            strTxt = "SFA ARMY APP features <font color=\"red\">CUSTOMERS HAVE NO APPROVAL</font><br>Updated November 09, 2019<br><br>Contact Us<br>Email: support@xplus.ph";
+            strTxt = "SFA ARMY APP features <font color=\"red\">CUSTOMERS HAVE NO APPROVAL</font><br>Updated February 15, 2020<br><br>Contact Us<br>Email: support@xplus.ph";
         }else {
-            strTxt = "SFA ARMY APP Updated November 09, 2019<br><br>Contact Us<br>Email: support@xplus.ph";
+            strTxt = "SFA ARMY APP Updated February 15, 2020<br><br>Contact Us<br>Email: support@xplus.ph";
         }
 
-        TextView tv1 = (TextView) findViewById(R.id.textView1);
+        TextView tv1 = findViewById(R.id.textView1);
         tv1.setText(Html.fromHtml(strTxt), TextView.BufferType.SPANNABLE);
-        TextView imei = (TextView) findViewById(R.id.imei);
+        TextView imei = findViewById(R.id.imei);
         imei.setText(getIMEI());
 
-        ImageView iv1 = (ImageView) findViewById(R.id.iv1);
-        ImageView iv2 = (ImageView) findViewById(R.id.iv2);
-        ImageView iv3 = (ImageView) findViewById(R.id.iv3);
-        ImageView iv4 = (ImageView) findViewById(R.id.iv4);
-        ImageView iv12 = (ImageView) findViewById(R.id.imageView12);
+        ImageView iv1 = findViewById(R.id.iv1);
+        ImageView iv2 = findViewById(R.id.iv2);
+        ImageView iv3 = findViewById(R.id.iv3);
+        ImageView iv4 = findViewById(R.id.iv4);
+        ImageView iv12 = findViewById(R.id.imageView12);
         iv1.setOnClickListener(new View.OnClickListener() {
 
             @Override

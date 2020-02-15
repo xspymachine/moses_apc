@@ -12,13 +12,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnFocusChangeListener;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.xpluscloud.mosesshell_davao.dbase.MerchandisingDbManager;
 import com.xpluscloud.mosesshell_davao.dbase.RetailDataDbManager;
 import com.xpluscloud.mosesshell_davao.getset.Retail;
 
+import java.util.HashMap;
 import java.util.List;
 
 public class RetailFragA extends Fragment {
@@ -30,18 +34,34 @@ public class RetailFragA extends Fragment {
 	
 	Context context;
 	
-	List<Retail> listem;
+	List<HashMap<String,String>> listem;
+
+    public interface onSomeEventListener {
+        void someEvent(String s, boolean b);
+    }
+
+    onSomeEventListener someEventListener;
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        try {
+            someEventListener = (onSomeEventListener) context;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(context.toString() + " must implement onSomeEventListener");
+        }
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        View rootView = inflater.inflate(R.layout.first_frag2, container, false);
+        View rootView = inflater.inflate(R.layout.first_frag1, container, false);
 
         context = getActivity();
 
-		TextView tv3 = (TextView) rootView.findViewById(R.id.textView2);
-		tv3.setText("IOH");
-        
+//		TextView tv3 = (TextView) rootView.findViewById(R.id.textView2);
+////		tv3.setText("IOH");
+
         ccode = getArguments().getString("ccode");
         devId = getArguments().getString("devId");
         
@@ -66,29 +86,43 @@ public class RetailFragA extends Fragment {
     
     
     private void contentSetup(){	
-		RetailDataDbManager db = new RetailDataDbManager(context);
+		MerchandisingDbManager db = new MerchandisingDbManager(context);
 	    db.open();
-	    listem = db.getList(ccode);
+	    listem = db.getList(1);
 	    db.close();
 	    
 		ll.removeAllViews();
         int i=0;
         Log.e("frag","A");
-        for(Retail data : listem){
-            final View inflateView = View.inflate(context,R.layout.retail_listview,null);
+        for(HashMap data : listem){
+            final View inflateView = View.inflate(context,R.layout.checklist_item,null);
 
-            if(i % 2 ==1) inflateView.setBackgroundColor(Color.rgb(231, 249, 255));
-            else inflateView.setBackgroundColor(Color.rgb(195, 240, 255));
+//            if(i % 2 ==1) inflateView.setBackgroundColor(Color.rgb(231, 249, 255));
+//            else inflateView.setBackgroundColor(Color.rgb(195, 240, 255));
 
-            final TextView description = (TextView) inflateView.findViewById(R.id.retDescription);
-            final EditText etValue =  (EditText) inflateView.findViewById(R.id.retValue);
-            etValue.setInputType(InputType.TYPE_CLASS_NUMBER);
+//            final TextView description = (TextView) inflateView.findViewById(R.id.retDescription);
+//            final EditText etValue =  (EditText) inflateView.findViewById(R.id.retValue);
+//            etValue.setInputType(InputType.TYPE_CLASS_NUMBER);
 
-            description.setText(data.getDescription());
-            etValue.setText(""+data.getIoh());
-            Log.e("frag","A"+data.getIoh());
-            etValue.setOnFocusChangeListener(new etFocus(etValue));
-            etValue.addTextChangedListener(new etTextWatcher(data.getComcode()));
+//            description.setText(data.get("description").toString());
+//            etValue.setText(""+data.getIoh());
+//            Log.e("frag","A"+data.getIoh());
+//            etValue.setOnFocusChangeListener(new etFocus(etValue));
+//            etValue.addTextChangedListener(new etTextWatcher(data.getComcode()));
+
+            final TextView tvMCID = inflateView.findViewById(R.id.tv_mcid);
+            TextView tvMerch = inflateView.findViewById(R.id.tv_checklist);
+            tvMerch.setText(data.get("description").toString());
+            tvMCID.setText(data.get("mcid").toString());
+
+            CheckBox cbMerch = inflateView.findViewById(R.id.cb_checklist);
+            cbMerch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+//                    someEventListener.someEvent("Fragment A check-"+b+"-"+tvMCID.getText().toString());
+                    someEventListener.someEvent(tvMCID.getText().toString(),b);
+                }
+            });
 
             ll.addView(inflateView);
             i++;

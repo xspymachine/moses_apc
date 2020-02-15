@@ -7,9 +7,12 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.xpluscloud.mosesshell_davao.dbase.AccountTypeDbManager;
 
 /**
  * Created by Shirwen on 4/18/2018.
@@ -40,21 +43,32 @@ public class PromotionsActivity extends Activity {
 //                intent.putExtras(b);
 //                startActivity(intent);
 
-                final String[] items = {
-                        "Army Detailer - Starter Pack", "Army Detailer - Trade Promo", "Army Detailer - Consumer Promo","Army - Merch Guidelines"
-                };
+                AccountTypeDbManager db = new AccountTypeDbManager(ctx);
+                db.open();
+                final String[] items = db.getOtherData(13);
+                db.close();
+
+//                final String[] items = {
+//                        "Army Detailer - Starter Pack", "Army Detailer - Trade Promo", "Army Detailer - Consumer Promo","Army - Merch Guidelines"
+//                };
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(ctx);
                 builder.setTitle("Current Promotions");
                 builder.setItems(items, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int item) {
                         // Do something with the selection
+
+                        AccountTypeDbManager db = new AccountTypeDbManager(ctx);
+                        db.open();
+                        int pcid = db.getOtherDataId(items[item],13);
+                        db.close();
                         Intent intent = new Intent(PromotionsActivity.this, PDFViewActivity.class);
                         Bundle b = new Bundle();
                         b.putInt("option", 1);
-                        b.putInt("selected",item);
+                        b.putInt("selected",pcid);
                         intent.putExtras(b);
                         startActivity(intent);
+
                     }
                 });
                 AlertDialog alert = builder.create();

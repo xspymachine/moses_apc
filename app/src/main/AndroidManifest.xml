@@ -59,6 +59,12 @@
             android:windowSoftInputMode="stateHidden"
             android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
+        <activity
+            android:name="com.xpluscloud.mosesshell_davao.MerchandisingActivity"
+            android:label="@string/app_name"
+            android:windowSoftInputMode="stateHidden"
+            android:configChanges="keyboardHidden|orientation|screenSize">
+        </activity>
 
         <activity
             android:name="com.xpluscloud.mosesshell_davao.IssuesActivity"
