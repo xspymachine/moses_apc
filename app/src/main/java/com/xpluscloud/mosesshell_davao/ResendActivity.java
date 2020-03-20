@@ -276,7 +276,9 @@ public class ResendActivity extends ListActivity {
                               item.getPckg() 			+ ";" +
                               item.getDescription()	    + ";" +
                               item.getPrice()			+ ";" +
-                              item.getId();
+                              item.getId()				+ ";" +
+							  item.getSubcategoryid()	+ ";" +
+							  item.getCategoryid();
 
                       DbUtil.saveMsg(context,DbUtil.getGateway(context), message);
 

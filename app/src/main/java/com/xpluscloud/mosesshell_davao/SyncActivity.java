@@ -65,8 +65,8 @@
 
             devId = DbUtil.getSetting(context, Master.DEVID);
 
-//            devId = "351802101498594";
-            devId = "354669101269581";
+            devId = "866222030538030";
+//            devId = "354669101269581";
             APIK= getResources().getString(R.string.apik);
 
      //add header to list

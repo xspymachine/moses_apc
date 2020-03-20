@@ -65,9 +65,9 @@ public class AboutActivity extends AppCompatActivity {
 //		uploadCustomers();
         String strTxt;
         if(Master.FOR_APPROVAL_SETTING == 0){
-            strTxt = "SFA ARMY APP features <font color=\"red\">CUSTOMERS HAVE NO APPROVAL</font><br>Updated February 15, 2020<br><br>Contact Us<br>Email: support@xplus.ph";
+            strTxt = "SFA ARMY APP features <font color=\"red\">CUSTOMERS HAVE NO APPROVAL</font><br>Updated February 17, 2020<br><br>Contact Us<br>Email: support@xplus.ph";
         }else {
-            strTxt = "SFA ARMY APP Updated February 15, 2020<br><br>Contact Us<br>Email: support@xplus.ph";
+            strTxt = "SFA ARMY APP Updated February 17, 2020<br><br>Contact Us<br>Email: support@xplus.ph";
         }
 
         TextView tv1 = findViewById(R.id.textView1);

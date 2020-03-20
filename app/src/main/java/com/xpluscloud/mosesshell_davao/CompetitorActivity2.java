@@ -255,19 +255,20 @@ public class CompetitorActivity2 extends AppCompatActivity implements ItemOption
 
     String forOthers = "";
     @Override
-    public void onSelectOption(Integer position, String strValue) {
+    public void onSelectOption(Integer position, String strValue, int opt) {
         CompetitorDbManager2 db = new CompetitorDbManager2(context);
         db.open();
         int _id = db.getCatId(strValue,1);
-        if(_id>0){
+        if(opt==1){
             catid = _id;
             addItems(2);
             if(strValue.contains("Others")) forOthers = strValue;
         }
         else {
             icatid=db.getCatId(strValue,2);
-            if(forOthers.isEmpty()) selectSingleItem(catid,icatid);
-            else createEtDialog();
+//            if(forOthers.isEmpty()) selectSingleItem(catid,icatid);
+//            else createEtDialog();
+            createEtDialog();
             forOthers="";
         }
 
@@ -277,19 +278,38 @@ public class CompetitorActivity2 extends AppCompatActivity implements ItemOption
 
     public void createEtDialog(){
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(context)
-                .setTitle("OTHERS")
-                .setMessage("Specify the item name.");
+                .setTitle("Specify the item name.")
+                .setMessage("Brand Family + Packaging + Viscosity\nPlease don't use special characters.");
         alertDialog.setCancelable(false);
 
         final EditText input = new EditText(context);
+        final EditText input1 = new EditText(context);
+        final EditText input2 = new EditText(context);
         LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT,
                 LinearLayout.LayoutParams.MATCH_PARENT);
         lp.setMargins(50, 0, 50, 0);
+
+        LinearLayout layout = new LinearLayout(context);
+        layout.setLayoutParams(lp);
+        layout.setOrientation(LinearLayout.VERTICAL);
+
         input.setLayoutParams(lp);
         input.setBackgroundResource(android.R.drawable.edit_text);
-        input.setHint("format : Brand SKU (name of product) Viscosity");
-        alertDialog.setView(input);
+        input.setHint("Brand Family");
+        layout.addView(input);
+
+        input1.setLayoutParams(lp);
+        input1.setBackgroundResource(android.R.drawable.edit_text);
+        input1.setHint("Packaging");
+        layout.addView(input1);
+
+        input2.setLayoutParams(lp);
+        input2.setBackgroundResource(android.R.drawable.edit_text);
+        input2.setHint("Viscosity");
+        layout.addView(input2);
+
+        alertDialog.setView(layout);
 
         alertDialog.setPositiveButton("Continue", new DialogInterface.OnClickListener() {
 
@@ -313,20 +333,16 @@ public class CompetitorActivity2 extends AppCompatActivity implements ItemOption
             @Override
             public void onClick(View v)
             {
-                String createItem = input.getText().toString();
-//                if(imageRemarks.length() > 50){
-//                    DbUtil.makeToast(LayoutInflater.from(context), "Please summarize your remarks, 50 characters only." , context,null,1);
-//                    return;
-//                }else{
-//                    Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-//                    takePictureIntent.putExtra("remarks", input.getText().toString());
-//                    if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
-//                        startActivityForResult(takePictureIntent, 2);
-//                        dialog.dismiss();
-//                    }
-//                }
-                addToItems2(createItem);
-                dialog.dismiss();
+                String brand = input.getText().toString();
+                String pack = input1.getText().toString();
+                String viscosity = input2.getText().toString();
+                if(brand.length() < 1){
+                    DbUtil.makeToast(LayoutInflater.from(context), "Please input brand family." , context,null,1);
+                }else{
+                    addToItems2(brand+"_"+pack+"_"+viscosity);
+                    dialog.dismiss();
+                }
+
             }
         });
 
@@ -451,7 +467,9 @@ public class CompetitorActivity2 extends AppCompatActivity implements ItemOption
                         item.getPckg() 			+ ";" +
                         item.getDescription()	+ ";" +
                         item.getPrice()			+ ";" +
-                        item.getId();
+                        item.getId()			+ ";" +
+                        item.getSubcategoryid()	+ ";" +
+                        item.getCategoryid();
 
                 DbUtil.saveMsg(context,DbUtil.getGateway(context), message);
 
@@ -578,7 +596,8 @@ public class CompetitorActivity2 extends AppCompatActivity implements ItemOption
 
             //Item Description Column
             TextView itemDescription = new TextView(this);
-            itemDescription.setText(item.getDescription()+"\n");
+
+            itemDescription.setText(item.getDescription().replace("_"," ")+"\n");
             itemDescription.setLayoutParams(new TableRow.LayoutParams(android.view.ViewGroup.LayoutParams.WRAP_CONTENT,android.view.ViewGroup.LayoutParams.WRAP_CONTENT));
             itemDescription.setGravity(Gravity.LEFT | Gravity.BOTTOM);
             itemDescription.setSingleLine(false);

@@ -213,6 +213,8 @@ public class CompetitorDbManager2 extends DbManager {
                 "ii.cmpcode," +
                 "ii.itemcode," +
                 "itm.description," +
+                "itm.subcategory_id," +
+                "itm.category_id," +
                 "ii.pckg," +
                 "ii.qty, " +
                 "ii.price, " +
@@ -256,6 +258,8 @@ public class CompetitorDbManager2 extends DbManager {
                 c.getColumnIndex(DesContract.Competitors.PRICE)));
         ro.setStatus(c.getInt(
                 c.getColumnIndex(DesContract.Competitors.STATUS)));
+        ro.setSubcategoryid(c.getInt(c.getColumnIndex("subcategory_id")));
+        ro.setCategoryid(c.getInt(c.getColumnIndex("category_id")));
         return ro;
     }
     public int getLastSOno() {

@@ -14,6 +14,24 @@ public class Inventory {
 	private float 	price; 	
 	private int 	status;
 	private String description;
+	private int subcategoryid;
+	private int categoryid;
+
+	public int getSubcategoryid() {
+		return subcategoryid;
+	}
+
+	public void setSubcategoryid(int subcategoryid) {
+		this.subcategoryid = subcategoryid;
+	}
+
+	public int getCategoryid() {
+		return categoryid;
+	}
+
+	public void setCategoryid(int categoryid) {
+		this.categoryid = categoryid;
+	}
 
 	public String getDescription() {
 		return description;
@@ -112,6 +130,8 @@ public class Inventory {
 		this.price 		= 0;
 		this.status 	= 0;
 		this.description = "";
+		this.subcategoryid = 0;
+		this.categoryid = 0;
 	}
 	
 	

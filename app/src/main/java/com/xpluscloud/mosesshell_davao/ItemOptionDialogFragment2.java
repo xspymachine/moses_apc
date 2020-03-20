@@ -15,9 +15,10 @@ public class ItemOptionDialogFragment2 extends DialogFragment {
 
     private OptionDialogListener callback;
 
-    String Title="Brand Family";
+    String Title="Product ID";
     //	ArrayList<String> Options = new ArrayList<>();
     String[] Options;
+    int opt;
 
 
     public ItemOptionDialogFragment2(){
@@ -33,14 +34,14 @@ public class ItemOptionDialogFragment2 extends DialogFragment {
             callback = (OptionDialogListener) getActivity();
 
             Bundle args = getArguments();
-            int opt = args.getInt("opt", 0);
+            opt = args.getInt("opt", 0);
             int catid = args.getInt("catid", 0);
 
             CompetitorDbManager2 db = new CompetitorDbManager2(getActivity().getApplicationContext());
             db.open();
             ArrayList<String> category = db.getCategoryList(opt,catid);
             db.close();
-            if(opt>1) Title = "Brand Name";
+            if(opt>1) Title = "Product Type";
             Options = category.toArray(new String[category.size()]);
             //this.dismiss();
         }catch (ClassCastException e){
@@ -57,7 +58,7 @@ public class ItemOptionDialogFragment2 extends DialogFragment {
                 .setItems(Options, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int position) {
-                        callback.onSelectOption(position,Options[position]);
+                        callback.onSelectOption(position,Options[position], opt);
                     }
                 });
         return builder.create();
@@ -65,7 +66,7 @@ public class ItemOptionDialogFragment2 extends DialogFragment {
 
 
     public interface OptionDialogListener {
-        void onSelectOption(Integer position, String strValue);
+        void onSelectOption(Integer position, String strValue, int opt);
     }
 
 }

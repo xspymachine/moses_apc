@@ -30,7 +30,7 @@ public class PromotionsActivity extends Activity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         ctx = PromotionsActivity.this;
 
-        TextView brochure = (TextView) findViewById(R.id.brochure);
+        TextView brochure = findViewById(R.id.brochure);
 
         brochure.setOnClickListener(new View.OnClickListener() {
 

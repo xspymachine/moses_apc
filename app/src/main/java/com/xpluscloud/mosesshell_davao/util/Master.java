@@ -125,9 +125,9 @@ public final class Master {
     /********************************
      * Outgoing gateway
      *******************************///smart - +639989720280
-    public final static String INIT_GATEWAY = "+639771049747"; //globe
+//    public final static String INIT_GATEWAY = "+639771049747"; //globe
 //    public final static String INIT_GATEWAY 	= "+639989720280"; //smart
-//	public final static String INIT_GATEWAY 	= "+639255208007"; //sun
+	public final static String INIT_GATEWAY 	= "+639255208007"; //sun
     public final static Long INIT_SEND_INTERVAL = 1000 * 60 * 10l;
 
 
