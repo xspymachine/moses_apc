@@ -176,36 +176,36 @@ public class InOutActivity extends AppCompatActivity {
 	       btSubmitIO.setOnClickListener(new OnClickListener() {
 		        @Override
 				public void onClick(View v) {
-		        	saveIO();
-//					if(inout.contains("OUT")) {
-//						saveIO();
-//					}else {
-//						if (gpsFix == null) {
-//							DbUtil.makeToast(LayoutInflater.from(context), "Searching location please wait...", context,
-//									(ViewGroup) findViewById(R.id.custom_toast_layout), 0);
-//							return;
-//						}
-//						CustomerDbManager db = new CustomerDbManager(context);
-//						db.open();
-//						Customer c = db.getCustomerByCode(customerCode);
-//						db.close();
-//
-//						Location loc1 = new Location("");
-//						loc1.setLatitude(c.getLatitude());
-//						loc1.setLongitude(c.getLatitude());
-//
-//						Location loc2 = new Location("");
-//						loc2.setLatitude(gpsFix.getLatitude());
-//						loc2.setLongitude(gpsFix.getLatitude());
-//
-//						float distanceInMeters = loc1.distanceTo(loc2);
-//						Log.e("in", inout + distanceInMeters);
-//						if (distanceInMeters > 20) {
-//							DialogManager.showAlertDialog(InOutActivity.this,
-//									"Time IN unacceptable!",
-//									"You have to time in while you are near the customer’s marked location GPS coordinates.", false);
-//						} else saveIO();
-//					}
+//		        	saveIO();
+					if(inout.contains("OUT")) {
+						saveIO();
+					}else {
+						if (gpsFix == null) {
+							DbUtil.makeToast(LayoutInflater.from(context), "Searching location please wait...", context,
+									(ViewGroup) findViewById(R.id.custom_toast_layout), 0);
+							return;
+						}
+						CustomerDbManager db = new CustomerDbManager(context);
+						db.open();
+						Customer c = db.getCustomerByCode(customerCode);
+						db.close();
+
+						Location loc1 = new Location("");
+						loc1.setLatitude(c.getLatitude());
+						loc1.setLongitude(c.getLatitude());
+
+						Location loc2 = new Location("");
+						loc2.setLatitude(gpsFix.getLatitude());
+						loc2.setLongitude(gpsFix.getLatitude());
+
+						float distanceInMeters = loc1.distanceTo(loc2);
+						Log.e("in", inout + distanceInMeters);
+						if (distanceInMeters > 20) {
+							DialogManager.showAlertDialog(InOutActivity.this,
+									"Time IN unacceptable!",
+									"You have to time in while you are near the customer’s marked location GPS coordinates.", false);
+						} else saveIO();
+					}
 		        }
 		    });
 

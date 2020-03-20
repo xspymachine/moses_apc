@@ -62,10 +62,10 @@ public class MerchandisingActivity extends FragmentActivity implements RetailFra
         etRemarks = findViewById(R.id.etRemarks_pg);
 
         Bundle b = getIntent().getExtras();
-        ccode = b.getString("customerCode");
+        ccode = b.getString("ccode");
 //        cusName = b.getString("customerName");
 //        cusAddress = b.getString("customerAddress");
-        devId = b.getString("devId");
+        devId = b.getString("devid");
 //		selected = b.getString("selected");
 
 //        tvCusName.setText(cusName);

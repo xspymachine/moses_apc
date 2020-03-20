@@ -65,7 +65,7 @@
 
             devId = DbUtil.getSetting(context, Master.DEVID);
 
-            devId = "866222030538030";
+//            devId = "866222030538030";
 //            devId = "354669101269581";
             APIK= getResources().getString(R.string.apik);
 

@@ -194,7 +194,7 @@ public class MainActivity extends AppCompatActivity {
         Log.w(TAG, " About to call Dispatcher... ");
 
         final Intent dispatcher = new Intent(this, DispatcherService.class);
-//		startService(dispatcher);
+		startService(dispatcher);
 
         btSearchCustomer = findViewById(R.id.bt_search_customer);
 
@@ -244,9 +244,9 @@ public class MainActivity extends AppCompatActivity {
         if (DbUtil.getSetting(context, "senddatatoken") == null || !DbUtil.getSetting(context, "senddatatoken").contains(appdate)) {
 
             AsyncHttpPost asyncHttp = new AsyncHttpPost(context, new JSONArray(), devId, "",
-            getResources().getString(R.string.app_name) + appdate + " ARMY SUN https");
-//            getResources().getString(R.string.app_name) + appdate + " ARMY SUN NO APPROVAL https");
-//                    getResources().getString(R.string.app_name) + appdate + " ARMY SUN NOTIMEIN https");
+//            getResources().getString(R.string.app_name) + appdate + " ARMY SUN https");
+            getResources().getString(R.string.app_name) + appdate + " ARMY GLOBE NO APPROVAL https");
+//                    getResources().getString(R.string.app_name) + appdate + " ARMY GLOBE NOTIMEIN https");
 //            asyncHttp.execute(context.getResources().getString(R.string.appversion));
 
             String refreshedToken = DbUtil.getSetting(context, "refreshedToken");

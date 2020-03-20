@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/MosesShell - Davao.iml" filepath="$PROJECT_DIR$/MosesShell - Davao.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/moses_sfa.iml" filepath="$PROJECT_DIR$/moses_sfa.iml" group="moses_sfa" />
+      <module fileurl="file://$PROJECT_DIR$/app/moses_sfa-app.iml" filepath="$PROJECT_DIR$/app/moses_sfa-app.iml" group="moses_sfa/app" />
     </modules>
   </component>
 </project>

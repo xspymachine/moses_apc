@@ -119,6 +119,7 @@ public class DownloadTask extends AsyncTask<String, Void, Boolean> {
 			db.close();
 			String url="";
 			for(int i=0;i<strUrl.size();i++){
+				if(strUrl.get(i).equals("")) return;
 				url = "https://shellpromo.storage.googleapis.com/"+strUrl.get(i);
 				new DownloadTaskFile(context, null, "Current Promotions").execute(url, strUrl.get(i).split("/")[1]);
 			}

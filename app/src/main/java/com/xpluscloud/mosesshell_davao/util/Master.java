@@ -125,16 +125,16 @@ public final class Master {
     /********************************
      * Outgoing gateway
      *******************************///smart - +639989720280
-//    public final static String INIT_GATEWAY = "+639771049747"; //globe
+    public final static String INIT_GATEWAY = "+639771049747"; //globe
 //    public final static String INIT_GATEWAY 	= "+639989720280"; //smart
-	public final static String INIT_GATEWAY 	= "+639255208007"; //sun
+//	public final static String INIT_GATEWAY 	= "+639255208007"; //sun
     public final static Long INIT_SEND_INTERVAL = 1000 * 60 * 10l;
 
 
     /*******************************
      * Outgoing  Commands ***********
      *******************************/
-    public final static int FOR_APPROVAL_SETTING = 1; //if this app is for approval status 1
+    public final static int FOR_APPROVAL_SETTING = 0; //if this app is for approval status 1
     public final static String CMD_REGISTER = "CMDREG1";
     public final static String CMD_INOUT = "CMDTIO"; //Time In Out
 
