@@ -25,8 +25,8 @@ public class BootStrapActivity extends Activity {
 		context = BootStrapActivity.this;
 		
 		TelephonyManager telephonyManager = (TelephonyManager)getSystemService(Context.TELEPHONY_SERVICE);
-		String devId = telephonyManager.getDeviceId();
-		
+//		String devId = telephonyManager.getDeviceId();
+		String devId = Master.getDevId2(context);
 		String sysDateTime = DateUtil.strDateTime(System.currentTimeMillis());
 	   	
 	   	Integer battery = Master.getBatteryInfo(context);

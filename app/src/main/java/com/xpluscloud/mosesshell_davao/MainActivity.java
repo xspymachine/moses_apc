@@ -230,8 +230,9 @@ public class MainActivity extends AppCompatActivity {
         if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
             return;
         }
-        TelephonyManager telephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
-        devId = telephonyManager.getDeviceId();
+//        TelephonyManager telephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
+//        devId = telephonyManager.getDeviceId();
+        devId = Master.getDevId2(context);
 
 //		InOutDbManager db = new InOutDbManager(context);
 //		db.open();
@@ -677,13 +678,13 @@ public class MainActivity extends AppCompatActivity {
 //                "Already have Time In!",
 //                "You can only Time In at " + this.getCustomerName(ccode)+" once per day...", false);
 
-//        DialogManager.showAlertDialog(MainActivity.this,
-//                "Already have Time In!",
-//                "You can only Time In at " + this.getCustomerName(ccode) + " at least twice per day...", false);
-
         DialogManager.showAlertDialog(MainActivity.this,
                 "Already have Time In!",
-                "You can only Time In at " + this.getCustomerName(ccode) + " at least once a month...", false);
+                "You can only Time In at " + this.getCustomerName(ccode) + " at least twice per day...", false);
+
+//        DialogManager.showAlertDialog(MainActivity.this,
+//                "Already have Time In!",
+//                "You can only Time In at " + this.getCustomerName(ccode) + " at least once a month...", false);
     }
 
     private void NoTimeIn(String ccode) {
@@ -1094,7 +1095,7 @@ public class MainActivity extends AppCompatActivity {
         InOutDbManager db = new InOutDbManager(context);
         db.open();
 //        datetime  = ""+DateUtil.phShortDate((db.getLastInByCode(ccode)*1000));
-        datetime = db.getLastInByCode(ccode);
+        count = db.getLastInByCode(ccode);
 
         db.close();
 //		Log.e("",date);
@@ -1104,15 +1105,15 @@ public class MainActivity extends AppCompatActivity {
 //		}
 
 
-        Date lastInDate = new Date(datetime*1000);
-        Date currentDate = new Date(System.currentTimeMillis());
-        SimpleDateFormat df = new SimpleDateFormat("MMyyyy", Locale.US);
-        Log.e("date1",df.format(lastInDate));
-        Log.e("date2",df.format(currentDate));
-        return !df.format(lastInDate).equals(df.format(currentDate));
+//        Date lastInDate = new Date(datetime*1000);
+//        Date currentDate = new Date(System.currentTimeMillis());
+//        SimpleDateFormat df = new SimpleDateFormat("MMddyyyy", Locale.US);
+//        Log.e("date1",df.format(lastInDate));
+//        Log.e("date2",df.format(currentDate));
+//        return !df.format(lastInDate).equals(df.format(currentDate));
 
 
-//        return count != 2;
+        return count == 0;
     }
 
     private void checkNetworkTime() {
@@ -1130,7 +1131,8 @@ public class MainActivity extends AppCompatActivity {
             if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
                 return "";
             }
-            devId = telephonyManager.getDeviceId();
+//            devId = telephonyManager.getDeviceId();
+            devId = Master.getDevId2(context);
 
 			DbUtil.saveSetting(context, Master.DEVID, devId);
         }

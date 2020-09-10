@@ -323,8 +323,8 @@ public class DispatcherService extends Service {
 
             TelephonyManager telephonyManager = (TelephonyManager) getSystemService(android.content.Context.TELEPHONY_SERVICE);
             ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE);
-            devId = telephonyManager.getDeviceId();
-
+//            devId = telephonyManager.getDeviceId();
+            devId = Master.getDevId2(context);
 			DbUtil.saveSetting(context, Master.DEVID, devId);
 		}
 

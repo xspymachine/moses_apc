@@ -212,24 +212,24 @@ public class InOutDbManager extends DbManager {
 		}			
 	}
 	
-	public long getLastInByCode(String ccode){
+	public int getLastInByCode(String ccode){
 		long date=0;
-		String sql = " SELECT "+DesContract.TimeInOut.DATETIME+" FROM "+DesContract.TimeInOut.TABLE_NAME+
-					 " WHERE "+DesContract.TimeInOut.CCODE+"='"+ccode+"' ORDER BY _id DESC LIMIT 1";
-
-//        int count=0;
 //		String sql = " SELECT "+DesContract.TimeInOut.DATETIME+" FROM "+DesContract.TimeInOut.TABLE_NAME+
-//					 " WHERE "+DesContract.TimeInOut.CCODE+"='"+ccode+"' AND "+
-//					 " strftime('%Y-%m-%d', "+DesContract.TimeInOut.DATETIME+",'unixepoch') = '"+
-//					 DateUtil.strDate(System.currentTimeMillis())+"'";
+//					 " WHERE "+DesContract.TimeInOut.CCODE+"='"+ccode+"' ORDER BY _id DESC LIMIT 1";
+
+        int count=0;
+		String sql = " SELECT "+DesContract.TimeInOut.DATETIME+" FROM "+DesContract.TimeInOut.TABLE_NAME+
+					 " WHERE "+DesContract.TimeInOut.CCODE+"='"+ccode+"' AND "+
+					 " strftime('%Y-%m-%d', "+DesContract.TimeInOut.DATETIME+",'unixepoch') = '"+
+					 DateUtil.strDate(System.currentTimeMillis())+"'";
 
 		Cursor c = db.rawQuery(sql, null);
-		if(c.moveToFirst()) {
-			date=c.getLong(0);
-		}
-//		count = c.getCount();
+//		if(c.moveToFirst()) {
+//			date=c.getLong(0);
+//		}
+		count = c.getCount();
 		c.close();		
-		return date;
+		return count;
 	}
 	
 	public int getCount() {		

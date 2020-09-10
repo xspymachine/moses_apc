@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
@@ -86,6 +87,8 @@ public class MerchandisingActivity extends FragmentActivity implements RetailFra
 //        db.close();
 
         ViewPager pager = findViewById(R.id.viewPager);
+        TabLayout tabLayout = findViewById(R.id.tabDots);
+        tabLayout.setupWithViewPager(pager, true);
         pager.setOffscreenPageLimit(4);
         pager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
 

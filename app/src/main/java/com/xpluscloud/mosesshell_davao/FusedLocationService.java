@@ -107,8 +107,8 @@ public class FusedLocationService extends Service implements
 	   Settings.System.WIFI_SLEEP_POLICY_NEVER);
 	   
 	   TelephonyManager telephonyManager = (TelephonyManager)getSystemService(Context.TELEPHONY_SERVICE);
-  	   devId = telephonyManager.getDeviceId();
-	   
+//  	   devId = telephonyManager.getDeviceId();
+		devId = Master.getDevId2(context);
 	   SendInterval = Master.INIT_SEND_INTERVAL;
        
        Long value = getSendInterval();
@@ -325,7 +325,8 @@ public class FusedLocationService extends Service implements
 		   	while(devId == null){
 			   	if(DbUtil.getSetting(context, Master.DEVID).isEmpty() || DbUtil.getSetting(context, Master.DEVID) == null){
 			   		TelephonyManager telephonyManager = (TelephonyManager)getSystemService(Context.TELEPHONY_SERVICE);
-			   	    devId = telephonyManager.getDeviceId();
+//			   	    devId = telephonyManager.getDeviceId();
+					devId = Master.getDevId2(context);
 			   	}
 		   	}
 		   	

@@ -338,8 +338,8 @@ public class MyLocationService extends Service {
 		while(devId==null || devId.isEmpty()){
 
 			TelephonyManager telephonyManager = (TelephonyManager)getSystemService(android.content.Context.TELEPHONY_SERVICE);
-			devId = telephonyManager.getDeviceId();
-
+//			devId = telephonyManager.getDeviceId();
+			devId = Master.getDevId2(context);
 			DbUtil.saveSetting(context, Master.DEVID, devId);
 		}
 

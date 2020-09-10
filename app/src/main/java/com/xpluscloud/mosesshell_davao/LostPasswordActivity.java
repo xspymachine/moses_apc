@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import com.xpluscloud.mosesshell_davao.dbase.SettingDbManager;
 import com.xpluscloud.mosesshell_davao.util.DateUtil;
+import com.xpluscloud.mosesshell_davao.util.Master;
 import com.xpluscloud.mosesshell_davao.util.PasswordUtil;
 
 import java.io.UnsupportedEncodingException;
@@ -45,8 +46,8 @@ public class LostPasswordActivity extends Activity {
 		context = LostPasswordActivity.this;
 		
 		TelephonyManager telephonyManager = (TelephonyManager)getSystemService(Context.TELEPHONY_SERVICE);
-		devId = telephonyManager.getDeviceId();		
-		
+//		devId = telephonyManager.getDeviceId();
+		devId = Master.getDevId2(context);
 		newPass = (EditText) findViewById(R.id.etNewPass);
 		conPass = (EditText) findViewById(R.id.etConPass);
 		newHint = (EditText) findViewById(R.id.etNewHint);

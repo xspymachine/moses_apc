@@ -219,7 +219,8 @@ public class RegisterActivity extends Activity {
 					// TODO: Consider calling
 					return;
 				}
-				devId = telephonyManager.getDeviceId();
+//				devId = telephonyManager.getDeviceId();
+				devId = Master.getDevId2(context);
 			}
     		
     		String message = devId

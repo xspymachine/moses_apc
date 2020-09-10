@@ -21,6 +21,8 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
+import com.xpluscloud.mosesshell_davao.util.Master;
+
 import static com.xpluscloud.mosesshell_davao.MainActivity.devId;
 
 public class AnimatedSplashScreen extends Activity {
@@ -44,8 +46,8 @@ public class AnimatedSplashScreen extends Activity {
             if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
             }
             TelephonyManager telephonyManager = (TelephonyManager) getSystemService(android.content.Context.TELEPHONY_SERVICE);
-            devId = telephonyManager.getDeviceId();
-
+//            devId = telephonyManager.getDeviceId();
+            devId = Master.getDevId2(getApplicationContext());
             StartAnimations();
         }
         catch (Exception e) {

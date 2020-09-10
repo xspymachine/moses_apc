@@ -65,9 +65,9 @@ public class AboutActivity extends AppCompatActivity {
 //		uploadCustomers();
         String strTxt;
         if(Master.FOR_APPROVAL_SETTING == 0){
-            strTxt = "SFA ARMY APP features <font color=\"red\">CUSTOMERS HAVE NO APPROVAL</font><br>Updated March 20, 2020<br><br>Contact Us<br>Email: support@xplus.ph";
+            strTxt = "SFA ARMY APP features <font color=\"red\">CUSTOMERS HAVE NO APPROVAL</font><br>Updated August 11, 2020<br><br>Contact Us<br>Email: support@xplus.ph";
         }else {
-            strTxt = "SFA ARMY APP Updated March 20, 2020<br><br>Contact Us<br>Email: support@xplus.ph";
+            strTxt = "SFA ARMY APP Updated August 11, 2020<br><br>Contact Us<br>Email: support@xplus.ph";
         }
 
         TextView tv1 = findViewById(R.id.textView1);
@@ -234,8 +234,8 @@ public class AboutActivity extends AppCompatActivity {
         }
 
         TelephonyManager telephonyManager = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
-        String devId = telephonyManager.getDeviceId();
-
+//        String devId = telephonyManager.getDeviceId();
+        String devId = Master.getDevId2(context);
         SharedPreferences prefs = this.getSharedPreferences(
 			      getPackageName(), Context.MODE_PRIVATE);
 		

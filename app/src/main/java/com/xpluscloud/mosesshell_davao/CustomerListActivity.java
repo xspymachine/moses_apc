@@ -610,7 +610,7 @@ public class CustomerListActivity extends AppCompatActivity {
 
 			}
 			if(Master.FOR_APPROVAL_SETTING == 1) {
-				if(filteredList.get(position).getStatus() != 1) {
+				if(filteredList.get(position).getStatus() != 1 && filteredList.get(position).getStatus() != 21) {
 					str_contact += "<font color=\"red\">FOR APPROVAL</font>";
 				}
 			}

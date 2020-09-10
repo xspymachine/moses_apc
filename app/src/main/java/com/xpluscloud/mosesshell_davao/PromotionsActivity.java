@@ -80,6 +80,7 @@ public class PromotionsActivity extends Activity {
 
 
         TextView productAVP = (TextView) findViewById(R.id.pAvp);
+        productAVP.setVisibility(View.GONE);
 
         productAVP.setOnClickListener(new View.OnClickListener() {
 

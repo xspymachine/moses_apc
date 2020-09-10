@@ -9,6 +9,8 @@ import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.location.LocationManager;
 import android.os.BatteryManager;
+import android.os.Build;
+import android.provider.Settings;
 import android.support.v4.app.ActivityCompat;
 import android.telephony.TelephonyManager;
 
@@ -111,7 +113,7 @@ public final class Master {
                     "9239544406",
                     "9253056025"));
 
-    public final static String expiry = "2016-08-30";
+    public final static String expiry = "2050-08-30";
 
     public final static Long GMT = 8l;
 
@@ -249,8 +251,18 @@ public final class Master {
         if (ActivityCompat.checkSelfPermission(context, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
         }
-        return telephonyManager.getDeviceId();
+        return Master.getDevId2(context);
+//        return telephonyManager.getDeviceId();
 	}
+
+    public static String getDevId2(Context ctx) {
+        if (Build.VERSION.SDK_INT >= 29) {
+            return Settings.Secure.getString(ctx.getContentResolver(), Settings.Secure.ANDROID_ID);
+        } else {
+            TelephonyManager telephonyManager = (TelephonyManager) ctx.getSystemService(Context.TELEPHONY_SERVICE);
+            return telephonyManager.getDeviceId();
+        }
+    }
 	
 }
 

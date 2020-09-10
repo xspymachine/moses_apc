@@ -118,7 +118,7 @@
                         deleteTable("isubcategory");
                         deleteTable("cmpicategory");
                         deleteTable("cmpisubcategory");
-                        deleteTable("cus_datas"," where status NOT IN (11,12)");
+                        deleteTable("cus_datas"," where status NOT IN (11,12,13)");
                         deleteTable("checklists");
                         deleteTable("acct_types");
                         downloadCmpList();
@@ -134,14 +134,22 @@
                         break;
                     case PCHECK:
                         deleteTable("cus_datas"," where status=11");
-                        downloadPromo();
-                        break;
-                    case PBROCHURE:
-                        deleteFiles();
                         deleteTable("cus_datas"," where status=12");
                         deleteTable("cus_datas"," where status=13");
+                        downloadPromo();
                         downloadPromotions();
                         downloadPromoCat();
+                        break;
+//                    case PBROCHURE:
+//                        deleteFiles();
+//                        deleteTable("cus_datas"," where status=12");
+//                        deleteTable("cus_datas"," where status=13");
+//                        downloadPromotions();
+//                        downloadPromoCat();
+//                        break;
+                    case PBROCHURE:
+                        deleteFiles();
+                        downloadPromotionsFiles();
                         break;
                     default:
                         //
@@ -179,6 +187,10 @@
         }
         private void downloadPromotions(){
             String url = baseUrl+"download/promotion2";
+            new DownloadTask(context,header,"Promo Brochures").execute(url,"cus_datas",devId,APIK);
+        }
+        private void downloadPromotionsFiles(){
+            String url = baseUrl+"download/promotion2_xxx";
             new DownloadTask(context,header,"Promo Brochures","BROCHURE").execute(url,"cus_datas",devId,APIK);
         }
         private void downloadPromoCat(){

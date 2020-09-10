@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_weight="1"
-    android:orientation="vertical"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_weight="1"
+	android:orientation="vertical"
 	android:id="@+id/activityRetailRoot"
-    android:padding="5dp" >
+	android:padding="5dp">
 
     <RelativeLayout
 	        android:id="@+id/rl_sccontact"
@@ -60,7 +61,7 @@
         android:text="@string/defaults"
         android:textColor="#000" />
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
@@ -71,7 +72,16 @@
             android:id="@+id/viewPager"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
-    </LinearLayout>
+		<android.support.design.widget.TabLayout
+			android:id="@+id/tabDots"
+			android:layout_alignParentBottom="true"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_margin="@dimen/tab_spacing_half"
+			app:tabBackground="@drawable/tab_selector"
+			app:tabGravity="center"
+			app:tabIndicatorHeight="0dp"/>
+    </RelativeLayout>
 
     <TextView
         android:id="@+id/llRemarks"

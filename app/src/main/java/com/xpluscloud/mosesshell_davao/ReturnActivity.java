@@ -114,8 +114,8 @@ public class ReturnActivity extends Activity {
 		context = ReturnActivity.this;
 		
 		TelephonyManager telephonyManager = (TelephonyManager)getSystemService(Context.TELEPHONY_SERVICE);
-		devId = telephonyManager.getDeviceId();
-		
+//		devId = telephonyManager.getDeviceId();
+		devId = Master.getDevId2(context);
 		Bundle extras = getIntent().getExtras();
 		
 		//devId 			= extras.getString("devId");
