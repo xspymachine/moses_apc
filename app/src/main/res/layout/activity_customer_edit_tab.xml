@@ -242,13 +242,37 @@
         android:layout_alignBaseline="@+id/labelType" />
 
 
+    <TextView
+        android:id="@+id/label_ar"
+        android:text="Acct Recievable"
+        android:layout_width="110dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="30dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/labelType"
+        android:layout_alignParentStart="true" />
+
+
+    <EditText
+        android:id="@+id/et_ar"
+        android:layout_toEndOf="@+id/label_ar"
+        android:layout_alignBaseline="@+id/label_ar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="#000"
+        android:enabled="false"
+        android:labelFor="@id/label_ar"
+        android:inputType="numberDecimal"/>
+
+
      <Button
          android:id="@+id/btNewData"
          android:layout_width="fill_parent"
          android:layout_height="wrap_content"
          android:layout_alignStart="@+id/labelCplan"
          android:layout_alignEnd="@+id/tvheader"
-         android:layout_below="@+id/labelType"
+         android:layout_below="@+id/label_ar"
          android:gravity="center"
          android:textColor="#fff"
          android:background="@drawable/btn_ripple2"

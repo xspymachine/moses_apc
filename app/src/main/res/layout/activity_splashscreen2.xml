@@ -15,6 +15,7 @@
         android:contentDescription="@id/imageView1"
         android:scaleType="fitCenter"
         android:layout_marginTop="40dp"
+        android:visibility="gone"
         android:src="@drawable/shell" />
 
     <ImageView

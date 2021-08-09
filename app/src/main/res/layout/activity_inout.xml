@@ -224,7 +224,6 @@
 			android:layout_below="@+id/Separator"
 			android:layout_centerInParent="true"
 			android:layout_marginRight="10dp"
-			android:visibility="visible"
 			android:layout_marginTop="20dp">
 
 			<CheckBox
@@ -324,11 +323,32 @@
 				android:textStyle="bold" />
 			<!-- *********************************** -->
 			<CheckBox
-				android:id="@+id/cbORem3"
+				android:id="@+id/cbORem003"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:layout_alignLeft="@+id/cbORem1"
 				android:layout_below="@+id/tvORem1"
+				android:layout_marginTop="20dp"
+				android:background="@drawable/custom_checkbox"
+				android:textSize="20sp" />
+
+			<TextView
+				android:id="@+id/tvORem003"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_alignTop="@+id/cbORem003"
+				android:layout_marginLeft="10dp"
+				android:layout_toRightOf="@+id/cbORem003"
+				android:text="@string/orem20000"
+				android:textColor="#000"
+				android:textSize="20sp"
+				android:textStyle="bold" />
+			<CheckBox
+				android:id="@+id/cbORem3"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_alignLeft="@+id/cbORem1"
+				android:layout_below="@+id/tvORem003"
 				android:layout_marginTop="20dp"
 				android:background="@drawable/custom_checkbox"
 				android:textSize="20sp" />

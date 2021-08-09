@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/sv_box"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:background="@color/shellyellow" >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:layout_marginBottom="100dp" >
+
+        <TextView
+            android:id="@+id/llDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="12dp"
+            android:textSize="16sp"
+            android:text="@string/date" />
+
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/llDate"
+            android:layout_alignStart="@+id/llDate"
+            android:padding="12dp"
+            android:gravity="center"
+            android:textSize="30sp"
+            android:background="@drawable/recbg">
+
+        </TextView>
+
+        <RelativeLayout
+            android:id="@+id/cbGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvDate"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:padding="10dp"
+            android:background="@drawable/rounded_gray_border">
+
+            <TextView
+                android:id="@+id/header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:padding="12dp"
+                android:text="@string/reminders2"
+                android:textColor="#000"
+                android:background="@color/shellyellow" />
+
+            <CheckBox
+                android:id="@+id/cbRem1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/header"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/custom_checkbox"
+                android:textSize="20sp" />
+
+
+            <TextView
+                android:id="@+id/tvRem1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/cbRem1"
+                android:layout_alignTop="@+id/cbRem1"
+                android:layout_marginStart="10dp"
+                android:textSize="20sp"
+                android:text="@string/bbrem1" />
+
+
+            <CheckBox
+                android:id="@+id/cbRem2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvRem1"
+                android:background="@drawable/custom_checkbox"
+                android:layout_marginTop="30dp"
+                android:textSize="20sp" />
+
+
+            <TextView
+                android:id="@+id/tvRem2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/cbRem2"
+                android:layout_alignTop="@+id/cbRem2"
+                android:textSize="20sp"
+                android:layout_marginStart="10dp"
+                android:text="@string/bbrem2" />
+
+
+            <CheckBox
+                android:id="@+id/cbRem3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvRem2"
+                android:background="@drawable/custom_checkbox"
+                android:layout_marginTop="30dp"
+                android:textSize="20sp"/>
+
+
+            <TextView
+                android:id="@+id/tvRem3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/cbRem3"
+                android:layout_alignTop="@+id/cbRem3"
+                android:textSize="20sp"
+                android:layout_marginStart="10dp"
+                android:text="@string/bbrem3" />
+
+
+            <CheckBox
+                android:id="@+id/cbRem4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvRem3"
+                android:background="@drawable/custom_checkbox"
+                android:layout_marginTop="30dp"
+                android:textSize="20sp" />
+
+
+            <TextView
+                android:id="@+id/tvRem4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/cbRem4"
+                android:layout_alignTop="@+id/cbRem4"
+                android:textSize="20sp"
+                android:layout_marginStart="10dp"
+                android:text="@string/bbrem4" />
+
+            <CheckBox
+                android:id="@+id/cbRem5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/custom_checkbox"
+                android:layout_below="@+id/tvRem4"
+                android:layout_marginTop="30dp"
+                android:textSize="20sp" />
+
+
+            <TextView
+                android:id="@+id/tvRem5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/cbRem5"
+                android:layout_alignTop="@+id/cbRem5"
+                android:textSize="20sp"
+                android:layout_marginStart="10dp"
+                android:text="@string/bbrem5" />
+
+            <CheckBox
+                android:id="@+id/cbRem6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvRem5"
+                android:background="@drawable/custom_checkbox"
+                android:layout_marginTop="30dp"
+                android:textSize="20sp" />
+
+
+            <TextView
+                android:id="@+id/tvRem6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/cbRem6"
+                android:layout_alignTop="@+id/cbRem6"
+                android:textSize="20sp"
+                android:layout_marginStart="10dp"
+                android:text="@string/bbrem6" />
+
+            <CheckBox
+                android:id="@+id/cbRem7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvRem6"
+                android:background="@drawable/custom_checkbox"
+                android:layout_marginTop="30dp"
+                android:textSize="20sp" />
+
+
+            <TextView
+                android:id="@+id/tvRem7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/cbRem7"
+                android:layout_alignTop="@+id/cbRem7"
+                android:textSize="20sp"
+                android:layout_marginStart="10dp"
+                android:text="@string/bbrem7" />
+            <CheckBox
+                android:id="@+id/cbRem8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvRem7"
+                android:background="@drawable/custom_checkbox"
+                android:layout_marginTop="30dp"
+                android:textSize="20sp" />
+
+
+            <TextView
+                android:id="@+id/tvRem8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/cbRem8"
+                android:layout_alignTop="@+id/cbRem8"
+                android:textSize="20sp"
+                android:layout_marginStart="10dp"
+                android:text="@string/bbrem8" />
+            <CheckBox
+                android:id="@+id/cbRem9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvRem8"
+                android:background="@drawable/custom_checkbox"
+                android:layout_marginTop="30dp"
+                android:textSize="20sp" />
+
+
+            <TextView
+                android:id="@+id/tvRem9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/cbRem9"
+                android:layout_alignTop="@+id/cbRem9"
+                android:textSize="20sp"
+                android:layout_marginStart="10dp"
+                android:text="@string/bbrem9" />
+            <CheckBox
+                android:id="@+id/cbRem10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvRem9"
+                android:background="@drawable/custom_checkbox"
+                android:layout_marginTop="30dp"
+                android:textSize="20sp" />
+
+
+            <TextView
+                android:id="@+id/tvRem10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/cbRem10"
+                android:layout_alignTop="@+id/cbRem10"
+                android:textSize="20sp"
+                android:layout_marginStart="10dp"
+                android:text="@string/bbrem10" />
+        </RelativeLayout>
+
+        <!-- <RelativeLayout
+            android:id="@+id/cbGroup2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvDate"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="30dp"
+            android:visibility="gone"
+            android:background="@drawable/rounded_gray_border">
+
+             <TextView
+                    android:id="@+id/header2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center"
+                    android:textSize="20sp"
+                    android:padding="12dp"
+                    android:text="@string/merchHeader"
+                    android:textColor="#fff"
+                    android:background="#215390" />
+
+                <CheckBox
+                    android:id="@+id/cbRem12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/header2"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/custom_checkbox"
+                    android:textSize="20sp" />
+
+
+                <TextView
+                    android:id="@+id/tvRem12"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/cbRem12"
+                    android:layout_alignTop="@+id/cbRem12"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="20sp"
+                    android:text="@string/merch1" />
+
+
+                <CheckBox
+                    android:id="@+id/cbRem22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvRem12"
+                    android:background="@drawable/custom_checkbox"
+                    android:layout_marginTop="30dp"
+                    android:textSize="20sp" />
+
+
+                <TextView
+                    android:id="@+id/tvRem22"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/cbRem22"
+                    android:layout_alignTop="@+id/cbRem22"
+                    android:textSize="20sp"
+                    android:layout_marginLeft="10dp"
+                    android:text="@string/merch2" />
+
+
+                <CheckBox
+                    android:id="@+id/cbRem32"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvRem22"
+                    android:background="@drawable/custom_checkbox"
+                    android:layout_marginTop="30dp"
+                    android:textSize="20sp"/>
+
+
+                <TextView
+                    android:id="@+id/tvRem32"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/cbRem32"
+                    android:layout_alignTop="@+id/cbRem32"
+                    android:textSize="20sp"
+                    android:layout_marginLeft="10dp"
+                    android:text="@string/merch3" />
+
+
+                <CheckBox
+                    android:id="@+id/cbRem42"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvRem32"
+                    android:background="@drawable/custom_checkbox"
+                    android:layout_marginTop="30dp"
+                    android:textSize="20sp" />
+
+
+                <TextView
+                    android:id="@+id/tvRem42"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/cbRem42"
+                    android:layout_alignTop="@+id/cbRem42"
+                    android:textSize="20sp"
+                    android:layout_marginLeft="10dp"
+                    android:text="@string/merch4" />
+
+                <CheckBox
+                    android:id="@+id/cbRem52"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/custom_checkbox"
+                    android:layout_below="@+id/tvRem42"
+                    android:layout_marginTop="30dp"
+                    android:textSize="20sp" />
+
+
+                <TextView
+                    android:id="@+id/tvRem52"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/cbRem52"
+                    android:layout_alignTop="@+id/cbRem52"
+                    android:textSize="20sp"
+                    android:layout_marginLeft="10dp"
+                    android:text="@string/merch5" />
+
+                <CheckBox
+                    android:id="@+id/cbRem62"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/custom_checkbox"
+                    android:layout_below="@+id/tvRem52"
+                    android:layout_marginTop="30dp"
+                    android:textSize="20sp" />
+
+
+                <TextView
+                    android:id="@+id/tvRem62"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/cbRem62"
+                    android:layout_alignTop="@+id/cbRem62"
+                    android:textSize="20sp"
+                    android:layout_marginLeft="10dp"
+                    android:text="@string/merch6" />
+
+                <CheckBox
+                    android:id="@+id/cbRem72"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/custom_checkbox"
+                    android:layout_below="@+id/tvRem62"
+                    android:layout_marginTop="30dp"
+                    android:textSize="20sp" />
+
+
+                <TextView
+                    android:id="@+id/tvRem72"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/cbRem72"
+                    android:layout_alignTop="@+id/cbRem72"
+                    android:textSize="20sp"
+                    android:layout_marginLeft="10dp"
+                    android:text="@string/merch7" />
+
+                <TextView
+                    android:id="@+id/llRemarks"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/cbRem72"
+                    android:layout_alignLeft="@+id/cbRem72"
+                    android:padding="8dp"
+                    android:layout_marginTop="20dp"
+                    android:textStyle="bold"
+                    android:text="@string/remarks"/>
+
+                <EditText
+                    android:id="@+id/etRemarks"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/llRemarks"
+                    android:layout_alignLeft="@+id/llRemarks"
+                    android:gravity="center"
+                    android:inputType="textCapSentences"
+                    android:padding="8dp"
+                    android:typeface="sans"
+                    android:textSize="16sp"
+                    android:lines="3"
+                    android:maxLength="80"
+                    android:background="@drawable/rounded_gray_border"/>
+
+          </RelativeLayout> -->
+
+        <LinearLayout
+            android:id="@+id/cbGroup2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvDate"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="20dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="30dp"
+            android:visibility="gone"
+            android:orientation="vertical"
+            android:background="@drawable/rounded_gray_border">
+
+            <TextView
+                android:id="@+id/header2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:padding="12dp"
+                android:text="@string/merchHeader"
+                android:textColor="#000"
+                android:background="@color/shellyellow" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btSubmit"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cbGroup"
+            android:layout_marginTop="30dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/custom_button_click"
+            android:gravity="center"
+            android:text="@string/submit"
+            android:textColor="#E88100"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btSubmit2"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cbGroup2"
+            android:layout_marginTop="30dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/custom_button_click"
+            android:gravity="center"
+            android:text="@string/submit"
+            android:textColor="#E21717"
+            android:textSize="20sp"
+            android:visibility="gone"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+</ScrollView>

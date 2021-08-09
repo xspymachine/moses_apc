@@ -1,10 +1,26 @@
-<menu xmlns:android="http://schemas.android.com/apk/res/android" >
-    
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+
+
    <item
-        android:id="@+id/delete_all"
-        android:orderInCategory="100"
-        android:icon="@drawable/delete32"
-        android:showAsAction="never"
-        android:title="@string/action_delete_all"/>
+       android:id="@+id/open_scanner"
+       android:orderInCategory="10"
+       android:icon="@mipmap/ic_scanner"
+       app:showAsAction="ifRoom" />
+
+   <item
+       android:id="@+id/history"
+       android:orderInCategory="100"
+       android:icon="@drawable/list32"
+       android:title="@string/history"
+       app:showAsAction="never" />
+
+   <item
+       android:id="@+id/delete"
+       android:orderInCategory="100"
+       android:icon="@drawable/delete32"
+       android:title="@string/delete"
+       app:showAsAction="never" />
 
 </menu>

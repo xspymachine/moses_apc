@@ -152,8 +152,8 @@
     
     
     
-    <ListView 
-    	android:id="@+id/android:list"
+    <ListView
+		android:id="@android:id/list"
     	android:dividerHeight="1dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -27,8 +27,8 @@
         android:background="@drawable/rounded_gray_border"/>
   
 	
-    <ListView 
-    	android:id="@+id/android:list"
+    <ListView
+        android:id="@android:id/list"
     	android:dividerHeight="2dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -37,7 +37,7 @@
         android:layout_below="@+id/inputSearch" />
     
     <TextView
-        android:id="@+id/android:empty"
+        android:id="@android:id/empty"
         android:gravity="center_horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />

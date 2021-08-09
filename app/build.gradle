@@ -3,18 +3,18 @@ apply plugin: 'com.android.application'
 android {
     signingConfigs {
         appkey {
-            keyAlias 'sfakeyalias'
-            keyPassword 'sfaarmy0117'
-            storeFile file('../appkey/sfaarmykey.jks')
-            storePassword 'sfaarmy0117'
+            keyAlias 'apckeyalias'
+            keyPassword 'apc0728'
+            storeFile file('../appkey/apckey.jks')
+            storePassword 'apc0728'
         }
     }
 
-    compileSdkVersion 27
+    compileSdkVersion 28
     useLibrary 'org.apache.http.legacy'
     defaultConfig {
-        applicationId "com.xpluscloud.mosesshell_davao"
-        minSdkVersion 21
+        applicationId "com.xpluscloud.moses_apc"
+        minSdkVersion 19
         targetSdkVersion 27
         versionCode 1
         versionName "1.0"
@@ -51,7 +51,6 @@ dependencies {
     implementation 'com.google.firebase:firebase-messaging:17.3.4'
     implementation 'com.google.firebase:firebase-core:16.0.6'
     implementation 'com.squareup.okhttp3:okhttp:3.10.0'
-    implementation 'me.dm7.barcodescanner:zbar:1.9'
     testImplementation 'junit:junit:4.12'
     implementation 'de.hdodenhof:circleimageview:2.2.0'
     implementation 'com.github.scottyab:showhidepasswordedittext:0.8'
@@ -64,6 +63,14 @@ dependencies {
     implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'
     implementation 'com.zplesac:connectionbuddy:2.0.1'
     implementation 'com.blankj:utilcode:1.23.7'
+    implementation 'me.dm7.barcodescanner:zxing:1.9.13'
+    implementation 'com.pixplicity.easyprefs:library:1.9.0'
+    implementation('com.github.ViksaaSkool:AwesomeSplash:v1.0.0') {
+        exclude group: 'com.android.support'
+        exclude module: 'appcompat-v7'
+        exclude module: 'support-v4'
+    }
+
 
 }
 

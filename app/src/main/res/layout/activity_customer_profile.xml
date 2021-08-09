@@ -29,7 +29,7 @@
         <!--android:scaleType="centerCrop"-->
         <!--android:src="@drawable/assets_logo"/>-->
 
-        <com.xpluscloud.mosesshell_davao.MLRoundedImageView
+        <com.xpluscloud.moses_apc.MLRoundedImageView
             android:id="@+id/user_profile_photo"
             android:layout_width="120dp"
             android:layout_height="120dp"

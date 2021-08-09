@@ -1,2 +1,2 @@
-alias : sfakeyalias
-password : sfaarmy0117
+alias : apckeyalias
+password : apc0728

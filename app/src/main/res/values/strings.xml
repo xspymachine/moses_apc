@@ -1,12 +1,12 @@
 <resources>
-    <string name="app_name">Moses-Army</string>
+    <string name="app_name">Moses-APC</string>
     <string name="version">v2.0</string>
     <string name="date">Date  </string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
     <string name="apik">mrj2k12atxplusg5</string>
     <string name="cl">Credit Limit</string>
-    <string name="versiondate">Shell 2020-08-11</string>
+    <string name="versiondate">APC 2021-08-03</string>
 
     <string name="date_from">Date from </string>
     <string name="date_to">Date to</string>
@@ -301,6 +301,19 @@
     <string name="rem6">Merchandising Materials</string>
     <string name="rem7">Power bank and mobile phone fully charged</string>
 
+
+    <string name="reminders2">MGA BAGAY NA DAPAT I-CHECK BAGO BUMIYAHE (BLOW BAGETS)</string>
+    <string name="bbrem1">Brake</string>
+    <string name="bbrem2">Lights</string>
+    <string name="bbrem3">Oil</string>
+    <string name="bbrem4">Water</string>
+    <string name="bbrem5">Battery</string>
+    <string name="bbrem6">Air</string>
+    <string name="bbrem7">Gas</string>
+    <string name="bbrem8">Engine</string>
+    <string name="bbrem9">Tire</string>
+    <string name="bbrem10">Self</string>
+
     <string name="orem">Up Sale/Leave Call</string>
     <string name="orem1">Present/Offer new products</string>
     <string name="orem2">Present all marketing programs</string>
@@ -317,6 +330,7 @@
     <string name="orem400">Take competitor pricing and activities</string>
     <string name="orem500">Advise him of the next visit</string>
     <string name="orem600">Merchandise the store</string>
+    <string name="orem20000">Enroll store in SHARe and remind to scan products</string>
 
     <string name="promo1">New Starter Pack</string>
     <string name="promo2">Negosyo-pport</string>
@@ -343,6 +357,83 @@
         <item>Biscuit</item>
         <item>Pasta</item>
         <item>Oil</item>
+    </string-array>
+
+    <string-array name="brand_name">
+        <item>SHELL</item>
+        <item>CALTEXT</item>
+        <item>PETRON</item>
+        <item>CASTROL</item>
+        <item>MOBIL</item>
+    </string-array>
+
+
+    <string-array name="variant_1">
+        <item>SHELL HELIX HX3</item>
+        <item>CASTROL GTX - ESSENTIAL*NEW</item>
+        <item>HAVOLINE SF</item>
+        <item>HAVOLINE MO</item>
+        <item>PETRON ULTRON EXTRA / BLAZE RACING BR 200 MULTIGRADE</item>
+        <item>SHELL HELIX HX5 Diesel</item>
+        <item>SHELL HELIX HX5</item>
+        <item>CASTROL GTX</item>
+        <item>CASTROL GTX - DIESEL</item>
+        <item>HAVOLINE FORMULA</item>
+        <item>PETRON ULTRON TOURING / BLAZE RACING BR 400 PREM. MULTIGRADE</item>
+        <item>SHELL HELIX HX7</item>
+        <item>CASTROL MAGNATEC 10W40</item>
+        <item>CASTROL MAGNATEC DIESEL</item>
+        <item>HAVOLINE SYNBLEND 5W30</item>
+        <item>PETRON BLAZE RACING / BLAZE RACING BR 600</item>
+        <item>SHELL HELIX BEN LED</item>
+        <item>SHELL HELIX HX8</item>
+        <item>SHELL HELIX ULTRA 0W40</item>
+        <item>CASTROL EDGE</item>
+        <item>CASTROL MAGNATEC STOP START</item>
+        <item>HAVOLINE PRO DS LE Fully Syn</item>
+        <item>HAVOLINE PRO DS ECO</item>
+        <item>PETRON BLAZE HTP - 0W40*</item>
+        <item>PETRON BLAZE RACING BR 830 FULLY SYNTHETIC BLEND* NEW</item>
+        <item>PETRON RACE / BLAZE RACING BR 800 FULLY SYNTHETIC BLEND</item>
+        <item>MOBIL SUPER 5W30</item>
+        <item>MOBIL 1 0W-40</item>
+    </string-array>
+
+
+    <string-array name="variant_2">
+        <item>SHELL ADVANCE AX3 20W40</item>
+        <item>CALTEX EZY 4T</item>
+        <item>CASTROL GO 4T</item>
+        <item>PETRON RIDER / PETRON SR 200 SPRINT MULTIGRADE</item>
+        <item>SHELL ADVANCE AX5</item>
+        <item>CALTEX SUPER4T 20W40</item>
+        <item>CASTROL ACTIV</item>
+        <item>PETRON ENDURO / PETRON SPRINT SR 400 PREM. MULTIGRADE</item>
+        <item>SHELL ADVANCE AX7</item>
+        <item>CALTEX SUPER SEMI SYN</item>
+        <item>CASTROL POWER1</item>
+        <item>PETRON SPRINT SR 600 SYNTHETIC* NEW</item>
+        <item>SHELL ADVANCE BEN LED</item>
+        <item>SHELL ADVANCE ULTRA 10W40</item>
+        <item>CALTEX SUPER 4T FULLY SYN</item>
+        <item>CASTROL POWER1 RACING</item>
+        <item>PETRON RACER / PETRON SR 800 FULLY SYNTHETIC</item>
+    </string-array>
+
+
+    <string-array name="variant_3">
+        <item>Rimula R1 20W40</item>
+        <item>CRB Multi 20W40 </item>
+        <item>RevX HD 40 </item>
+        <item>Silver SAE 40 </item>
+        <item>Rimula R4X 15W40 </item>
+        <item>Castrol CRB Turbomax 15W40</item>
+        <item>Revx RX400 Premium Multi 15W40</item>
+        <item>Delo Gold Ultra Engine Oil </item>
+        <item>Rimula Light Duty 10W40</item>
+        <item>Vecton 15W40 CI-4 or Vecton 10W40 CI-4</item>
+        <item>Delo 400 MGX </item>
+        <item>Rev-x RX 600 10W40</item>
     </string-array>
 
 
