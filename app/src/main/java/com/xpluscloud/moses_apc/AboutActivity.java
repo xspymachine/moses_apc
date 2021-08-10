@@ -62,11 +62,11 @@ public class AboutActivity extends AppCompatActivity {
         String telco = Prefs.getString("strgateway",Master.STR_GATEWAY_SMART);
         String appname = getString(R.string.app_name);
         if(Master.FOR_APPROVAL_SETTING == 0){
-            strTxt = appname+" APP features <font color=\"red\">CUSTOMERS HAVE NO APPROVAL</font><br>Updated August 03, 2021<br>" +
+            strTxt = appname+"<br>APP features <font color=\"red\">CUSTOMERS HAVE NO APPROVAL</font><br>Updated August 10, 2021<br>" +
                     "<br>Uses "+telco+" Telco" +
                     "<br>Contact Us<br>Email: support@xplus.ph";
         }else {
-            strTxt = appname+" APP Updated August 03, 2021<br>" +
+            strTxt = appname+"<br>APP Updated August 10, 2021<br>" +
                     "<br>Uses "+telco+" Telco"+
                     "<br>Contact Us<br>Email: support@xplus.ph";
         }

@@ -43,6 +43,14 @@ public class CustomerDbManager extends DbManager {
 	public CustomerDbManager(Context context) {
 		super(context);
 	}
+
+	public void updateDeletionPic(int _id) {
+		String sql="UPDATE " + DesContract.Customer.TABLE_NAME +
+				" SET " + DesContract.Customer.STATUS + " = 9999" +
+				" WHERE " + DesContract.Customer._ID + " = " +  _id ;
+
+		db.execSQL(sql);
+	}
 	
 	public long AddNew(Customer c) {
 		ContentValues cv = new ContentValues();

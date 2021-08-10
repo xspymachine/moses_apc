@@ -87,7 +87,7 @@ public class GetSignatureActivity extends Activity {
 			customerAddress		=b.getString("customerAddress");
 			csCode				=b.getString("csCode");
 			txNo				=b.getString("txNo");
-			logo = BitmapFactory.decodeResource(getResources(),R.drawable.shell);
+			logo = BitmapFactory.decodeResource(getResources(),R.drawable.apc_logo2);
 			logo = Bitmap.createScaledBitmap(logo, 150, 150, true);
 			
 			if(csCode==null || csCode=="") {

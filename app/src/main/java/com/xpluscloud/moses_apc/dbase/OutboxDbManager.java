@@ -308,7 +308,7 @@ public class OutboxDbManager extends DbManager {
 		CMDCUA2, CMDCUU2,CMDCUA3, CMDCUU3,CMDINV,CMDOWN3,
 		CMDCUD, CMDUDT, CMDSOR, CMDSIG,CMPREM,SURREM,CMDPMB,CMDINV2,CMDINVI2,CMDCMP6,CMDCMPI6,
 		CMDSET, CMDBOT,CMDCST,CMDCSI,CMDPIC,CMDPIC2,GPSOFF,GPSON,
-		CMDGPS,CMDCOL1,CMDRET,CMDCMP2,CMDOWN,CMDPUR,CMDLOG,
+		CMDGPS,CMDCOL1,CMDRET,CMDCMP2,CMDOWN,CMDPUR,CMDLOG,CMDDPC,CMDPOPC,CMDMPC,
 		CMDMER,CMDODATA,XPT911,CMDMSTAT,CMDTRUCK,CMDWHCAP,CMDUCST,
 		CMDGPDATA,CMDCHK,CMDISS,CMDCMP5,CMDSUR,CMDSCL,CMDISS2
 	}
@@ -365,7 +365,16 @@ public class OutboxDbManager extends DbManager {
 			
 			case CMDPIC:
 				strCommand="Picture Info";
-				break;		
+				break;
+			case CMDMPC:
+				strCommand="Picture Info for Merchandising Display Customer";
+				break;
+			case CMDDPC:
+				strCommand="Picture Info for deleted Customer";
+				break;
+			case CMDPOPC:
+				strCommand="Picture Info for PO Documentation Customer";
+				break;
 				
 			case CMDSET:
 				strCommand="System Settings";
@@ -507,6 +516,9 @@ public class OutboxDbManager extends DbManager {
 				case CMDSOR:
 				case CMDSIG:
 				case CMDPIC:
+				case CMDMPC:
+				case CMDDPC:
+				case CMDPOPC:
 				case CMDBOT:	
 				case CMDCST:
 				case CMDCOL1:

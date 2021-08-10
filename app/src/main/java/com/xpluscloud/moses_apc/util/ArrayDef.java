@@ -12,7 +12,7 @@ public final class ArrayDef {
 		"Promos Availed",
         "Sales Order",
 		"Competitor Mapping",
-	    "Camera",
+	    "Take Photo",
 	    "Customer Issue",
 		"Time Out",
 		"Mark Location",
@@ -143,7 +143,8 @@ public final class ArrayDef {
 	};
 	public final static String[] STATUS = {
 			"Active",
-			"Prospect"
+			"Prospect",
+			"Lead"
 	};
 
     

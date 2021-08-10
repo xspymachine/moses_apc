@@ -23,7 +23,7 @@ public final class Master {
      * Client Company Exclusive
      **************************/
 
-    public final static String COMPANY_NAME = "sfaarmy";
+    public final static String COMPANY_NAME = "apc";
 
     public final static String[] pckg_option = {
             "CTN",
@@ -143,7 +143,7 @@ public final class Master {
     /*******************************
      * Outgoing  Commands ***********
      *******************************/
-    public final static int FOR_APPROVAL_SETTING = 0; //if this app is for approval status 1
+    public final static int FOR_APPROVAL_SETTING = 1; //if this app is for approval status 1
     public final static String CMD_REGISTER = "CMDREG1";
     public final static String CMD_INOUT = "CMDTIO"; //Time In Out
 
@@ -166,6 +166,9 @@ public final class Master {
 
     public final static String CMD_PICTURE = "CMDPIC"; //PICTURE Info
     public final static String CMD_PICTURE2 = "CMDPIC2"; //PICTURE Info remarks
+    public final static String CMD_MERCH_PICTURE	= "CMDMPC"; //Deleted Customer image Info
+    public final static String CMD_DEL_PICTURE		= "CMDDPC"; //Deleted Customer image Info
+    public final static String CMD_PO_PICTURE		= "CMDPOPC"; //Deleted Customer image Info
 
     public final static String CMD_CALLSHEET = "CMDCST"; //Callsheet
 

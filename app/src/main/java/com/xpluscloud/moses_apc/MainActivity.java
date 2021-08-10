@@ -249,8 +249,8 @@ public class MainActivity extends AppCompatActivity {
             String strGateway = Prefs.getString("strgateway",Master.INIT_GATEWAY_SMART);
 
             AsyncHttpPost asyncHttp = new AsyncHttpPost(context, new JSONArray(), devId, "",
-//            getResources().getString(R.string.app_name) + appdate + strGateway +" https");
-            getResources().getString(R.string.app_name) + appdate + strGateway +" NO APPROVAL https");
+            getResources().getString(R.string.app_name) + appdate + strGateway +" https");
+//            getResources().getString(R.string.app_name) + appdate + strGateway +" NO APPROVAL https");
 //                    getResources().getString(R.string.app_name) + appdate + " ARMY "+ strGateway +" NOTIMEIN https");
 //            asyncHttp.execute(context.getResources().getString(R.string.appversion));
 
@@ -553,7 +553,7 @@ public class MainActivity extends AppCompatActivity {
                     break;
 //
                 case PICTURE:
-                    if (isTimeIn(customerCode, dbo)) takePicture();
+                    if (isTimeIn(customerCode, dbo)) activity_takepicture();
                     else NoTimeIn(customerCode);
                     break;
                 case PROMOTIONS:
@@ -973,6 +973,19 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+
+    private void activity_takepicture(){
+
+        Intent intent = new Intent(context, TakePhotoActivity.class);
+        Bundle b = new Bundle();
+        b.putString("devId", devId);
+        b.putString("customerCode", customerCode);
+        b.putString("customerName", customerName);
+        b.putString("customerAddress", customerAddress);
+        intent.putExtras(b);
+        startActivity(intent);
+    }
+
     /*************************************************************
      *** Confirm Dialog
      ************************************************************/
@@ -1199,6 +1212,7 @@ public class MainActivity extends AppCompatActivity {
 
 		return devId;
 	}
+
 
 	private void takePicture(){
 		Drawable dr = context.getResources().getDrawable(R.drawable.assets_about);

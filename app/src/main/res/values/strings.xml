@@ -6,7 +6,7 @@
     <string name="hello_world">Hello world!</string>
     <string name="apik">mrj2k12atxplusg5</string>
     <string name="cl">Credit Limit</string>
-    <string name="versiondate">APC 2021-08-03</string>
+    <string name="versiondate">APC 2021-08-10</string>
 
     <string name="date_from">Date from </string>
     <string name="date_to">Date to</string>
@@ -201,6 +201,7 @@
     <string name="link">https://moses.xpluscloud.com</string>
 
     <string name="pictures_dir">Pictures</string>
+    <string name="pictures_del_dir">CusDelete</string>
     <string name="upload">Upload</string>
 
     <!-- Expired -->
