@@ -196,7 +196,7 @@ public class MainActivity extends AppCompatActivity {
         Log.w(TAG, " About to call Dispatcher... ");
 
         final Intent dispatcher = new Intent(this, DispatcherService.class);
-		startService(dispatcher);
+//		startService(dispatcher);
 
         btSearchCustomer = findViewById(R.id.bt_search_customer);
 
@@ -249,8 +249,8 @@ public class MainActivity extends AppCompatActivity {
             String strGateway = Prefs.getString("strgateway",Master.INIT_GATEWAY_SMART);
 
             AsyncHttpPost asyncHttp = new AsyncHttpPost(context, new JSONArray(), devId, "",
-            getResources().getString(R.string.app_name) + appdate + strGateway +" https");
-//            getResources().getString(R.string.app_name) + appdate + strGateway +" NO APPROVAL https");
+//            getResources().getString(R.string.app_name) + appdate + strGateway +" https");
+            getResources().getString(R.string.app_name) + appdate + strGateway +" NO APPROVAL https");
 //                    getResources().getString(R.string.app_name) + appdate + " ARMY "+ strGateway +" NOTIMEIN https");
 //            asyncHttp.execute(context.getResources().getString(R.string.appversion));
 

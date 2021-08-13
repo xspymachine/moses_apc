@@ -124,6 +124,25 @@ public final class ArrayDef {
 
 	};
 
+	public final static String[] ACCT_TYPES4 = {
+			"-",
+			"IB",
+			"IC",
+			"IM",
+			"H",
+			"NB",
+			"BM",
+			"SC",
+			"T1",
+			"T2",
+			"FSD",
+			"R",
+			"CVS",
+			"HO",
+			"T"
+
+	};
+
 	public final static String[] TERMS2 = {
 			"7 days",//1
 			"15 days", //2

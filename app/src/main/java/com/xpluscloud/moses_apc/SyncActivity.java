@@ -233,6 +233,7 @@
             String url = baseUrl+"download/items_subcategory";
             new DownloadTask(context,header,"Items - Subcategory").execute(url,"isubcategory",devId,APIK);
         }
+
         private void downloadItemsCategory2() {
 //            deleteTable("items_category");
             String url = baseUrl+"download/cmp_items_category";
@@ -295,7 +296,6 @@
             db.deleteCusData();
             db.close();
         }
-
         private void deleteTable(String tableName){
             UtilDbManager db = new UtilDbManager(context);
             db.open();

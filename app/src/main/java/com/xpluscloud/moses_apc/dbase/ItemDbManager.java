@@ -34,7 +34,7 @@ public class ItemDbManager extends DbManager {
 
 	public Item getItemBarcode(String barcode) {
 		Item item;
-		String sql = "SELECT *FROM items WHERE barcode='"+barcode+"'";
+		String sql = "SELECT *FROM items WHERE barcode LIKE '%"+barcode+"%'";
 		Cursor c = db.rawQuery(sql,null);
 
 		if(c.moveToFirst()) {

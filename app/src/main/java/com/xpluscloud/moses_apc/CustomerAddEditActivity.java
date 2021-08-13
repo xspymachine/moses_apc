@@ -281,9 +281,10 @@ public class CustomerAddEditActivity extends AppCompatActivity {
     	spTerms.setAdapter(tmArrayAdapter);
 		spTerms.setSelection(3);
 
-		String[] types;
-		if(DbUtil.getSetting(context,"type").contains("B2C")) types = ArrayDef.ACCT_TYPES2;
-		else types = ArrayDef.ACCT_TYPES3;
+		String[] types = ArrayDef.ACCT_TYPES4;
+//		if(DbUtil.getSetting(context,"type").contains("B2C")) types = ArrayDef.ACCT_TYPES2;
+//		else types = ArrayDef.ACCT_TYPES3;
+
 		spType.setAdapter(new ArrayAdapter<Object>(this,
 				R.layout.csi_spinner, types));
 

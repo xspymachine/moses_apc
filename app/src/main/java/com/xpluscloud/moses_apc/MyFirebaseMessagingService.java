@@ -73,6 +73,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         // Check if message contains a notification payload.
         if (remoteMessage.getNotification() != null) {
             Log.d(TAG, "Message Notification Body: " + remoteMessage.getNotification().getBody());
+//            generateNotification(getApplicationContext(),remoteMessage.getNotification().getBody(),0,"");
         }
 
 //        ProcessMessage(0, "", remoteMessage, getApplicationContext());

@@ -143,7 +143,7 @@ public final class Master {
     /*******************************
      * Outgoing  Commands ***********
      *******************************/
-    public final static int FOR_APPROVAL_SETTING = 1; //if this app is for approval status 1
+    public final static int FOR_APPROVAL_SETTING = 0; //if this app is for approval status 1
     public final static String CMD_REGISTER = "CMDREG1";
     public final static String CMD_INOUT = "CMDTIO"; //Time In Out
 

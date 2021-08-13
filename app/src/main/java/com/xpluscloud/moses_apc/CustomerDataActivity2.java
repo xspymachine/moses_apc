@@ -15,6 +15,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.xpluscloud.moses_apc.dbase.CoveragePlanDbManager;
 import com.xpluscloud.moses_apc.dbase.CustomerDbManager;
@@ -45,6 +46,7 @@ public class CustomerDataActivity2 extends AppCompatActivity {
 	EditText pEmail;
 	EditText pPosition;
 
+	Button btMore;
 	Button btSave;
 	Button btCancel;
 	
@@ -131,7 +133,8 @@ public class CustomerDataActivity2 extends AppCompatActivity {
 		pPhone 		= (EditText) findViewById(R.id.etPPhone);
 		pEmail 		= (EditText) findViewById(R.id.etPEmail);
 		pPosition	= (EditText) findViewById(R.id.etPposition);
-				
+
+		btMore = findViewById(R.id.bt_more_details);
 		btSave = (Button) findViewById(R.id.bt_save);
 		btCancel = (Button) findViewById(R.id.bt_cancel);
 		DbUtil.changeDrawableColor("#F90606", btCancel, 2);
@@ -150,6 +153,13 @@ public class CustomerDataActivity2 extends AppCompatActivity {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				finish();
+			}
+		});
+		btMore.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Toast.makeText(context,"Web Server still constructing, wait until next update.",Toast.LENGTH_SHORT).show();
 			}
 		});
 		
