@@ -29,7 +29,7 @@ public class PromoDbManager extends DbManager {
         int count = 0;
         String OrderBy = "_id DESC";
         String Limit = "1";
-        String where = "ccode = '"+ccode+"' AND strftime('%Y-%m-%d',s."+DesContract.CustomerPromo.DATETIME+",'unixepoch') = strftime('%Y-%m-%d', 'now')";
+        String where = "ccode = '"+ccode+"' AND strftime('%Y-%m-%d',s."+DesContract.CustomerPromo.DATETIME+",'unixepoch','localtime') = strftime('%Y-%m-%d', 'now','localtime')";
         String sql =  " SELECT *from "+DesContract.CustomerPromo.TABLE_NAME +" s "
                 +" LEFT JOIN "+DesContract.Customer.TABLE_NAME+" c "+" USING ("+DesContract.Customer.CCODE+")"
                 +" WHERE "+where;

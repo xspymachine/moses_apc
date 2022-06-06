@@ -149,7 +149,7 @@ public class StartActivity extends Activity {
 	    	   }
 	       }
 	       
-	       if (cbCheckCount>=7) {
+	       if (cbCheckCount>=6) {
 		       SharedPreferences.Editor prefEditor = settings.edit();
 			   prefEditor.putString("setDate", sysDate);
 			   prefEditor.commit();	

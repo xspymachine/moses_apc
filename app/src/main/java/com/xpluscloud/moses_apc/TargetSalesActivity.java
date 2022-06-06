@@ -142,7 +142,7 @@ public class TargetSalesActivity extends Activity{
 			TableRow tr = new TableRow(context);
 			tr.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.WRAP_CONTENT));
 			if (i % 2==0) {
-				tr.setBackgroundColor(getResources().getColor(R.color.shellred));
+				tr.setBackground(getResources().getDrawable(R.drawable.bg34));
 			  } else {
 				  tr.setBackgroundColor(getResources().getColor(R.color.shellyellow));
 			  }

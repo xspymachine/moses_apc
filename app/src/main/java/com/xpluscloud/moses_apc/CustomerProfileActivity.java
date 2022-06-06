@@ -47,13 +47,7 @@ public class CustomerProfileActivity extends Activity {
             "Hobbies and Interest",
             "Contact Number",
             "E-mail Address",
-            "SECONDARY CONTACT",
-            "Name",
-            "Position",
-            "Birthdate",
-            "Hobbies and Interest",
-            "Contact Number",
-            "E-mail Address",
+            "Total AR"
     };
 
     Customer customer_info;
@@ -87,6 +81,7 @@ public class CustomerProfileActivity extends Activity {
         CustomerDbManager db = new CustomerDbManager(context);
         db.open();
         values1 = db.getCustomerDataInfo3(ccode,10);
+        values1.add(DbUtil.getCustomerCLBAL(context,ccode));
         values2 = db.getCustomerDataInfo3(ccode,20);
         customer_info = db.getCustomer(ccode);
         filename = customer_info.getName() + "_" + customer_info.getCustomerCode() + ".png";

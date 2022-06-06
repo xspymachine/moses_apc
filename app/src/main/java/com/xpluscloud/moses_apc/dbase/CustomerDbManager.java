@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.provider.BaseColumns;
+import android.util.Log;
 
 import com.xpluscloud.moses_apc.getset.Customer;
 import com.xpluscloud.moses_apc.getset.CustomerData;
@@ -37,6 +38,9 @@ public class CustomerDbManager extends DbManager {
 		DesContract.Customer.TARGET,
 		DesContract.Customer.TYPEID,
 		DesContract.Customer.AR,
+		DesContract.Customer.CLBAL,
+		DesContract.Customer.APP,
+		DesContract.Customer.SG,
 		DesContract.Customer.STATUS
 	};
 	
@@ -101,6 +105,8 @@ public class CustomerDbManager extends DbManager {
 		cv.put(DesContract.Customer.TARGET 			, c.getTarget());
 		cv.put(DesContract.Customer.STATUS 			, c.getStatus());
 		cv.put(DesContract.Customer.TYPEID 			, c.getTypeid());
+		cv.put(DesContract.Customer.SG 				, c.getSalesgroup());
+		cv.put(DesContract.Customer.APP 			, c.getApplication());
 		
 		//return db.insert(DesContract.Customer.TABLE_NAME, null, cv);
 		
@@ -163,6 +169,17 @@ public class CustomerDbManager extends DbManager {
 		c.close();
 		
 		return cust;
+	}
+
+	public String getCustomerCLBAL(String ccode) {
+		String credit_limit="0";
+		String sql = "SELECT credit_limit FROM cus_credit_limit WHERE ccode= '" + ccode + "'  LIMIT 1";
+		Cursor c = db.rawQuery(sql,null);
+		if (c != null && c.moveToFirst()) {
+			credit_limit = c.getString(0); //The 0 is the column index, we only have 1 column, so the index is 0
+		}
+		c.close();
+		return credit_limit;
 	}
 	
 	public String getCustomerCode(int id) {
@@ -307,6 +324,8 @@ public class CustomerDbManager extends DbManager {
 		cv.put(DesContract.Customer.TERMID			, c.getTermid());
 		cv.put(DesContract.Customer.TARGET 			, c.getTarget());
 		cv.put(DesContract.Customer.TYPEID 			, c.getTypeid());
+		cv.put(DesContract.Customer.SG 				, c.getSalesgroup());
+		cv.put(DesContract.Customer.APP 			, c.getApplication());
 		String where = "_id=" + c.getId();
 		
 		db.update(DesContract.Customer.TABLE_NAME, cv, where, null);
@@ -365,6 +384,12 @@ public class CustomerDbManager extends DbManager {
 				c.getColumnIndex(DesContract.Customer.TYPEID)));
 		customer.setAr(c.getString(
 				c.getColumnIndex(DesContract.Customer.AR)));
+		customer.setApplication(c.getString(
+				c.getColumnIndex(DesContract.Customer.APP)));
+		customer.setSalesgroup(c.getString(
+				c.getColumnIndex(DesContract.Customer.SG)));
+		customer.setClbal(c.getString(
+				c.getColumnIndex(DesContract.Customer.CLBAL)));
 		return customer;
 	}
 	
@@ -511,16 +536,21 @@ public class CustomerDbManager extends DbManager {
 		return spid;
 	}
 
-	public ArrayList<String> getAddress(int opt){
+	public ArrayList<String> getAddress(int opt,String where){
 		ArrayList<String> str = new ArrayList<>();
-		str.add("-");
+//		str.add("-");
 		String sql = "";
 		switch (opt){
-			case 0: sql = "SELECT DISTINCT city FROM customers WHERE city != '' AND city IS NOT NULL AND city != 'null'";
+			case 1: sql = "SELECT provDesc FROM refprovince";
 					break;
-			case 1: sql = "SELECT DISTINCT state FROM customers WHERE state != '' AND state IS NOT NULL AND state != 'null'";
+			case 0:	String strwhere = "(SELECT provCode FROM refprovince WHERE provDesc='"+where+"' )";
+					sql = "SELECT citymunDesc FROM refcitymun WHERE provCode = " + strwhere;
+					break;
+			case 2: String strwhere2 = "(SELECT citymunCode FROM refcitymun WHERE citymunDesc='"+where+"' )";
+					sql = "SELECT brgyDesc FROM refbrgy WHERE citymunCode = " + strwhere2;
 					break;
 		}
+		Log.e("sql",sql);
 		Cursor c = db.rawQuery(sql,null);
 		if (c != null && c.moveToFirst()) {
 			for(int i = 0; i < c.getCount(); i++) {
@@ -529,6 +559,8 @@ public class CustomerDbManager extends DbManager {
 				}
 			}
 		}
+
+		Log.e("sql","count="+c.getCount());
 		c.close();
 
 		return str;

@@ -269,7 +269,7 @@ public class ResendActivity extends ListActivity {
               List<Inventory> csi = db.getList(inCode.getCscode());
               for (Inventory item : csi) 	{
                   if(item.getStatus()==0 && item.getPrice()>0) {
-                      String message = Master.CMD_CMPI6 + " " +
+                      String message = Master.CMD_CMPI7 + " " +
                               devId 					+ ";" +
                               item.getINCode() 		    + ";" +
                               item.getItemCode()		+ ";" +
@@ -277,8 +277,8 @@ public class ResendActivity extends ListActivity {
                               item.getDescription()	    + ";" +
                               item.getPrice()			+ ";" +
                               item.getId()				+ ";" +
-							  item.getSubcategoryid()	+ ";" +
-							  item.getCategoryid();
+							  getStrCategory(item.getSubcategoryid(),2)	+ ";" +
+							  getStrCategory(item.getCategoryid(),1);
 
                       DbUtil.saveMsg(context,DbUtil.getGateway(context), message);
 
@@ -289,6 +289,14 @@ public class ResendActivity extends ListActivity {
 
           db.close();
 	  }
+	private String getStrCategory(int id, int opt){
+		String cat = "";
+		CompetitorDbManager2 db = new CompetitorDbManager2(context);
+		db.open();
+		cat = db.getCatStr(id,opt);
+		db.close();
+		return cat;
+	}
        
 }
 	

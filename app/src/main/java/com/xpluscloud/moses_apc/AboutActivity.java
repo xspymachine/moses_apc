@@ -62,11 +62,11 @@ public class AboutActivity extends AppCompatActivity {
         String telco = Prefs.getString("strgateway",Master.STR_GATEWAY_SMART);
         String appname = getString(R.string.app_name);
         if(Master.FOR_APPROVAL_SETTING == 0){
-            strTxt = appname+"<br>APP features <font color=\"red\">CUSTOMERS HAVE NO APPROVAL</font><br>Updated August 10, 2021<br>" +
+            strTxt = appname+"<br>APP features <font color=\"red\">CUSTOMERS HAVE NO APPROVAL</font><br>Updated April 04, 2022<br>" +
                     "<br>Uses "+telco+" Telco" +
                     "<br>Contact Us<br>Email: support@xplus.ph";
         }else {
-            strTxt = appname+"<br>APP Updated August 10, 2021<br>" +
+            strTxt = appname+"<br>APP Updated April 04, 2022<br>" +
                     "<br>Uses "+telco+" Telco"+
                     "<br>Contact Us<br>Email: support@xplus.ph";
         }
@@ -106,7 +106,7 @@ public class AboutActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
-                callSupport("09778037710");
+                callSupport("09171084984");
             }
         });
         iv4.setOnClickListener(new View.OnClickListener() {
@@ -114,7 +114,7 @@ public class AboutActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
-                sendMessage("09778037710", "GLOBE");
+                sendMessage("09171084984", "GLOBE");
             }
         });
         iv12.setOnClickListener(new View.OnClickListener() {

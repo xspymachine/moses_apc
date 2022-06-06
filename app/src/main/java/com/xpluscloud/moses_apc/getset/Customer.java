@@ -22,6 +22,9 @@ public class Customer {
 	private int cashSales;
 	private int target;
 	private String ar;
+	private String salesgroup;
+	private String application;
+	private String clbal;
 	
 	
 	private int status;
@@ -45,6 +48,33 @@ public class Customer {
 		this.status=0;
 		this.typeid = 0;
 		this.ar = "";
+		this.salesgroup = "";
+		this.application="";
+		this.clbal = "";
+	}
+
+	public String getSalesgroup() {
+		return salesgroup;
+	}
+
+	public void setSalesgroup(String salesgroup) {
+		this.salesgroup = salesgroup;
+	}
+
+	public String getApplication() {
+		return application;
+	}
+
+	public void setApplication(String application) {
+		this.application = application;
+	}
+
+	public String getClbal() {
+		return clbal;
+	}
+
+	public void setClbal(String clbal) {
+		this.clbal = clbal;
 	}
 
 	public String getAr() {

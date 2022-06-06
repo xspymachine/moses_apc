@@ -111,6 +111,19 @@ public static void updateStatus(Context context, Integer id, Integer status) {
 	 return ro;
 	 
  }
+
+	public static String getCustomerCLBAL(Context context, String cCode){
+		String clbal;
+
+		CustomerDbManager db = new CustomerDbManager(context);
+
+		db.open();
+		clbal = db.getCustomerCLBAL(cCode);
+		db.close();
+
+		return clbal;
+
+	}
  
  public static String getSetting(Context context, String key) {
 		

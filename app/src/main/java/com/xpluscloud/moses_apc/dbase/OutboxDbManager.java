@@ -121,7 +121,8 @@ public class OutboxDbManager extends DbManager {
 	public List<Outbox> getDispMessages() {
 		delete_old();	
 		List<Outbox> list = new ArrayList<Outbox>();
-		String sql = "SELECT * FROM outbox WHERE message NOT LIKE '%XPT911%' AND message NOT LIKE '%CMDLOG%' AND message NOT LIKE '%CMDTOK%' ORDER BY  _id DESC";
+		String sql = "SELECT * FROM outbox WHERE message NOT LIKE '%XPT911%' AND message NOT LIKE '%CMDLOG%' AND message NOT LIKE '%CMDTOK%'" +
+				" AND message NOT LIKE '%CMDCUSM%' ORDER BY  _id DESC";
 		Cursor c = db.rawQuery(sql,null);
 		
 		if (c != null && c.moveToFirst()) {
@@ -306,7 +307,7 @@ public class OutboxDbManager extends DbManager {
 	private enum Command {
 		CMDREG1, CMDLOC, CMDTIO, CMDMRK, CMDCCL,CMDCCL2,
 		CMDCUA2, CMDCUU2,CMDCUA3, CMDCUU3,CMDINV,CMDOWN3,
-		CMDCUD, CMDUDT, CMDSOR, CMDSIG,CMPREM,SURREM,CMDPMB,CMDINV2,CMDINVI2,CMDCMP6,CMDCMPI6,
+		CMDCUD, CMDUDT, CMDSOR, CMDSIG,CMPREM,SURREM,CMDPMB,CMDINV2,CMDINVI2,CMDCMP6,CMDCMPI6,CMDCMPI7,
 		CMDSET, CMDBOT,CMDCST,CMDCSI,CMDPIC,CMDPIC2,GPSOFF,GPSON,
 		CMDGPS,CMDCOL1,CMDRET,CMDCMP2,CMDOWN,CMDPUR,CMDLOG,CMDDPC,CMDPOPC,CMDMPC,
 		CMDMER,CMDODATA,XPT911,CMDMSTAT,CMDTRUCK,CMDWHCAP,CMDUCST,
@@ -478,6 +479,7 @@ public class OutboxDbManager extends DbManager {
 			case CMDCMP6:
 				strCommand = "Competitor Pricing Item";
 				break;
+			case CMDCMPI7:
 			case CMDCMPI6:
 				strCommand = "Competitor Pricing";
 				break;
@@ -549,6 +551,7 @@ public class OutboxDbManager extends DbManager {
 				case CMDUDT:
 					newMsg = "Device Update: " + message;
 					break;
+				case CMDCMPI7:
 				case CMDCMPI6:
 					String citem = splitMsg[1] + ": " + getItemName2(splitMsg[2]) + "\n PCKG: " + splitMsg[3];
 					newMsg= strCommand +": " + citem ;

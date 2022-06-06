@@ -16,7 +16,8 @@
         android:layout_width="wrap_content" 
         android:layout_height="wrap_content" 
         android:layout_toEndOf="@+id/cb"
-        android:paddingTop="8dp"        
+        android:paddingTop="8dp"
+        android:visibility="gone"
         android:contentDescription="@string/app_name" 
         android:src="@drawable/uploadpic32" />
     

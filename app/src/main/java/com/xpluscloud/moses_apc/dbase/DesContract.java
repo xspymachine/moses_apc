@@ -27,6 +27,9 @@ public class DesContract {
 		public static final String TERMID			= "termid";	//
 		public static final String TYPEID			= "typeid";	//
 		public static final String AR				= "a_r";
+		public static final String SG				= "salesgroup";
+		public static final String APP				= "application";
+		public static final String CLBAL			= "clbal";
 		public static final String STATUS 			= "status";
 	}
 	
@@ -562,5 +565,47 @@ public class DesContract {
 		public static final String CCODE		= "ccode";
 		public static final String DATETIME		= "datetime";
 		public static final String STATUS		= "status";
+	}
+	public static abstract class CustomerCLBAL implements BaseColumns {
+		public static final String TABLE_NAME	= "cus_credit_limit";
+		public static final String CCODE		= "ccode";
+		public static final String CLBAL		= "credit_limit";
+		public static final String STATUS		= "status";
+	}
+
+	public static abstract class RefBarangay implements BaseColumns {
+		public static final String TABLE_NAME	= "refbrgy";
+		public static final String REFID		= "id";
+		public static final String BRGYCODE		= "brgyCode";
+		public static final String STRDESC		= "brgyDesc";
+		public static final String REGCODE		= "regCode";
+		public static final String PROVCODE		= "provCode";
+		public static final String CITYMUNCODE	= "citymunCode";
+	}
+
+	public static abstract class RefCitymun implements BaseColumns {
+		public static final String TABLE_NAME	= "refcitymun";
+		public static final String REFID		= "id";
+		public static final String PSGCCODE		= "psgcCode";
+		public static final String STRDESC		= "citymunDesc";
+		public static final String REGDESC		= "regDesc";
+		public static final String PROVCODE		= "provCode";
+		public static final String CITYMUNCODE	= "citymunCode";
+	}
+
+	public static abstract class RefProvince implements BaseColumns {
+		public static final String TABLE_NAME	= "refprovince";
+		public static final String REFID		= "id";
+		public static final String PSGCCODE		= "psgcCode";
+		public static final String STRDESC		= "provDesc";
+		public static final String PROVCODE		= "provCode";
+		public static final String REGCODE		= "regCode";
+	}
+	public static abstract class RefRegion implements BaseColumns {
+		public static final String TABLE_NAME	= "refregion";
+		public static final String REFID		= "id";
+		public static final String PSGCCODE		= "psgcCode";
+		public static final String STRDESC		= "regDesc";
+		public static final String REGCODE		= "regCode";
 	}
 }

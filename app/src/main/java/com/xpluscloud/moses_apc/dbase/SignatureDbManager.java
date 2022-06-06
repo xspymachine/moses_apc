@@ -93,7 +93,23 @@ public class SignatureDbManager extends DbManager {
 		String sql = "DELETE FROM signatures WHERE datetime < '"+ past +"' ";
 		db.rawQuery(sql,null);
 	}
-	
+
+	public int getFileStatus(String filename){
+		int status = 0;
+		String sql = "SELECT status FROM signatures WHERE filename = '"+filename+"'";
+		Cursor c =db.rawQuery(sql,null);
+		if(c.moveToFirst()) status =c.getInt(0);
+
+		c.close();
+		return status;
+	}
+
+	public void updateFilenameStatus(String fname){
+		String where = DesContract.Signature.FILENAME + " = '" + fname + "'";
+		ContentValues cv = new ContentValues();
+		cv.put(DesContract.Signature.STATUS, 1);
+		db.update(DesContract.Signature.TABLE_NAME,cv,where,null);
+	}
 	
 	public int getLastId() {
 		int lastId = 0;
@@ -112,7 +128,7 @@ public class SignatureDbManager extends DbManager {
 
 		String OrderBy = "_id DESC";
 		String Limit = "1";
-		String where = "ccode = '"+ccode+"' AND strftime('%Y-%m-%d',s."+DesContract.Signature.DATETIME+",'unixepoch') = strftime('%Y-%m-%d', 'now')";
+		String where = "ccode = '"+ccode+"' AND strftime('%Y-%m-%d',s."+DesContract.Signature.DATETIME+",'unixepoch','localtime') = strftime('%Y-%m-%d', 'now','localtime')";
 		String sql =  " SELECT *from "+DesContract.Signature.TABLE_NAME +" s "
 				+" LEFT JOIN "+DesContract.Customer.TABLE_NAME+" c "+" USING ("+DesContract.Signature.CCODE+")"
 				+" WHERE "+where;

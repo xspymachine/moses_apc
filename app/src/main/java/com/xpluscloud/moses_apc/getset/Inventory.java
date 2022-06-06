@@ -16,6 +16,24 @@ public class Inventory {
 	private String description;
 	private int subcategoryid;
 	private int categoryid;
+	private int subcategory;
+	private int category;
+
+	public int getSubcategory() {
+		return subcategory;
+	}
+
+	public void setSubcategory(int subcategory) {
+		this.subcategory = subcategory;
+	}
+
+	public int getCategory() {
+		return category;
+	}
+
+	public void setCategory(int category) {
+		this.category = category;
+	}
 
 	public int getSubcategoryid() {
 		return subcategoryid;

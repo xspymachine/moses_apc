@@ -332,7 +332,7 @@ public class CallSheetActivity4 extends AppCompatActivity implements ItemOptionD
                 termId = ArrayDef.TERMS2.length-1;
             }
             cTerm			= ArrayDef.TERMS[termId];
-            Log.e("asdasdasda","asdasd"+cTerm);
+//            Log.e("asdasdasda","asdasd"+cTerm);
             cDiscount		= cust.getDiscount();
 //			cCashSales		= 0;//cust.getCashSales();
             cBuffer			= cust.getBuffer();

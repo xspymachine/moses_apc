@@ -34,7 +34,7 @@
             android:layout_centerHorizontal="true"
             android:layout_below="@id/textView1"
         android:textColor="#000"
-            android:text="+63 977 803 7710 (Globe)"/>
+            android:text="+63 917 108 4984 (Globe)"/>
     
     <LinearLayout 
         android:id="@+id/conG"
@@ -73,12 +73,14 @@
             android:layout_centerHorizontal="true"
             android:layout_below="@id/conG"
         	android:textColor="#000"
+        android:visibility="gone"
             android:text="+63 925 305 6025 (Sun)"/>
     
     <LinearLayout 
         android:id="@+id/conS"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:visibility="gone"
         android:orientation="horizontal"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="5dp"

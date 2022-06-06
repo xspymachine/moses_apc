@@ -8,8 +8,7 @@ public final class ArrayDef {
    		"My Performance",
 		"Time In",
         "Customer Call",
-		"Current Promotions",
-		"Promos Availed",
+		"Sales Materials",
         "Sales Order",
 		"Competitor Mapping",
 	    "Take Photo",
@@ -20,6 +19,39 @@ public final class ArrayDef {
 		"Upload Picture",
 		"Downloads",
 		"About"
+	};
+
+	public final static String[] REASON_NO_PRODUCTION = {
+			"Tap to Select Reason",
+			"NO OWNER",
+			"SUFFICIENT INVENTORY",
+			"PURCHASE FROM OTHER SOURCE",
+			"PENDING DELIVERY",
+			"BAD ACCOUNT",
+			"PRICING ISSUE",
+			"MARKETING ISSUE",
+			"DISSATISFIED CUSTOMER",
+			"STORED CLOSED",
+			"PENDING COLLECTIONS",
+			"OTHERS"
+	};
+	public final static String[] REASON_NO_PRODUCTION3 = {
+			"Tap to Select Reason",
+			"Price Gap",
+			"Owner/Buyer Not Around",
+			"Product Issues",
+			"For Customer Discovery Sched",
+			"On-Going Demo and Tech Discussion",
+			"On-Going Commercial Nego",
+			"Pending Product Approval",
+			"Pending Customer Complaint Handling",
+			"Pending Customer Complaint Resolution",
+			"Not looking for Alternative Suppliers",
+			"Inventory Full",
+			"Unpaid AR",
+			"AR Issue for Recon",
+			"Delivery Issue",
+			"Others"
 	};
     
     public final static String[] TERMS = {
@@ -126,20 +158,39 @@ public final class ArrayDef {
 
 	public final static String[] ACCT_TYPES4 = {
 			"-",
-			"IB",
-			"IC",
-			"IM",
-			"H",
-			"NB",
-			"BM",
-			"SC",
-			"T1",
-			"T2",
-			"FSD",
-			"R",
-			"CVS",
-			"HO",
-			"T"
+			"Industrial Bakery",
+			"Industrial Commissary",
+			"Cloud Kitchen",
+			"Industrial Manufacturing",
+			"HOTELS",
+			"RESTAURANTS",
+			"CATERING",
+			"CAFÉ",
+			"BARS",
+			"Neighborhood Bakeries",
+			"Backyard Manufacturing",
+			"SME COMMISSARY",
+			"Dealers",
+			"Sub-dealers",
+			"Trader",
+			"FeedMiller",
+			"Food Service Distributor",
+			"Retail SMKT/GRO",
+			"GENERAL TRADE",
+			"Convenience Store",
+			"Head Office",
+			"Training",
+			"Fieldwork",
+			"Plant",
+			"Rebisco",
+			"BIR"
+
+	};
+	public final static String[] GROUPSALES = {
+			"-",
+			"SKA",
+			"SME",
+			"TSS"
 
 	};
 

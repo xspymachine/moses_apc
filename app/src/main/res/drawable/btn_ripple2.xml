@@ -2,8 +2,11 @@
     android:color="@color/shellyellow">
     <item>
         <shape xmlns:android="http://schemas.android.com/apk/res/android">
-            <corners android:radius="1dp" />
-            <solid android:color="@color/shellred" />
+            <corners android:radius="1dp" /><gradient
+            android:startColor="#E88100"
+            android:centerColor="#E79D00"
+            android:endColor="#E5B900"
+            android:angle="270"/> />
         </shape>
     </item>
 </ripple>

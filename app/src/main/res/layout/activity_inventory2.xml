@@ -190,6 +190,7 @@
             android:layout_marginTop="5dp"
             android:padding="8dp"
             android:textSize="16sp"
+            android:textColor="#000"
             android:background="@drawable/btn_ripple2"
             android:text="@string/add_sku"/>
 
@@ -304,7 +305,7 @@
                 android:padding="8dp"
                 android:textColor="#000"
                 android:textStyle="bold"
-                android:text="How many bottles sold per day?"/>
+                android:text="What is the volume/month in bags or kg or packs?"/>
 
             <EditText
                 android:id="@+id/etRemarks"

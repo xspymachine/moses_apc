@@ -91,18 +91,18 @@ public class MainActivity extends AppCompatActivity {
     public final int TIME_IN            = 1;
     public final int CUSTOMER_CALL      = 2;
     public final int PROMOTIONS         = 3;
-    public final int PROMO              = 4;
-    public final int CALL_SHEET         = 5;
+//    public final int PROMO              = 4;
+    public final int CALL_SHEET         = 4;
 //    public final int SURVEY             = 6;
-    public final int COMPETITOR         = 6;
-    public final int PICTURE            = 7;
-    public final int ISSUES				= 8;
-    public final int TIME_OUT           = 9;
-    public final int MARK_LOCATION      = 10;
-    public final int UPLOAD_SIGNATURE   = 11;
-    public final int UPLOAD_PICTURE     = 12;
-    public final int SYNC               = 13;
-    public final int ABOUT              = 14;
+    public final int COMPETITOR         = 5;
+    public final int PICTURE            = 6;
+    public final int ISSUES				= 7;
+    public final int TIME_OUT           = 8;
+    public final int MARK_LOCATION      = 9;
+    public final int UPLOAD_SIGNATURE   = 10;
+    public final int UPLOAD_PICTURE     = 11;
+    public final int SYNC               = 12;
+    public final int ABOUT              = 13;
 
 
 
@@ -196,7 +196,7 @@ public class MainActivity extends AppCompatActivity {
         Log.w(TAG, " About to call Dispatcher... ");
 
         final Intent dispatcher = new Intent(this, DispatcherService.class);
-//		startService(dispatcher);
+		startService(dispatcher);
 
         btSearchCustomer = findViewById(R.id.bt_search_customer);
 
@@ -221,6 +221,7 @@ public class MainActivity extends AppCompatActivity {
         refreshList();
         if(Master.FOR_APPROVAL_SETTING == 0) noapproval();
         getCustomerBdayList(2);
+        clbalReminder();
 
     }
 
@@ -252,7 +253,7 @@ public class MainActivity extends AppCompatActivity {
 //            getResources().getString(R.string.app_name) + appdate + strGateway +" https");
             getResources().getString(R.string.app_name) + appdate + strGateway +" NO APPROVAL https");
 //                    getResources().getString(R.string.app_name) + appdate + " ARMY "+ strGateway +" NOTIMEIN https");
-//            asyncHttp.execute(context.getResources().getString(R.string.appversion));
+            asyncHttp.execute(context.getResources().getString(R.string.appversion));
 
             String refreshedToken = DbUtil.getSetting(context, "refreshedToken");
             String message = Master.CMD_TOK + " " +
@@ -389,12 +390,15 @@ public class MainActivity extends AppCompatActivity {
                         String telco = radioSexButton.getText().toString();
                         switch (telco){
                             case Master.STR_GATEWAY_GLOBE:
+                                DbUtil.saveSetting(context,Master.SMS_GATEWAY,Master.INIT_GATEWAY_GLOBE);
                                 Prefs.putString("strgateway",Master.STR_GATEWAY_GLOBE);
                                 Prefs.putString("gateway",Master.INIT_GATEWAY_GLOBE);break;
                             case Master.STR_GATEWAY_SMART:
+                                DbUtil.saveSetting(context,Master.SMS_GATEWAY,Master.INIT_GATEWAY_SMART);
                                 Prefs.putString("strgateway",Master.STR_GATEWAY_SMART);
                                 Prefs.putString("gateway",Master.INIT_GATEWAY_SMART);break;
                             case Master.STR_GATEWAY_SUN:
+                                DbUtil.saveSetting(context,Master.SMS_GATEWAY,Master.INIT_GATEWAY_SUN);
                                 Prefs.putString("strgateway",Master.STR_GATEWAY_SUN);
                                 Prefs.putString("gateway",Master.INIT_GATEWAY_SUN);break;
                         }
@@ -457,7 +461,7 @@ public class MainActivity extends AppCompatActivity {
                 case TIME_IN:
                     if (dbo == null) {
                         timeInOut("IN");
-                    } else if (dbo.getInout() == 0 && getInDate(customerCode)) {
+                    } else if (getInDate(customerCode)) {
                         timeInOut("IN");
                     }
                     else if (dbo.getInout()==0 && !getInDate(customerCode)){
@@ -469,8 +473,9 @@ public class MainActivity extends AppCompatActivity {
                     break;
 
                 case CUSTOMER_CALL:
-                    if (isTimeIn(customerCode, dbo)) customerCall();
-                    else NoTimeIn(customerCode);
+//                    if (isTimeIn(customerCode, dbo)) customerCall();
+//                    else NoTimeIn(customerCode);
+                    customerCall();
                     break;
 
                 case CALL_SHEET:
@@ -492,9 +497,9 @@ public class MainActivity extends AppCompatActivity {
 //                         else if ((dbo.getInout() == 1) && !cusInventoryCheck()) {
 //                             NoInventory(customerCode);
 //                         }
-                         else if ((dbo.getInout() == 1) && !cusPromoCheck()) {
-                             NoCusPromo(customerCode);
-                        }
+//                         else if ((dbo.getInout() == 1) && !cusPromoCheck()) {
+//                             NoCusPromo(customerCode);
+//                        }
                          else if ((dbo.getInout() == 1) && (dbo.getCustomerCode().equalsIgnoreCase(customerCode))) {
                              timeInOut("OUT");
                          }else {
@@ -553,8 +558,9 @@ public class MainActivity extends AppCompatActivity {
                     break;
 //
                 case PICTURE:
-                    if (isTimeIn(customerCode, dbo)) activity_takepicture();
-                    else NoTimeIn(customerCode);
+//                    if (isTimeIn(customerCode, dbo)) activity_takepicture();
+//                    else NoTimeIn(customerCode);
+                    activity_takepicture();
                     break;
                 case PROMOTIONS:
                     if (isTimeIn(customerCode, dbo)) promotions();
@@ -572,10 +578,10 @@ public class MainActivity extends AppCompatActivity {
 //                            "Survey Button",
 //                            "This button is temporary only for viewing purposes.", false);
 //                    break;
-                case PROMO:
-                    if (isTimeIn(customerCode, dbo)) promobutton();
-                    else NoTimeIn(customerCode);
-                    break;
+//                case PROMO:
+//                    if (isTimeIn(customerCode, dbo)) promobutton();
+//                    else NoTimeIn(customerCode);
+//                    break;
                 case COMPETITOR:
                     if (isTimeIn(customerCode, dbo)) competitor();
                     else NoTimeIn(customerCode);
@@ -739,8 +745,8 @@ public class MainActivity extends AppCompatActivity {
 //                "You can only Time In at " + this.getCustomerName(ccode)+" once per day...", false);
 
         DialogManager.showAlertDialog(MainActivity.this,
-                "Already have Time In!",
-                "You can only Time In at " + this.getCustomerName(ccode) + " at least twice per day...", false);
+                "Already have Timed In!",
+                "You can only Time In at " + this.getCustomerName(ccode) + " once per day!", false);
 
 //        DialogManager.showAlertDialog(MainActivity.this,
 //                "Already have Time In!",
@@ -1128,6 +1134,12 @@ public class MainActivity extends AppCompatActivity {
         DialogManager.showAlertDialog(MainActivity.this,
                 "No GPS Signal",
                 "Go out in an open sky and wait for 5-10 minutes to acquire GPS signal.", false);
+    }
+
+    private void clbalReminder() {
+        DialogManager.showAlertDialog(MainActivity.this,
+                "Customers Account Receivables",
+                "Don’t forget to update A/R to get the latest available A/R of your customers. Go to downloads and click Update Customers’ A/R.", false);
     }
 
     private void noapproval() {

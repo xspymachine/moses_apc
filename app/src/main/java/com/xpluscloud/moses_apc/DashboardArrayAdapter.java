@@ -64,37 +64,37 @@ public class DashboardArrayAdapter extends ArrayAdapter<String> {
 				imageView.setImageResource(R.drawable.ic_ccall);
 				break;
 			case 3:
-			case 4:
+//			case 4:
 				imageView.setImageResource(R.drawable.ic_promo);
 				break;
-			case 5:
+			case 4:
 				imageView.setImageResource(R.drawable.ic_sales);
 				break;
 //			case 6:
 //				imageView.setImageResource(R.drawable.ic_inventory);
 //				break;
-			case 6:
+			case 5:
 				imageView.setImageResource(R.drawable.ic_competitor);
 				break;
-			case 7:
+			case 6:
 				imageView.setImageResource(R.drawable.ic_camera);
 				break;
-			case 8:
+			case 7:
 				imageView.setImageResource(R.drawable.ic_issues);
 				break;
-			case 9:
+			case 8:
 				imageView.setImageResource(R.drawable.ic_out);
 				break;
-			case 10:
+			case 9:
 				imageView.setImageResource(R.drawable.ic_mark);
 				break;
-			case 11:
+			case 10:
 				imageView.setImageResource(R.drawable.ic_upsig);
 				break;
-			case 12:
+			case 11:
 				imageView.setImageResource(R.drawable.ic_upcamera);
 				break;
-			case 13:
+			case 12:
 				imageView.setImageResource(R.drawable.ic_down);
 				break;		
 			default:

@@ -22,23 +22,23 @@
         android:layout_marginEnd="5dp"
         android:padding="6dp"
         android:textSize="16sp"
-        android:textColor="#000"       
-        android:background="@color/shellyellow" />
+        android:textColor="#000"
+        android:background="@drawable/bg34"/>
     
     <TextView
         android:id="@+id/labelCode"
         android:text="@string/customer_code"
         android:layout_width="110dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tvheader"
+        android:layout_below="@id/tvheader"
         android:layout_marginBottom="10dp"
         android:layout_marginEnd="5dp"
         android:visibility="gone" />
 
     <TextView
         android:id="@+id/tvCode"
-        android:layout_toEndOf="@+id/labelCode"
-        android:layout_alignBaseline="@+id/labelCode"
+        android:layout_toEndOf="@id/labelCode"
+        android:layout_alignBaseline="@id/labelCode"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" 
         android:visibility="gone"/>
@@ -46,7 +46,7 @@
     <TextView
         android:id="@+id/labelName"
         android:text="@string/name"
-        android:layout_below="@+id/labelCode"
+        android:layout_below="@id/labelCode"
         android:layout_width="110dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="30dp"
@@ -54,8 +54,8 @@
     
      <EditText
         android:id="@+id/etName"
-        android:layout_toEndOf="@+id/labelName"
-        android:layout_alignBaseline="@+id/labelName"
+        android:layout_toEndOf="@id/labelName"
+        android:layout_alignBaseline="@id/labelName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" 
         android:labelFor="@id/etName"
@@ -64,71 +64,28 @@
      
      <TextView
         android:id="@+id/labelAddress"
-        android:text="@string/address"
-        android:layout_below="@+id/labelName"
+        android:text="Customer Journey"
+        android:layout_below="@id/labelName"
         android:layout_width="110dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="30dp"
         android:layout_marginEnd="5dp" />
     
-     <EditText
+     <Spinner
         android:id="@+id/etAddress"
-        android:layout_toEndOf="@+id/labelAddress"
-        android:layout_alignBaseline="@+id/labelAddress"
+        android:layout_toEndOf="@id/labelAddress"
+        android:layout_alignBaseline="@id/labelAddress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" 
         android:labelFor="@id/etAddress"
+         android:entries="@array/cjourn"
         android:inputType="textCapWords"/>
-     
-     <TextView
-        android:id="@+id/labelBrgy"
-        android:text="@string/brgy"
-        android:layout_below="@+id/labelAddress"
-        android:layout_width="110dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
-        android:layout_marginEnd="5dp" />
-    
-     <EditText
-        android:id="@+id/etBrgy"
-        android:layout_toEndOf="@+id/labelBrgy"
-        android:layout_alignBaseline="@+id/labelBrgy"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" 
-        android:labelFor="@id/etBrgy"
-        android:inputType="textCapWords"/>
-     
-     <TextView
-        android:id="@+id/labelCity"
-        android:text="City/Municipality"
-        android:layout_below="@+id/labelBrgy"
-        android:layout_width="110dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
-        android:layout_marginEnd="5dp" />
-    
-     <!--<EditText-->
-        <!--android:id="@+id/etCity"-->
-        <!--android:layout_toEndOf="@+id/labelCity"-->
-        <!--android:layout_alignBaseline="@+id/labelCity"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content" -->
-        <!--android:labelFor="@id/etCity"-->
-        <!--android:inputType="textCapWords"/>-->
-
-    <Spinner
-        android:id="@+id/etCity"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_toEndOf="@+id/labelCity"
-        android:layout_alignBaseline="@+id/labelCity" />
-     
      
      
      <TextView
         android:id="@+id/labelState"
         android:text="@string/state"
-        android:layout_below="@+id/labelCity"
+        android:layout_below="@id/labelAddress"
         android:layout_width="110dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="30dp"
@@ -147,13 +104,65 @@
         android:id="@+id/etState"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_toEndOf="@+id/labelState"
-        android:layout_alignBaseline="@+id/labelState" />
+        android:layout_toEndOf="@id/labelState"
+        android:layout_alignBaseline="@id/labelState" />
+
+
+    <TextView
+        android:id="@+id/labelCity"
+        android:text="City/Municipality"
+        android:layout_below="@id/labelState"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:layout_marginEnd="5dp" />
+
+    <!--<EditText-->
+    <!--android:id="@+id/etCity"-->
+    <!--android:layout_toEndOf="@+id/labelCity"-->
+    <!--android:layout_alignBaseline="@+id/labelCity"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content" -->
+    <!--android:labelFor="@id/etCity"-->
+    <!--android:inputType="textCapWords"/>-->
+
+    <Spinner
+        android:id="@+id/etCity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/labelCity"
+        android:layout_alignBaseline="@id/labelCity" />
+
+
+    <TextView
+        android:id="@+id/labelBrgy"
+        android:text="@string/brgy"
+        android:layout_below="@id/labelCity"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:layout_marginEnd="5dp" />
+
+<!--    <EditText-->
+<!--        android:id="@+id/etBrgy"-->
+<!--        android:layout_toEndOf="@+id/labelBrgy"-->
+<!--        android:layout_alignBaseline="@+id/labelBrgy"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:labelFor="@id/etBrgy"-->
+<!--        android:inputType="textCapWords"/>-->
+
+    <Spinner
+        android:id="@+id/etBrgy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/labelBrgy"
+        android:layout_alignBaseline="@id/labelBrgy" />
           
       <TextView
         android:id="@+id/labelContact"
         android:text="@string/status"
-        android:layout_below="@+id/labelState"
+        android:layout_below="@id/labelBrgy"
         android:layout_width="110dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="30dp"
@@ -172,8 +181,8 @@
         android:id="@+id/etContact"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_toEndOf="@+id/labelContact"
-        android:layout_alignBaseline="@+id/labelContact" />
+        android:layout_toEndOf="@id/labelContact"
+        android:layout_alignBaseline="@id/labelContact" />
 
 
     <TextView
@@ -183,13 +192,13 @@
         android:layout_marginEnd="5dp"
         android:layout_marginBottom="30dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/labelContact"
+        android:layout_below="@id/labelContact"
         android:layout_alignParentStart="true" />
 
     <AutoCompleteTextView
         android:id="@+id/etCplan"
-        android:layout_toEndOf="@+id/labelCplan"
-        android:layout_alignBaseline="@+id/labelCplan"
+        android:layout_toEndOf="@id/labelCplan"
+        android:layout_alignBaseline="@id/labelCplan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -203,7 +212,7 @@
         android:layout_marginEnd="5dp"
         android:layout_marginBottom="30dp"
          android:layout_height="wrap_content"
-         android:layout_below="@+id/labelCplan"
+         android:layout_below="@id/labelCplan"
         android:visibility="gone"
          android:text="@string/terms" />
      
@@ -212,24 +221,24 @@
          android:id="@+id/spTerms"
          android:layout_width="match_parent"
          android:layout_height="wrap_content"
-         android:layout_toEndOf="@+id/labelTerms"
-         android:layout_alignBaseline="@+id/labelTerms" />
+         android:layout_toEndOf="@id/labelTerms"
+         android:layout_alignBaseline="@id/labelTerms" />
 
     <ImageView
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_alignParentStart="true"
-        android:layout_alignTop="@+id/labelType"
-        android:layout_toEndOf="@+id/spType"
+        android:layout_alignTop="@id/labelType"
+        android:layout_toEndOf="@id/spType"
         android:onClick="storeType"
         android:visibility="gone"
         android:src="@drawable/ic_about" />
 
     <TextView
         android:id="@+id/labelType"
-        android:layout_width="90dp"
+        android:layout_width="110dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/labelTerms"
+        android:layout_below="@+id/label_ar"
         android:layout_marginBottom="30dp"
         android:layout_marginEnd="5dp"
         android:text="Customer Segment" />
@@ -238,25 +247,39 @@
         android:id="@+id/spType"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_toEndOf="@+id/labelType"
-        android:layout_alignBaseline="@+id/labelType" />
+        android:layout_toEndOf="@id/labelType"
+        android:layout_alignBaseline="@id/labelType" />
+    <TextView
+        android:id="@+id/labelgs"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/labelType"
+        android:layout_marginBottom="30dp"
+        android:layout_marginEnd="5dp"
+        android:text="Sales Group" />
 
+    <Spinner
+        android:id="@+id/spGs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/labelgs"
+        android:layout_alignBaseline="@id/labelgs" />
 
     <TextView
         android:id="@+id/label_ar"
-        android:text="Acct Recievable"
+        android:text="Total AR"
         android:layout_width="110dp"
         android:layout_marginEnd="5dp"
         android:layout_marginBottom="30dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/labelType"
+        android:layout_below="@id/labelCplan"
         android:layout_alignParentStart="true" />
 
 
     <EditText
         android:id="@+id/et_ar"
-        android:layout_toEndOf="@+id/label_ar"
-        android:layout_alignBaseline="@+id/label_ar"
+        android:layout_toEndOf="@id/label_ar"
+        android:layout_alignBaseline="@id/label_ar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -265,16 +288,97 @@
         android:labelFor="@id/label_ar"
         android:inputType="numberDecimal"/>
 
+    <TextView
+        android:text="Application - at least one"
+        android:id="@+id/labelcusapp"
+        android:layout_below="@id/labelgs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:id="@+id/appcb"
+        android:orientation="vertical"
+        android:layout_below="@id/labelcusapp"
+        android:layout_width="match_parent"
+        android:layout_margin="8dp"
+        android:padding="10dp"
+        android:background="@drawable/shadow_box"
+        android:layout_height="wrap_content">
+
+        <CheckBox
+            android:text="Baking"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <CheckBox
+            android:text="Frying"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <CheckBox
+            android:text="Grilling"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <CheckBox
+            android:text="Steamer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <CheckBox
+            android:text="Wrapper"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <CheckBox
+            android:text="Non-Food"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <CheckBox
+            android:text="Confectionery"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <CheckBox
+            android:text="Ice cream / Soft serve / Dairy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <CheckBox
+            android:text="Icing / Frosting / Ganache"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <CheckBox
+            android:text="Fillings / Toppings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <CheckBox
+            android:text="Premixes / Blends"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <CheckBox
+            android:text="Beverages"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <CheckBox
+            android:text="Processed Meat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <CheckBox
+            android:text="Breading / Coatings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <CheckBox
+            android:text="Sauces / Dips / Condiments"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+    </LinearLayout>
+
 
      <Button
          android:id="@+id/btNewData"
          android:layout_width="fill_parent"
          android:layout_height="wrap_content"
-         android:layout_alignStart="@+id/labelCplan"
-         android:layout_alignEnd="@+id/tvheader"
-         android:layout_below="@+id/label_ar"
+         android:layout_alignStart="@id/labelCplan"
+         android:layout_alignEnd="@id/tvheader"
+         android:layout_below="@id/appcb"
          android:gravity="center"
-         android:textColor="#fff"
+         android:textColor="#000"
          android:background="@drawable/btn_ripple2"
          android:text="@string/btNewData" />
       
@@ -283,7 +387,7 @@
          android:layout_width="match_parent"
          android:layout_height="wrap_content"
          android:layout_alignParentStart="true"
-         android:layout_below="@+id/btNewData"
+         android:layout_below="@id/btNewData"
          android:layout_marginTop="10dp"
          android:background="@color/shellyellow"
          android:gravity="center"
@@ -310,7 +414,7 @@
              android:contentDescription="@string/btn_clear"
              android:background="@drawable/btn_ripple2"
              android:text="@string/btCancel"
-             android:textColor="#fff"      
+             android:textColor="#000"
              android:paddingRight="10dp" />
 
          <Button

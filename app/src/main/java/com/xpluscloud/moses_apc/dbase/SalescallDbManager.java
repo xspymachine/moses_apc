@@ -131,8 +131,8 @@ public class SalescallDbManager extends DbManager {
 	
 	public List<MyList> getSummaryCalls(String date1, String customerName) {
 		List<MyList> list = new ArrayList<MyList>();
-//		String where1 = " where strftime('%Y-%m', t1.datetime, 'unixepoch') LIKE '%"+date1+"%' AND t2.name = '"+customerName+"' ";
-		String where2 = " where strftime('%Y-%m', t1.datetime, 'unixepoch') LIKE '%"+date1+"%'";
+//		String where1 = " where strftime('%Y-%m', t1.datetime, 'unixepoch','localtime') LIKE '%"+date1+"%' AND t2.name = '"+customerName+"' ";
+		String where2 = " where strftime('%Y-%m', t1.datetime, 'unixepoch','localtime') LIKE '%"+date1+"%'";
 //		String where = customerName.equals("") ? where2 : where1;
 		String sql = "SELECT DISTINCT " +
 				"strftime('%Y-%m',t1.datetime,'unixepoch','localtime')  AS dtime," +
@@ -212,11 +212,11 @@ public class SalescallDbManager extends DbManager {
 		
 		String OrderBy = "_id DESC";
 		String Limit = "1";
-		String where = "ccode = '"+ccode+"' AND strftime('%Y-%m-%d',s."+DesContract.SalesCall.DATETIME+",'unixepoch') = strftime('%Y-%m-%d', 'now')";
+		String where = "ccode = '"+ccode+"' AND strftime('%Y-%m-%d',s."+DesContract.SalesCall.DATETIME+",'unixepoch','localtime') = strftime('%Y-%m-%d', 'now','localtime')";
 		String sql =  " SELECT *from "+DesContract.SalesCall.TABLE_NAME +" s "
 					 +" LEFT JOIN "+DesContract.Customer.TABLE_NAME+" c "+" USING ("+DesContract.Customer.CCODE+")"
 					 +" WHERE "+where;
-		
+
 		Cursor c = db.rawQuery(sql, null);
 		if(c.moveToFirst()) {
 			ccall = createSalesCall(c);
@@ -274,22 +274,22 @@ public class SalescallDbManager extends DbManager {
 		
 		switch (option) {
 		case 1:
-			sql = "SELECT count(*) FROM salescalls WHERE strftime('%Y-%m', datetime, 'unixepoch') LIKE '%"+date+"%' AND ccode = '"+ccode+"'";	
+			sql = "SELECT count(*) FROM salescalls WHERE strftime('%Y-%m', datetime, 'unixepoch','localtime') LIKE '%"+date+"%' AND ccode = '"+ccode+"'";
 			c = db.rawQuery(sql, null);
 			if(c.moveToFirst()) info = ""+c.getInt(0);
 			break;
 		case 2:
-			sql = "SELECT count(*) FROM salescalls WHERE strftime('%Y-%m', datetime, 'unixepoch') LIKE '%"+date+"%' AND ccode = '"+ccode+"' AND  blob NOT LIKE '%Reason ' || X'0A' || '%'";
+			sql = "SELECT count(*) FROM salescalls WHERE strftime('%Y-%m', datetime, 'unixepoch','localtime') LIKE '%"+date+"%' AND ccode = '"+ccode+"' AND  blob NOT LIKE '%Reason ' || X'0A' || '%'";
 			c = db.rawQuery(sql, null);
 			if(c.moveToFirst()) info = ""+c.getInt(0);
 			break;
 		case 3:
-			sql = "SELECT blob FROM salescalls WHERE strftime('%Y-%m', datetime, 'unixepoch') LIKE '%"+date+"%' AND ccode = '"+ccode+"' ORDER BY _id DESC LIMIT 1";
+			sql = "SELECT blob FROM salescalls WHERE strftime('%Y-%m', datetime, 'unixepoch','localtime') LIKE '%"+date+"%' AND ccode = '"+ccode+"' ORDER BY _id DESC LIMIT 1";
 			c = db.rawQuery(sql, null);
 			if(c.moveToFirst()) info = c.getString(0);
 			break;
 		case 4:
-			String sql1 = "SELECT _id FROM salescalls WHERE strftime('%Y-%m', datetime, 'unixepoch') LIKE '%"+date+"%' AND ccode = '"+ccode+"' ORDER BY _id DESC LIMIT 1";
+			String sql1 = "SELECT _id FROM salescalls WHERE strftime('%Y-%m', datetime, 'unixepoch','localtime') LIKE '%"+date+"%' AND ccode = '"+ccode+"' ORDER BY _id DESC LIMIT 1";
 			sql = "SELECT remarks FROM merchandising WHERE customercall_id = ("+sql1+")";
 			c = db.rawQuery(sql, null);
 			if(c.moveToFirst()) info = c.getString(0);

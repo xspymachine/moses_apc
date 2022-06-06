@@ -27,8 +27,10 @@
                 new String[] {
                     "Customer List",
                     "Coverage Plan",
-                    "Promo Checklist",
+//                    "Promo Checklist",
                     "Promo Brochures",
+                    "Update Customers’ A/R",
+                    "Places",
                     "Others"
                 };
 
@@ -36,9 +38,11 @@
 
         public final int CUSTOMER_LIST	= 0;
         public final int CPLAN			= 1;
-        public final int PCHECK         = 2;
-        public final int PBROCHURE      = 3;
-        public final int MISCS			= 4;
+//        public final int PCHECK         = 2;
+        public final int PBROCHURE      = 2;
+        public final int CLBAL          = 3;
+        public final int PLACES         = 4;
+        public final int MISCS			= 5;
 
 
         public String devId;
@@ -68,6 +72,7 @@
 //            devId = "97dd3ba4ad67900c";
 //            devId= "98c277105e3e1e21";
 //            devId = "e93ef37f1b4996ef";
+//            devId = "3df3536e41862d5f";  //apc
             APIK= getResources().getString(R.string.apik);
 
      //add header to list
@@ -103,8 +108,14 @@
                     case CUSTOMER_LIST:
                         deleteTable("customers");
                         deleteTable("owner");
+//                        deleteTable("cus_credit_limit");
                         downloadCustomers();
                         downloadOwner();
+//                        downloadCustomersCLBAL();
+                        break;
+                    case CLBAL:
+                        deleteTable("cus_credit_limit");
+                        downloadCustomersCLBAL();
                         break;
                     case CPLAN:
                         deleteTable("coverageplans");
@@ -133,14 +144,14 @@
                         downloadTerms();
                         downloadUnits();
                         break;
-                    case PCHECK:
-                        deleteTable("cus_datas"," where status=11");
-                        deleteTable("cus_datas"," where status=12");
-                        deleteTable("cus_datas"," where status=13");
-                        downloadPromo();
-                        downloadPromotions();
-                        downloadPromoCat();
-                        break;
+//                    case PCHECK:
+//                        deleteTable("cus_datas"," where status=11");
+//                        deleteTable("cus_datas"," where status=12");
+//                        deleteTable("cus_datas"," where status=13");
+//                        downloadPromo();
+//                        downloadPromotions();
+//                        downloadPromoCat();
+//                        break;
 //                    case PBROCHURE:
 //                        deleteFiles();
 //                        deleteTable("cus_datas"," where status=12");
@@ -148,7 +159,23 @@
 //                        downloadPromotions();
 //                        downloadPromoCat();
 //                        break;
+                    case PLACES:
+                        deleteTable("refbrgy");
+                        deleteTable("refcitymun");
+                        deleteTable("refprovince");
+                        deleteTable("refregion");
+                        downloadBarangay();
+                        downloadCitymun();
+                        downloadProvince();
+                        downloadRegion();
+                        break;
                     case PBROCHURE:
+                        deleteTable("cus_datas"," where status=11");
+                        deleteTable("cus_datas"," where status=12");
+                        deleteTable("cus_datas"," where status=13");
+                        downloadPromo();
+                        downloadPromotions();
+                        downloadPromoCat();
                         deleteFiles();
                         downloadPromotionsFiles();
                         break;
@@ -288,6 +315,31 @@
             deleteTable("work_with");
             String url = baseUrl+"download/work_with";
             new DownloadTask(context,header,"Miscellaneous (Work-with)").execute(url,"work_with",devId,APIK);
+        }
+
+        private void downloadCustomersCLBAL(){
+            String url = baseUrl+"download/a_r";
+            new DownloadTask(context,header,"Customers Credit Limit Balance").execute(url,"cus_credit_limit",devId,APIK);
+        }
+
+        private void downloadBarangay() {
+            String url = baseUrl+"download/brgy";
+            new DownloadTask(context,header,"Places Barangay").execute(url,"refbrgy",devId,APIK);
+        }
+
+        private void downloadCitymun() {
+            String url = baseUrl+"download/city";
+            new DownloadTask(context,header,"Places City/Municipality").execute(url,"refcitymun",devId,APIK);
+        }
+
+        private void downloadProvince() {
+            String url = baseUrl+"download/province";
+            new DownloadTask(context,header,"Places Province").execute(url,"refprovince",devId,APIK);
+        }
+
+        private void downloadRegion() {
+            String url = baseUrl+"download/region";
+            new DownloadTask(context,header,"Places Region").execute(url,"refregion",devId,APIK);
         }
 
         private void cusDataDelete(){

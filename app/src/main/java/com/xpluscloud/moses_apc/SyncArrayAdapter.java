@@ -16,7 +16,9 @@ public class SyncArrayAdapter extends ArrayAdapter<String> {
 		
 	public final int CUSTOMER_LIST	= 0;
 	public final int CPLAN			= 1;
-	public final int CHECK			= 2;
+//	public final int CHECK			= 2;
+	public final int BROCHURE		= 2;
+	public final int CLBAL			= 3;
 	
 	private final Context context;
 	private final String[] values;
@@ -54,6 +56,18 @@ public class SyncArrayAdapter extends ArrayAdapter<String> {
 			case CPLAN:  
 //				imageView.setImageResource(R.drawable.assets_calendarclientlist);
 				imageView.setImageBitmap(LayoutUtil.decodeSampledBitmapFromResource(context.getResources(),R.drawable.assets_calendarclientlist, 90,90));
+				break;
+//			case CHECK:
+////				imageView.setImageResource(R.drawable.assets_calendarclientlist);
+//				imageView.setImageBitmap(LayoutUtil.decodeSampledBitmapFromResource(context.getResources(),R.drawable.assets_checklist, 90,90));
+//				break;
+			case BROCHURE:
+//				imageView.setImageResource(R.drawable.assets_calendarclientlist);
+				imageView.setImageBitmap(LayoutUtil.decodeSampledBitmapFromResource(context.getResources(),R.mipmap.ic_brochure, 90,90));
+				break;
+			case CLBAL:
+//				imageView.setImageResource(R.drawable.assets_calendarclientlist);
+				imageView.setImageBitmap(LayoutUtil.decodeSampledBitmapFromResource(context.getResources(),R.mipmap.ic_credit, 90,90));
 				break;
 			//for resend activity
 			case 1000:

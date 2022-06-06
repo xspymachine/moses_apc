@@ -21,6 +21,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.InputType;
 import android.text.TextWatcher;
+import android.text.method.DigitsKeyListener;
 import android.util.Log;
 import android.view.ContextMenu;
 import android.view.Gravity;
@@ -53,8 +54,13 @@ import com.xpluscloud.moses_apc.util.LayoutUtil;
 import com.xpluscloud.moses_apc.util.Master;
 import com.xpluscloud.moses_apc.util.StringUtil;
 
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.Currency;
 import java.util.List;
+import java.util.Locale;
 
 public class CompetitorActivity2 extends AppCompatActivity implements ItemOptionDialogFragment2.OptionDialogListener {
     Context context;
@@ -275,7 +281,7 @@ public class CompetitorActivity2 extends AppCompatActivity implements ItemOption
     public void createEtDialog(){
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(context)
                 .setTitle("Specify the item name.")
-                .setMessage("Brand Family + Variant + Price per liter\nPlease don't use special characters.");
+                .setMessage("Brand Family + Variant + Price\nPlease don't use special characters.");
         alertDialog.setCancelable(false);
 
         final Spinner input = new Spinner(context);
@@ -283,6 +289,7 @@ public class CompetitorActivity2 extends AppCompatActivity implements ItemOption
         final AutoCompleteTextView input2 = new AutoCompleteTextView(context);
         final AutoCompleteTextView input3 = new AutoCompleteTextView(context);
         final EditText input4 = new EditText(context);
+        final Spinner input5 = new Spinner(context);
         LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT,
                 LinearLayout.LayoutParams.MATCH_PARENT);
@@ -296,8 +303,9 @@ public class CompetitorActivity2 extends AppCompatActivity implements ItemOption
         input.setBackgroundResource(android.R.drawable.edit_text);
 //        input.setHint("Brand Family");
         ArrayAdapter spinnerArrayAdapter = new ArrayAdapter(this,
-                android.R.layout.simple_spinner_dropdown_item, populateSpinner(1,0));
+                android.R.layout.simple_spinner_dropdown_item, populateSpinner(2,0));
         input.setAdapter(spinnerArrayAdapter);
+        input.setSelection(0);
         layout.addView(input);
 
         input1.setLayoutParams(lp);
@@ -305,43 +313,21 @@ public class CompetitorActivity2 extends AppCompatActivity implements ItemOption
 //        input1.setHint("Packaging");
         ArrayAdapter spinnerArrayAdapter2 = new ArrayAdapter(this,
                 android.R.layout.simple_spinner_dropdown_item, populateSpinner(2,0));
-        input1.setAdapter(spinnerArrayAdapter2);
+//        input1.setAdapter(spinnerArrayAdapter2);
         layout.addView(input1);
 
-        input2.setLayoutParams(lp);
-        input2.setBackgroundResource(android.R.drawable.edit_text);
-        input2.setHint("BRAND");
-        CompetitorDbManager2 db = new CompetitorDbManager2(context);
-        db.open();
-        ArrayList<String> brand_names = db.getBrands();
-        db.close();
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>
-                (this,android.R.layout.simple_list_item_1,brand_names);
-        input2.setAdapter(adapter);
-        layout.addView(input2);
-
-        input3.setLayoutParams(lp);
-        input3.setBackgroundResource(android.R.drawable.edit_text);
-        input3.setHint("VARIANT NAME");
-        input2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                String[] variants = getResources().getStringArray(R.array.variant_1);
-//                if(input.getSelectedItemPosition() == 1) variants = getResources().getStringArray(R.array.variant_2);
-//                else if(input.getSelectedItemPosition() == 2) variants = getResources().getStringArray(R.array.variant_3);
-                ArrayList<String>  variants = getCmpItem(input.getSelectedItem().toString(), input1.getSelectedItem().toString(),input2.getText().toString());
-                ArrayAdapter<String> adapter2 = new ArrayAdapter<String>
-                        (context,android.R.layout.simple_list_item_1,variants);
-                input3.setAdapter(adapter2);
-            }
-        });
         input.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                ArrayList<String>  variants = getCmpItem(input.getSelectedItem().toString(), input1.getSelectedItem().toString(),input2.getText().toString());
-                ArrayAdapter<String> adapter2 = new ArrayAdapter<String>
-                        (context,android.R.layout.simple_list_item_1,variants);
-                input3.setAdapter(adapter2);
+                CompetitorDbManager2 db = new CompetitorDbManager2(context);
+                db.open();
+//                ArrayList<String> strfilter = db.getVariants(getIdCategory("",2));
+                ArrayList<String> strfilter = db.getVariants(getIdCategory(input.getSelectedItem().toString(),2));
+                ArrayAdapter filter = new ArrayAdapter(context,
+                        android.R.layout.simple_list_item_1, strfilter);
+                db.close();
+                input1.setAdapter(filter);
+//                input1.setSelection(0);
             }
 
             @Override
@@ -350,35 +336,64 @@ public class CompetitorActivity2 extends AppCompatActivity implements ItemOption
             }
         });
 
-        input1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                ArrayList<String>  variants = getCmpItem(input.getSelectedItem().toString(), input1.getSelectedItem().toString(),input2.getText().toString());
-                ArrayAdapter<String> adapter2 = new ArrayAdapter<String>
-                        (context,android.R.layout.simple_list_item_1,variants);
-                input3.setAdapter(adapter2);
-            }
+        input2.setLayoutParams(lp);
+        input2.setBackgroundResource(android.R.drawable.edit_text);
+        input2.setHint("Company/Brand");
+        input2.setAdapter(spinnerArrayAdapter2);
+//        layout.addView(input2);
 
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-
+        input3.setLayoutParams(lp);
         input3.setBackgroundResource(android.R.drawable.edit_text);
-//        String[] variants = getResources().getStringArray(R.array.variant_1);
-//        if(input.getSelectedItemPosition() == 1) variants = getResources().getStringArray(R.array.variant_2);
-//        else if(input.getSelectedItemPosition() == 2) variants = getResources().getStringArray(R.array.variant_3);
-//        ArrayAdapter<String> adapter2 = new ArrayAdapter<String>
-//                (this,android.R.layout.simple_list_item_1,variants);
-//        input3.setAdapter(adapter2);
-        layout.addView(input3);
+        input3.setHint("Product Variant");
+//        input3.setAdapter(spinnerArrayAdapter);
+        input3.setBackgroundResource(android.R.drawable.edit_text);
+//        layout.addView(input3);
+
+        input2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                CompetitorDbManager2 db = new CompetitorDbManager2(context);
+                db.open();
+                ArrayList<String> strfilter = db.getVariants(getIdCategory(input2.getText().toString(),2));
+                ArrayAdapter filter = new ArrayAdapter(context,
+                        android.R.layout.simple_list_item_1, strfilter);
+                db.close();
+                input3.setAdapter(filter);
+            }
+        });
 
         input4.setLayoutParams(lp);
         input4.setBackgroundResource(android.R.drawable.edit_text);
-        input4.setHint("Enter price per liter");
-        input4.setInputType(InputType.TYPE_CLASS_NUMBER);
+        input4.setHint("Enter price");
+        input4.setInputType(InputType.TYPE_CLASS_NUMBER|InputType.TYPE_NUMBER_FLAG_DECIMAL);
         layout.addView(input4);
+//        input4.addTextChangedListener(new TextWatcher() {
+//            @Override
+//            public void beforeTextChanged(CharSequence s, int start, int count, int after) { }
+//            @Override
+//            public void onTextChanged(CharSequence s, int start, int before, int count) { }
+//            @Override
+//            public void afterTextChanged(Editable view) {
+//                if(input4.getText().toString().isEmpty()) return;
+//                Double number = Double.valueOf(input4.getText().toString());
+//                DecimalFormat formatter = (DecimalFormat) NumberFormat.getCurrencyInstance(Locale.US);
+//                DecimalFormatSymbols symbols = formatter.getDecimalFormatSymbols();
+//                symbols.setCurrencySymbol(""); // Don't use null.
+//                formatter.setDecimalFormatSymbols(symbols);
+//                String credits = formatter.format(number);
+//
+////                input4.setText(credits);
+//                Log.e("test",credits);
+//            }
+//        });
+
+        input5.setLayoutParams(lp);
+        input5.setBackgroundResource(android.R.drawable.edit_text);
+        String[] uom = getResources().getStringArray(R.array.uom_array);
+        ArrayAdapter adapter3 = new ArrayAdapter(this,
+                android.R.layout.simple_spinner_dropdown_item, uom);
+        input5.setAdapter(adapter3);
+        layout.addView(input5);
 
         alertDialog.setView(layout);
 
@@ -404,15 +419,16 @@ public class CompetitorActivity2 extends AppCompatActivity implements ItemOption
             @Override
             public void onClick(View v)
             {
-                String productid = input.getSelectedItem().toString();
-                String producttype = input1.getSelectedItem().toString();
-                String brand = input2.getText().toString();
-                String variant = input3.getText().toString();
+//                String productid = input.getSelectedItem().toString();
+//                String producttype = input1.getSelectedItem().toString();
+                String brand = input.getSelectedItem().toString();
+                String variant = input1.getSelectedItem().toString();
                 String price = input4.getText().toString();
+                String uom = input5.getSelectedItem().toString();
                 if(brand.length() < 1 || variant.length()< 1 || price.length()<1){
                     DbUtil.makeToast(LayoutInflater.from(context), "Please input brand family or check price." , context,null,1);
                 }else{
-                    addToItems2(brand,variant,getIdCategory(productid,1),getIdCategory(producttype,2), price);
+                    addToItems2(brand,variant, price,uom);
                     dialog.dismiss();
                 }
 
@@ -448,7 +464,18 @@ public class CompetitorActivity2 extends AppCompatActivity implements ItemOption
         return category;
     }
 
-    private void addToItems2(String brand,String itemName,int catid, int icatid, String price){
+    private void addToItems2(String brand,String variant,String price, String pckg){
+        String itemName = brand+" - "+variant;
+        CompetitorDbManager2 db = new CompetitorDbManager2(context);
+        db.open();
+
+        if(getIdCategory(brand,2)==0){
+            icatid = (int) db.addcatsubcat(brand,2);
+        }
+        if(getIdCategory(variant,1)==0){
+            catid = (int) db.addcatsubcat(brand,1);
+        }
+
         String itemcode = StringUtil.randomText(20);
         CmpItem i = new CmpItem();
         i.setItemCode(itemcode);
@@ -458,14 +485,13 @@ public class CompetitorActivity2 extends AppCompatActivity implements ItemOption
         i.setBpname(brand);
         i.setStatus(1);
 
-        CompetitorDbManager2 db = new CompetitorDbManager2(context);
-        db.open();
-        String cmpItemcode = db.getcmpItemcode(itemName);
+        String cmpItemcode = db.getcmpItemcode(variant);
+        if(cmpItemcode.isEmpty()) cmpItemcode = db.getcmpItemcode(itemName);
         if(cmpItemcode.isEmpty()){
             db.AddOtherItem(i);
-            addCsItem(itemcode,price);
+            addCsItem(itemcode,price,pckg);
         }
-        else addCsItem(cmpItemcode,price);
+        else addCsItem(cmpItemcode,price,pckg);
         refreshList();
         db.close();
     }
@@ -477,6 +503,14 @@ public class CompetitorActivity2 extends AppCompatActivity implements ItemOption
         id = db.getCatId(str,opt);
         db.close();
         return id;
+    }
+    private String getStrCategory(int id, int opt){
+        String cat = "";
+        CompetitorDbManager2 db = new CompetitorDbManager2(context);
+        db.open();
+        cat = db.getCatStr(id,opt);
+        db.close();
+        return cat;
     }
 
     private void selectSingleItem(int catid, int icatid) {
@@ -532,15 +566,15 @@ public class CompetitorActivity2 extends AppCompatActivity implements ItemOption
 
         Inventory cs = db.getInfo(csCode);
         List<Inventory> csi = db.getList(csCode);
-        if(csi.size() < 3){
+        if(csi.size() < 1){
             DialogManager.showAlertDialog(CompetitorActivity2.this,
                     "Minimum Competitor",
-                    "Please input at least 3 competitor prices.", false);
+                    "Please input at least 1 competitor prices.", false);
             return;
         }else if(etRemarks.getText().toString().isEmpty()){
             DialogManager.showAlertDialog(CompetitorActivity2.this,
-                    "Bottles Sold Per day",
-                    "Please input how many bottles sold per day.", false);
+                    "Volume per month",
+                    "What is the volume/month in bags or kg or packs?", false);
             return;
         }
 
@@ -566,7 +600,7 @@ public class CompetitorActivity2 extends AppCompatActivity implements ItemOption
 
         for (Inventory item : csi) 	{
             if(item.getStatus()==0 && item.getPrice()>0) {
-                message = Master.CMD_CMPI6 + " " +
+                message = Master.CMD_CMPI7 + " " +
                         devId 					+ ";" +
                         item.getINCode() 		+ ";" +
                         item.getItemCode()		+ ";" +
@@ -574,8 +608,8 @@ public class CompetitorActivity2 extends AppCompatActivity implements ItemOption
                         item.getDescription()	+ ";" +
                         item.getPrice()			+ ";" +
                         item.getId()			+ ";" +
-                        item.getSubcategoryid()	+ ";" +
-                        item.getCategoryid();
+                        getStrCategory(item.getSubcategoryid(),2)	+ ";" +
+                        getStrCategory(item.getCategoryid(),1);
 
                 DbUtil.saveMsg(context,DbUtil.getGateway(context), message);
 
@@ -708,7 +742,7 @@ public class CompetitorActivity2 extends AppCompatActivity implements ItemOption
             itemDescription.setLayoutParams(new TableRow.LayoutParams(android.view.ViewGroup.LayoutParams.WRAP_CONTENT,android.view.ViewGroup.LayoutParams.WRAP_CONTENT));
             itemDescription.setGravity(Gravity.LEFT | Gravity.BOTTOM);
             itemDescription.setSingleLine(false);
-            itemDescription.setMaxLines(4);
+            itemDescription.setMaxLines(10);
             //itemDescription.setMinWidth(140);
             itemDescription.setMaxWidth(120);
             tr.addView(itemDescription);
@@ -725,41 +759,20 @@ public class CompetitorActivity2 extends AppCompatActivity implements ItemOption
                 etPckg.setEnabled(false);
                 etPckg.setClickable(false);
             }
-
-//			AccountTypeDbManager datadb = new AccountTypeDbManager(this);
-//			datadb.open();
-//			String[] pckg_opt= datadb.getOtherData(10);
-//			datadb.close();
-
-            String[] pckg_option = {
-                    "Liter"
-            };
-            String[] pckg_opt = pckg_option;
-//            etPckg.setEnabled(true);
-//            String[] drm = {"DRUM"};
-//            String[] pl = {"PAIL"};
-//            ItemDbManager dbItem = new ItemDbManager(context);
-//            dbItem.open();
-//            int pack = dbItem.getPacking(item.getItemCode());
-//            dbItem.close();
-//            if(pack==1000) {
-//                etPckg.setEnabled(false);
-//                pckg_opt=pl;
-//            }
-//            else if(pack==2000) {
-//                etPckg.setEnabled(false);
-//                pckg_opt = drm;
-//            }
+            String[] pckg_opt = getResources().getStringArray(R.array.uom_array);
 
             @SuppressWarnings({ "unchecked", "rawtypes" })
             ArrayAdapter spinnerArrayAdapter = new ArrayAdapter(this,
                     R.layout.csi_spinner_phone, pckg_opt);
             etPckg.setAdapter(spinnerArrayAdapter);
-            etPckg.setSelection(0);
+            int spinnerPosition2 = spinnerArrayAdapter.getPosition(pckg);
+            etPckg.setSelection(spinnerPosition2);
+//            etPckg.setSelection(0);
 //			if(pckg.equalsIgnoreCase(Master.PACKS)) {
 //				etPckg.setSelection(Master.PCKG_PACK);
 //			}
 //			else etPckg.setSelection(Master.PCKG_UNIT);
+            etPckg.setEnabled(false);
             etPckg.setId(SP_PCKG);
             tr.addView(etPckg);
 
@@ -927,7 +940,7 @@ public class CompetitorActivity2 extends AppCompatActivity implements ItemOption
                 //String itemDescription=data.getStringExtra("itemDescription");
                 Double ppPack=data.getDoubleExtra("ppPack",0.0);
                 //Double ppUnit=data.getDoubleExtra("ppUnit",0.0);
-                addCsItem (itemCode,""+ppPack);
+                addCsItem (itemCode,""+ppPack, Master.UNIT);
                 refreshList();
 
             }
@@ -947,7 +960,7 @@ public class CompetitorActivity2 extends AppCompatActivity implements ItemOption
         if(!SUBMITTED) btAddSku.setEnabled(true);
 
     }
-    private void addCsItem(String itemCode,String price) {
+    private void addCsItem(String itemCode,String price, String pckg) {
         CompetitorDbManager2 db = new CompetitorDbManager2(context);
         db.open();
 
@@ -955,7 +968,7 @@ public class CompetitorActivity2 extends AppCompatActivity implements ItemOption
 
         ini.setINCode(csCode);
         ini.setItemCode(itemCode);
-        ini.setPckg(Master.PACKS);
+        ini.setPckg(pckg);
         ini.setPrice(Float.parseFloat(price));
         ini.setQty(0);
 

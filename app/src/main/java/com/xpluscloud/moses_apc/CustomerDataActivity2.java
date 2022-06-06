@@ -2,6 +2,7 @@ package com.xpluscloud.moses_apc;
 
 import android.app.DatePickerDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -159,7 +160,14 @@ public class CustomerDataActivity2 extends AppCompatActivity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				Toast.makeText(context,"Web Server still constructing, wait until next update.",Toast.LENGTH_SHORT).show();
+				Intent intent = new Intent(context, DemandAnalysisActivity.class);
+				Bundle b = new Bundle();
+
+				b.putString("devId", devId);
+				b.putString("ccode", ccode);
+
+				intent.putExtras(b);
+				startActivity(intent);
 			}
 		});
 		

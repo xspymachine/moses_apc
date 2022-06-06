@@ -27,7 +27,7 @@
             android:layout_marginLeft="1dp"
             android:layout_marginRight="1dp"
             android:layout_weight="1"
-            android:background="@color/shellyellow"
+            android:background="@drawable/btn_ripple2"
             android:hint="@string/search_customer"
             android:padding="6dp"
             android:singleLine="false"

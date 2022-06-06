@@ -17,6 +17,7 @@
 	        android:layout_height="wrap_content"
 	        android:layout_marginEnd="12dp"
 	        android:textSize="16sp"
+			android:visibility="gone"
 	        android:text="@string/date" />
 	
 	    <TextView
@@ -52,7 +53,7 @@
 			        android:textSize="20sp"
 			        android:padding="12dp"
 			        android:text="@string/new_reminders"
-			        android:textColor="#000"
+			        android:textColor="#fff"
 			        android:background="@color/shellyellow" />
 	
 	            <CheckBox
@@ -178,25 +179,6 @@
 			        android:layout_marginStart="10dp"
 			        android:text="@string/rem6" />
 
-			<CheckBox
-				android:id="@+id/cbRem7"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_below="@+id/tvRem6"
-				android:background="@drawable/custom_checkbox"
-				android:layout_marginTop="30dp"
-				android:textSize="20sp" />
-
-
-			<TextView
-				android:id="@+id/tvRem7"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:layout_toEndOf="@+id/cbRem7"
-				android:layout_alignTop="@+id/cbRem7"
-				android:textSize="20sp"
-				android:layout_marginStart="10dp"
-				android:text="@string/rem7" />
 	      </RelativeLayout>    
 	      
 	    <!-- <RelativeLayout  

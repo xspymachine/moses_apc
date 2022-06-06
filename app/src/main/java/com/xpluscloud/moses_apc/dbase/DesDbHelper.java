@@ -1,16 +1,27 @@
 package com.xpluscloud.moses_apc.dbase;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.content.res.Resources;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
+
+import com.xpluscloud.moses_apc.R;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Scanner;
 
 public class DesDbHelper extends SQLiteOpenHelper {
 	
-	public static final int DATABASE_VERSION = 2012;
+	public static final int DATABASE_VERSION = 2016;
 	public static final String DATABASE_NAME = "MosesShellSFA.db";
+	Context ctx;
 	
 	public DesDbHelper(Context context) {
 		super(context, DATABASE_NAME, null, DATABASE_VERSION);
+		ctx=context;
 	}
 	
 	@Override
@@ -65,7 +76,13 @@ public class DesDbHelper extends SQLiteOpenHelper {
 		db.execSQL(CREATE_TABLE_CMPITEMSCATEGORY);
 		db.execSQL(CREATE_TABLE_CMPITEMSSUBCATEGORY);
 		db.execSQL(CREATE_TABLE_CUSTOMERPROMO);
+		db.execSQL(CREATE_TABLE_CUSTOMERCLBAL);
+		db.execSQL(CREATE_TABLE_REFBRGY);
+		db.execSQL(CREATE_TABLE_REFCITYMUN);
+		db.execSQL(CREATE_TABLE_REFPROVINCE);
+		db.execSQL(CREATE_TABLE_REFREGION);
 
+//		populateData(db,R.raw.refregion);
 	}
 	
 	@Override
@@ -77,60 +94,48 @@ public class DesDbHelper extends SQLiteOpenHelper {
 			case 2009: db.execSQL("ALTER TABLE items ADD COLUMN liters TEXT");
 			case 2010: db.execSQL("ALTER TABLE callsheetitems ADD COLUMN sharetpts INTEGER");
 			case 2011: db.execSQL("ALTER TABLE customers ADD COLUMN a_r TEXT");
+			case 2012: db.execSQL("ALTER TABLE customers ADD COLUMN salesgroup TEXT");
+				db.execSQL("ALTER TABLE customers ADD COLUMN application TEXT");
+				db.execSQL("ALTER TABLE customers ADD COLUMN clbal TEXT");
+			case 2014: db.execSQL(CREATE_TABLE_CUSTOMERCLBAL);
+			case 2015: db.execSQL(CREATE_TABLE_REFBRGY);
+				db.execSQL(CREATE_TABLE_REFCITYMUN);
+				db.execSQL(CREATE_TABLE_REFPROVINCE);
+				db.execSQL(CREATE_TABLE_REFREGION);
 		}
-//		db.execSQL(DROP_TABLE_CUSTOMERS);
-//		db.execSQL(DROP_TABLE_ITEMS);
-//		db.execSQL(DROP_TABLE_INVENTORY);
-//		db.execSQL(DROP_TABLE_INVENTORY_ITEMS);
-//		db.execSQL(DROP_TABLE_COMPETITOR);
-//		db.execSQL(DROP_TABLE_COMPETITOR_ITEMS);
-//		db.execSQL(DROP_TABLE_RETURNS);
-//		db.execSQL(DROP_TABLE_DELIVERIES);
-//		db.execSQL(DROP_TABLE_COLLECTIBLES);
-//		db.execSQL(DROP_TABLE_COLLECTIONS);
-//		db.execSQL(DROP_TABLE_CALL_SHEETS);
-//		db.execSQL(DROP_TABLE_CALL_SHEET_ITEMS);
-//		db.execSQL(DROP_TABLE_COVERAGE_PLAN);
-//		db.execSQL(DROP_TABLE_PERIOD);
-//		db.execSQL(DROP_TABLE_TIME_INOUT);
-//		db.execSQL(DROP_TABLE_SALESCALL);
-//		db.execSQL(DROP_TABLE_MARKED_LOCATION);
-//		db.execSQL(DROP_TABLE_SIGNATURE);
-//		db.execSQL(DROP_TABLE_PICTURE);
-//		db.execSQL(DROP_TABLE_TRAIL);
-//		db.execSQL(DROP_TABLE_INBOX);
-//		db.execSQL(DROP_TABLE_OUTBOX);
-//		db.execSQL(DROP_TABLE_SETTINGS);
-//		db.execSQL(DROP_TABLE_CUSTITEM);
-//		db.execSQL(DROP_TABLE_CMPITEMS);
-//		db.execSQL(DROP_TABLE_REGION);
-//		db.execSQL(DROP_TABLE_OWNER);
-//		db.execSQL(DROP_TABLE_PURCHASER);
-//		db.execSQL(DROP_TABLE_ACCTTYPES);
-//		db.execSQL(DROP_TABLE_CHECKLISTS);
-//		db.execSQL(DROP_TABLE_CHECKLISTS);
-//		db.execSQL(DROP_TABLE_TRUCKS);
-//		db.execSQL(DROP_TABLE_TRUCKSLIST);
-//		db.execSQL(DROP_TABLE_WAREHOUSEITEMS);
-//		db.execSQL(DROP_TABLE_MERCHANDISING);
-//		db.execSQL(DROP_TABLE_SUPPLIERS);
-//		db.execSQL(DROP_TABLE_WORKWITH);
-//		db.execSQL(DROP_TABLE_CALLSHEETSERVED);
-//		db.execSQL(DROP_TABLE_GENERALPROFILE);
-//        db.execSQL(DROP_TABLE_CALLCHECKLIST);
-//        db.execSQL(DROP_TABLE_CCALLCHECKLIST);
-//        db.execSQL(DROP_TABLE_CUSTOMERISSUES);
-//		db.execSQL(DROP_TABLE_RETAILDATA);
-//		db.execSQL(DROP_TABLE_SURVEYDATA);
-//		db.execSQL(DROP_TABLE_CUSTOMERMOREDATA);
-//		db.execSQL(DROP_TABLE_SALESTARGET);
-//		db.execSQL(DROP_TABLE_ITEMSCATEGORY);
-//		db.execSQL(DROP_TABLE_ITEMSSUBCATEGORY);
-//		db.execSQL(DROP_TABLE_CMPITEMSCATEGORY);
-//		db.execSQL(DROP_TABLE_CMPITEMSSUBCATEGORY);
-//		db.execSQL(DROP_TABLE_CUSTOMERPROMO);
-//		onCreate(db);
 	}
+
+//	private void populateData(SQLiteDatabase db, int fileId){
+//
+//		Scanner scanner = new Scanner(ctx.getResources().openRawResource(fileId));
+//		String[] strCol = new String[0];
+//		db.beginTransaction();
+//		db.execSQL("CREATE TABLE refregion (id INTEGER PRIMARY KEY AUTOINCREMENT,psgCode TEXT,regDesc TEXT,regCode TEXT)");
+//		String line;
+//		while(scanner.hasNextLine() && ((line = scanner.nextLine()) != null)) {
+//			String[] values = line.split(",");
+////			if(values.length != 4)
+////				continue;
+////
+////			for(int i = 0; i < values.length; i++)
+////				values[i] = values[i].replace("\"", "");
+//
+//			if(values[0].contains("id")){
+//				System.arraycopy(values, 0, strCol, 0, values.length);
+//			}
+//
+//			ContentValues contentValues = new ContentValues();
+//			contentValues.put("id", values[0]);
+//			contentValues.put("psgCode", values[1]);
+//			contentValues.put("regDesc", values[2]);
+//			contentValues.put("regCode", values[3]);
+//
+//			db.insert("refregion", null, contentValues);
+//		}
+//
+//		db.setTransactionSuccessful();
+//		db.endTransaction();
+//	}
 	
 	@Override
 	public void onDowngrade(SQLiteDatabase db, int oldVersion, int newVersion) {
@@ -159,6 +164,9 @@ public class DesDbHelper extends SQLiteOpenHelper {
 		+ DesContract.Customer.TERMID			+ " INTEGER, "
 		+ DesContract.Customer.TYPEID			+ " INTEGER, "
 		+ DesContract.Customer.AR				+ " TEXT, "
+		+ DesContract.Customer.SG				+ " TEXT, "
+		+ DesContract.Customer.APP				+ " TEXT, "
+		+ DesContract.Customer.CLBAL			+ " TEXT, "
 		+ DesContract.Customer.STATUS		 	+ " INTEGER )";
 	
 	
@@ -724,56 +732,51 @@ public class DesDbHelper extends SQLiteOpenHelper {
 					+ DesContract.CustomerPromo.CCODE		+ " TEXT, "
 					+ DesContract.CustomerPromo.DATETIME	+ " TEXT, "
 					+ DesContract.CustomerPromo.STATUS		+ " INTEGER);";
-	
-	private static final String DROP_TABLE_ITEMS 			= "DROP TABLE IF EXISTS " + DesContract.Item.TABLE_NAME;
-	private static final String DROP_TABLE_INVENTORY 		= "DROP TABLE IF EXISTS " + DesContract.Inventory.TABLE_NAME;
-	private static final String DROP_TABLE_INVENTORY_ITEMS	= "DROP TABLE IF EXISTS " + DesContract.Inventory.TABLE_NAME2;
-	private static final String DROP_TABLE_RETURNS 			= "DROP TABLE IF EXISTS " + DesContract.Return.TABLE_NAME;
-	private static final String DROP_TABLE_CUSTOMERS 		= "DROP TABLE IF EXISTS " + DesContract.Customer.TABLE_NAME;
-	private static final String DROP_TABLE_COVERAGE_PLAN 	= "DROP TABLE IF EXISTS " + DesContract.CoveragePlan.TABLE_NAME;
-	private static final String DROP_TABLE_PERIOD 			= "DROP TABLE IF EXISTS " + DesContract.Period.TABLE_NAME;
-	private static final String DROP_TABLE_TIME_INOUT	 	= "DROP TABLE IF EXISTS " + DesContract.TimeInOut.TABLE_NAME;
-	private static final String DROP_TABLE_SALESCALL 		= "DROP TABLE IF EXISTS " + DesContract.SalesCall.TABLE_NAME;
-	private static final String DROP_TABLE_DELIVERIES 		= "DROP TABLE IF EXISTS " + DesContract.Delivery.TABLE_NAME;
-	private static final String DROP_TABLE_COLLECTIBLES 	= "DROP TABLE IF EXISTS " + DesContract.Collectible.TABLE_NAME;
-	private static final String DROP_TABLE_COLLECTIONS 		= "DROP TABLE IF EXISTS " + DesContract.Collection.TABLE_NAME;
-	private static final String DROP_TABLE_CALL_SHEETS 		= "DROP TABLE IF EXISTS " + DesContract.CallSheet.TABLE_NAME;
-	private static final String DROP_TABLE_CALL_SHEET_ITEMS = "DROP TABLE IF EXISTS " + DesContract.CallSheetItem.TABLE_NAME;
-	private static final String DROP_TABLE_MARKED_LOCATION 	= "DROP TABLE IF EXISTS " + DesContract.MarkedLocation.TABLE_NAME;
-	private static final String DROP_TABLE_SIGNATURE	 	= "DROP TABLE IF EXISTS " + DesContract.Signature.TABLE_NAME;
-	private static final String DROP_TABLE_PICTURE		 	= "DROP TABLE IF EXISTS " + DesContract.Picture.TABLE_NAME;
-	private static final String DROP_TABLE_TRAIL 			= "DROP TABLE IF EXISTS " + DesContract.Trail.TABLE_NAME;
-	private static final String DROP_TABLE_INBOX 			= "DROP TABLE IF EXISTS " + DesContract.Inbox.TABLE_NAME;
-	private static final String DROP_TABLE_OUTBOX			= "DROP TABLE IF EXISTS " + DesContract.Outbox.TABLE_NAME;
-	private static final String DROP_TABLE_SETTINGS			= "DROP TABLE IF EXISTS " + DesContract.Setting.TABLE_NAME;
-	private static final String DROP_TABLE_CUSTITEM			= "DROP TABLE IF EXISTS " + DesContract.CustItem.TABLE_NAME;
-	private static final String DROP_TABLE_CMPITEMS			= "DROP TABLE IF EXISTS " + DesContract.CustItemList.TABLE_NAME;
-	private static final String DROP_TABLE_ACCTTYPES		= "DROP TABLE IF EXISTS " + DesContract.AccountTypes.TABLE_NAME;
-	private static final String DROP_TABLE_REGION			= "DROP TABLE IF EXISTS " + DesContract.Region.TABLE_NAME;
-	private static final String DROP_TABLE_OWNER			= "DROP TABLE IF EXISTS " + DesContract.CusOwnerData.TABLE_NAME;
-	private static final String DROP_TABLE_PURCHASER		= "DROP TABLE IF EXISTS " + DesContract.CusPurchaserData.TABLE_NAME;
-	private static final String DROP_TABLE_CHECKLISTS		= "DROP TABLE IF EXISTS " + DesContract.Checklists.TABLE_NAME;
-	private static final String DROP_TABLE_TRUCKS			= "DROP TABLE IF EXISTS " + DesContract.CusTrucksData.TABLE_NAME;
-	private static final String DROP_TABLE_TRUCKSLIST		= "DROP TABLE IF EXISTS " + DesContract.CusTrucksList.TABLE_NAME;
-	private static final String DROP_TABLE_WAREHOUSEITEMS	= "DROP TABLE IF EXISTS " + DesContract.CusWarehouseItems.TABLE_NAME;
-	private static final String DROP_TABLE_MERCHANDISING	= "DROP TABLE IF EXISTS " + DesContract.Merchandising.TABLE_NAME;
-	private static final String DROP_TABLE_SUPPLIERS		= "DROP TABLE IF EXISTS " + DesContract.Suppliers.TABLE_NAME;
-	private static final String DROP_TABLE_WORKWITH			= "DROP TABLE IF EXISTS " + DesContract.WorkWith.TABLE_NAME;
-	private static final String DROP_TABLE_CALLSHEETSERVED	= "DROP TABLE IF EXISTS " + DesContract.CallSheetServe.TABLE_NAME;
-	private static final String DROP_TABLE_GENERALPROFILE	= "DROP TABLE IF EXISTS " + DesContract.GeneralProfile.TABLE_NAME;
-	private static final String DROP_TABLE_CALLCHECKLIST	= "DROP TABLE IF EXISTS " + DesContract.CallChecklist.TABLE_NAME;
-    private static final String DROP_TABLE_CCALLCHECKLIST	= "DROP TABLE IF EXISTS " + DesContract.CustomerCallChecklist.TABLE_NAME;
-    private static final String DROP_TABLE_CUSTOMERISSUES	= "DROP TABLE IF EXISTS " + DesContract.CustomerIssues.TABLE_NAME;
-	private static final String DROP_TABLE_RETAILDATA		= "DROP TABLE IF EXISTS " + DesContract.RetailData.TABLE_NAME;
-	private static final String DROP_TABLE_SURVEYDATA		= "DROP TABLE IF EXISTS " + DesContract.SurveyData.TABLE_NAME;
-	private static final String DROP_TABLE_CUSTOMERMOREDATA	= "DROP TABLE IF EXISTS " + DesContract.CustomerMoreData.TABLE_NAME;
-    private static final String DROP_TABLE_SALESTARGET   	= "DROP TABLE IF EXISTS " + DesContract.SalesTarget.TABLE_NAME;
-	private static final String DROP_TABLE_ITEMSCATEGORY	= "DROP TABLE IF EXISTS " + DesContract.ItemsCategory.TABLE_NAME;
-	private static final String DROP_TABLE_ITEMSSUBCATEGORY   	= "DROP TABLE IF EXISTS " + DesContract.ItemsSubCategory.TABLE_NAME;
-	private static final String DROP_TABLE_CMPITEMSCATEGORY		= "DROP TABLE IF EXISTS " + DesContract.CMPItemsCategory.TABLE_NAME;
-	private static final String DROP_TABLE_CMPITEMSSUBCATEGORY  = "DROP TABLE IF EXISTS " + DesContract.CMPItemsSubCategory.TABLE_NAME;
-	private static final String DROP_TABLE_COMPETITOR			= "DROP TABLE IF EXISTS " + DesContract.Competitors.TABLE_NAME;
-	private static final String DROP_TABLE_COMPETITOR_ITEMS  	= "DROP TABLE IF EXISTS " + DesContract.Competitors.TABLE_NAME2;
-	private static final String DROP_TABLE_CUSTOMERPROMO	  	= "DROP TABLE IF EXISTS " + DesContract.CustomerPromo.TABLE_NAME;
+
+	private static final String CREATE_TABLE_CUSTOMERCLBAL =
+			"CREATE TABLE " + DesContract.CustomerCLBAL.TABLE_NAME + " ("
+					+ DesContract.CustomerCLBAL._ID			+ " INTEGER PRIMARY KEY AUTOINCREMENT, "
+					+ DesContract.CustomerCLBAL.CCODE		+ " TEXT, "
+					+ DesContract.CustomerCLBAL.CLBAL		+ " TEXT, "
+					+ DesContract.CustomerCLBAL.STATUS		+ " INTEGER);";
+
+
+	private static final String CREATE_TABLE_REFBRGY =
+			"CREATE TABLE " + DesContract.RefBarangay.TABLE_NAME + " ("
+					+ DesContract.RefBarangay._ID			+ " INTEGER PRIMARY KEY AUTOINCREMENT, "
+					+ DesContract.RefBarangay.REFID			+ " INTEGER, "
+					+ DesContract.RefBarangay.BRGYCODE		+ " TEXT, "
+					+ DesContract.RefBarangay.STRDESC		+ " TEXT, "
+					+ DesContract.RefBarangay.REGCODE		+ " TEXT, "
+					+ DesContract.RefBarangay.PROVCODE		+ " TEXT, "
+					+ DesContract.RefBarangay.CITYMUNCODE	+ " TEXT);";
+
+	private static final String CREATE_TABLE_REFCITYMUN =
+			"CREATE TABLE " + DesContract.RefCitymun.TABLE_NAME + " ("
+					+ DesContract.RefCitymun._ID			+ " INTEGER PRIMARY KEY AUTOINCREMENT, "
+					+ DesContract.RefCitymun.REFID			+ " INTEGER, "
+					+ DesContract.RefCitymun.PSGCCODE		+ " TEXT, "
+					+ DesContract.RefCitymun.STRDESC		+ " TEXT, "
+					+ DesContract.RefCitymun.REGDESC		+ " TEXT, "
+					+ DesContract.RefCitymun.PROVCODE		+ " TEXT, "
+					+ DesContract.RefCitymun.CITYMUNCODE		+ " TEXT);";
+
+	private static final String CREATE_TABLE_REFPROVINCE =
+			"CREATE TABLE " + DesContract.RefProvince.TABLE_NAME + " ("
+					+ DesContract.RefProvince._ID			+ " INTEGER PRIMARY KEY AUTOINCREMENT, "
+					+ DesContract.RefProvince.REFID		+ " INTEGER, "
+					+ DesContract.RefProvince.PSGCCODE		+ " TEXT, "
+					+ DesContract.RefProvince.PROVCODE		+ " TEXT, "
+					+ DesContract.RefProvince.STRDESC		+ " TEXT, "
+					+ DesContract.RefProvince.REGCODE		+ " TEXT);";
+
+	private static final String CREATE_TABLE_REFREGION =
+			"CREATE TABLE " + DesContract.RefRegion.TABLE_NAME + " ("
+					+ DesContract.RefRegion._ID			+ " INTEGER PRIMARY KEY AUTOINCREMENT, "
+					+ DesContract.RefRegion.REFID		+ " INTEGER, "
+					+ DesContract.RefRegion.PSGCCODE	+ " TEXT, "
+					+ DesContract.RefRegion.STRDESC		+ " TEXT, "
+					+ DesContract.RefRegion.REGCODE		+ " TEXT);";
+
 }
 

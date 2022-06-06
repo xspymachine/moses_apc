@@ -7,11 +7,15 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.text.Html;
+import android.text.Spanned;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.xpluscloud.moses_apc.dbase.AccountTypeDbManager;
+
+import uk.co.deanwild.flowtextview.FlowTextView;
 
 /**
  * Created by Shirwen on 4/18/2018.
@@ -30,6 +34,11 @@ public class PromotionsActivity extends Activity {
         ctx = PromotionsActivity.this;
 
         TextView brochure = findViewById(R.id.brochure);
+
+        FlowTextView flowTextView = (FlowTextView) findViewById(R.id. ftv);
+        String content = getString(R.string.info);
+        Spanned html = Html.fromHtml(content);
+        flowTextView.setText(html);
 
         brochure.setOnClickListener(new View.OnClickListener() {
 
@@ -52,7 +61,7 @@ public class PromotionsActivity extends Activity {
 //                };
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(ctx);
-                builder.setTitle("Current Promotions");
+                builder.setTitle("Sales Materials");
                 builder.setItems(items, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int item) {
                         // Do something with the selection

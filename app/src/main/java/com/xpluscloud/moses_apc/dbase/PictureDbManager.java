@@ -61,6 +61,23 @@ public class PictureDbManager extends DbManager {
 	public void delete(String dateBefore) {
 		 db.delete(DesContract.Picture.TABLE_NAME, "datetime < ?", new String[] {dateBefore});
 	}
+
+	public int getFileStatus(String filename){
+		int status = 0;
+		String sql = "SELECT status FROM pictures WHERE filename = '"+filename+"'";
+		Cursor c =db.rawQuery(sql,null);
+		if(c.moveToFirst()) status =c.getInt(0);
+
+		c.close();
+		return status;
+	}
+
+	public void updateFilenameStatus(String fname){
+		String where = DesContract.Picture.FILENAME + " = '" + fname + "'";
+		ContentValues cv = new ContentValues();
+		cv.put(DesContract.Picture.STATUS, 1);
+		db.update(DesContract.Picture.TABLE_NAME,cv,where,null);
+	}
 	
 	public List<MyList> getAll() {
 		List<MyList> list = new ArrayList<MyList>();

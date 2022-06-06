@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android" 
-	android:id="@+id/ll_box"   	
+<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/ll_box"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
 	android:background="@color/shellyellow" >
@@ -90,7 +90,7 @@
 					android:layout_gravity="center_horizontal"
 					android:layout_marginTop="6dp"
 					android:text="@string/gps_status"
-					android:textColor="#000"
+					android:textColor="#fff"
 					android:textSize="16sp" />
 
 				<TextView
@@ -121,7 +121,7 @@
 					android:layout_gravity="center_horizontal"
 					android:layout_marginTop="6dp"
 					android:text="@string/accuracy"
-					android:textColor="#000"
+					android:textColor="#fff"
 					android:textSize="16sp" />
 
 				<TextView
@@ -153,7 +153,7 @@
 					android:layout_gravity="center_horizontal"
 					android:layout_marginTop="6dp"
 					android:text="@string/gpstime"
-					android:textColor="#000"
+					android:textColor="#fff"
 					android:textSize="16sp"
 					android:visibility="gone" />
 
@@ -188,7 +188,7 @@
 					android:layout_gravity="center_horizontal"
 					android:layout_marginTop="6dp"
 					android:text="@string/devicetime"
-					android:textColor="#000"
+					android:textColor="#fff"
 					android:textSize="16sp" />
 
 				<TextView
@@ -262,7 +262,7 @@
 				android:layout_marginLeft="10dp"
 				android:layout_toRightOf="@+id/cbRem1"
 				android:text="@string/greet"
-				android:textColor="#000"
+				android:textColor="#fff"
 				android:textSize="20sp"
 				android:textStyle="bold" />
 
@@ -274,7 +274,7 @@
 				android:layout_marginLeft="10dp"
 				android:layout_toRightOf="@+id/cbRem2"
 				android:text="@string/introduce"
-				android:textColor="#000"
+				android:textColor="#fff"
 				android:textSize="20sp"
 				android:textStyle="bold" />
 
@@ -286,7 +286,7 @@
 				android:layout_marginLeft="10dp"
 				android:layout_toRightOf="@+id/cbRem3"
 				android:text="@string/ask"
-				android:textColor="#000"
+				android:textColor="#fff"
 				android:textSize="20sp"
 				android:textStyle="bold" />
 
@@ -317,8 +317,8 @@
 				android:layout_alignTop="@+id/cbORem1"
 				android:layout_marginLeft="10dp"
 				android:layout_toRightOf="@+id/cbORem1"
-				android:text="@string/orem100"
-				android:textColor="#000"
+				android:text="@string/orem1"
+				android:textColor="#fff"
 				android:textSize="20sp"
 				android:textStyle="bold" />
 			<!-- *********************************** -->
@@ -339,8 +339,8 @@
 				android:layout_alignTop="@+id/cbORem003"
 				android:layout_marginLeft="10dp"
 				android:layout_toRightOf="@+id/cbORem003"
-				android:text="@string/orem20000"
-				android:textColor="#000"
+				android:text="@string/orem4"
+				android:textColor="#fff"
 				android:textSize="20sp"
 				android:textStyle="bold" />
 			<CheckBox
@@ -360,107 +360,24 @@
 				android:layout_alignTop="@+id/cbORem3"
 				android:layout_marginLeft="10dp"
 				android:layout_toRightOf="@+id/cbORem3"
-				android:text="@string/orem200"
-				android:textColor="#000"
+				android:text="@string/orem5"
+				android:textColor="#fff"
 				android:textSize="20sp"
 				android:textStyle="bold" />
 
-			<CheckBox
-				android:id="@+id/cbORem4"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_alignStart="@+id/cbORem3"
-				android:layout_below="@+id/tvORem3"
-				android:layout_marginTop="20dp"
-				android:background="@drawable/custom_checkbox"
-				android:textSize="20sp" />
 
-			<TextView
-				android:id="@+id/tvORem4"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_alignTop="@+id/cbORem4"
-				android:layout_marginLeft="10dp"
-				android:layout_toRightOf="@+id/cbORem4"
-				android:text="@string/orem300"
-				android:textColor="#000"
-				android:textSize="20sp"
-				android:textStyle="bold" />
-
-			<CheckBox
-				android:id="@+id/cbORem5"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_alignStart="@+id/cbORem4"
-				android:layout_below="@+id/tvORem4"
-				android:layout_marginTop="20dp"
-				android:background="@drawable/custom_checkbox"
-				android:textSize="20sp" />
-
-			<TextView
-				android:id="@+id/tvORem5"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_alignTop="@+id/cbORem5"
-				android:layout_marginLeft="10dp"
-				android:layout_toRightOf="@+id/cbORem5"
-				android:text="@string/orem400"
-				android:textColor="#000"
-				android:textSize="20sp"
-				android:textStyle="bold" />
-			<CheckBox
-				android:id="@+id/cbORem6"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_alignStart="@+id/cbORem5"
-				android:layout_below="@+id/tvORem5"
-				android:layout_marginTop="20dp"
-				android:background="@drawable/custom_checkbox"
-				android:textSize="20sp" />
-
-			<TextView
-				android:id="@+id/tvORem6"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_alignTop="@+id/cbORem6"
-				android:layout_marginLeft="10dp"
-				android:layout_toRightOf="@+id/cbORem6"
-				android:text="@string/orem500"
-				android:textColor="#000"
-				android:textSize="20sp"
-				android:textStyle="bold" />
-			<CheckBox
-				android:id="@+id/cbORem7"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_alignStart="@+id/cbORem6"
-				android:layout_below="@+id/tvORem6"
-				android:layout_marginTop="20dp"
-				android:background="@drawable/custom_checkbox"
-				android:textSize="20sp" />
-
-			<TextView
-				android:id="@+id/tvORem7"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_alignTop="@+id/cbORem7"
-				android:layout_marginLeft="10dp"
-				android:layout_toRightOf="@+id/cbORem7"
-				android:text="@string/orem600"
-				android:textColor="#000"
-				android:textSize="20sp"
-				android:textStyle="bold" />
 
 			<Button
 				android:id="@+id/btMerch"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:layout_alignParentStart="true"
-				android:layout_below="@+id/tvORem7"
+				android:layout_below="@+id/tvORem3"
 				android:layout_centerHorizontal="true"
 				android:layout_marginTop="20dp"
 				android:background="@drawable/custom_button_click"
 				android:gravity="center"
+				android:visibility="gone"
 				android:text="@string/orem10"
 				android:textColor="#E88100"
 				android:textStyle="bold" />
@@ -490,7 +407,7 @@
 
 		</RelativeLayout>
 	</RelativeLayout>
-	
+
 </ScrollView>
 
    	

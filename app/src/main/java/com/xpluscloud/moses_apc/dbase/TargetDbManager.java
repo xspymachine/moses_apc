@@ -47,21 +47,21 @@ public class TargetDbManager extends DbManager{
 		
 		switch (option) {
 			case 0://all calls
-				sql = "SELECT count(*) FROM salescalls WHERE strftime('%Y-%m', datetime, 'unixepoch') LIKE '%"+date+"%'";	
+				sql = "SELECT count(*) FROM salescalls WHERE strftime('%Y-%m', datetime, 'unixepoch','localtime') LIKE '%"+date+"%'";
 				c = db.rawQuery(sql, null);
 				if(c.moveToFirst()) info = ""+c.getInt(0);
 				break;
 			case 1://filter productive calls
-				sql = "SELECT count(*) FROM callsheets WHERE strftime('%Y-%m', date, 'unixepoch') LIKE '%"+date+"%' "
-					+ "AND ccode IN (SELECT ccode FROM `salescalls` WHERE strftime('%Y-%m', datetime, 'unixepoch') LIKE '%"+date+"%')";
-//				sql = "SELECT count(*) FROM callsheets WHERE strftime('%Y-%m', date, 'unixepoch') LIKE '%"+date+"%' ";
+				sql = "SELECT count(*) FROM callsheets WHERE strftime('%Y-%m', date, 'unixepoch','localtime') LIKE '%"+date+"%' "
+					+ "AND ccode IN (SELECT ccode FROM `salescalls` WHERE strftime('%Y-%m', datetime, 'unixepoch','localtime') LIKE '%"+date+"%')";
+//				sql = "SELECT count(*) FROM callsheets WHERE strftime('%Y-%m', date, 'unixepoch','localtime') LIKE '%"+date+"%' ";
 				c = db.rawQuery(sql, null);
 				if(c.moveToFirst()) info = ""+c.getInt(0);
 				break;
 			case 2:
 				int count =0;
-				String sql2 = "SELECT count(*) FROM callsheets WHERE strftime('%Y-%m', date, 'unixepoch') LIKE '%"+date+"%' "
-						+ "AND ccode IN (SELECT ccode FROM `salescalls` WHERE strftime('%Y-%m', datetime, 'unixepoch') LIKE '%"+date+"%')";
+				String sql2 = "SELECT count(*) FROM callsheets WHERE strftime('%Y-%m', date, 'unixepoch','localtime') LIKE '%"+date+"%' "
+						+ "AND ccode IN (SELECT ccode FROM `salescalls` WHERE strftime('%Y-%m', datetime, 'unixepoch','localtime') LIKE '%"+date+"%')";
 				Cursor c2 = db.rawQuery(sql2, null);
 				if(c2.moveToFirst()) count = c2.getInt(0);
 
@@ -121,7 +121,7 @@ public class TargetDbManager extends DbManager{
 
 //	public void updateFailData(){
 //        String todate = DateUtil.strDateMY(System.currentTimeMillis());
-//		String sql = "SELECT datetime,message FROM outbox WHERE  strftime('%Y-%m', datetime, 'unixepoch') BETWEEN '2017-03' AND '"+todate+"' AND message LIKE '%CMDUCST%'";
+//		String sql = "SELECT datetime,message FROM outbox WHERE  strftime('%Y-%m', datetime, 'unixepoch','localtime') BETWEEN '2017-03' AND '"+todate+"' AND message LIKE '%CMDUCST%'";
 //		Cursor c= db.rawQuery(sql,null);
 //
 //		if (c != null && c.moveToFirst()) {

@@ -8,15 +8,24 @@ import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.xpluscloud.moses_apc.dbase.CustomerDbManager;
+import com.xpluscloud.moses_apc.dbase.PictureDbManager;
+import com.xpluscloud.moses_apc.dbase.SignatureDbManager;
+import com.xpluscloud.moses_apc.getset.Customer;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -78,7 +87,7 @@ public class UploadSignatureActivity extends AppCompatActivity {
     	   try {
     		   ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
     		    		R.layout.detail_file_list, R.id.filename, Files);
-    		    listView.setAdapter(adapter);// set all the file in the list 
+    		    listView.setAdapter(new FileArrayAdapter(context,Files));// set all the file in the list
     	   }
            catch(Exception e) {
         	   Log.e("ERROR: ","LST");
@@ -88,9 +97,57 @@ public class UploadSignatureActivity extends AppCompatActivity {
         else {
         	Log.e("Directory : ","No! " + currentpath);
         }
-    } 
-  
-    
+    }
+
+	public class FileArrayAdapter extends ArrayAdapter<String>{
+		private final ArrayList<String> values;
+		private final Context context;
+		public FileArrayAdapter(Context context, ArrayList<String> values) {
+			super(context, R.layout.detail_picture_file_list, values);
+			this.values = values;
+			this.context = context;
+		}
+
+		@NonNull
+		@Override
+		public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+
+			LayoutInflater inflater = (LayoutInflater) context
+					.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+			View rowView = inflater.inflate(R.layout.detail_picture_file_list, parent, false);
+			TextView tvFname = rowView.findViewById(R.id.filename);
+			CheckBox cBox = rowView.findViewById(R.id.cb);
+			String ccode = "";
+			try{
+				ccode = values.get(position).split("_")[1].replace(".jpg","");
+			}catch (Exception ignored){}
+
+			CustomerDbManager db1 = new CustomerDbManager(context);
+			db1.open();
+			Customer c = db1.getCustomer(ccode);
+			db1.close();
+			String cusname = "";
+			if(c!=null) {
+				if(c.getName().contains("(")) cusname = c.getName().split("[(]")[0] + "\n";
+				else cusname = c.getName() + "\n";
+			}
+			String fnameCus = cusname +values.get(position);
+
+			tvFname.setText(fnameCus);
+
+			SignatureDbManager db = new SignatureDbManager(context);
+			db.open();
+			int status = db.getFileStatus(values.get(position));
+			db.close();
+			if(status == 1) {
+				rowView.setBackgroundColor(context.getResources().getColor(android.R.color.holo_blue_light));
+//				cBox.setChecked(true);
+//				cBox.setEnabled(false);
+			}
+
+			return rowView;
+		}
+	}
     
     
   //sorts based on the files name 
@@ -181,7 +238,10 @@ public class UploadSignatureActivity extends AppCompatActivity {
 	    	    if (cb.isChecked()) {
 	    	    	selected=true;
 	    	    	TextView fileitem = (TextView) v.findViewById(R.id.filename);
-	    	    	String selectedItem = fileitem.getText().toString();
+					String selectedItem = fileitem.getText().toString();
+					try{
+						selectedItem = fileitem.getText().toString().split("\n")[1];
+					}catch (Exception ignored){}
 	    	    	Log.e("Selected Item:  ", selectedItem );
 	    	    	
 	    	    	Path = new File(currentPath + selectedItem);
@@ -366,7 +426,14 @@ public class UploadSignatureActivity extends AppCompatActivity {
     	TextView myMsg = new TextView(this);
     	int i = 0; 
     	String strResponses ="";
-        while( i < Responses.size() ) { 
+        while( i < Responses.size() ) {
+
+			String fname = Responses.get(i).split(" : ")[0];
+			SignatureDbManager db = new SignatureDbManager(context);
+			db.open();
+			db.updateFilenameStatus(fname.replace(" ",""));
+			db.close();
+
         	strResponses += Responses.get(i) + "\n";
             i++; 
         }
@@ -380,16 +447,22 @@ public class UploadSignatureActivity extends AppCompatActivity {
     		.setPositiveButton("Close", new DialogInterface.OnClickListener() {
 	           @Override
 			public void onClick(DialogInterface dialog, int id) {
-	        	   
-	            	finish(); 
+
+				   fileList(currentPath);
 	           } 
 	       }); 	      
     	
     	AlertDialog dialog = builder.create();
     	dialog.show();     	
     }
-    
-    private boolean isConnected() { 
+
+	@Override
+	public void onBackPressed() {
+		if(currentPath.equals(FilePath)) finish();
+		else fileList(FilePath);
+	}
+
+	private boolean isConnected() {
 		ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
 		NetworkInfo ni = cm.getActiveNetworkInfo();
 		if (ni == null) { 

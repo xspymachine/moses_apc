@@ -61,6 +61,7 @@ import com.xpluscloud.moses_apc.util.NumUtil;
 import com.xpluscloud.moses_apc.util.StringUtil;
 
 import java.text.DecimalFormat;
+import java.util.Arrays;
 import java.util.List;
 
 
@@ -127,6 +128,7 @@ public class CallSheetActivity extends AppCompatActivity implements ItemOptionDi
 	TextView tvCaddress;
 	TextView tvCacctType;
 	TextView etRemarks;
+	TextView tvCredit;
 	Spinner tvCterm;
 	AutoCompleteTextView atSupplier;
 
@@ -204,6 +206,7 @@ public class CallSheetActivity extends AppCompatActivity implements ItemOptionDi
 			tvCaddress.setText(cAddress);
 //	        tvCterm.setText(cTerm);
 //			tvCacctType.setText(cAcctType);
+			tvCredit.setText(DbUtil.getCustomerCLBAL(context,cCode));
 		}catch (Exception e){e.printStackTrace();}
 
 		try {
@@ -265,6 +268,7 @@ public class CallSheetActivity extends AppCompatActivity implements ItemOptionDi
 			spCashSales		= (Spinner)  findViewById(R.id.spnScType);
 			etPayment		= (EditText) findViewById(R.id.etPayment);
 			etRemarks		= (EditText) findViewById(R.id.etRemarks);
+			tvCredit		= findViewById(R.id.tvCredit);
 
             ArrayAdapter<?> scArrayAdapter = new ArrayAdapter<Object>(this,
                     R.layout.csi_spinner, Master.sc_option);
@@ -311,7 +315,7 @@ public class CallSheetActivity extends AppCompatActivity implements ItemOptionDi
 				termId = ArrayDef.TERMS2.length-1;
 			}
 			cTerm			= ArrayDef.TERMS2[termId];
-			Log.e("asdasdasda","asdasd"+cTerm);
+//			Log.e("asdasdasda","asdasd"+cTerm);
 			cDiscount		= cust.getDiscount();
 //			cCashSales		= 0;//cust.getCashSales();
 			cBuffer			= cust.getBuffer();
@@ -792,7 +796,7 @@ public class CallSheetActivity extends AppCompatActivity implements ItemOptionDi
 		sharepts.setText("ShP");
 		//sharepts.setGravity(Gravity.LEFT | Gravity.BOTTOM);
 		sharepts.setBackgroundColor(Color.BLACK);
-//		sharepts.setVisibility(View.GONE);
+		sharepts.setVisibility(View.GONE);
 		header.addView(sharepts);
 
 		//Amount Column
@@ -807,6 +811,7 @@ public class CallSheetActivity extends AppCompatActivity implements ItemOptionDi
 		tPts.setText("TShP");
 //		tPts.setGravity(Gravity.CENTER | Gravity.BOTTOM);
 //		tPts.setBackgroundColor(Color.BLACK);
+		tPts.setVisibility(View.GONE);
 		header.addView(tPts);
 
 		//Item Code Column
@@ -886,29 +891,30 @@ public class CallSheetActivity extends AppCompatActivity implements ItemOptionDi
 //			String[] pckg_opt= datadb.getOtherData(10);
 //			datadb.close();
 
-			String[] pckg_opt = Master.pckg_option;
-			etPckg.setEnabled(true);
-			String[] drm = {"DRUM"};
-			String[] pl = {"PAIL"};
-			ItemDbManager dbItem = new ItemDbManager(context);
-			dbItem.open();
-			final int pack = dbItem.getPacking(item.getItemcode());
-			dbItem.close();
-			if(pack==1000) {
-				etPckg.setEnabled(false);
-				pckg_opt=pl;
-			}
-			else if(pack==2000) {
-				etPckg.setEnabled(false);
-				pckg_opt = drm;
-			}
+			String[] pckg_opt = getResources().getStringArray(R.array.uom_array);
+//			etPckg.setEnabled(true);
+//			String[] drm = {"DRUM"};
+//			String[] pl = {"PAIL"};
+//			ItemDbManager dbItem = new ItemDbManager(context);
+//			dbItem.open();
+//			final int pack = dbItem.getPacking(item.getItemcode());
+//			dbItem.close();
+//			if(pack==1000) {
+//				etPckg.setEnabled(false);
+//				pckg_opt=pl;
+//			}
+//			else if(pack==2000) {
+//				etPckg.setEnabled(false);
+//				pckg_opt = drm;
+//			}
 
 			@SuppressWarnings({ "unchecked", "rawtypes" })
 			ArrayAdapter spinnerArrayAdapter = new ArrayAdapter(this,
 					R.layout.csi_spinner_phone, pckg_opt);
 			etPckg.setAdapter(spinnerArrayAdapter);
-			etPckg.setSelection(0);
-			if(pckg.equals(Master.UNIT2)) etPckg.setSelection(1);
+			int pckgIndex = Arrays.asList(pckg_opt).lastIndexOf(pckg);
+			etPckg.setSelection(pckgIndex);
+//			if(pckg.equals(Master.UNIT2)) etPckg.setSelection(1);
 //			if(pckg.equalsIgnoreCase(Master.PACKS)) {
 //				etPckg.setSelection(Master.PCKG_PACK);
 //			}
@@ -1115,7 +1121,7 @@ public class CallSheetActivity extends AppCompatActivity implements ItemOptionDi
 			sharePts.setText(String.valueOf(Math.round(item.getSharepts())));
 			sharePts.setGravity(Gravity.CENTER | Gravity.BOTTOM);
 			sharePts.setId(TV_SHPTS);
-//			offtake.setVisibility(View.GONE);
+			sharePts.setVisibility(View.GONE);
 			tr.addView(sharePts);
 
 
@@ -1137,6 +1143,7 @@ public class CallSheetActivity extends AppCompatActivity implements ItemOptionDi
 //			tspts.setText(dfshpts.format(shpts));
 			tspts.setGravity(Gravity.RIGHT | Gravity.BOTTOM);
 			tspts.setId(TV_TSHPTS);
+			tspts.setVisibility(View.GONE);
 			tr.addView(tspts);
 
 			//checkbox

@@ -13,8 +13,8 @@
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:scaleType="fitCenter"
-            android:background="@color/shellyellow"
-            android:src="@drawable/shell" />
+            android:background="#fff"
+            android:src="@drawable/apc_logo2" />
 
         <!--<ImageButton-->
         <!--android:id="@+id/user_profile_photo"-->

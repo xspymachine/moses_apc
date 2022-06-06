@@ -220,8 +220,9 @@ public class InOutDbManager extends DbManager {
         int count=0;
 		String sql = " SELECT "+DesContract.TimeInOut.DATETIME+" FROM "+DesContract.TimeInOut.TABLE_NAME+
 					 " WHERE "+DesContract.TimeInOut.CCODE+"='"+ccode+"' AND "+
-					 " strftime('%Y-%m-%d', "+DesContract.TimeInOut.DATETIME+",'unixepoch') = '"+
-					 DateUtil.strDate(System.currentTimeMillis())+"'";
+					 " strftime('%Y-%m-%d', "+DesContract.TimeInOut.DATETIME+",'unixepoch','localtime') = '"+
+					 DateUtil.strDate(System.currentTimeMillis())+"' AND" +
+					" inout=1";
 
 		Cursor c = db.rawQuery(sql, null);
 //		if(c.moveToFirst()) {

@@ -5,8 +5,8 @@
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
     <string name="apik">mrj2k12atxplusg5</string>
-    <string name="cl">Credit Limit</string>
-    <string name="versiondate">APC 2021-08-10</string>
+    <string name="cl">Credit Limit Balance</string>
+    <string name="versiondate">APC 2022-04-04</string>
 
     <string name="date_from">Date from </string>
     <string name="date_to">Date to</string>
@@ -114,8 +114,8 @@
     <string name="gps_status">GPS Status</string>
     <string name="devicetime">Device Time</string>
     <string name="greet">Greet Customer</string>
-    <string name="introduce">Introduce yourself as Trade Marketing Implementer</string>
-    <string name="ask">Ask permission for cascade of programs, survey and merchandising</string>
+    <string name="introduce">Introduce yourself</string>
+    <string name="ask">Ask permission to check store and warehouse</string>
 
 
     <!-- Customer Call (Store/Warehouse) Check List -->
@@ -294,12 +294,12 @@
         <string name="rem3">Merchandising materials on hand</string>
         <string name="rem4">Device fully charged and working</string>
         <string name="rem5">GPS of device is activated</string> -->
-    <string name="rem1">HSSE Guidelines, Safety Gear</string>
-    <string name="rem2">Uniform, ID, Trade Letter</string>
-    <string name="rem3">Daily Call Plan</string>
-    <string name="rem4">Army Tool Kit, Promo Detailers</string>
-    <string name="rem5">Account Opening Forms</string>
-    <string name="rem6">Merchandising Materials</string>
+    <string name="rem1">Sales invoices and ORs</string>
+    <string name="rem2">Merchandising materials</string>
+    <string name="rem3">Daily call plan</string>
+    <string name="rem4">Car safety</string>
+    <string name="rem5">Laptop battery fully charged</string>
+    <string name="rem6">Mobile phone battery fully charged</string>
     <string name="rem7">Power bank and mobile phone fully charged</string>
 
 
@@ -319,8 +319,8 @@
     <string name="orem1">Present/Offer new products</string>
     <string name="orem2">Present all marketing programs</string>
     <string name="orem3">Take competitor pricing and activities</string>
-    <string name="orem4">Thank the store owner</string>
-    <string name="orem5">Advise him of the next visit</string>
+    <string name="orem4">Thank the store owner or purchaser</string>
+    <string name="orem5">Advise him/her of the date of your next scheduled visit</string>
     <string name="orem6">Merchandise the store</string>
     <string name="orem10">Merchandising Checklist</string>
 
@@ -368,6 +368,13 @@
         <item>MOBIL</item>
     </string-array>
 
+    <string-array name="uom_array">
+        <item>bag</item>
+        <item>tin can</item>
+        <item>kg</item>
+        <item>box</item>
+        <item>carbouy</item>
+    </string-array>
 
     <string-array name="variant_1">
         <item>SHELL HELIX HX3</item>
@@ -562,18 +569,41 @@
 
     <string name="server_ready_set">From Server: Device successfully set to ready!</string>
 
-    <string name="info">We aim to meet the energy needs of society in ways that are economically, socially and environmentally viable, now and in the future. Learn about our business and people, which grew from a small shop in London nearly 200 years ago to become a major energy company.</string>
+<!--    <string name="info">We aim to meet the energy needs of society in ways that are economically, socially and environmentally viable, now and in the future. Learn about our business and people, which grew from a small shop in London nearly 200 years ago to become a major energy company.</string>-->
     <string name="product_avp">Product AVP</string>
-    <string name="brochure">Brochure</string>
+    <string name="brochure">Brochures</string>
+    <string name="info"><![CDATA[ \t\t\t\t\t\t Agripacific Corporation is a Food Manufacturing Company established by a group of
+        manufacturing professionals and businessmen who share the same goal-to create and provide high quality
+        flours, fats, oils, and other important basic products for businesses and other food manufacturers.<br><br>
+    \t\t\t\t\t\t What`s special about APC is that we go the extra mile in understanding the business requirements
+        of our customers. We provide solutions that work for the raw material needs of our customers in the food industry.<br><br>
+    \t\t\t\t\t\t The reputation and success of your business is important to us, and this is what drives APC to this day.]]> </string>
+    <string name="info1">What`s special about APC is that we go the extra mile in understanding the business requirements
+        of our customers. We provide solutions that work for the raw material needs of our customers in the food industry.</string>
+    <string name="info2">The reputation and success of your business is important to us, and this is what drives APC to this day.</string>
 
 
     <string name="promo_remarks">Remarks\n
 				- No DSR visit since?\n
 				- Not selling shell</string>
     <string name="sales_remarks">New Outlet\n
-				No DSR visit since?\n
 				Upsell/cross-sell of promo\n
-                Promo availment\n
                 New SKU</string>
+
+    <string-array name="bnbarry">
+        <item>Tap to select</item>
+        <item>Will Buy</item>
+        <item>Will Not Buy</item>
+    </string-array>
+    <string-array name="cjourn">
+        <item>Tap to select</item>
+        <item>Lead</item>
+        <item>Qualifying</item>
+        <item>Prospecting</item>
+        <item>Product Presentation</item>
+        <item>Negotiation</item>
+        <item>Closing</item>
+        <item>Buying</item>
+    </string-array>
 
 </resources>

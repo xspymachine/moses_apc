@@ -7,7 +7,7 @@
     android:paddingStart="10dp"
     android:paddingTop="10dp"
     android:paddingBottom="30dp"
-    android:background="@color/shellyellow"
+    android:background="@color/white"
     android:orientation="vertical">
 
     <LinearLayout

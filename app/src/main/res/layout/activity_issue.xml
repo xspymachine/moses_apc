@@ -76,7 +76,7 @@
         android:padding="5dp"
         android:layout_margin="5dp"
         android:hint="@string/issHint"
-        android:background="@color/shellyellow"
+        android:background="@color/white"
         android:textColor="@android:color/black"
         android:id="@+id/etIssue" />
 

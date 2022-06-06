@@ -101,19 +101,26 @@ public final class Master {
 
     public final static ArrayList<String> commanders =
             new ArrayList<String>(Arrays.asList(
-                    "9176252408",//instinct
-                    "9178125267",
-                    "9088753479",
-                    "9228583243",
-                    "9228583242",
-                    "9237498247",
-                    "9328786950",
-                    "9328786956",
-                    "9778258885", //sir globe
-                    "9328786951",
-                    "9778037710",
-                    "9239544406",
-                    "9253056025"));
+                    "9310600181",
+                    "9171084984", //support
+                    "9692422959", //receiver
+                    "9777171658", //receiver
+                    "9178884134"  //sender
+            ));
+//            new ArrayList<String>(Arrays.asList(
+//                    "9176252408",//instinct
+//                    "9178125267",
+//                    "9088753479",
+//                    "9228583243",
+//                    "9228583242",
+//                    "9237498247",
+//                    "9328786950",
+//                    "9328786956",
+//                    "9778258885", //sir globe
+//                    "9328786951",
+//                    "9778037710",
+//                    "9239544406",
+//                    "9253056025"));
 
     public final static String expiry = "2050-08-30";
 
@@ -129,9 +136,15 @@ public final class Master {
     /********************************
      * Outgoing gateway
      *******************************///smart - +639989720280
-    public final static String INIT_GATEWAY_GLOBE = "+639771049747"; //globe
-    public final static String INIT_GATEWAY_SMART 	= "+639989720280"; //smart
-	public final static String INIT_GATEWAY_SUN 	= "+639255208007"; //sun
+//    public final static String INIT_GATEWAY_GLOBE = "+639771049747"; //globe
+//    public final static String INIT_GATEWAY_GLOBE = "+639274010081"; //globe test my number
+//    public final static String INIT_GATEWAY_SMART 	= "+639989720280"; //smart
+////	public final static String INIT_GATEWAY_SUN 	= "+639255208007"; //sun
+//    public final static String INIT_GATEWAY_SUN 	= "+639310600190"; //sun test my number
+
+    public final static String INIT_GATEWAY_GLOBE = "+639777171658"; //globe
+    public final static String INIT_GATEWAY_SMART 	= "+639692422959"; //smart
+    public final static String INIT_GATEWAY_SUN 	= "+639692422959"; //sun
     public final static String STR_GATEWAY_GLOBE    = "GLOBE"; //globe
     public final static String STR_GATEWAY_SMART 	= "SMART"; //smart
     public final static String STR_GATEWAY_SUN 	    = "SUN"; //sun
@@ -150,6 +163,7 @@ public final class Master {
     public final static String CMD_ACUS = "CMDCUA2"; //add customer
     public final static String CMD_UCUS = "CMDCUU2"; //update customer
     public final static String CMD_DCUS = "CMDCUD"; //delete customer
+    public final static String CMD_CUSM = "CMDCUSM";//customer meta
 
     public final static String CMD_LOCATION = "CMDLOC";    //Location Update
 
@@ -166,9 +180,9 @@ public final class Master {
 
     public final static String CMD_PICTURE = "CMDPIC"; //PICTURE Info
     public final static String CMD_PICTURE2 = "CMDPIC2"; //PICTURE Info remarks
-    public final static String CMD_MERCH_PICTURE	= "CMDMPC"; //Deleted Customer image Info
+    public final static String CMD_MERCH_PICTURE	= "CMDMPC"; //Merch Customer image Info
     public final static String CMD_DEL_PICTURE		= "CMDDPC"; //Deleted Customer image Info
-    public final static String CMD_PO_PICTURE		= "CMDPOPC"; //Deleted Customer image Info
+    public final static String CMD_PO_PICTURE		= "CMDPOPC"; //PO Doc Customer image Info
 
     public final static String CMD_CALLSHEET = "CMDCST"; //Callsheet
 
@@ -217,7 +231,7 @@ public final class Master {
     public final static String CMD_INV = "CMDINV2"; //INVENTORY ACTIVITY
     public final static String CMD_INVI = "CMDINVI2"; //INVENTORY ACTIVITY ITEMS
     public final static String CMD_CMP6 = "CMDCMP6"; //INVENTORY ACTIVITY
-    public final static String CMD_CMPI6 = "CMDCMPI6"; //INVENTORY ACTIVITY ITEMS
+    public final static String CMD_CMPI7 = "CMDCMPI7"; //INVENTORY ACTIVITY ITEMS
 
     /*CLOUD MESSAGING COMMANDS*/
 

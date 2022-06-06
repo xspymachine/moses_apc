@@ -1,15 +1,16 @@
 package com.xpluscloud.moses_apc;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -19,8 +20,6 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.orhanobut.dialogplus.DialogPlus;
-import com.orhanobut.dialogplus.ViewHolder;
 import com.xpluscloud.moses_apc.dbase.SalescallDbManager;
 import com.xpluscloud.moses_apc.getset.SalesCall;
 import com.xpluscloud.moses_apc.util.ArrayDef;
@@ -33,6 +32,9 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 public class CustomerCallActivity extends AppCompatActivity {
 
@@ -54,7 +56,7 @@ public class CustomerCallActivity extends AppCompatActivity {
 	public EditText inpORNo=null;
 
 	public Spinner spNpReason;
-	public Spinner spValidation;
+	public Spinner spBuynbuy;
 
 	public Button btSubmit;
 
@@ -164,36 +166,31 @@ public class CustomerCallActivity extends AppCompatActivity {
 		inpInvNo = (EditText) findViewById(R.id.et_invoiceno);
 		inpORNo = (EditText) findViewById(R.id.et_orno);
 
-
+		spBuynbuy = (Spinner) findViewById(R.id.sp_buynbuy);
 		spNpReason = (Spinner) findViewById(R.id.sp_npreason);
 
 		try {
 			ArrayAdapter<?> scArrayAdapter = new ArrayAdapter<Object>(this,
-					R.layout.csi_spinner, ArrayDef.REASON_NO_PRODUCTION2);
+					R.layout.csi_spinner, ArrayDef.REASON_NO_PRODUCTION3);
 			spNpReason.setAdapter(scArrayAdapter);
-
-		}catch (Exception e){}
-
-		spValidation = (Spinner) findViewById(R.id.sp_validation);
-
-		try {
-			ArrayAdapter<?> scArrayAdapter = new ArrayAdapter<Object>(this,
-					R.layout.csi_spinner, ArrayDef.VALIDATION);
-			spValidation.setAdapter(scArrayAdapter);
 
 		}catch (Exception e){}
 	}
 
-	private Boolean preSubmit(){
-		if(spNpReason.getSelectedItemPosition() > 0 && inpRemarks.getText().toString().isEmpty()){
-				Toast.makeText(getApplicationContext(), "Explain reason for not buying."  , Toast.LENGTH_SHORT ).show();
+	private Boolean preSubmit() {
+		Log.e("bnb", "" + spBuynbuy.getSelectedItemPosition());
+		if (spBuynbuy.getSelectedItemPosition() == 0) {
+			Toast.makeText(getApplicationContext(), "Please select if this customer will buy or not buy.", Toast.LENGTH_SHORT).show();
 			return false;
-		}else if(spValidation.getSelectedItemPosition() == 0 ){
-            Toast.makeText(getApplicationContext(), "Please tag this outlet as covered or not covered AND whether not buying."  , Toast.LENGTH_SHORT ).show();
-            return false;
-        }
-
-		return true;
+		}else if(spBuynbuy.getSelectedItemPosition() == 2 && spNpReason.getSelectedItemPosition() == 0 ){
+			Toast.makeText(getApplicationContext(), "Select a reason for not buying."  , Toast.LENGTH_SHORT ).show();
+			return false;
+		}else if(spNpReason.getSelectedItemPosition() > 0 && inpRemarks.getText().toString().isEmpty()){
+			Toast.makeText(getApplicationContext(), "Explain reason for not buying."  , Toast.LENGTH_SHORT ).show();
+			return false;
+		}
+		else return true;
+//		else return false;
 	}
 
 	public void submitSalesCall() {
@@ -202,9 +199,9 @@ public class CustomerCallActivity extends AppCompatActivity {
 
 		try {
 			int position = spNpReason.getSelectedItemPosition();
-			int valid = spValidation.getSelectedItemPosition();
 			String npreason = (String) (position==0 ? "" : spNpReason.getSelectedItem());
-			String Remarks = npreason + "\n" + inpRemarks.getText().toString();
+			String bnbreason = (String) (position==0 ? "" : spBuynbuy.getSelectedItem());
+			String Remarks = bnbreason+ "\n" +npreason + "\n" + inpRemarks.getText().toString();
 			String Collection = inpCollection.getText().toString();
 			String Sales = inpSales.getText().toString();
 
@@ -257,23 +254,22 @@ public class CustomerCallActivity extends AppCompatActivity {
 
 			String message;
 
-
+			devId = DbUtil.getSetting(context, Master.DEVID);
 			//Save message to outbox
 			message =  Master.CMD_SALESCALL + " "
 					+ devId  		+ ";"
 					+ customerCode  + ";"
 					+ Visited 		+ ";"
-					+ valid 		+ ";" //sales // validation 1=covered/2=not covered
-					+ "" 			+ ";" //collection
-					+ "" 			+ ";" //paymethod
-					+ "" 			+ ";" //checkno
-					+ "" 			+ ";" //invoiceno
-					+ "" 			+ ";" //orno
+					+ "" 			+ ";"
+					+ "" 			+ ";"
+					+ "" 			+ ";"
+					+ "" 			+ ";"
+					+ "" 			+ ";"
+					+ "" 			+ ";"
 					+ Remarks		+ ";"
 					+ sysTime 		+ ";"
 					+ id;
 			DbUtil.saveMsg(context,DbUtil.getGateway(context), message);
-            Log.e("Success :***: ", message);
 
 
 			submitted=true;
@@ -285,8 +281,8 @@ public class CustomerCallActivity extends AppCompatActivity {
 		inpVisited.setText("");
 		inpRemarks.setText("");
 
-//		InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-//		imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
+		InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+		imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
 
 //		getVisitedCallsPerDay(context,customerCode);
 	}
@@ -424,21 +420,12 @@ public class CustomerCallActivity extends AppCompatActivity {
 ////		return visited;
 //	}
 
-	public void validtype(View v){
-//		Intent intent = new Intent(context, StoretypeActivity.class);
-//		Bundle b = new Bundle();
-//		b.putInt("type", 3);
-//		intent.putExtras(b);
-//		startActivity(intent);
-		LayoutInflater inflater = LayoutInflater.from(context);
-		View customV = inflater.inflate(R.layout.activity_validationtype, null);
-
-		DialogPlus dialog = DialogPlus.newDialog(context)
-				.setContentHolder(new ViewHolder(customV))
-				.setPadding(50, 50, 50, 50)
-				.setMargin(20,20,20,20)
-				.create();
-		dialog.show();
+	public void nonbuytype(View v){
+		Intent intent = new Intent(context, StoretypeActivity.class);
+		Bundle b = new Bundle();
+		b.putInt("type", 2);
+		intent.putExtras(b);
+		startActivity(intent);
 	}
 
 }

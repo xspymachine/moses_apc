@@ -23,9 +23,11 @@
     <uses-permission android:name="android.permission.WAKE_LOCK"/>
     <uses-permission android:name="android.permission.VIBRATE"/>
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera"
+        android:required="true" />
 
     <application
-        android:allowBackup="true"
+        android:allowBackup="false"
         android:icon="@drawable/assets_icon"
         android:label="@string/app_name"
         android:supportsRtl="true"
@@ -52,6 +54,16 @@
             </intent-filter>
 
         </activity>
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.xpluscloud.moses_apc.TakePhotoActivity.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths"/>
+        </provider>
 
         <activity
             android:name="com.xpluscloud.moses_apc.RetailDataActivity"
@@ -476,6 +488,8 @@
         <activity android:name="com.xpluscloud.moses_apc.Brochure01"
             android:configChanges="keyboardHidden|orientation|screenSize"/>
         <activity android:name="com.xpluscloud.moses_apc.SummaryStatusWeb"
+            android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:name="com.xpluscloud.moses_apc.DemandAnalysisActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"/>
         <activity android:name="com.xpluscloud.moses_apc.TargetSalesActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"/>

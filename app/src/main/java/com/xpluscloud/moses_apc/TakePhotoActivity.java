@@ -16,6 +16,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
+import android.support.v4.content.FileProvider;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -40,6 +41,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.Locale;
 
 import static com.xpluscloud.moses_apc.util.DbUtil.getSetting;
@@ -106,7 +108,21 @@ public class TakePhotoActivity extends Activity {
             public void onClick(View view) {
                 Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                 if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
-                    startActivityForResult(takePictureIntent, 1);
+                    // Create the File where the photo should go
+                    File photoFile = null;
+                    try {
+                        photoFile = createImageFile();
+                    } catch (IOException ex) {
+                        // Error occurred while creating the File
+                    }
+                    // Continue only if the File was successfully created
+                    if (photoFile != null) {
+                        photoURI = FileProvider.getUriForFile(context,
+                                "com.xpluscloud.moses_apc.TakePhotoActivity.provider",
+                                photoFile);
+                        takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
+                        startActivityForResult(takePictureIntent, 1);
+                    }
                 }
             }
         });
@@ -122,17 +138,43 @@ public class TakePhotoActivity extends Activity {
         });
     }
 
+    Uri photoURI;
+    String temp_image_path="";
+    private File createImageFile() throws IOException {
+        // Create an image file name
+
+        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+        String imageFileName = "JPEG_" + timeStamp + "_";
+        File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
+        File image = File.createTempFile(
+                imageFileName,  /* prefix */
+                ".jpg",         /* suffix */
+                storageDir      /* directory */
+        );
+
+        // Save a file: path for use with ACTION_VIEW intents
+        temp_image_path = image.getAbsolutePath();
+        return image;
+    }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         switch (requestCode) {
             case 1:
                 if (resultCode == RESULT_OK) {
-                    Bundle extras = data.getExtras();
-                    Bitmap picture = (Bitmap) extras.get("data");
-                    picture = Bitmap.createScaledBitmap(picture, 320, 240, true);
+//                    Bundle extras = data.getExtras();
+//                    Bitmap picture = (Bitmap) extras.get("data");
+//                    picture = Bitmap.createScaledBitmap(picture, picture.getWidth(), picture.getHeight(), true);
+//                    Bitmap picture = retrieveLastPhotoTaken();
+                    try {
+                        Bitmap picture = MediaStore.Images.Media.getBitmap(this.getContentResolver(), photoURI);
+                        iv_store.setImageBitmap(picture);
+                        iv_store.setTag("updated");
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
 
-                    iv_store.setImageBitmap(picture);
-                    iv_store.setTag("updated");
+
 //                    savePicture(picture);
 
                 }
@@ -226,7 +268,7 @@ public class TakePhotoActivity extends Activity {
 
         try {
             FileOutputStream fo = new FileOutputStream(newfile);
-            picture.compress(Bitmap.CompressFormat.JPEG,100, fo);
+            picture.compress(Bitmap.CompressFormat.JPEG,10, fo);
             fo.flush();
             fo.close();
 
@@ -263,7 +305,7 @@ public class TakePhotoActivity extends Activity {
                     dateStamp + ";" +
                     sysTime + ";" +
                     id + ";" +
-                    rb_reason;
+                    rb_reason+"=>"+del_remarks;
 
             DbUtil.saveMsg(context, DbUtil.getGateway(context), message);
         }
@@ -276,7 +318,7 @@ public class TakePhotoActivity extends Activity {
                     dateStamp + ";" +
                     sysTime + ";" +
                     id + ";" +
-                    rb_reason;
+                    rb_reason+"=>"+del_remarks;
 
             DbUtil.saveMsg(context, DbUtil.getGateway(context), message);
 
@@ -300,7 +342,7 @@ public class TakePhotoActivity extends Activity {
                     dateStamp + ";" +
                     sysTime + ";" +
                     id + ";" +
-                    rb_reason;
+                    rb_reason+"=>"+del_remarks;
 
             DbUtil.saveMsg(context, DbUtil.getGateway(context), message);
         }
@@ -327,32 +369,14 @@ public class TakePhotoActivity extends Activity {
 
     private void deleteLastPhotoTaken() {
 
-        String[] projection = new String[] {
-                MediaStore.Images.ImageColumns._ID,
-                MediaStore.Images.ImageColumns.DATA,
-                MediaStore.Images.ImageColumns.BUCKET_DISPLAY_NAME,
-                MediaStore.Images.ImageColumns.DATE_TAKEN,
-                MediaStore.Images.ImageColumns.MIME_TYPE };
-
-        final Cursor cursor = getContentResolver().query(
-                MediaStore.Images.Media.EXTERNAL_CONTENT_URI, projection,
-                null,null, MediaStore.Images.ImageColumns.DATE_TAKEN + " DESC");
-
-        if (cursor != null) {
-            cursor.moveToFirst();
-
-            int column_index_data =
-                    cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
-
-            String image_path = cursor.getString(column_index_data);
-            Log.e("sdpath",image_path);
-            File file = new File(image_path);
+            Log.e("sdpath",temp_image_path);
+            File file = new File(temp_image_path);
             if (file.exists()) {
                 file.delete();
-                System.out.println("file Deleted :" + image_path);
+                System.out.println("file Deleted :" + temp_image_path);
                 deleteFileFromMediaStore(context.getContentResolver(),file);
-            }else System.out.println("file not Deleted :" + image_path);
-        }
+            }else System.out.println("file not Deleted :" + temp_image_path);
+
     }
     public static void deleteFileFromMediaStore(final ContentResolver contentResolver, final File file) {
         String canonicalPath;

@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -14,11 +15,15 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.RadioGroup;
+import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -57,15 +62,17 @@ public class CustomerAddEditActivity extends AppCompatActivity {
 	TextView tvHeader;
 	TextView tvCcode;
 	EditText etName;
-	EditText etAddress;
-	EditText etBrgy;
+	Spinner etAddress;
+	Spinner etBrgy;
 	Spinner etCity;
     Spinner etState;
 	Spinner spStatus;
 //	Spinner spAcctType;
 	Spinner spTerms;
 	Spinner spType;
+	Spinner spGs;
 	EditText etAr;
+	LinearLayout cbLayout;
 	
 	AutoCompleteTextView atCplan;
 	
@@ -87,6 +94,7 @@ public class CustomerAddEditActivity extends AppCompatActivity {
 	
 	ArrayAdapter<String> aTArrayAdapter;
 
+	ArrayAdapter<String> brgyAdapter;
     ArrayAdapter<String> cityAdapter;
     ArrayAdapter<String> stateAdapter;
 		
@@ -185,15 +193,17 @@ public class CustomerAddEditActivity extends AppCompatActivity {
 		tvHeader	= (TextView) findViewById(R.id.tvheader);
 		tvCcode 	= (TextView) findViewById(R.id.tvCode);
 		etName 		= (EditText) findViewById(R.id.etName);
-		etAddress 	= (EditText) findViewById(R.id.etAddress);
-		etBrgy		= (EditText) findViewById(R.id.etBrgy);
+		etAddress 	=  findViewById(R.id.etAddress);
+		etBrgy		= (Spinner) findViewById(R.id.etBrgy);
 		etCity 		= (Spinner) findViewById(R.id.etCity);
 		etState 	= (Spinner) findViewById(R.id.etState);
 		spStatus	= (Spinner) findViewById(R.id.etContact);
 //		spAcctType	= (Spinner)  findViewById(R.id.spType);
 		spTerms		= (Spinner)  findViewById(R.id.spTerms);
 		spType		= (Spinner)  findViewById(R.id.spType);
+		spGs		= (Spinner)  findViewById(R.id.spGs);
 		etAr		= findViewById(R.id.et_ar);
+		cbLayout 	= findViewById(R.id.appcb);
 		etAr.setOnFocusChangeListener(new View.OnFocusChangeListener() {
 			@Override
 			public void onFocusChange(View v, boolean hasFocus) {
@@ -241,28 +251,41 @@ public class CustomerAddEditActivity extends AppCompatActivity {
 	    atCplan.setText("W13 D1");
 	    
 	    /**************** State/Province Select Option **********************/
-	    
-//	    ArrayList<String> state = new ArrayList<String>();
-//
-//	    CustomerDbManager db2 = new CustomerDbManager(this);
-//	    db2.open();
-//	    state = db2.getArrayList("region");
-//	    db2.close();
-	    
-//	    ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_single_choice, state);
-//	    etState.setThreshold(1);
-//	    etState.setDropDownHeight(LayoutParams.WRAP_CONTENT);
-//	    etState.setAdapter(adapter2);
 
-        stateAdapter = new ArrayAdapter<>(this,
-                R.layout.csi_spinner, getStrAddress(1));
-        etState.setAdapter(stateAdapter);
-        etState.setSelection(0);
+		stateAdapter = new ArrayAdapter<>(this,
+				R.layout.csi_spinner, getStrAddress(1,""));
+		etState.setAdapter(stateAdapter);
+		etState.setSelection(0);
 
-        cityAdapter = new ArrayAdapter<>(this,
-                R.layout.csi_spinner, getStrAddress(0));
-        etCity.setAdapter(cityAdapter);
-        etCity.setSelection(0);
+		etState.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+			@Override
+			public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+				cityAdapter = new ArrayAdapter<>(context,
+					R.layout.csi_spinner, getStrAddress(0,etState.getSelectedItem().toString()));
+				etCity.setAdapter(cityAdapter);
+				etCity.setSelection(0);
+			}
+
+			@Override
+			public void onNothingSelected(AdapterView<?> parent) {
+
+			}
+		});
+
+		etCity.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+			@Override
+			public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+				brgyAdapter = new ArrayAdapter<>(context,
+					R.layout.csi_spinner, getStrAddress(2,etCity.getSelectedItem().toString()));
+				etBrgy.setAdapter(brgyAdapter);
+				etBrgy.setSelection(0);
+			}
+
+			@Override
+			public void onNothingSelected(AdapterView<?> parent) {
+
+			}
+		});
 	    
 	    /**************************************/
 	       
@@ -287,6 +310,8 @@ public class CustomerAddEditActivity extends AppCompatActivity {
 
 		spType.setAdapter(new ArrayAdapter<Object>(this,
 				R.layout.csi_spinner, types));
+		spGs.setAdapter(new ArrayAdapter<Object>(this,
+				R.layout.csi_spinner, ArrayDef.GROUPSALES));
 
 		ArrayAdapter<?> stArrayAdapter = new ArrayAdapter<Object>(this,
 				R.layout.csi_spinner, ArrayDef.STATUS);
@@ -312,10 +337,11 @@ public class CustomerAddEditActivity extends AppCompatActivity {
 			custCode = cust.getCustomerCode();
 			tvCcode.setText(cust.getCustomerCode());
 			etName.setText(cust.getName());
-			etAddress.setText(cust.getAddress());
-			etBrgy.setText(cust.getBrgy());
 
-			String acctR = cust.getAr().isEmpty() ? "0.0" : cust.getAr();
+			int spinnerPosition4 = cityAdapter.getPosition(cust.getBrgy());
+			etBrgy.setSelection(spinnerPosition4);
+
+			String acctR = (cust.getAr() == null || cust.getAr().isEmpty()) ? "0.0" : cust.getAr();
 			etAr.setText(acctR);
 
             int spinnerPosition1 = cityAdapter.getPosition(cust.getCity());
@@ -323,6 +349,9 @@ public class CustomerAddEditActivity extends AppCompatActivity {
 
             int spinnerPosition2 = stateAdapter.getPosition(cust.getState());
             etState.setSelection(spinnerPosition2);
+
+			int spinnerPosition3 = Arrays.asList(getResources().getStringArray(R.array.cjourn) ).indexOf(cust.getAddress());
+			etAddress.setSelection(spinnerPosition3);
 
 //			etCity.setText(cust.getCity());
 //			etState.setText(cust.getState());
@@ -344,14 +373,34 @@ public class CustomerAddEditActivity extends AppCompatActivity {
 
 //			spType.setSelection(type>typeL?typeL:type);
 			Log.e("accttypeid",""+type);
-			int typeIndex = Arrays.asList(ArrayDef.ACCT_TYPES2).lastIndexOf(getTypeString(type));
+			int typeIndex = Arrays.asList(ArrayDef.ACCT_TYPES4).lastIndexOf(getTypeString(type));
 			spType.setSelection(typeIndex);
 
             int status = Arrays.asList(ArrayDef.STATUS).indexOf(cust.getContactNumber());
             spStatus.setSelection(status<0?0:status);
 
-//        	etDiscount.setText(""+cust.getDiscount());
+			int gsIndex = Arrays.asList(ArrayDef.GROUPSALES).indexOf(cust.getSalesgroup());
+			spGs.setSelection(gsIndex);
 
+			if(cust.getApplication()!=null && cust.getApplication().contains(",")){
+				String[] strApp = cust.getApplication().split(",");
+				int count =0;
+				while (strApp.length > count){
+					for(int i=0;i<cbLayout.getChildCount();i++){
+						View child=cbLayout.getChildAt(i);
+						if (child instanceof CheckBox){
+							if (((CheckBox) child).getText().toString().equals(strApp[count])) {
+								((CheckBox) child).setChecked(true);
+								break;
+							}
+						}
+					}
+					count++;
+				}
+			}
+
+//        	etDiscount.setText(""+cust.getDiscount());
+			Log.e("cplan",cust.getCplanCode());
 			if(cust.getCplanCode().length()<2) atCplan.setText("F2");
 			else atCplan.setText(cust.getCplanCode());
 		
@@ -378,7 +427,8 @@ public class CustomerAddEditActivity extends AppCompatActivity {
 						
 			
 		}catch (Exception e) {
-//			Log.e("Error: getCustomerInfo  ","Exception Error!");
+//			Log.e("Error:getCustomerInfo","Exception Error!");
+			e.printStackTrace();
 		}
 //		Log.d("CUSTOMERADDEDIT", "end");
 		
@@ -396,11 +446,27 @@ public class CustomerAddEditActivity extends AppCompatActivity {
 		String cpcode = atCplan.getText().toString();
 //		String region = etState.getText().toString();
 
+		if(etState.getSelectedItemPosition() < 1){
+			DialogManager
+					.showAlertDialog(context,
+							"Invalid Province",
+							"Please provide a valid Province or download `places` from Dashboard-downloads.",
+							true);
+			return false;
+		}
+		if(spGs.getSelectedItemPosition() < 1){
+			DialogManager
+					.showAlertDialog(context,
+							"Invalid Sales Group",
+							"Please provide a valid Sales Group.",
+							true);
+			return false;
+		}
 		if(spType.getSelectedItemPosition() < 1){
 			DialogManager
 					.showAlertDialog(context,
-							"Invalid Store Type",
-							"Please provide a valid store type.",
+							"Invalid Customer Segment",
+							"Please provide a valid Customer Segment.",
 							true);
 			return false;
 		}
@@ -430,19 +496,32 @@ public class CustomerAddEditActivity extends AppCompatActivity {
 				return false;
 			}
 		}
+
+		String customerApplication =  cb_application();
+		if(customerApplication.isEmpty()){
+			DialogManager
+					.showAlertDialog(context,
+							"Customer Application is empty.",
+							"Please provide at least one.",
+							true);
+			atCplan.requestFocus();
+			return false;
+		}
 		
 		try {
 			
 			String customerCode 	= tvCcode.getText().toString();
 			String customerName 	= etName.getText().toString();
-			String customerAddress 	= etAddress.getText().toString();
-			String customerBrgy 	= etBrgy.getText().toString();
+			String customerAddress 	= etAddress.getSelectedItem().toString();
+			String customerBrgy 	= etBrgy.getSelectedItem().toString();
 			String customerCity 	= etCity.getSelectedItem().toString();
 			String customerState 	= etState.getSelectedItem().toString();
 			String customerContact 	= spStatus.getSelectedItem().toString();
 			int    customerTerm		= spTerms.getSelectedItemPosition();
 			int    customerType		= spType.getSelectedItemPosition();
 			customerAcctype         = getTypeId(spType.getSelectedItem().toString());
+			String customerGroupsales 		= spGs.getSelectedItem().toString();
+
 			int termid 				= getOtherDataId(spTerms.getSelectedItem().toString(),6);
 
 			String customerCplan 	= atCplan.getText().toString();
@@ -451,12 +530,15 @@ public class CustomerAddEditActivity extends AppCompatActivity {
 			
 			customerName 			= StringUtil.strCleanUp(customerName);
 			
-			customerAddress			= StringUtil.strCleanUp(customerAddress);
+//			customerAddress			= StringUtil.strCleanUp(customerAddress);
 			customerCity 			= StringUtil.strCleanUp(customerCity); 
 			customerBrgy			= StringUtil.strCleanUp(customerBrgy);
 
-			NumberFormat formatter = new DecimalFormat("#,###");
-			String fmAcctR = formatter.format(etAr.getText().toString());
+//			String fmAcctR="";
+//			if(!etAr.getText().toString().isEmpty()) {
+//				NumberFormat formatter = new DecimalFormat("#,###");
+//				fmAcctR = formatter.format(etAr.getText().toString());
+//			}
 			
 //			Log.d(TAG+":updateCustomerInfo","customerCode: "+customerCode);
 			Customer cust = new Customer();
@@ -474,7 +556,9 @@ public class CustomerAddEditActivity extends AppCompatActivity {
 			cust.setAcctypid(customerAcctype);
 			cust.setTermid(customerTerm);
 			cust.setTypeid(customerType);
-			cust.setAr(fmAcctR);
+//			cust.setAr(fmAcctR);
+			cust.setSalesgroup(customerGroupsales);
+			cust.setApplication(customerApplication);
 						
 			CustomerDbManager db = new CustomerDbManager(this);
 			db.open();	
@@ -508,6 +592,18 @@ public class CustomerAddEditActivity extends AppCompatActivity {
 					sysTime 			+ ";" +
 					custId;	
 			DbUtil.saveMsg(context,DbUtil.getGateway(context), message);
+			String message2 = Master.CMD_CUSM + " " +
+					devId 				+ ";" +
+					customerCode  		+ ";" +
+					"groupsales" 		+ ";" +
+					customerGroupsales;
+			DbUtil.saveMsg(context,DbUtil.getGateway(context), message2);
+			String message3 = Master.CMD_CUSM + " " +
+					devId 				+ ";" +
+					customerCode  		+ ";" +
+					"application"		+ ";" +
+					customerApplication;
+			DbUtil.saveMsg(context,DbUtil.getGateway(context), message3);
 
 			DbUtil.makeToast(LayoutInflater.from(context),  "Customer has been updated!", context,
 					(ViewGroup) findViewById(R.id.custom_toast_layout),0);
@@ -516,6 +612,24 @@ public class CustomerAddEditActivity extends AppCompatActivity {
 			e.printStackTrace();
 		}
 		return true;
+	}
+
+	private String cb_application(){
+		String txtCbApp = "";
+		int cbCheckCount=0;
+		for(int i=0;i<cbLayout.getChildCount();i++){
+			View child=cbLayout.getChildAt(i);
+
+			if (child instanceof CheckBox){
+				if (((CheckBox) child).isChecked()) {
+					cbCheckCount++;
+					txtCbApp += ((CheckBox) child).getText().toString()+",";
+				}
+			}
+		}
+		if (cbCheckCount>=1) {
+			return txtCbApp.substring(0,txtCbApp.length()-1);
+		}else return "";
 	}
 	
 	private String get_custCode(){
@@ -589,11 +703,11 @@ public class CustomerAddEditActivity extends AppCompatActivity {
 		return id;
 	}
 
-	private String[] getStrAddress(int opt){
+	private String[] getStrAddress(int opt,String where){
 
         CustomerDbManager db = new CustomerDbManager(context);
         db.open();
-        ArrayList<String> str = db.getAddress(opt);
+        ArrayList<String> str = db.getAddress(opt,where);
         db.close();
 
         String[] stockArr = new String[str.size()];

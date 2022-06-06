@@ -145,7 +145,7 @@ public class InOutActivity extends AppCompatActivity {
 
 	    	   RelativeLayout timeoutReminder = (RelativeLayout) findViewById(R.id.timeOutReminders);
 	    	   timeoutReminder.setVisibility(View.VISIBLE);
-	    	   btMerchCheck.setVisibility(View.VISIBLE);
+	    	   btMerchCheck.setVisibility(View.GONE);
 	    	   btMerchCheck.setOnClickListener(new OnClickListener() {
 			        @Override
 					public void onClick(View v) {
@@ -297,12 +297,12 @@ public class InOutActivity extends AppCompatActivity {
 			if (!allChecked(cbGroup)) {
 				return;
 			}
-			if(btMerchCheck.isClickable()){
-				DialogManager.showAlertDialog(context,
-    	                "Merchandising Checklists", 
-    	                "This button must be clicked.", false); 
-				return;
-			}
+//			if(btMerchCheck.isClickable()){
+//				DialogManager.showAlertDialog(context,
+//    	                "Merchandising Checklists",
+//    	                "This button must be clicked.", false);
+//				return;
+//			}
 		}
 		
 		

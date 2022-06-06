@@ -27,8 +27,11 @@ public class CompetitorDbManager2 extends DbManager {
 
         switch (opt){
             case 1: sql = "SELECT category  FROM cmpicategory ";
+                list.add("Select Brand ");
                 break;
             case 2: sql = "SELECT subcategory  FROM cmpisubcategory";
+                list.add("Select Brand ");
+                break;
         }
 
         Cursor c = db.rawQuery(sql,null);
@@ -55,6 +58,20 @@ public class CompetitorDbManager2 extends DbManager {
         if(c.moveToFirst()) catid = c.getInt(0);
 
         return catid;
+    }
+    public String getCatStr(int categoryid,int opt){
+        String cat ="";
+        String sql = "";
+        switch (opt){
+            case 1: sql ="SELECT category FROM cmpicategory WHERE category_id="+categoryid;
+                break;
+            case 2: sql = "SELECT subcategory FROM cmpisubcategory WHERE subcategory_id="+categoryid;
+                break;
+        }
+        Cursor c = db.rawQuery(sql,null);
+        if(c.moveToFirst()) cat = c.getString(0);
+
+        return cat;
     }
 
     public List<Item> getList1234(int catid, int icatid) {
@@ -439,7 +456,7 @@ public class CompetitorDbManager2 extends DbManager {
         int count = 0;
         String OrderBy = "_id DESC";
         String Limit = "1";
-        String where = "ccode = '"+ccode+"' AND strftime('%Y-%m-%d',s."+DesContract.Competitors.DATE+",'unixepoch') = strftime('%Y-%m-%d', 'now')";
+        String where = "ccode = '"+ccode+"' AND strftime('%Y-%m-%d',s."+DesContract.Competitors.DATE+",'unixepoch','localtime') = strftime('%Y-%m-%d', 'now','localtime') AND s.status =1";
         String sql =  " SELECT *from "+DesContract.Competitors.TABLE_NAME +" s "
                 +" LEFT JOIN "+DesContract.Customer.TABLE_NAME+" c "+" USING ("+DesContract.Customer.CCODE+")"
                 +" WHERE "+where;
@@ -454,6 +471,40 @@ public class CompetitorDbManager2 extends DbManager {
         c.close();
 
         return count;
+    }
+
+    public long addcatsubcat(String description, int opt) {// ro => record object
+        ContentValues cv = new ContentValues();
+        int _id = 0;
+
+        if(opt == 1){
+            Cursor c = db.rawQuery("SELECT category_id FROM cmpicategory ORDER BY category_id DESC LIMIT 1",null);
+            if(c.moveToFirst()) _id = c.getInt(0);
+            _id = _id+1;
+            cv.put("category_id", _id);
+            cv.put("category",description);
+            db.insert("cmpicategory",null,cv);
+            return _id;
+        }else{
+            Cursor c = db.rawQuery("SELECT subcategory_id FROM cmpisubcategory ORDER BY subcategory_id DESC LIMIT 1",null);
+            if(c.moveToFirst()) _id = c.getInt(0);
+            _id = _id+1;
+            cv.put("subcategory_id", _id);
+            cv.put("subcategory",description);
+            db.insert("cmpisubcategory",null,cv);
+            return _id;
+        }
+    }
+
+    public ArrayList<String> getVariants(int subcatid){
+        ArrayList<String> variants = new ArrayList<>();
+        variants.add("Select Variant");
+        Cursor c = db.rawQuery("SELECT t2.category FROM citem t1 LEFT JOIN cmpicategory t2 ON(t1.category_id = t2.category_id) " +
+                "WHERE t1.subcategory_id='"+subcatid+"'",null);
+        for(int i=0;i<c.getCount();i++){
+            if(c.moveToPosition(i)) variants.add(c.getString(0));
+        }
+        return variants;
     }
 
 

@@ -156,15 +156,16 @@
 
     <Button
         android:id="@+id/bt_more_details"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/OEmail"
         android:contentDescription="@string/btn_clear"
         android:background="@drawable/bg34"
-        android:text="Demand Analysis and More Customer Details"
+        android:textStyle="bold"
+        android:text="Market Demand Analysis"
         android:textColor="#000"
         android:paddingStart="10dp"
-        android:paddingRight="10dp" />
+        android:paddingEnd="10dp" />
     
     
     <RelativeLayout
@@ -361,6 +362,7 @@
         android:layout_below="@+id/logistics"
         android:background="@drawable/bg34"
         android:gravity="center"
+        android:visibility="gone"
         android:textColor="#000" />     
 
 </RelativeLayout> 
