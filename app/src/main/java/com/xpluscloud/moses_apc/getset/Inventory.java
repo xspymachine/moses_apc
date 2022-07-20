@@ -16,22 +16,34 @@ public class Inventory {
 	private String description;
 	private int subcategoryid;
 	private int categoryid;
-	private int subcategory;
-	private int category;
+	private String company;
+	private String subcategory;
+	private String category;
+	private float priceperpack;
+	private float srp;
+	private String uom;
 
-	public int getSubcategory() {
+	public String getCompany() {
+		return company;
+	}
+
+	public void setCompany(String company) {
+		this.company = company;
+	}
+
+	public String getSubcategory() {
 		return subcategory;
 	}
 
-	public void setSubcategory(int subcategory) {
+	public void setSubcategory(String subcategory) {
 		this.subcategory = subcategory;
 	}
 
-	public int getCategory() {
+	public String getCategory() {
 		return category;
 	}
 
-	public void setCategory(int category) {
+	public void setCategory(String category) {
 		this.category = category;
 	}
 
@@ -150,10 +162,32 @@ public class Inventory {
 		this.description = "";
 		this.subcategoryid = 0;
 		this.categoryid = 0;
+		this.priceperpack = 0;
+		this.srp = 0;
+		this.uom = "";
 	}
-	
-	
-	
-	
-	
+
+	public float getPriceperpack() {
+		return priceperpack;
+	}
+
+	public void setPriceperpack(float priceperpack) {
+		this.priceperpack = priceperpack;
+	}
+
+	public float getSrp() {
+		return srp;
+	}
+
+	public void setSrp(float srp) {
+		this.srp = srp;
+	}
+
+	public String getUom() {
+		return uom;
+	}
+
+	public void setUom(String uom) {
+		this.uom = uom;
+	}
 }

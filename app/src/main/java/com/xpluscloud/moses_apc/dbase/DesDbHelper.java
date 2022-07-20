@@ -15,7 +15,7 @@ import java.util.Scanner;
 
 public class DesDbHelper extends SQLiteOpenHelper {
 	
-	public static final int DATABASE_VERSION = 2016;
+	public static final int DATABASE_VERSION = 2020;
 	public static final String DATABASE_NAME = "MosesShellSFA.db";
 	Context ctx;
 	
@@ -81,6 +81,7 @@ public class DesDbHelper extends SQLiteOpenHelper {
 		db.execSQL(CREATE_TABLE_REFCITYMUN);
 		db.execSQL(CREATE_TABLE_REFPROVINCE);
 		db.execSQL(CREATE_TABLE_REFREGION);
+		db.execSQL(CREATE_TABLE_CMPITEMSCOMPANY);
 
 //		populateData(db,R.raw.refregion);
 	}
@@ -102,6 +103,14 @@ public class DesDbHelper extends SQLiteOpenHelper {
 				db.execSQL(CREATE_TABLE_REFCITYMUN);
 				db.execSQL(CREATE_TABLE_REFPROVINCE);
 				db.execSQL(CREATE_TABLE_REFREGION);
+			case 2016: db.execSQL(CREATE_TABLE_CMPITEMSCOMPANY);
+			case 2017: db.execSQL("ALTER TABLE cmpisubcategory ADD COLUMN category_id INTEGER");
+			case 2018: db.execSQL("ALTER TABLE cmpsheetitems ADD COLUMN ppp REAL");
+				db.execSQL("ALTER TABLE cmpsheetitems ADD COLUMN srp REAL");
+				db.execSQL("ALTER TABLE cmpsheetitems ADD COLUMN uom TEXT");
+			case 2019: db.execSQL("ALTER TABLE cmpsheetitems ADD COLUMN category TEXT");
+				db.execSQL("ALTER TABLE cmpsheetitems ADD COLUMN subcategory TEXT");
+				db.execSQL("ALTER TABLE cmpsheetitems ADD COLUMN company TEXT");
 		}
 	}
 
@@ -227,12 +236,18 @@ public class DesDbHelper extends SQLiteOpenHelper {
 	private static final String CREATE_TABLE_COMPETITOR_ITEMS =
 			"CREATE TABLE " + DesContract.Competitors.TABLE_NAME2 + " ("
 					+ DesContract.Competitors._ID         		+ " INTEGER PRIMARY KEY AUTOINCREMENT, "
-					+ DesContract.Competitors.INCODE        		+ " TEXT NOT NULL, "
+					+ DesContract.Competitors.INCODE        	+ " TEXT NOT NULL, "
 					+ DesContract.Competitors.ITEM_CODE   		+ " TEXT NOT NULL, "
 					+ DesContract.Competitors.PCKG				+ " TEXT NOT NULL, "
-					+ DesContract.Competitors.QTY					+ " INTEGER, "
+					+ DesContract.Competitors.QTY				+ " INTEGER, "
 					+ DesContract.Competitors.PRICE   			+ " REAL,"
-					+ DesContract.Competitors.STATUS 				+ " INTEGER );";
+					+ DesContract.Competitors.SRP   			+ " REAL,"
+					+ DesContract.Competitors.PRICEPERPACK		+ " REAL,"
+					+ DesContract.Competitors.UOM				+ " TEXT, "
+					+ DesContract.Competitors.CATEGORY			+ " TEXT, "
+					+ DesContract.Competitors.SUBCATEGORY		+ " TEXT, "
+					+ DesContract.Competitors.COMPANY			+ " TEXT, "
+					+ DesContract.Competitors.STATUS 			+ " INTEGER );";
 	
 	private static final String CREATE_TABLE_RETURNS =
 		"CREATE TABLE " + DesContract.Return.TABLE_NAME + " ("
@@ -449,7 +464,7 @@ public class DesDbHelper extends SQLiteOpenHelper {
 	private static final String CREATE_TABLE_SETTINGS =
 			"CREATE TABLE " + DesContract.Setting.TABLE_NAME + " ("
 			+ DesContract.Setting._ID          	+ " INTEGER PRIMARY KEY AUTOINCREMENT, "
-			+ DesContract.Setting.KEY  			+ " TEXT NOT NULL UNIQUE, "
+			+ "'"+DesContract.Setting.KEY  			+ "' 'TEXT' NOT NULL UNIQUE, "
 			+ DesContract.Setting.VALUE			+ " TEXT NOT NULL, "			
 			+ DesContract.Setting.STATUS 		+ " INTEGER);";	
 	
@@ -723,8 +738,16 @@ public class DesDbHelper extends SQLiteOpenHelper {
 			"CREATE TABLE " + DesContract.CMPItemsSubCategory.TABLE_NAME + " ("
 					+ DesContract.CMPItemsSubCategory._ID			+ " INTEGER PRIMARY KEY AUTOINCREMENT, "
 					+ DesContract.CMPItemsSubCategory.SUBCATID		+ " INTEGER UNIQUE, "
+					+ DesContract.CMPItemsSubCategory.CATID			+ " INTEGER , "
 					+ DesContract.CMPItemsSubCategory.SUBCAT		+ " TEXT, "
 					+ DesContract.CMPItemsSubCategory.STATUS		+ " INTEGER);";
+	private static final String CREATE_TABLE_CMPITEMSCOMPANY =
+			"CREATE TABLE " + DesContract.CMPItemsCompany.TABLE_NAME + " ("
+					+ DesContract.CMPItemsCompany._ID			+ " INTEGER PRIMARY KEY AUTOINCREMENT, "
+					+ DesContract.CMPItemsCompany.COMPID		+ " INTEGER UNIQUE, "
+					+ DesContract.CMPItemsCompany.CATID			+ " INTEGER, "
+					+ DesContract.CMPItemsCompany.COMPANY		+ " TEXT, "
+					+ DesContract.CMPItemsCompany.STATUS		+ " INTEGER);";
 
 	private static final String CREATE_TABLE_CUSTOMERPROMO =
 			"CREATE TABLE " + DesContract.CustomerPromo.TABLE_NAME + " ("

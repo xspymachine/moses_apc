@@ -1,7 +1,7 @@
 package com.xpluscloud.moses_apc;
 
 import android.content.ContextWrapper;
-import android.support.multidex.MultiDexApplication;
+import androidx.multidex.MultiDexApplication;
 
 import com.pixplicity.easyprefs.library.Prefs;
 import com.zplesac.connectionbuddy.ConnectionBuddy;

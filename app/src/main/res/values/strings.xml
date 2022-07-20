@@ -6,7 +6,7 @@
     <string name="hello_world">Hello world!</string>
     <string name="apik">mrj2k12atxplusg5</string>
     <string name="cl">Credit Limit Balance</string>
-    <string name="versiondate">APC 2022-04-04</string>
+    <string name="versiondate">APC 2022-07-20</string>
 
     <string name="date_from">Date from </string>
     <string name="date_to">Date to</string>
@@ -89,6 +89,10 @@
     <string name="by_piece">By Piece</string>
     <string name="by_case_piece">Both By Case/Piece</string>
     <string name="no_customers">No Customers</string>
+    <string name="sel_pack">Select Packaging</string>
+    <string name="sel_uom">Select UOM</string>
+    <string name="sel_cat">Select Category</string>
+    <string name="sel_subcat">Select Sub-Category</string>
 
     <string name="profile">Profile</string>
     <string name="prof_Header">Profile List</string>
@@ -369,11 +373,23 @@
     </string-array>
 
     <string-array name="uom_array">
-        <item>bag</item>
-        <item>tin can</item>
-        <item>kg</item>
-        <item>box</item>
-        <item>carbouy</item>
+        <item>Bulk</item>
+        <item>Carbouy</item>
+        <item>Cotton</item>
+        <item>PET</item>
+        <item>Polybag</item>
+        <item>Pouch</item>
+        <item>Tin</item>
+        <item>Drums</item>
+        <item>Box</item>
+        <item>Pail</item>
+        <item>Bag</item>
+    </string-array>
+    <string-array name="uom_array2">
+        <item>Kilograms(kg)</item>
+        <item>Liters(L)</item>
+        <item>Grams(g)</item>
+        <item>Milliliters(ml)</item>
     </string-array>
 
     <string-array name="variant_1">

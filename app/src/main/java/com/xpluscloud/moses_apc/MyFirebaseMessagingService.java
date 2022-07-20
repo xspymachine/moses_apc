@@ -10,6 +10,8 @@ import android.net.Uri;
 import android.os.Build;
 import android.util.Log;
 
+import androidx.annotation.NonNull;
+
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 import com.xpluscloud.moses_apc.dbase.CustomerDbManager;
@@ -29,6 +31,28 @@ import java.util.Random;
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
     private static final String TAG = "MyFirebaseMsgService";
+
+    @Override
+    public void onNewToken(@NonNull String token) {
+        super.onNewToken(token);
+        Log.d(TAG, "Refreshed token: " + token);
+        sendRegistrationToServer(token);
+    }
+    private void sendRegistrationToServer(String token) {
+        String devId = "";
+        while (devId == null || devId.isEmpty()) {
+            devId = Master.getDevId(getApplicationContext());
+
+            DbUtil.saveSetting(getApplicationContext(), Master.DEVID, devId);
+        }
+        DbUtil.saveSetting(getApplicationContext(), "refreshedToken",token);
+        String message = Master.CMD_TOK + " " +
+                devId + ";" +
+                token + ";" +
+                System.currentTimeMillis()/1000;
+
+        DbUtil.saveMsg(getApplicationContext(), DbUtil.getGateway(getApplicationContext()), message);
+    }
 
     /**
      * Called when message is received.

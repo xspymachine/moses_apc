@@ -31,6 +31,7 @@
                     "Promo Brochures",
                     "Update Customers’ A/R",
                     "Places",
+                    "Competitors Data",
                     "Others"
                 };
 
@@ -42,7 +43,8 @@
         public final int PBROCHURE      = 2;
         public final int CLBAL          = 3;
         public final int PLACES         = 4;
-        public final int MISCS			= 5;
+        public final int CMP            = 5;
+        public final int MISCS			= 6;
 
 
         public String devId;
@@ -73,6 +75,7 @@
 //            devId= "98c277105e3e1e21";
 //            devId = "e93ef37f1b4996ef";
 //            devId = "3df3536e41862d5f";  //apc
+//            devId = "387402a70cb113b5";
             APIK= getResources().getString(R.string.apik);
 
      //add header to list
@@ -124,21 +127,15 @@
                         downloadPeriods();
                         break;
                     case MISCS:
-                        deleteTable("citem");
                         deleteTable("items");
                         deleteTable("icategory");
                         deleteTable("isubcategory");
-                        deleteTable("cmpicategory");
-                        deleteTable("cmpisubcategory");
                         deleteTable("cus_datas"," where status NOT IN (11,12,13)");
                         deleteTable("checklists");
                         deleteTable("acct_types");
-                        downloadCmpList();
                         downloadItems();
                         downloadItemsCategory();
                         downloadItemsSubCategory();
-                        downloadItemsCategory2();
-                        downloadItemsSubCategory2();
                         downloadChecklists();
                         downloadAccountTypes();
                         downloadTerms();
@@ -169,6 +166,16 @@
                         downloadProvince();
                         downloadRegion();
                         break;
+                    case CMP:
+                        deleteTable("cmpicategory");
+                        deleteTable("cmpisubcategory");
+                        deleteTable("cmpicompany");
+                        deleteTable("citem");
+                        downloadCmpList();
+                        downloadItemsCategory2();
+                        downloadItemsSubCategory2();
+                        downloadItemsCompany();
+                        break;
                     case PBROCHURE:
                         deleteTable("cus_datas"," where status=11");
                         deleteTable("cus_datas"," where status=12");
@@ -176,7 +183,7 @@
                         downloadPromo();
                         downloadPromotions();
                         downloadPromoCat();
-                        deleteFiles();
+//                        deleteFiles();
                         downloadPromotionsFiles();
                         break;
                     default:
@@ -272,6 +279,11 @@
             String url = baseUrl+"download/cmp_items_subcategory";
             new DownloadTask(context,header,"Items - Subcategory2").execute(url,"cmpisubcategory",devId,APIK);
         }
+        private void downloadItemsCompany() {
+//            deleteTable("items_category");
+            String url = baseUrl+"download/cmp_items_company";
+            new DownloadTask(context,header,"Items - Subcategory2").execute(url,"cmpicompany",devId,APIK);
+        }
 
         private void downloadCplan() {
             String url = baseUrl+"download/coverageplan";
@@ -362,13 +374,15 @@
         }
 
         private void deleteFiles(){
-            File dir = new File(Environment.getExternalStorageDirectory().toString()+"/ShellPromo");
-            if (dir.isDirectory())
-            {
-                String[] children = dir.list();
-                for (String child : children) {
-                    new File(dir, child).delete();
-                }
-            }
+//            File dir = new File(Environment.getExternalStorageDirectory().toString()+"/ShellPromo");
+//            File dir = new File(context.getFilesDir().toString()+"/apc");
+//            dir.delete();
+//            if (dir.isDirectory())
+//            {
+//                String[] children = dir.list();
+//                for (String child : children) {
+//                    new File(dir, child).delete();
+//                }
+//            }
         }
     }

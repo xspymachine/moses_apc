@@ -95,8 +95,8 @@ public class LoginActivity extends Activity {
 	    				(ViewGroup) findViewById(R.id.custom_toast_layout),1);
 			}
 		});
-		ImageView iv = (ImageView) findViewById(R.id.imagetesting101);
-        LayoutUtil.setListenerToRootView(LoginActivity.this,context,iv);
+//		ImageView iv = (ImageView) findViewById(R.id.imagetesting101);
+//        LayoutUtil.setListenerToRootView(LoginActivity.this,context,iv);
 	}
 
     private void lostPass(){

@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Environment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,14 +13,15 @@ import com.xpluscloud.moses_apc.GifCustomProgressDialog;
 import com.xpluscloud.moses_apc.R;
 import com.xpluscloud.moses_apc.util.DbUtil;
 
-import org.apache.http.util.ByteArrayBuffer;
-
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 
 import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
 
 public class DownloadTaskFile extends AsyncTask<String, Void, Boolean> {
 
@@ -52,10 +54,14 @@ public class DownloadTaskFile extends AsyncTask<String, Void, Boolean> {
         String linkUrl = params[0];
         String filename = params[1];
 
+        Log.e("link_url",linkUrl);
         try {
-            InputStream input = new java.net.URL(linkUrl).openStream();
-            String root = Environment.getExternalStorageDirectory().toString();
-            File myDir = new File(root + "/ShellPromo");
+            Request request = new Request.Builder().url(linkUrl).build();
+            Response response = client.newCall(request).execute();
+            InputStream pdf = response.body().byteStream();
+
+            String root = context.getFilesDir().toString();
+            File myDir = new File(root + "/apc");
             if(!myDir.isDirectory()) {
                 myDir.mkdirs();
             }
@@ -64,14 +70,14 @@ public class DownloadTaskFile extends AsyncTask<String, Void, Boolean> {
             File file = new File(myDir, fname);
             if (file.exists()) file.delete();
 
-            BufferedInputStream bis = new BufferedInputStream(input);
-            ByteArrayBuffer baf = new ByteArrayBuffer(50);
-            int current;
-            while ((current = bis.read()) != -1) {
-                baf.append((byte) current);
-            }
+            BufferedInputStream bis = new BufferedInputStream(pdf);
             FileOutputStream fos = new FileOutputStream(file);
-            fos.write(baf.toByteArray());
+
+            int current = 0;
+            while ((current = bis.read()) != -1) {
+                fos.write(current);
+            }
+
             fos.close();
 
             completed = Boolean.TRUE;
@@ -80,6 +86,11 @@ public class DownloadTaskFile extends AsyncTask<String, Void, Boolean> {
         }
 
         return completed;
+    }
+
+    @Override
+    protected void onProgressUpdate(Void... values) {
+        super.onProgressUpdate(values);
     }
 
     @Override

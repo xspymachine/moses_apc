@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
-import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -15,8 +14,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
-import android.support.annotation.Nullable;
-import android.support.v4.content.FileProvider;
+import androidx.annotation.Nullable;
+import androidx.core.content.FileProvider;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -232,19 +231,20 @@ public class TakePhotoActivity extends Activity {
         File[] extMounts = getApplicationContext().getExternalFilesDirs(null);
         File sdRoot = null;
         if(extMounts.length > 1) sdRoot = extMounts[1];
-        if(sdRoot == null){
+//        if(sdRoot == null){
             Log.e("STORAGE","NOT AVAILABLE");
-            devPath = Environment.getExternalStorageDirectory() + "/"
+            devPath = context.getFilesDir().toString() +"/"
                     + getResources().getString(R.string.pictures_dir) + "/"
                     + folder +"/";
             prepareDirectory();
-        }else{
-            String domainedFolder = sdRoot.getAbsolutePath();
-            Log.e("STORAGE","AVAILABLE="+domainedFolder);
-            devPath = sdRoot.getAbsolutePath()+"/"+getResources().getString(R.string.pictures_dir)+"/"+folder+"/";
-            prepareDirectory();
-
-        }
+//        }
+//        else{
+//            String domainedFolder = sdRoot.getAbsolutePath();
+//            Log.e("STORAGE","AVAILABLE="+domainedFolder);
+//            devPath = sdRoot.getAbsolutePath()+"/"+getResources().getString(R.string.pictures_dir)+"/"+folder+"/";
+//            prepareDirectory();
+//
+//        }
 
         SimpleDateFormat df = new SimpleDateFormat("yyyyMMddHHmmss",Locale.US);
         String dateStamp =  df.format(c.getTime());

@@ -46,7 +46,8 @@
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden"
-            android:configChanges="keyboardHidden|orientation|screenSize">
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -56,7 +57,7 @@
         </activity>
 
         <provider
-            android:name="android.support.v4.content.FileProvider"
+            android:name="androidx.core.content.FileProvider"
             android:authorities="com.xpluscloud.moses_apc.TakePhotoActivity.provider"
             android:exported="false"
             android:grantUriPermissions="true">
@@ -544,7 +545,8 @@
         <!--   <service android:enabled="true"  android:name=".SendCommandService"/> -->
 
         <receiver android:enabled="true" android:name="com.xpluscloud.moses_apc.AutoRun"
-            android:permission="android.permission.RECEIVE_BOOT_COMPLETED">
+            android:permission="android.permission.RECEIVE_BOOT_COMPLETED"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -552,7 +554,8 @@
         </receiver>
 
         <receiver android:name="com.xpluscloud.moses_apc.SMSReceiver"
-            android:permission="android.permission.BROADCAST_SMS">
+            android:permission="android.permission.BROADCAST_SMS"
+            android:exported="true">
             <intent-filter android:priority="10" >
                 <action android:name="android.provider.Telephony.SMS_RECEIVED" />
             </intent-filter>
@@ -561,7 +564,8 @@
         <receiver
             android:name="com.xpluscloud.moses_apc.RestartService"
             android:enabled="true"
-            tools:ignore="ExportedReceiver">
+            tools:ignore="ExportedReceiver"
+            android:exported="true">
             <intent-filter>
                 <action android:name="restartService" />
             </intent-filter>
@@ -569,19 +573,13 @@
 
         <service
             android:name="com.xpluscloud.moses_apc.MyFirebaseMessagingService"
-            tools:ignore="ExportedService">
+            tools:ignore="ExportedService"
+            android:exported="true">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT"/>
             </intent-filter>
         </service>
 
-        <service
-            android:name="com.xpluscloud.moses_apc.MyFirebaseInstanceIDService"
-            tools:ignore="ExportedService">
-            <intent-filter>
-                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
-            </intent-filter>
-        </service>
     </application>
 
 </manifest>

@@ -16,8 +16,8 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.ActivityCompat;
-import android.support.v7.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.appcompat.app.AppCompatActivity;
 import android.telephony.SmsManager;
 import android.telephony.TelephonyManager;
 import android.text.Html;
@@ -62,11 +62,11 @@ public class AboutActivity extends AppCompatActivity {
         String telco = Prefs.getString("strgateway",Master.STR_GATEWAY_SMART);
         String appname = getString(R.string.app_name);
         if(Master.FOR_APPROVAL_SETTING == 0){
-            strTxt = appname+"<br>APP features <font color=\"red\">CUSTOMERS HAVE NO APPROVAL</font><br>Updated April 04, 2022<br>" +
+            strTxt = appname+"<br>APP features <font color=\"red\">CUSTOMERS HAVE NO APPROVAL</font><br>Updated July 20, 2022<br>" +
                     "<br>Uses "+telco+" Telco" +
                     "<br>Contact Us<br>Email: support@xplus.ph";
         }else {
-            strTxt = appname+"<br>APP Updated April 04, 2022<br>" +
+            strTxt = appname+"<br>APP Updated July 20, 2022<br>" +
                     "<br>Uses "+telco+" Telco"+
                     "<br>Contact Us<br>Email: support@xplus.ph";
         }

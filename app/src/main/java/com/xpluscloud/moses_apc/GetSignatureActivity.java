@@ -153,7 +153,7 @@ public class GetSignatureActivity extends Activity {
 	    SimpleDateFormat df2 = new SimpleDateFormat("yyyyMMdd", Locale.US);
 	    String folder = df2.format(c.getTime());
 	      
-		devPath = Environment.getExternalStorageDirectory() + "/"
+		devPath = context.getFilesDir().toString() +"/"
 		            + getResources().getString(R.string.signatures_dir) + "/"
 		            + folder +"/"; 
 		prepareDirectory(); 

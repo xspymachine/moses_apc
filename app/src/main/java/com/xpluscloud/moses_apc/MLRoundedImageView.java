@@ -13,7 +13,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 
-public class MLRoundedImageView extends android.support.v7.widget.AppCompatImageView {
+public class MLRoundedImageView extends androidx.appcompat.widget.AppCompatImageView {
 
 	public MLRoundedImageView(Context context) {
         super(context);

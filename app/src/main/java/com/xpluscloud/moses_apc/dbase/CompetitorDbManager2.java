@@ -27,10 +27,12 @@ public class CompetitorDbManager2 extends DbManager {
 
         switch (opt){
             case 1: sql = "SELECT category  FROM cmpicategory ";
-                list.add("Select Brand ");
                 break;
-            case 2: sql = "SELECT subcategory  FROM cmpisubcategory";
-                list.add("Select Brand ");
+            case 2: sql = "SELECT subcategory  FROM cmpisubcategory WHERE category_id = "+catid;
+                break;
+            case 3: sql = "SELECT company  FROM cmpicompany WHERE category_id LIKE '%"+catid+"%'";
+                break;
+            case 4: sql = "SELECT description  FROM citem WHERE category_id = "+catid;
                 break;
         }
 
@@ -88,9 +90,9 @@ public class CompetitorDbManager2 extends DbManager {
         for(int i = 0; i < c.getCount(); i++) {
             if(c.moveToPosition(i)) {
                 Item itm = new Item();
-                itm.setId(c.getInt(c.getColumnIndex("_id")));
-                itm.setItemCode(c.getString(c.getColumnIndex("itemcode")));
-                itm.setDescription(c.getString(c.getColumnIndex("description")));
+                itm.setId(c.getInt(c.getColumnIndexOrThrow("_id")));
+                itm.setItemCode(c.getString(c.getColumnIndexOrThrow("itemcode")));
+                itm.setDescription(c.getString(c.getColumnIndexOrThrow("description")));
                 list.add(itm);
             }
         }
@@ -119,7 +121,7 @@ public class CompetitorDbManager2 extends DbManager {
 //                itm.setId(c.getInt(c.getColumnIndex("_id")));
 //                itm.setItemCode(c.getString(c.getColumnIndex("itemcode")));
 //                itm.setDescription(c.getString(c.getColumnIndex("description")));
-                list.add(c.getString(c.getColumnIndex("description")));
+                list.add(c.getString(c.getColumnIndexOrThrow("description")));
             }
         }
 
@@ -158,10 +160,16 @@ public class CompetitorDbManager2 extends DbManager {
 
         cv.put(DesContract.Competitors.INCODE			,ro.getINCode());
         cv.put(DesContract.Competitors.ITEM_CODE		,ro.getItemCode());
-        cv.put(DesContract.Competitors.PCKG			,ro.getPckg());
-        cv.put(DesContract.Competitors.QTY    		,ro.getQty());
+        cv.put(DesContract.Competitors.PCKG			    ,ro.getPckg());
+        cv.put(DesContract.Competitors.QTY    		    ,ro.getQty());
         cv.put(DesContract.Competitors.PRICE    		,ro.getPrice());
         cv.put(DesContract.Competitors.STATUS			,ro.getStatus());
+        cv.put(DesContract.Competitors.PRICEPERPACK		,ro.getPriceperpack());
+        cv.put(DesContract.Competitors.SRP			    ,ro.getSrp());
+        cv.put(DesContract.Competitors.UOM			    ,ro.getUom());
+        cv.put(DesContract.Competitors.CATEGORY			,ro.getCategory());
+        cv.put(DesContract.Competitors.SUBCATEGORY		,ro.getSubcategory());
+        cv.put(DesContract.Competitors.COMPANY			,ro.getCompany());
 
         if (ro.getId() > 0) cv.put(BaseColumns._ID, ro.getId());
 
@@ -234,17 +242,17 @@ public class CompetitorDbManager2 extends DbManager {
         Inventory ro = new Inventory();
 
         ro.setId(c.getInt(
-                c.getColumnIndex(BaseColumns._ID)));
+                c.getColumnIndexOrThrow(BaseColumns._ID)));
         ro.setCcode(c.getString(
-                c.getColumnIndex(DesContract.Competitors.CCODE)));
+                c.getColumnIndexOrThrow(DesContract.Competitors.CCODE)));
         ro.setINno(c.getInt(
-                c.getColumnIndex(DesContract.Competitors.INNO)));
+                c.getColumnIndexOrThrow(DesContract.Competitors.INNO)));
         ro.setINCode(c.getString(
-                c.getColumnIndex(DesContract.Competitors.INCODE)));
+                c.getColumnIndexOrThrow(DesContract.Competitors.INCODE)));
         ro.setDate(c.getString(
-                c.getColumnIndex(DesContract.Competitors.DATE)));
+                c.getColumnIndexOrThrow(DesContract.Competitors.DATE)));
         ro.setStatus(c.getInt(
-                c.getColumnIndex(DesContract.Competitors.STATUS)));
+                c.getColumnIndexOrThrow(DesContract.Competitors.STATUS)));
         return ro;
     }
 
@@ -288,6 +296,9 @@ public class CompetitorDbManager2 extends DbManager {
                 "ii.pckg," +
                 "ii.qty, " +
                 "ii.price, " +
+                "ii.category, " +
+                "ii.subcategory, " +
+                "ii.company, " +
                 "ii.status " +
                 "FROM cmpsheetitems ii " +
                 "LEFT JOIN citem itm " +
@@ -313,23 +324,26 @@ public class CompetitorDbManager2 extends DbManager {
         Inventory ro = new Inventory();
 
         ro.setId(c.getInt(
-                c.getColumnIndex(BaseColumns._ID)));
+                c.getColumnIndexOrThrow(BaseColumns._ID)));
         ro.setINCode(c.getString(
-                c.getColumnIndex(DesContract.Competitors.INCODE)));
+                c.getColumnIndexOrThrow(DesContract.Competitors.INCODE)));
         ro.setItemCode(c.getString(
-                c.getColumnIndex(DesContract.Competitors.ITEM_CODE)));
+                c.getColumnIndexOrThrow(DesContract.Competitors.ITEM_CODE)));
         ro.setPckg(c.getString(
-                c.getColumnIndex(DesContract.Competitors.PCKG)));
+                c.getColumnIndexOrThrow(DesContract.Competitors.PCKG)));
         ro.setDescription(c.getString(
-                c.getColumnIndex(DesContract.Item.DESCRIPTION)));
+                c.getColumnIndexOrThrow(DesContract.Item.DESCRIPTION)));
         ro.setQty(c.getInt(
-                c.getColumnIndex(DesContract.Competitors.QTY)));
+                c.getColumnIndexOrThrow(DesContract.Competitors.QTY)));
         ro.setPrice(c.getFloat(
-                c.getColumnIndex(DesContract.Competitors.PRICE)));
+                c.getColumnIndexOrThrow(DesContract.Competitors.PRICE)));
         ro.setStatus(c.getInt(
-                c.getColumnIndex(DesContract.Competitors.STATUS)));
-        ro.setSubcategoryid(c.getInt(c.getColumnIndex("subcategory_id")));
-        ro.setCategoryid(c.getInt(c.getColumnIndex("category_id")));
+                c.getColumnIndexOrThrow(DesContract.Competitors.STATUS)));
+        ro.setSubcategoryid(c.getInt(c.getColumnIndexOrThrow("subcategory_id")));
+        ro.setCategoryid(c.getInt(c.getColumnIndexOrThrow("category_id")));
+        ro.setCategory(c.getString(c.getColumnIndexOrThrow("category")));
+        ro.setSubcategory(c.getString(c.getColumnIndexOrThrow("subcategory")));
+        ro.setCompany(c.getString(c.getColumnIndexOrThrow("company")));
         return ro;
     }
     public int getLastSOno() {
@@ -414,17 +428,17 @@ public class CompetitorDbManager2 extends DbManager {
                 if(c.moveToPosition(i)) {
                     CallSheet obj = new CallSheet();
                     obj.setId(c.getInt(
-                            c.getColumnIndex(BaseColumns._ID)));
+                            c.getColumnIndexOrThrow(BaseColumns._ID)));
                     obj.setDate(c.getString(
-                            c.getColumnIndex(DesContract.Competitors.DATE)));
+                            c.getColumnIndexOrThrow(DesContract.Competitors.DATE)));
                     obj.setCscode(c.getString(
-                            c.getColumnIndex(DesContract.Competitors.INCODE)));
+                            c.getColumnIndexOrThrow(DesContract.Competitors.INCODE)));
                     obj.setcusname(c.getString(
-                            c.getColumnIndex("name")));
+                            c.getColumnIndexOrThrow("name")));
                     obj.setSono(c.getInt(
-                            c.getColumnIndex(DesContract.Competitors.INNO)));
+                            c.getColumnIndexOrThrow(DesContract.Competitors.INNO)));
                     obj.setStatus(c.getInt(
-                            c.getColumnIndex(DesContract.Competitors.STATUS)));
+                            c.getColumnIndexOrThrow(DesContract.Competitors.STATUS)));
                     list.add(obj);
                 }
             }

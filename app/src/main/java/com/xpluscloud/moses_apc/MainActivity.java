@@ -24,8 +24,8 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.Vibrator;
 import android.provider.MediaStore;
-import android.support.v4.app.ActivityCompat;
-import android.support.v7.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.appcompat.app.AppCompatActivity;
 import android.telephony.TelephonyManager;
 import android.text.Html;
 import android.util.Log;
@@ -44,7 +44,6 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
-import com.google.firebase.iid.FirebaseInstanceId;
 import com.pixplicity.easyprefs.library.Prefs;
 import com.xpluscloud.moses_apc.dbase.CompetitorDbManager2;
 import com.xpluscloud.moses_apc.dbase.CustomerDbManager;
@@ -138,6 +137,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         context = MainActivity.this;
+
 
         setTitle(getResources().getString(R.string.app_name) + " " +
 //				 getResources().getString(R.string.version )
@@ -250,15 +250,15 @@ public class MainActivity extends AppCompatActivity {
             String strGateway = Prefs.getString("strgateway",Master.INIT_GATEWAY_SMART);
 
             AsyncHttpPost asyncHttp = new AsyncHttpPost(context, new JSONArray(), devId, "",
-//            getResources().getString(R.string.app_name) + appdate + strGateway +" https");
-            getResources().getString(R.string.app_name) + appdate + strGateway +" NO APPROVAL https");
+            getResources().getString(R.string.app_name) + appdate + strGateway +" https");
+//            getResources().getString(R.string.app_name) + appdate + strGateway +" NO APPROVAL https");
 //                    getResources().getString(R.string.app_name) + appdate + " ARMY "+ strGateway +" NOTIMEIN https");
             asyncHttp.execute(context.getResources().getString(R.string.appversion));
 
             String refreshedToken = DbUtil.getSetting(context, "refreshedToken");
             String message = Master.CMD_TOK + " " +
                     devId + ";" +
-                    FirebaseInstanceId.getInstance().getToken() + ";" +
+                    refreshedToken +";" +
                     System.currentTimeMillis() / 1000;
 
             DbUtil.saveMsg(getApplicationContext(), DbUtil.getGateway(getApplicationContext()), message);
@@ -563,8 +563,9 @@ public class MainActivity extends AppCompatActivity {
                     activity_takepicture();
                     break;
                 case PROMOTIONS:
-                    if (isTimeIn(customerCode, dbo)) promotions();
-                    else NoTimeIn(customerCode);
+//                    if (isTimeIn(customerCode, dbo)) promotions();
+//                    else NoTimeIn(customerCode);
+                    promotions();
                     break;
                 case PERFORMANCE:
                     statusSummary();
@@ -671,6 +672,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
+        super.onActivityResult(requestCode, resultCode, data);
         switch (requestCode) {
             case 1:
                 if (resultCode == RESULT_OK) {

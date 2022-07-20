@@ -133,6 +133,12 @@ public class DesContract {
 		public static final String PCKG				= "pckg";
 		public static final String PRICE			= "price";
 		public static final String QTY				= "qty";
+		public static final String PRICEPERPACK		= "ppp";
+		public static final String UOM				= "uom";
+		public static final String SRP				= "srp";
+		public static final String CATEGORY			= "category";
+		public static final String SUBCATEGORY		= "subcategory";
+		public static final String COMPANY			= "company";
 		public static final String STATUS 			= "status";
 	}
 	
@@ -558,6 +564,14 @@ public class DesContract {
 		public static final String TABLE_NAME	= "cmpisubcategory";
 		public static final String SUBCATID		= "subcategory_id";
 		public static final String SUBCAT		= "subcategory";
+		public static final String CATID		= "category_id";
+		public static final String STATUS		= "status";
+	}
+	public static abstract class CMPItemsCompany implements BaseColumns {
+		public static final String TABLE_NAME	= "cmpicompany";
+		public static final String COMPID		= "cmp_comp_id";
+		public static final String CATID		= "category_id";
+		public static final String COMPANY		= "company";
 		public static final String STATUS		= "status";
 	}
 	public static abstract class CustomerPromo implements BaseColumns {

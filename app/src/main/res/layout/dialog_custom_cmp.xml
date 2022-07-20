@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:padding="5dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Spinner
+            android:prompt="@string/sel_cat"
+            style="@android:style/Widget.Spinner"
+            android:layout_marginBottom="2dp"
+            android:id="@+id/cmp_category"
+            android:padding="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <Spinner
+            android:prompt="@string/sel_subcat"
+            style="@android:style/Widget.Spinner"
+            android:layout_marginBottom="5dp"
+            android:id="@+id/cmp_subcategory"
+            android:padding="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <AutoCompleteTextView
+            android:hint="Company"
+            android:background="@drawable/recbg"
+            android:layout_marginBottom="5dp"
+            android:padding="10dp"
+            android:inputType="textCapSentences"
+            android:id="@+id/cmp_company"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <AutoCompleteTextView
+            android:hint="Brand"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/recbg"
+            android:inputType="textCapSentences"
+            android:padding="10dp"
+            android:id="@+id/cmp_brand"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <Spinner
+            style="@android:style/Widget.Spinner"
+            android:layout_marginBottom="2dp"
+            android:id="@+id/cmp_packaging"
+            android:entries="@array/uom_array"
+            android:padding="5dp"
+            android:prompt="@string/sel_pack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Price per pack"
+            android:inputType="numberDecimal"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/recbg"
+            android:padding="10dp"
+            android:id="@+id/cmp_priceperpack"/>
+        <Spinner
+            android:prompt="@string/sel_uom"
+            style="@android:style/Widget.Spinner"
+            android:layout_marginBottom="2dp"
+            android:id="@+id/cmp_uom"
+            android:entries="@array/uom_array2"
+            android:padding="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Quantity per pack"
+            android:layout_marginBottom="5dp"
+            android:inputType="number"
+            android:background="@drawable/recbg"
+            android:padding="10dp"
+            android:id="@+id/cmp_quantityperpack"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Transfer (Dealer) price"
+            android:inputType="numberDecimal"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/recbg"
+            android:padding="10dp"
+            android:id="@+id/cmp_transfer_price"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="SRP"
+            android:inputType="numberDecimal"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/recbg"
+            android:padding="10dp"
+            android:id="@+id/cmp_srp"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:gravity="end"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:textColor="@color/shellred"
+                android:id="@+id/cmp_cancel"
+                android:text="Cancel"/>
+            <Button
+                android:id="@+id/cmp_save"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/holo_green_dark"
+                android:text="Save"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</ScrollView>

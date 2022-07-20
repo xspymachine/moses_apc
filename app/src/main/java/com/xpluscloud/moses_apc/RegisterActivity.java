@@ -7,7 +7,7 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.provider.Settings;
-import android.support.v4.app.ActivityCompat;
+import androidx.core.app.ActivityCompat;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -92,7 +92,7 @@ public class RegisterActivity extends Activity {
 		ArrayAdapter<?> tmArrayAdapter = new ArrayAdapter<Object>(this,
 				R.layout.csi_spinner, ArrayDef.TYPE);
 		etType.setAdapter(tmArrayAdapter);
-		etType.setSelection(2);
+		etType.setSelection(1);
 		etType.setEnabled(false);
 
 		Button btClear = (Button) findViewById(R.id.bt_clear_reg);

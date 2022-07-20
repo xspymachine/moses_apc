@@ -9,9 +9,9 @@ import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -61,7 +61,7 @@ public class UploadPictureActivity extends AppCompatActivity {
         	//Resources res = getResources(); 
 
         	uploadURL = getString(R.string.pic_file_upload);
-	        FilePath = Environment.getExternalStorageDirectory() + "/"
+	        FilePath = context.getFilesDir().toString() +"/"
 	  	            + getResources().getString(R.string.pictures_dir) + "/";
 	  	    
 	  	   // sFolder +=  folder +"/";

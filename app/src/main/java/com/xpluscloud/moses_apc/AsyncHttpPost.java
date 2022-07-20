@@ -8,10 +8,6 @@ import com.xpluscloud.moses_apc.dbase.OutboxDbManager;
 import com.xpluscloud.moses_apc.dbase.UtilDbManager;
 import com.xpluscloud.moses_apc.getset.Outbox;
 
-import org.apache.http.NameValuePair;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.impl.client.DefaultHttpClient;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -21,7 +17,6 @@ import java.io.UnsupportedEncodingException;
 import java.security.SecureRandom;
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
-import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 import javax.net.ssl.HostnameVerifier;
@@ -61,27 +56,9 @@ public class AsyncHttpPost extends AsyncTask<String, String, String> {
     	
         byte[] result = null; 
         String str = "";
-        HttpClient client2 = new DefaultHttpClient();
-        HttpPost post = new HttpPost(params[0]);// in this case, params[0] is URL
         try { 
-            // set up post data 
-            ArrayList<NameValuePair> nameValuePair = new ArrayList<NameValuePair>();
+            // set up post data
             String apik=context.getResources().getString(R.string.apik);
-//            nameValuePair.add(new BasicNameValuePair("api", apik));
-//            nameValuePair.add(new BasicNameValuePair("devid", devid));
-//            nameValuePair.add(new BasicNameValuePair("sourceTable", sourceTable));
-//            nameValuePair.add(new BasicNameValuePair("data", data.toString()));
-//            nameValuePair.add(new BasicNameValuePair("version", version));
-//
-//            post.setEntity(new UrlEncodedFormEntity(nameValuePair, "UTF-8"));
-//        	HttpResponse response = client.execute(post);
-//
-//            StatusLine statusLine = response.getStatusLine();
-//            if(statusLine.getStatusCode() == HttpURLConnection.HTTP_OK){
-//                result = EntityUtils.toByteArray(response.getEntity());
-//                str = new String(result, "UTF-8");
-//                Log.e("Response: ",params[0]+"-----"+ str);
-//            }
 
             RequestBody body = new  FormBody.Builder()
                     .add("devid", devid)
@@ -97,14 +74,7 @@ public class AsyncHttpPost extends AsyncTask<String, String, String> {
             String result2 = response.body().string();
             Log.e("result",result2);
             str = result2;
-//			JsonParser.InsertData(context,Table,result);
             if (!response.isSuccessful()) throw new IOException("Unexpected code" + response.toString());
-//            else {
-//                if(result.length()> 5 && !result.contains("A PHP Error was encountered")) {
-//                    JsonParser.InsertData(context, Table, result);
-//                    completed = Boolean.TRUE;
-//                }
-//            }
         } 
         catch (UnsupportedEncodingException e) {
             e.printStackTrace(); 
